@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — macEQ</title>
+<meta name="description" content="Setup guide, troubleshooting steps, and direct support for macEQ, the system-wide audio equalizer for macOS.">
+
+<meta property="og:title" content="Support — macEQ">
+<meta property="og:description" content="Setup guide, troubleshooting steps, and direct support for macEQ.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://totoantonio.pages.dev/support.html">
+<meta property="og:site_name" content="macEQ">
+<meta property="og:image" content="https://totoantonio.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://totoantonio.pages.dev/og-image.png">
+<meta name="google-site-verification" content="knc6cXggIKqKZdjOSHALxoedXzTR1D6H0Jp_2SH4CgA">
+<link rel="canonical" href="https://totoantonio.pages.dev/support.html">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#FFFFFF">
+
+
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon.png?v=2">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "macEQ has no effect on the sound at all. How do I fix it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check that System EQ is on and the power button is lit. Open System Settings, then Privacy & Security, then Screen & System Audio Recording, and confirm macEQ is listed and enabled. If you just granted the permission, quit macEQ completely with Command-Q and reopen it, because macOS only hands the permission to a fresh launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does macEQ work in one app but not another?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A few apps hold an exclusive audio session or output their own hardware stream, which bypasses the system audio tap. Quit that app, make sure macEQ is already running, then reopen it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Audio cuts out when I switch to AirPods or a Bluetooth speaker.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toggle System EQ off, switch the output device, then toggle it back on so macEQ rebinds to the new device. If the AirPods entered call or headset mode, end the call or quit the app using the microphone, then reconnect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the audio crackling or distorting in macEQ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Turn Volume Boost down toward 100 percent, since boosting an already loud track will clip. Pull back any EQ bands sitting near plus 12 dB, turn off Auto Level temporarily, and press Reset EQ for a flat curve before rebuilding in smaller steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does macEQ require a virtual audio driver?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. macEQ uses Apple's native CATapDescription audio tap API, so no kernel extension or virtual audio device is installed and no output routing is changed. Turning it off restores your original audio routing in real time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my macEQ settings vanish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The EQ curve, spatial settings and effects only persist as a group when saved as a user preset. Tap Save Settings and name it, and it appears under My Presets to restore in one tap."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #FFFFFF;
+    --bg-2: #F5F5F7;
+    --text: #1D1D1F;
+    --muted: #6E6E73;
+    --line: rgba(0,0,0,.12);
+    --blue: #007AFF;
+    --green: #1E8E3E;
+    --red: #D0021B;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1C1C1E;
+      --bg-2: #232326;
+      --text: #F5F5F7;
+      --muted: #98989D;
+      --line: rgba(255,255,255,.14);
+      --blue: #0A84FF;
+      --green: #30D158;
+      --red: #FF453A;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 26px 24px 60px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--blue); }
+  a:hover { text-decoration: none; }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 56px;
+    font-size: 15px;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--text); }
+
+  .sf-symbol {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: var(--sf) center / contain no-repeat;
+    mask: var(--sf) center / contain no-repeat;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    font-weight: 700;
+  }
+
+  .lede {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 19px;
+    color: var(--muted);
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 48px 0 12px;
+    font-size: 22px;
+    letter-spacing: -.01em;
+    font-weight: 600;
+  }
+
+  h2 .sf-symbol {
+    width: 30px;
+    height: 30px;
+    color: var(--blue);
+  }
+
+  h3 {
+    margin: 28px 0 6px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 16px; }
+
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  li strong { font-weight: 600; }
+
+  .path {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .88em;
+    font-weight: 600;
+  }
+
+  /* ---------- Contact form ---------- */
+
+  form {
+    margin: 0 0 16px;
+  }
+
+  .field { margin-bottom: 16px; }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 11px 13px;
+    background: var(--bg-2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--blue);
+    outline-offset: -1px;
+    border-color: transparent;
+  }
+
+  textarea { min-height: 150px; resize: vertical; }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  button {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    border: 0;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 12px 30px;
+    border-radius: 980px;
+    cursor: pointer;
+  }
+  button:hover { opacity: .88; }
+  button[disabled] { opacity: .5; cursor: default; }
+
+  .form-note {
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .form-status {
+    margin: 14px 0 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .form-status.ok { color: var(--green); }
+  .form-status.err { color: var(--red); }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 48px 0 24px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 520px) {
+    h1 { font-size: 32px; }
+    .lede { font-size: 17px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="maceq.html">macEQ</a>
+  <a href="index.html#features">Features</a>
+  <a href="index.html#presets">Presets</a>
+  <a href="privacy.html">Privacy</a>
+  <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
+    <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
+    <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
+  </button>
+</nav>
+
+<h1>Support</h1>
+<p class="lede">Setup, fixes for the usual problems, and a way to reach a human.</p>
+
+<h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/power.png')" aria-hidden="true"></span>First run</h2>
+<ol class="reveal">
+  <li>Move macEQ to your <strong>Applications</strong> folder, then open it.</li>
+  <li>macOS asks for <strong>Screen &amp; System Audio Recording</strong> permission. Grant it — this is how macEQ receives system audio. It never records or saves anything; see the <a href="privacy.html">privacy policy</a>.</li>
+  <li>Quit and reopen macEQ after granting permission. macOS only hands the permission to a fresh launch.</li>
+  <li>Turn on <strong>System EQ</strong> in the bottom bar. A short confirmation tone plays.</li>
+  <li>Play something, then drag a slider. You should hear the change immediately.</li>
+</ol>
+
+<h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/shield.png')" aria-hidden="true"></span>Troubleshooting</h2>
+
+<h3>No effect on the sound at all</h3>
+<ol class="reveal">
+  <li>Check that <strong>System EQ</strong> is on and the power button is lit.</li>
+  <li>Open <span class="path">System Settings › Privacy &amp; Security › Screen &amp; System Audio Recording</span> and confirm macEQ is listed and enabled.</li>
+  <li>If you just granted it, quit macEQ completely (⌘Q, not just the window) and reopen it.</li>
+  <li>Confirm the audio is actually playing through the output device macEQ is watching — switch outputs and back in Control Center.</li>
+  <li>Try a dramatic setting, like Bass Boost with the 32 Hz band at +12 dB. Subtle curves on quiet material are easy to miss.</li>
+</ol>
+
+<h3>It works in one app but not another</h3>
+<p>
+  A few apps hold an exclusive audio session or output their own hardware stream, which bypasses the
+  system tap. Quit that app, make sure macEQ is running first, then reopen it. If it still bypasses
+  macEQ, send us the app's name using the form below.
+</p>
+
+<h3>Audio cuts out when switching to AirPods or a Bluetooth speaker</h3>
+<ol class="reveal">
+  <li>Toggle System EQ off, switch the output device, then toggle it back on. macEQ rebinds to the new device.</li>
+  <li>If the AirPods went into a call/headset mode, end the call or quit the app that grabbed the microphone, then reconnect.</li>
+  <li>Forget and re-pair the device in <span class="path">System Settings › Bluetooth</span> as a last resort.</li>
+</ol>
+
+<h3>Crackling, popping, or distortion</h3>
+<ol class="reveal">
+  <li>Turn <strong>Volume Boost</strong> down toward 100%. Boosting a track that is already loud will clip.</li>
+  <li>Pull back any bands sitting at +10 to +12 dB — several boosted bands stack up fast.</li>
+  <li>Turn off <strong>Auto Level</strong> temporarily to rule out the leveler reacting to a heavily compressed track.</li>
+  <li>Press <strong>Reset EQ</strong> for a clean flat curve, then rebuild your sound in smaller steps.</li>
+</ol>
+
+<h3>The sound is loud but muddy or harsh</h3>
+<p>
+  Cut instead of boost. Rather than raising the bands you want, lower the ones you don't, then bring
+  the master volume up. Try <strong>Night Mode</strong> for harshness and lower the 250 Hz band a few
+  dB for mud.
+</p>
+
+<h3>My settings vanished</h3>
+<p>
+  The EQ curve, spatial settings, and effects only persist as a group when you save them as a user
+  preset. Tap <strong>Save Settings</strong>, give it a name, and it will appear under
+  <strong>My Presets</strong> to restore in one tap.
+</p>
+
+<h3>Starting over completely</h3>
+<ol class="reveal">
+  <li>Press <strong>Reset EQ</strong>.</li>
+  <li>Turn off every spatial and effects toggle.</li>
+  <li>Set Stereo Width to 100%, Channel Balance to center, Volume Boost to 100%, and Pitch to 0.</li>
+  <li>Toggle System EQ off and on once.</li>
+</ol>
+
+<h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/menubar.png')" aria-hidden="true"></span>Still stuck? Write to us</h2>
+<p>
+  Tell us your macOS version, your output device, and what you were doing when it went wrong. The more
+  specific, the faster the fix.
+</p>
+
+<form id="support-form" action="https://formspree.io/f/meajnnkr" method="POST">
+  <div class="field">
+    <label for="name">Your name</label>
+    <input id="name" name="name" type="text" autocomplete="name" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Your email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+  </div>
+
+  <div class="field">
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic">
+      <option>No audio / EQ has no effect</option>
+      <option>Permission or first-run problem</option>
+      <option>Bluetooth or AirPods</option>
+      <option>Crackling or distortion</option>
+      <option>Presets or saved settings</option>
+      <option>Feature request</option>
+      <option>Something else</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="macos">macOS version and Mac model</label>
+    <input id="macos" name="macos" type="text" placeholder="macOS 27.1 · MacBook Air M2">
+  </div>
+
+  <div class="field">
+    <label for="message">What's happening?</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+
+  <!-- Spam trap: real people never fill this in. -->
+  <div class="hp" aria-hidden="true">
+    <label for="company">Company</label>
+    <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <input type="hidden" name="_subject" value="macEQ Support — website form">
+
+  <button type="submit">Send message</button>
+  <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  <p class="form-note">Your email address is used only to reply to you. Nothing else is stored.</p>
+</form>
+
+<hr>
+
+<footer>
+  <p>Every app on your Mac, tuned.</p>
+  <p><a href="maceq.html">macEQ</a> · <a href="privacy.html">Privacy</a> · totoantonio</p>
+  <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('support-form');
+  const status = document.getElementById('form-status');
+  const button = form.querySelector('button');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    button.disabled = true;
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.className = 'form-status ok';
+        status.textContent = 'Sent. We usually reply within a day or two.';
+      } else {
+        throw new Error('Bad response');
+      }
+    } catch {
+      status.className = 'form-status err';
+      status.textContent = 'That didn’t go through. Please try again in a moment.';
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

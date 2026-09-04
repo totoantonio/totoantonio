@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>macEQ — System-Wide Audio Equalizer for macOS 27</title>
+<meta name="description" content="macEQ is a system-wide equalizer for macOS 27. A 10-band EQ, stereo width, crossfeed and a live spectrum analyzer across every app — Spotify, Apple Music, YouTube, Safari — with no virtual audio driver and no subscription.">
+<meta name="keywords" content="mac equalizer, macOS equalizer, system-wide EQ Mac, Mac EQ app, audio enhancer macOS, Spotify equalizer Mac, no driver equalizer, crossfeed, stereo width">
+<meta name="google-site-verification" content="knc6cXggIKqKZdjOSHALxoedXzTR1D6H0Jp_2SH4CgA">
+<link rel="canonical" href="https://totoantonio.pages.dev/maceq.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta property="og:title" content="macEQ — System-Wide Audio Equalizer for macOS">
+<meta property="og:description" content="One equalizer for every app on your Mac. 10-band EQ, studio stereo processing and a live spectrum analyzer — no driver, no subscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://totoantonio.pages.dev/maceq.html">
+<meta property="og:site_name" content="macEQ">
+<meta property="og:image" content="https://totoantonio.pages.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="macEQ equalizer window showing a live spectrum analyzer and a ten-band EQ curve">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="macEQ — System-Wide Audio Equalizer for macOS">
+<meta name="twitter:description" content="One equalizer for every app on your Mac. No driver, no subscription.">
+<meta name="twitter:image" content="https://totoantonio.pages.dev/og-image.png">
+
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon.png?v=2">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "macEQ",
+  "alternateName": "macEQ Equalizer",
+  "url": "https://totoantonio.pages.dev/maceq.html",
+  "image": "https://totoantonio.pages.dev/og-image.png",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Audio Equalizer",
+  "operatingSystem": "macOS 27",
+  "author": { "@type": "Person", "name": "totoantonio" },
+  "publisher": { "@type": "Person", "name": "totoantonio" },
+  "slogan": "Hear Your Mac the Way It Was Meant to Sound",
+  "offers": {
+    "@type": "Offer",
+    "price": "14.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "description": "Free to try. One-time USD 14.99 unlocks the full version."
+  },
+  "description": "macEQ is a system-wide audio equalizer for macOS 27. It processes audio from every app at once using Apple's native CATapDescription audio tap API, so no virtual audio driver is installed and no system audio routing is changed.",
+  "featureList": [
+    "System-wide EQ across every app simultaneously",
+    "10-band parametric equalizer, 32 Hz to 16 kHz at plus or minus 12 dB",
+    "Live spectrum analyzer and live EQ frequency curve",
+    "No virtual audio driver and no kernel extension",
+    "Mid-Side stereo width from 0 to 200 percent",
+    "Headphone crossfeed",
+    "Virtual 5-channel spatial surround",
+    "Auto Level loudness normalization",
+    "Volume boost beyond the macOS system maximum",
+    "13 built-in presets plus unlimited user presets that save the full session",
+    "Bluetooth and AirPods support",
+    "Menu bar access"
+  ],
+  "softwareRequirements": "macOS 27",
+  "isAccessibleForFree": false
+}
+</script>
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #FFFFFF;
+    --text: #1D1D1F;
+    --muted: #6E6E73;
+    --line: rgba(0,0,0,.12);
+    --blue: #007AFF;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1C1C1E;
+      --text: #F5F5F7;
+      --muted: #98989D;
+      --line: rgba(255,255,255,.14);
+      --blue: #0A84FF;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 26px 24px 60px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--blue); }
+  a:hover { text-decoration: none; }
+
+  /* ---------- Nav ---------- */
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 56px;
+    font-size: 15px;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--text); }
+
+  /* ---------- SF Symbols ---------- */
+
+  .sf-symbol {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: var(--sf) center / contain no-repeat;
+    mask: var(--sf) center / contain no-repeat;
+  }
+
+  .app-icon {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 22px;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    font-weight: 700;
+  }
+
+  .tagline {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 19px;
+    color: var(--muted);
+  }
+
+  .download {
+    margin: 32px 0 0;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    line-height: 0;
+  }
+  .badge:hover { opacity: .85; }
+
+  .badge img {
+    width: 180px;
+    height: 60px;
+  }
+
+  .requirements {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  figure {
+    margin: 44px 0;
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 44px 0 12px;
+    font-size: 22px;
+    letter-spacing: -.01em;
+    font-weight: 600;
+  }
+
+  h2 .sf-symbol {
+    width: 30px;
+    height: 30px;
+    color: var(--blue);
+  }
+
+  p { margin: 0 0 16px; }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+
+  li { margin-bottom: 8px; }
+
+  li strong { font-weight: 600; }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .9em;
+    font-weight: 600;
+  }
+
+  .presets {
+    color: var(--muted);
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 48px 0 24px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 520px) {
+    body { padding-top: 48px; }
+    h1 { font-size: 32px; }
+    .tagline { font-size: 17px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="#features">Features</a>
+  <a href="#spatial">Spatial</a>
+  <a href="#presets">Presets</a>
+  <a href="#guide">How to use</a>
+  <a href="index.html">Author</a>
+  <a href="support.html">Support</a>
+  <a href="privacy.html">Privacy</a>
+  <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
+    <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
+    <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
+  </button>
+</nav>
+
+<div class="logo-lockup">
+  <div class="platform-badge" aria-label="Requires macOS 27">
+    <span>macOS 27</span>
+  </div>
+  <img class="app-icon" src="Assets/optimized/maceq-icon-256.webp" srcset="Assets/optimized/maceq-icon-256.webp 256w, Assets/optimized/maceq-icon-384.webp 384w" sizes="(max-width: 520px) 132px, 168px" width="128" height="128" fetchpriority="high" alt="macEQ app icon">
+</div>
+
+<h1>macEQ</h1>
+<p class="tagline">System-wide audio equalizer for macOS. Your Mac. Your Sound. No Compromises.</p>
+
+<p class="download download-options">
+  <a class="badge badge-soon" href="#" aria-disabled="true" aria-label="macEQ is coming soon to the App Store" data-soon="SOON"><img src="Assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store"></a>
+  <a class="lemon-badge badge-soon badge-live" href="https://totoantonio.lemonsqueezy.com/checkout/buy/999957db-ec04-4fe0-9851-130c210706f5" aria-label="Download macEQ from Lemon Squeezy" data-soon="RELEASED">
+    <img src="Assets/lemon-squeezy-mark.svg" width="28" height="28" alt="">
+    <span class="lemon-badge-copy">
+      <span>Download from</span>
+      <strong>Lemon Squeezy</strong>
+    </span>
+  </a>
+</p>
+<p class="requirements">Free to try · Requires macOS 27 · No Driver · No Subscription</p>
+
+<figure class="reveal main-figure">
+  <img src="Assets/optimized/maceq-main-640.webp" srcset="Assets/optimized/maceq-main-640.webp 640w, Assets/optimized/maceq-main-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1600" height="1208" fetchpriority="high" alt="macEQ equalizer showing a live spectrum analyzer and a ten-band EQ curve">
+  <figcaption>The ten-band equalizer, with the live curve and spectrum analyzer.</figcaption>
+</figure>
+
+<p>
+  <strong>macEQ</strong> shapes the sound of <em>every</em> app at once — Spotify, Apple Music, YouTube,
+  Safari, Chrome — with a 10-band EQ, studio stereo processing, and a live spectrum analyzer.
+</p>
+
+<p>
+  Most Mac equalizers make you install a virtual audio driver and reroute your output device.
+  <strong>macEQ</strong> doesn't. It uses Apple's native <code>CATapDescription</code> audio tap API — the same
+  mechanism macOS uses for screen recording audio. Toggle it off and your original audio
+  routing returns in real time.
+</p>
+
+<h2 id="features" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/waveform.png')" aria-hidden="true"></span>Features</h2>
+<ul class="reveal">
+  <li><strong>Every App, Simultaneously</strong> — one EQ for the whole system, no per-app setup.</li>
+  <li><strong>No Driver, No system changes</strong> — no kernel extension, no virtual device in Sound settings.</li>
+  <li><strong>10-band parametric EQ</strong> — 32 Hz to 16 kHz, ±12 dB, with a live bezier curve as you drag.</li>
+  <li><strong>Live Spectrum Analyzer</strong> — real-time audio energy per band, drawn separately from your EQ curve.</li>
+  <li><strong>Quick Actions</strong> — Extra Bass and Clarity add on top of your current curve and fully reverse on tap-off.</li>
+  <li><strong>Bluetooth &amp; AirPods</strong> — full support, not just wired output.</li>
+  <li><strong>Menu Bar App</strong> — adjust the curve, switch presets or set volume without leaving what you're doing.</li>
+</ul>
+
+<h2 id="spatial" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/spatial.png')" aria-hidden="true"></span>Spatial and Effects</h2>
+<ul class="reveal">
+  <li><strong>Stereo Width</strong> — true Mid-Side processing from 0% mono to 200% super-wide.</li>
+  <li><strong>Crossfeed</strong> — blends 30% of each channel into the opposite ear, so long headphone sessions stop being tiring.</li>
+  <li><strong>Spatial Surround</strong> — virtual 5-channel surround with an animated speaker diagram.</li>
+  <li><strong>Enhanced Stereo</strong> — plate reverb processing for cinematic stereo expansion.</li>
+  <li><strong>Auto Level</strong> — holds every track at consistent loudness, so loud ads stop startling you.</li>
+  <li><strong>Volume Boost</strong> — 100–200% beyond the macOS system maximum.</li>
+  <li><strong>Night Mode &amp; Ambience</strong> — roll off harsh highs, or add natural small-room depth.</li>
+  <li><strong>Fidelity &amp; Pitch Shift</strong> — restore air and micro-detail; move pitch ±12 semitones without changing speed.</li>
+  <li><strong>Channel Balance</strong> — independent left/right level control.</li>
+</ul>
+
+<figure class="reveal spatial-figure">
+  <img src="Assets/optimized/maceq-spatial-640.webp" srcset="Assets/optimized/maceq-spatial-640.webp 640w, Assets/optimized/maceq-spatial-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1946" height="1474" loading="lazy" decoding="async" alt="macEQ spatial effects controls with stereo width, crossfeed, and surround">
+  <figcaption>Spatial effects controls for stereo width, crossfeed, and surround.</figcaption>
+</figure>
+
+<figure class="reveal spatial-figure">
+  <img src="Assets/optimized/maceq-surround-640.webp" srcset="Assets/optimized/maceq-surround-640.webp 640w, Assets/optimized/maceq-surround-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1946" height="1474" loading="lazy" decoding="async" alt="macEQ spatial surround control with five virtual speaker positions">
+  <figcaption>Five virtual speaker positions with adjustable intensity.</figcaption>
+</figure>
+
+<h2 id="presets" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/preset.png')" aria-hidden="true"></span>Presets</h2>
+<p>
+  13 built-in presets, plus unlimited of your own. Each tile shows its EQ shape at a glance
+  and comes alive with the music when selected.
+</p>
+<p class="presets">
+  Bass Boost · Deep Bass · Treble Boost · Crisp Treble · Flat · Music · Movie · Gaming ·
+  Podcast · Night Mode · V-Shape · Warm · Orchestra
+</p>
+<p>
+  A saved preset stores the whole session — EQ, spatial settings, effects, pitch, volume boost
+  and auto level — under one name. One tap restores everything.
+</p>
+
+<figure class="reveal">
+  <img src="Assets/optimized/maceq-presets-640.webp" srcset="Assets/optimized/maceq-presets-640.webp 640w, Assets/optimized/maceq-presets-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1600" height="1244" loading="lazy" decoding="async" alt="macEQ presets tab with saved and built-in sound profiles">
+  <figcaption>Built-in and personal presets, all in one place.</figcaption>
+</figure>
+
+<h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/shield.png')" aria-hidden="true"></span>Advance Features</h2>
+<figure class="reveal">
+  <img src="Assets/optimized/maceq-advanced-640.webp" srcset="Assets/optimized/maceq-advanced-640.webp 640w, Assets/optimized/maceq-advanced-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1600" height="1244" loading="lazy" decoding="async" alt="macEQ advanced settings with import, export, AutoEq, low CPU mode, and spectrum analyzer controls">
+  <figcaption>Advanced controls for settings portability, headphone correction, and efficient processing.</figcaption>
+</figure>
+
+<ul class="reveal">
+  <li><strong>Export Settings</strong> — save your full EQ, spatial, and effects setup as a single file. Back it up or take it to another Mac.</li>
+  <li><strong>Import Settings</strong> — restore any macEQ settings file in seconds. No reconfiguring from scratch.</li>
+  <li><strong>AutoEq Headphone Profile</strong> — download a correction curve for your specific headphone from autoeq.app and import it directly. macEQ maps it to your 10 bands automatically.</li>
+  <li><strong>Low CPU Mode</strong> — removes inactive audio processing nodes from the chain when you're not using them. Lower idle CPU, same sound quality.</li>
+  <li><strong>Spectrum Analyzer Control</strong> — the live analyzer is powerful but optional. Turn it off for a quieter interface or lower CPU draw; the EQ keeps running either way.</li>
+</ul>
+
+<h2 id="guide" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/power.png')" aria-hidden="true"></span>How to use</h2>
+<ol class="reveal">
+  <li>Open macEQ and enable System EQ from the bottom bar.</li>
+  <li>Use the power button to turn real-time processing on or off.</li>
+  <li>Pick a preset, or shape the 10-band EQ manually.</li>
+  <li>Add Extra Bass or Clarity for a quick tone change.</li>
+  <li>Open Spatial for surround depth, stereo width, crossfeed and balance.</li>
+  <li>Set volume boost, ambience, pitch, Night Mode or auto leveling.</li>
+  <li>Save it all as a user preset.</li>
+</ol>
+
+<p class="download guide-download download-options">
+  <a class="badge badge-soon" href="#" aria-disabled="true" aria-label="macEQ is coming soon to the App Store" data-soon="SOON"><img src="Assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store"></a>
+  <a class="lemon-badge badge-soon badge-live" href="https://totoantonio.lemonsqueezy.com/checkout/buy/999957db-ec04-4fe0-9851-130c210706f5" aria-label="Download macEQ from Lemon Squeezy" data-soon="RELEASED">
+    <img src="Assets/lemon-squeezy-mark.svg" width="28" height="28" alt="">
+    <span class="lemon-badge-copy">
+      <span>Download from </span>
+      <strong>Lemon Squeezy</strong>
+    </span>
+  </a>
+</p>
+<p class="requirements">Requires macOS 27 · No Driver · No Subscription</p>
+
+
+
+<footer>
+  <p>Your Mac. Your Sound. No Compromises.</p>
+  <p><a href="https://totoantonio.pages.dev/maceq.html">System-Wide Audio Equalizer for macOS</a> · macEQ</p>
+  <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+/* ---------------------------------------------------------------
+   Shared enhancements: web font, theme toggle, scroll reveal.
+   Loaded after each page's inline <style>, so it wins on conflict.
+   --------------------------------------------------------------- */
+
+html {
+  overflow-x: hidden;
+}
+
+/* Apple devices resolve -apple-system first and never reach the web font.
+   Everything else falls through to Google Sans. */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Google Sans",
+    "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Type scale ----------
+   Values taken from Apple Support's own stylesheet (app-ac.css):
+   body 17/1.4706/-.022em · h1 48/1.0835/-.003em · h2 40/1.1/0 · h3 32/1.125/+.004em
+   Tracking loosens as type shrinks, and turns positive below 40px.
+   Sizes scale down on small screens, as Apple's own breakpoints do.        */
+
+body {
+  font-size: 17px;
+  line-height: 1.4706;
+  letter-spacing: -.022em;
+}
+
+h1 {
+  font-size: clamp(34px, 6.2vw, 48px);
+  line-height: 1.0835;
+  letter-spacing: -.003em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.1;
+  letter-spacing: 0em;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(24px, 3.6vw, 32px);
+  line-height: 1.125;
+  letter-spacing: .004em;
+  font-weight: 600;
+}
+
+/* Apple's 21px intro size, with its matching tracking. */
+.tagline,
+.lede {
+  font-size: clamp(19px, 2.5vw, 21px);
+  line-height: 1.381;
+  letter-spacing: .011em;
+}
+
+/* Small print: Apple's 14px caption tracking. */
+.requirements,
+.copyright,
+figcaption,
+footer,
+nav {
+  letter-spacing: -.016em;
+}
+
+/* Headline symbols scale with the larger headings. */
+h2 .sf-symbol {
+  width: clamp(30px, 4.8vw, 50px);
+  height: clamp(30px, 4.8vw, 50px);
+}
+
+/* ---------- Vertical rhythm: wide between topics, tight within ---------- */
+
+h2 {
+  margin-top: clamp(64px, 9vw, 96px);
+  margin-bottom: 14px;
+  /* A hairline gives structure without adding an object. */
+  padding-top: clamp(30px, 4vw, 44px);
+  border-top: 1px solid var(--line);
+}
+
+/* The first heading on a page needs no rule above it. */
+main > h2:first-of-type,
+h1 + h2 {
+  border-top: 0;
+  padding-top: 0;
+}
+
+h3 {
+  margin-top: 34px;
+  margin-bottom: 6px;
+}
+
+figure {
+  margin-top: clamp(40px, 6vw, 60px);
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+/* The screenshots are cropped to the window edge, so they span the same
+   width as the body text. The caption sits right under the window. */
+figcaption {
+  margin-top: 14px;
+}
+
+/* ---------- Hero: a more confident app icon ---------- */
+
+.app-icon {
+  width: 168px;
+  height: 168px;
+}
+
+.logo-lockup {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 28px;
+}
+
+.logo-lockup .app-icon {
+  margin: 0;
+}
+
+.platform-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 0;
+  gap: 7px;
+  margin: 0;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 999px;
+  background: #1D1D1F;
+  color: #F5F5F7;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  line-height: 1.5;
+  transition: opacity .2s ease;
+}
+
+.logo-lockup .platform-badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.platform-badge:hover { opacity: .85; }
+
+@media (max-width: 520px) {
+  .app-icon { width: 132px; height: 132px; }
+  .logo-lockup { margin-bottom: 20px; }
+}
+
+/* ---------- Links: inherit the text colour, never underlined ---------- */
+
+a,
+a:hover,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Inline links inside body copy stay findable through weight, not colour. */
+p a,
+li a {
+  font-weight: 600;
+  transition: opacity .2s ease;
+}
+
+p a:hover,
+li a:hover,
+footer a:hover {
+  opacity: .6;
+}
+
+/* ---------- Manual theme override ---------- */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --bg-2: #F5F5F7;
+  --text: #1D1D1F;
+  --muted: #6E6E73;
+  --line: rgba(0, 0, 0, .12);
+  --blue: #007AFF;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1C1C1E;
+  --bg-2: #232326;
+  --text: #F5F5F7;
+  --muted: #98989D;
+  --line: rgba(255, 255, 255, .14);
+  --blue: #0A84FF;
+}
+
+body {
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* ---------- Nav: always a single line ---------- */
+
+nav {
+  flex-wrap: nowrap;
+  align-items: center;
+  /* Gap and type shrink with the viewport before anything can wrap. */
+  gap: clamp(11px, 3.1vw, 24px);
+  font-size: clamp(12.5px, 3.1vw, 15px);
+  /* Last resort on very narrow screens: scroll sideways, never stack. */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+nav::-webkit-scrollbar { display: none; }
+
+nav a {
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* On phones, drop the two sections that are easiest to reach by scrolling. */
+@media (max-width: 600px) {
+  nav a[href*="#presets"],
+  nav a[href*="#guide"] {
+    display: none;
+  }
+}
+
+/* ---------- Theme toggle ---------- */
+
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--text);
+  transform: rotate(-15deg);
+}
+
+.theme-toggle .sf-symbol {
+  width: 16px;
+  height: 16px;
+}
+
+/* Show the icon for the theme you would switch TO. */
+.theme-toggle .theme-sun { display: none; }
+.theme-toggle .theme-moon { display: inline-block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .theme-sun { display: inline-block; }
+  :root:not([data-theme="light"]) .theme-toggle .theme-moon { display: none; }
+}
+
+:root[data-theme="dark"] .theme-toggle .theme-sun { display: inline-block; }
+:root[data-theme="dark"] .theme-toggle .theme-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .theme-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .theme-moon { display: inline-block; }
+
+/* ---------- "SOON" overlay on the App Store badge ---------- */
+
+.badge-soon {
+  position: relative;
+  cursor: default;
+}
+
+/* Small pill pinned to the badge's top-right corner. */
+.badge-soon::after {
+  content: attr(data-soon);
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  padding: 3px 9px;
+  border-radius: 980px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Same pill, but for a badge that actually links somewhere. */
+.badge-live {
+  cursor: pointer;
+}
+
+.badge-live::after {
+  background: #34C759;
+}
+
+:root[data-theme="dark"] .badge-live::after {
+  background: #30D158;
+  color: #0B1A0F;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: .75;
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  /* Apple's motion: leaves quickly, settles slowly. */
+  transition: opacity .5s cubic-bezier(.28, .11, .32, 1),
+              transform .5s cubic-bezier(.28, .11, .32, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Screenshots get a slightly larger, slower entrance. */
+figure.reveal {
+  transform: translateY(26px) scale(.99);
+}
+
+figure.reveal.visible {
+  transform: none;
+}
+
+/* ---------- Hero spacing: keep the badge above the fold ---------- */
+
+@media (max-height: 720px), (max-width: 520px) {
+  nav { margin-bottom: 34px; }
+  .app-icon { width: 132px; height: 132px; margin-bottom: 20px; }
+  .download { margin-top: 24px; }
+}
+
+/* ---------- Respect reduced motion ---------- */
+
+.download.guide-download {
+  margin-top: 48px;
+}
+
+.download-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.lemon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 180px;
+  height: 60px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: #FFC233;
+  color: #1D1D1F;
+  text-align: center;
+  transition: opacity .2s ease;
+}
+
+.lemon-badge:hover { opacity: .85; }
+
+.lemon-badge img {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+}
+
+.lemon-badge-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lemon-badge-copy > span {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .02em;
+}
+
+.lemon-badge-copy strong {
+  margin-top: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+@media (max-width: 520px) {
+  .download-options {
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .download-options > * {
+    width: calc((100% - 8px) / 2);
+    min-width: 0;
+  }
+
+  /* Both badges share the App Store artwork's 3:1 ratio so their
+     boxes are exactly the same size at any phone width. */
+  .download-options .badge {
+    display: flex;
+    aspect-ratio: 3 / 1;
+  }
+
+  .download-options .badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .download-options .lemon-badge {
+    height: auto;
+    aspect-ratio: 3 / 1;
+    padding: 0 6px;
+    gap: 5px;
+  }
+
+  .download-options .lemon-badge img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .download-options .lemon-badge-copy > span {
+    font-size: 8px;
+  }
+
+  .download-options .lemon-badge-copy strong {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  figure.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .theme-toggle:hover { transform: none; }
+  body { transition: none; }
+}

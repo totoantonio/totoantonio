@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>totoantonio — Squeezing useful software into the edges of a busy day job.</title>
+<meta name="description" content="totoantonio - Squeezing useful software into the edges of a busy day job.">
+<link rel="canonical" href="https://totoantonio.pages.dev/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta property="og:title" content="totoantonio — Squeezing useful software into the edges of a busy day job.">
+<meta property="og:description" content="Mac apps built out of need and necessity: macEQ, KeyboardS and Upscape.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://totoantonio.pages.dev/">
+<meta property="og:site_name" content="totoantonio">
+<meta property="og:image" content="https://totoantonio.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="totoantonio — Squeezing useful software into the edges of a busy day job.">
+<meta name="twitter:description" content="Mac apps built out of need and necessity: macEQ, KeyboardS and Upscape.">
+<meta name="twitter:image" content="https://totoantonio.pages.dev/og-image.png">
+
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon.png?v=2">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #FFFFFF;
+    --text: #1D1D1F;
+    --muted: #6E6E73;
+    --line: rgba(0, 0, 0, .12);
+    --blue: #007AFF;
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101114;
+    --text: #F5F5F7;
+    --muted: #98989D;
+    --line: rgba(255, 255, 255, .14);
+    --blue: #0A84FF;
+  }
+
+  /* Page-local palette so the theme toggle actually changes this page. */
+  :root,
+  :root[data-theme="light"] {
+    --page-bg: #F5F6F8;
+    --page-text: #111827;
+    --page-soft: #60708D;
+    --card-bg: #FFFFFF;
+    --card-text: #3E4A61;
+    --card-shadow: rgba(17, 24, 39, .12);
+    --card-shadow-hover: rgba(17, 24, 39, .16);
+    --pill-bg: #E8EAED;
+    --pill-text: #626A75;
+  }
+
+  :root[data-theme="dark"] {
+    --page-bg: #101114;
+    --page-text: #F5F5F7;
+    --page-soft: #9AA6BC;
+    --card-bg: #1C1D21;
+    --card-text: #B4BECD;
+    --card-shadow: rgba(0, 0, 0, .5);
+    --card-shadow-hover: rgba(0, 0, 0, .62);
+    --pill-bg: #2C2E34;
+    --pill-text: #A8B0BD;
+  }
+
+  * { box-sizing: border-box; }
+
+  .sf-symbol {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: var(--sf) center / contain no-repeat;
+    mask: var(--sf) center / contain no-repeat;
+  }
+
+  body {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 48px 32px 72px;
+    background: var(--page-bg);
+    color: var(--page-text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Google Sans", "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.4706;
+    letter-spacing: -.022em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 56px;
+    font-size: 15px;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  nav a:hover { color: var(--text); }
+
+  .author-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 868px;
+    margin: 0 auto 96px;
+  }
+
+  .author-home {
+    color: var(--page-soft);
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .author-home:hover {
+    color: var(--page-text);
+  }
+
+  .author-intro {
+    max-width: 900px;
+    margin: 0 auto 88px;
+    text-align: center;
+  }
+
+  .author-kicker {
+    display: none;
+  }
+
+  .author-intro h1 {
+    margin: 0;
+    color: var(--page-text);
+    text-align: center;
+    font-size: clamp(42px, 7vw, 84px);
+    line-height: .98;
+    letter-spacing: -.045em;
+  }
+
+  .author-role {
+    max-width: none;
+    margin: 26px 0 0;
+    color: var(--page-soft);
+    font-size: clamp(15px, 1.8vw, 19px);
+    line-height: 1.4;
+    letter-spacing: -.022em;
+  }
+
+  .author-section {
+    max-width: 868px;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .author-section h2 {
+    display: none;
+  }
+
+  .author-work {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    justify-content: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .author-work li {
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    background: var(--card-bg);
+    box-shadow: 0 3px 10px var(--card-shadow);
+    /* `top` instead of `transform`: a transform promotes the card to its own
+       layer and re-rasterizes the text at fractional pixels, which reads as
+       blur on hover. */
+    transition: box-shadow .2s ease, top .2s ease;
+  }
+
+  .author-work li:hover {
+    top: -2px;
+    box-shadow: 0 8px 22px var(--card-shadow-hover);
+  }
+
+  .author-work a {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    align-items: stretch;
+    gap: 16px;
+    min-height: 132px;
+    height: 100%;
+    padding: 22px;
+    color: var(--page-text);
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  /* theme.css fades any `li a` to .6 on hover — that washes the whole card
+     out. The card lifts instead. */
+  .author-work a:hover {
+    opacity: 1;
+  }
+
+  .work-logo {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 auto;
+    align-self: center;
+    border-radius: 16px;
+  }
+
+  .work-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .work-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    /* auto pushes it to the card floor; the description's margin keeps a
+       minimum gap when there is no slack to take. */
+    margin-top: auto;
+    padding: 4px 9px;
+    /* Transparent border keeps every pill the same height as the outlined one. */
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .02em;
+  }
+
+  /* Two pills sit side by side; the row takes the auto margin instead. */
+  .work-status-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+  }
+
+  .work-status-row .work-status {
+    margin-top: 0;
+  }
+
+  .work-status-lemon {
+    padding: 4px 10px 4px 5px;
+    background: #FFC233;
+    color: #1D1D1F;
+  }
+
+  /* Shipping now — the one pill that gets full colour. */
+  .work-status-released {
+    background: #007AFF;
+    border-color: #007AFF;
+    color: #FFFFFF;
+  }
+
+  /* Not shipped there yet — reads as inactive next to the live one. */
+  .work-status-pending {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--pill-text);
+    opacity: .65;
+  }
+
+  .work-status img {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+  }
+
+  .author-work strong {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .work-copy > span:not(.work-status):not(.work-status-row) {
+    margin-bottom: 12px;
+    color: var(--card-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .author-note {
+    max-width: 868px;
+    margin: 88px auto 0;
+    color: var(--page-soft);
+    font-size: 17px;
+    text-align: left;
+    line-height: 1.4706;
+  }
+
+  .author-note + .author-note {
+    margin-top: 22px;
+  }
+
+  footer {
+    max-width: 868px;
+    margin: 88px auto 0;
+    text-align: left;
+  }
+
+  @media (max-width: 520px) {
+    .author-page { padding: 28px 18px 52px; }
+    .author-nav { margin-bottom: 62px; }
+    .author-intro { margin-bottom: 56px; }
+    .author-work { grid-template-columns: 1fr; }
+    .author-work a { grid-template-columns: 72px 1fr; align-items: flex-start; gap: 16px; min-height: 0; padding: 22px; }
+    .work-logo { width: 72px; height: 72px; border-radius: 16px; }
+    .author-work strong { font-size: 22px; }
+    .work-copy > span:not(.work-status):not(.work-status-row) { display: block; margin-top: 5px; font-size: 16px; text-align: left; }
+  }
+</style>
+</head>
+<body class="author-page">
+
+<div class="author-nav">
+  <a class="author-home" href="maceq.html">macEQ</a>
+  <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
+    <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
+    <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
+  </button>
+</div>
+
+<main>
+  <section class="author-intro">
+    <p class="author-kicker">With time to tinker</p>
+    <h1>totoantonio</h1>
+    <p class="author-role">Squeezing useful software into the edges of a busy day job.</p>
+  </section>
+
+  <section class="author-section" aria-labelledby="selected-work">
+    <h2 id="selected-work">Selected work</h2>
+    <ul class="author-work">
+      <li><a href="maceq.html"><img class="work-logo" src="Assets/optimized/maceq-icon-256.webp" width="52" height="52" decoding="async" alt="macEQ app icon"><span class="work-copy"><strong>macEQ</strong><span>System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</span><span class="work-status-row"><span class="work-status work-status-lemon"><img src="Assets/lemon-squeezy-mark.svg" width="14" height="14" alt="">Lemon Squeezy</span><span class="work-status work-status-pending">App Store · Soon</span></span></span></a></li>
+      <li><a href="keyboards.html"><img class="work-logo" src="Assets/optimized/keyboards-icon-256.webp" width="52" height="52" decoding="async" alt="KeyboardS app icon"><span class="work-copy"><strong>KeyboardS</strong><span>A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</span><span class="work-status-row"><span class="work-status work-status-released">Released</span><span class="work-status work-status-lemon"><img src="Assets/lemon-squeezy-mark.svg" width="14" height="14" alt="">Lemon Squeezy</span></span></span></a></li>
+      <li><a href="upscape.html"><img class="work-logo" src="Assets/optimized/upscape-icon-256.webp" width="52" height="52" decoding="async" alt="Upscape app icon"><span class="work-copy"><strong>Upscape</strong><span>Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</span><span class="work-status-row"><span class="work-status work-status-pending">Lemon Squeezy · Soon</span></span></span></a></li>
+    </ul>
+  </section>
+
+  <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story — need first, product second. It also means I am the first person who has to live with the result every day.</p>
+  <p class="author-note">The apps get built in odd places. My work has me travelling most weeks — long drives, boat rides, airports, hotel rooms — so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
+  <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. No feature list padded out to look impressive. Software, thoughtfully made — out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
+</main>
+
+<footer>
+  <p>totoantonio · Curious, keeps figuring things out, and hopes it earns its keep.</p>
+  <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

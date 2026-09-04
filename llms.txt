@@ -1,0 +1,52 @@
+# totoantonio
+
+> totoantonio makes small, focused Mac apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; and Upscape, a private AI image upscaler. Home page: https://totoantonio.pages.dev/
+
+## macEQ
+
+> macEQ is a system-wide audio equalizer for macOS 27, sold as a one-time USD 14.99 purchase with no subscription. It shapes the sound of every app at once — Spotify, Apple Music, YouTube, Safari, Chrome — with a 10-band EQ, studio stereo processing, and a live spectrum analyzer. It installs no virtual audio driver. Page: https://totoantonio.pages.dev/maceq.html
+
+### What makes macEQ different
+
+- **No virtual audio driver.** macEQ uses Apple's native `CATapDescription` audio tap API — the same mechanism macOS uses for screen recording audio. Nothing is installed into the system, no kernel extension, and no virtual device appears in Sound settings. Turning it off restores the original audio routing in real time.
+- **Every app at once.** One system-wide EQ rather than per-app or player-only processing.
+- **One-time USD 14.99.** No subscription, no recurring fee, no account.
+- **macOS 27 only.** Designed exclusively for Mac, including Bluetooth speakers and AirPods.
+
+### macEQ features
+
+- 10-band parametric equalizer: 32, 64, 125, 250, 500 Hz and 1, 2, 4, 8, 16 kHz at ±12 dB
+- Live EQ frequency curve and a separate live spectrum analyzer
+- Quick actions: Extra Bass and Clarity, both additive on top of the current curve and fully reversible
+- Stereo Width via true Mid-Side processing, 0% mono to 200% super-wide
+- Crossfeed, blending 30% of each channel into the opposite ear for headphone comfort
+- Spatial Surround, a virtual 5-channel field with an animated speaker diagram
+- Dolby Stereo plate reverb for cinematic stereo expansion
+- Auto Level, a software AGC holding every track at consistent loudness
+- Volume Boost from 100% to 200% beyond the macOS system maximum
+- Night Mode, Ambience, Fidelity, and Pitch Shift of ±12 semitones
+- Channel Balance with independent left/right level control
+- 13 built-in presets: Bass Boost, Deep Bass, Treble Boost, Crisp Treble, Flat, Music, Movie, Gaming, Podcast, Night Mode, V-Shape, Warm, Orchestra
+- Unlimited user presets that save the entire session — EQ, spatial, effects, pitch, volume boost and auto level — under one name
+- Menu bar access
+
+### macEQ privacy
+
+macEQ processes all audio locally on the device. It does not record, save, store, upload, transmit, sell or share captured audio, and collects no personal data, listening history, analytics or advertising identifiers. It needs no internet connection to work. The macOS permission appears under Screen & System Audio Recording because macOS groups system audio recording under that privacy area; macEQ does not capture screen contents.
+
+## KeyboardS
+
+> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌘K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Page: https://totoantonio.pages.dev/keyboards.html
+
+## Upscape
+
+> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with seven specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Page: https://totoantonio.pages.dev/upscape.html
+
+## Pages
+
+- [Home](https://totoantonio.pages.dev/): who totoantonio is and every app in one place
+- [macEQ](https://totoantonio.pages.dev/maceq.html): overview, features, presets, and how to use macEQ
+- [KeyboardS](https://totoantonio.pages.dev/keyboards.html): features, categories, privacy, and how to use KeyboardS
+- [Upscape](https://totoantonio.pages.dev/upscape.html): features, models, use cases, privacy, and FAQ
+- [Support](https://totoantonio.pages.dev/support.html): first-run setup, troubleshooting steps, and a contact form
+- [Privacy policy](https://totoantonio.pages.dev/privacy.html): full privacy terms

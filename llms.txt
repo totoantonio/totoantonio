@@ -34,13 +34,72 @@
 
 macEQ processes all audio locally on the device. It does not record, save, store, upload, transmit, sell or share captured audio, and collects no personal data, listening history, analytics or advertising identifiers. It needs no internet connection to work. The macOS permission appears under Screen & System Audio Recording because macOS groups system audio recording under that privacy area; macEQ does not capture screen contents.
 
+### macEQ availability
+
+Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/checkout/buy/999957db-ec04-4fe0-9851-130c210706f5 — App Store release coming soon.
+
 ## KeyboardS
 
-> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌘K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Page: https://totoantonio.pages.dev/keyboards.html
+> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌘K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Tagline: "Every Mac Shortcut, One Keystroke Away". Page: https://totoantonio.pages.dev/keyboards.html
+
+### What makes KeyboardS different
+
+- **Nothing is watching.** Most shortcut apps observe your keyboard to work. KeyboardS is a reference list you open on purpose, so there is nothing to monitor and nothing to send anywhere.
+- **No Input Monitoring permission.** Nothing to approve in Privacy & Security.
+- **Menu bar only.** No Dock icon, no window management, open and gone in a second.
+- **Ships complete.** The full shortcut list lives inside the app and works offline, with no account.
+
+### KeyboardS features
+
+- Menu bar app with no Dock icon
+- Global ⌘K hotkey that opens the panel from any app
+- Instant search across every category at once
+- 200+ macOS shortcuts written in plain language
+- 14 categories, each with a running count: Most Used, Basics, Power, Modifier Keys, Screenshots, System, Spaces, Text, Text Selection, Finder, Finder Navigation, Accessibility, Function Keys, Advanced
+- One-click link to Apple's official shortcut reference
+- No subscription, no account, works offline
+
+### KeyboardS privacy
+
+KeyboardS does not record keystrokes and never observes what you type. It requires no Input Monitoring permission, no account, and no internet connection.
+
+### KeyboardS availability
+
+Released. Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/checkout/buy/a7ed3bb8-9b6f-4d91-94f3-5cfa2776aadd
 
 ## Upscape
 
-> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with seven specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Page: https://totoantonio.pages.dev/upscape.html
+> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with seven specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Tagline: "Upscale images privately on your Mac". Page: https://totoantonio.pages.dev/upscape.html
+
+### What makes Upscape different
+
+- **Private by design.** Every image is processed locally with Core ML. Files are never uploaded for processing.
+- **Seven specialized models** rather than one general-purpose network, so the model matches the source material.
+- **Built for Apple Silicon**, running across the GPU, Neural Engine and CPU.
+- **Works offline.** Once installed with its models, no internet connection and no account are needed.
+
+### Upscape features
+
+- AI upscaling up to 4x
+- Seven specialized models: Standard Photo, Illustration, Remacri, UltraSharp, Nomos8kSC, General v3, NMKD Siax CX
+- Interactive before and after comparison slider
+- Batch upscaling of multiple files in one run
+- Export to PNG, JPEG, TIFF, HEIC and WebP
+- Reads common macOS image formats including JPEG, PNG, TIFF, HEIC, WebP and RAW
+- Optimized for Apple Silicon with GPU, Neural Engine and CPU execution
+- No uploads, no account, works offline
+
+### Choosing an Upscape model
+
+Use Standard Photo for most images. Use Illustration for anime or artwork, Remacri for portraits, UltraSharp for hard edges and landscapes, Nomos8kSC for JPEG and photo restoration, and General v3 for conservative real-world enhancement.
+
+### Upscape limits
+
+Upscape improves low-resolution, compressed and pixelated images, but it cannot recover detail that was never captured. It works best on images that are small or compressed rather than severely out of focus.
+
+### Upscape availability
+
+Coming soon to Lemon Squeezy.
 
 ## Pages
 

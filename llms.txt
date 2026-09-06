@@ -81,7 +81,7 @@ Released. Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/check
 ### Upscape features
 
 - AI upscaling up to 4x
-- Seven specialized models: Standard Photo, Illustration, Remacri, UltraSharp, Nomos8kSC, General v3, NMKD Siax CX
+- Six specialized models: Standard Photo, Illustration, UltraSharp, NMKD Siax CX, Nomos 8K, General v3
 - Interactive before and after comparison slider
 - Batch upscaling of multiple files in one run
 - Export to PNG, JPEG, TIFF, HEIC and WebP
@@ -91,7 +91,7 @@ Released. Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/check
 
 ### Choosing an Upscape model
 
-Use Standard Photo for most images. Use Illustration for anime or artwork, Remacri for portraits, UltraSharp for hard edges and landscapes, Nomos8kSC for JPEG and photo restoration, and General v3 for conservative real-world enhancement.
+Use Standard Photo for most images. Use Illustration for anime or artwork, UltraSharp for architecture and landscapes, NMKD Siax CX for portraits and smooth gradients, Nomos 8K for punchy micro-detail and texture, and General v3 for real-world photos with fewer halos and artifacts.
 
 ### Upscape limits
 

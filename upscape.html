@@ -45,7 +45,7 @@
   "featureList": [
     "Local Core ML processing with no uploads",
     "AI upscaling up to 4x",
-    "Seven specialized upscaling models",
+    "Six specialized upscaling models",
     "Interactive before and after comparison slider",
     "Batch upscaling",
     "PNG, JPEG, TIFF, HEIC and WebP export",
@@ -65,7 +65,7 @@
     { "@type": "Question", "name": "Does Upscape upload my images?", "acceptedAnswer": { "@type": "Answer", "text": "No. Upscape processes images locally on your Mac. Your files are not uploaded for image processing." } },
     { "@type": "Question", "name": "What image types does Upscape support?", "acceptedAnswer": { "@type": "Answer", "text": "Upscape supports common image formats including JPEG, PNG, TIFF, HEIC, WebP, RAW, and other image files supported by macOS." } },
     { "@type": "Question", "name": "How much can Upscape upscale an image?", "acceptedAnswer": { "@type": "Answer", "text": "Upscape uses 4x AI upscaling models and can export at different output sizes depending on your chosen scale." } },
-    { "@type": "Question", "name": "Which model should I choose?", "acceptedAnswer": { "@type": "Answer", "text": "Use Standard Photo for most images. Use Illustration for anime or artwork, Remacri for portraits, UltraSharp for hard edges and landscapes, Nomos8kSC for JPEG and photo restoration, and General v3 for conservative real-world enhancement." } },
+    { "@type": "Question", "name": "Which model should I choose?", "acceptedAnswer": { "@type": "Answer", "text": "Use Standard Photo for most images. Use Illustration for anime or artwork, UltraSharp for architecture and landscapes, NMKD Siax CX for portraits and smooth gradients, Nomos 8K for punchy micro-detail and texture, and General v3 for real-world photos with fewer halos and artifacts." } },
     { "@type": "Question", "name": "Does Upscape work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once installed with its models, Upscape can process images locally without an internet connection." } },
     { "@type": "Question", "name": "Is Upscape good for blurry photos?", "acceptedAnswer": { "@type": "Answer", "text": "Upscape can improve low-resolution and compressed images, but it cannot fully recover detail that was never present. It works best on images that are small, compressed, or pixelated rather than severely out of focus." } },
     { "@type": "Question", "name": "Can I process multiple images?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upscape supports batch upscaling so you can process multiple files in one run." } },
@@ -327,7 +327,7 @@
 </figure>
 
 <figure class="reveal">
-  <img src="Assets/optimized/upscape-upscaling-640.webp" srcset="Assets/optimized/upscape-upscaling-640.webp 640w, Assets/optimized/upscape-upscaling-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1924" height="1486" loading="lazy" decoding="async" alt="Upscape upscaling a portrait with the Nomos8kSC model, showing progress at 89 percent">
+  <img src="Assets/optimized/upscape-upscaling-640.webp" srcset="Assets/optimized/upscape-upscaling-640.webp 640w, Assets/optimized/upscape-upscaling-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1924" height="1486" loading="lazy" decoding="async" alt="Upscape upscaling a portrait with the Nomos 8K model, showing progress at 89 percent">
   <figcaption>Upscaling runs on your Mac with live progress, and can be stopped at any point.</figcaption>
 </figure>
 
@@ -341,7 +341,7 @@
 <ul class="reveal">
   <li><strong>Private by Design</strong> — your images stay on your Mac. Upscape processes files locally using Core ML, so photos, client work, product shots, and personal images are never uploaded for processing.</li>
   <li><strong>AI Upscaling up to 4x</strong> — increase image resolution while reconstructing realistic detail. Built for low-resolution photos, web images, artwork, screenshots, and compressed files.</li>
-  <li><strong>Multiple Specialized Models</strong> — balanced photo enhancement, illustration cleanup, portrait-friendly smoothing, stronger edge detail, or JPEG and photo restoration.</li>
+  <li><strong>Multiple Specialized Models</strong> — balanced photo enhancement, illustration cleanup, portrait-friendly smoothing, maximum edge clarity, or punchy micro-detail and texture.</li>
   <li><strong>Before and After Comparison</strong> — inspect your result with an interactive comparison slider before exporting. Check texture, edges, faces, and fine detail side by side.</li>
   <li><strong>Batch Upscaling</strong> — process multiple images in one run and save upscaled files automatically with clean filenames and your preferred output format.</li>
   <li><strong>Flexible Export Formats</strong> — export as PNG, JPEG, TIFF, HEIC, or WebP. Choose the format that fits publishing, archiving, sharing, or web use.</li>
@@ -350,17 +350,16 @@
 
 <h2 id="models" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/preset.png')" aria-hidden="true"></span>Models</h2>
 <p>
-  Every image is different, so Upscape ships seven models. Pick the one that matches what you
+  Every image is different, so Upscape ships six models. Pick the one that matches what you
   are upscaling.
 </p>
 <ul class="reveal">
-  <li><strong>Standard Photo</strong> — balanced enhancement for everyday photos, product shots, screenshots, and mixed-content images.</li>
-  <li><strong>Illustration</strong> — designed for anime, comics, digital art, clean linework, and flat-color artwork.</li>
-  <li><strong>UltraSharp</strong> — adds stronger edge clarity for architecture, landscapes, objects, and highly detailed scenes.</li>
-  <li><strong>NMKD Siax CX</strong> — a universal upscaling model for clean or lightly compressed images, mixed photos, and faces.</li>
-  <li><strong>Nomos8kSC</strong> — photo restoration for JPEG compression, older web images, and slightly blurred camera shots.</li>
-  <li><strong>Remacri</strong> — portrait-friendly upscaling for people, faces, fashion, and softer photographic subjects.</li>
-  <li><strong>General v3</strong> — conservative real-world photo enhancement that helps reduce halos, jagged edges, and artificial texture.</li>
+  <li><strong>Standard Photo</strong> — balanced enhancement for general photos, product shots, screenshots, and mixed content.</li>
+  <li><strong>Illustration</strong> — designed for anime, comics, line art, and flat-color artwork.</li>
+  <li><strong>UltraSharp</strong> — maximum edge clarity for architecture, landscapes, and high-detail scenes.</li>
+  <li><strong>NMKD Siax CX</strong> — smooth gradients and crisp lines for portraits and faces.</li>
+  <li><strong>Nomos 8K</strong> — punchy micro-detail and texture for portraits and digital art.</li>
+  <li><strong>General v3</strong> — real-world photos with reduced halos, jagged edges, and artifacts.</li>
 </ul>
 
 <figure class="reveal">
@@ -412,7 +411,7 @@
   <li><strong>Does Upscape upload my images?</strong> — No. Upscape processes images locally on your Mac. Your files are not uploaded for image processing.</li>
   <li><strong>What image types does Upscape support?</strong> — Common image formats including JPEG, PNG, TIFF, HEIC, WebP, RAW, and other image files supported by macOS.</li>
   <li><strong>How much can Upscape upscale an image?</strong> — Upscape uses 4x AI upscaling models and can export at different output sizes depending on your chosen scale.</li>
-  <li><strong>Which model should I choose?</strong> — Standard Photo for most images, Illustration for anime or artwork, Remacri for portraits, UltraSharp for hard edges and landscapes, Nomos8kSC for JPEG and photo restoration, and General v3 for conservative real-world enhancement.</li>
+  <li><strong>Which model should I choose?</strong> — Standard Photo for most images, Illustration for anime or artwork, UltraSharp for architecture and landscapes, NMKD Siax CX for portraits and smooth gradients, Nomos 8K for punchy micro-detail and texture, and General v3 for real-world photos with fewer halos and artifacts.</li>
   <li><strong>Does Upscape work offline?</strong> — Yes. Once installed with its models, Upscape can process images locally without an internet connection.</li>
   <li><strong>Is Upscape good for blurry photos?</strong> — It can improve low-resolution and compressed images, but it cannot fully recover detail that was never present. It works best on images that are small, compressed, or pixelated rather than severely out of focus.</li>
   <li><strong>Can I process multiple images?</strong> — Yes. Upscape supports batch upscaling so you can process multiple files in one run.</li>

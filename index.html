@@ -115,11 +115,21 @@
   nav a:hover { color: var(--text); }
 
   .author-nav {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 868px;
     margin: 0 auto 96px;
+  }
+
+  /* Toggle sits out of the flow so the links centre on the page, not on
+     whatever is left over beside it. */
+  .author-nav .theme-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .author-links {
@@ -349,7 +359,7 @@
     <a class="author-home" href="maceq.html">macEQ</a>
     <a class="author-home" href="keyboards.html">KeyboardS</a>
     <a class="author-home" href="upscape.html">Upscape</a>
-    <a class="author-home" href="index.html">About Me</a>
+    <a class="author-home" href="index.html">Home</a>
   </div>
   <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
     <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>

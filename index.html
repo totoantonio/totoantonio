@@ -163,11 +163,28 @@
     display: none;
   }
 
+  /* Portrait and name sit on one line, centred as a pair. */
+  .author-identity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 2.4vw, 26px);
+  }
+
+  .author-avatar {
+    width: clamp(62px, 9vw, 104px);
+    height: clamp(62px, 9vw, 104px);
+    flex: 0 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
   .author-intro h1 {
     margin: 0;
     color: var(--page-text);
     text-align: center;
     font-size: clamp(42px, 7vw, 84px);
+    font-weight: 700;
     line-height: .98;
     letter-spacing: -.045em;
   }
@@ -375,7 +392,10 @@
 <main>
   <section class="author-intro">
     <p class="author-kicker">With time to tinker</p>
-    <h1>totoantonio</h1>
+    <div class="author-identity">
+      <img class="author-avatar" src="Assets/optimized/totoprofile-256.webp" srcset="Assets/optimized/totoprofile-256.webp 256w, Assets/optimized/totoprofile-384.webp 384w" sizes="clamp(62px, 9vw, 104px)" width="256" height="256" alt="ToTo Antonio">
+      <h1>totoantonio</h1>
+    </div>
     <p class="author-role">Squeezing useful software into the edges of a busy day job.</p>
   </section>
 

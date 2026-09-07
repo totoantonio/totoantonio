@@ -171,42 +171,62 @@
     gap: clamp(14px, 2.4vw, 26px);
   }
 
-  /* Registering the angle is what makes it animatable — an unregistered
-     custom property would jump instead of sweeping. */
-  @property --siri-angle {
-    syntax: '<angle>';
-    inherits: false;
-    initial-value: 210deg;
-  }
-
-  /* Siri ring: the gradient paints the border box, the photo covers the
-     padding box, so the colour only ever shows as a ring. */
-  .author-avatar {
+  /* Siri orb: the photo sits at the bottom of the stack, a glass vignette
+     darkens it, and a blurred light band drifts across the middle. */
+  .author-orb {
+    position: relative;
     width: clamp(62px, 9vw, 104px);
     height: clamp(62px, 9vw, 104px);
     flex: 0 0 auto;
-    border: 3px solid transparent;
     border-radius: 50%;
-    background: conic-gradient(
-      from var(--siri-angle),
-      #0A84FF 0%,
-      #5E5CE6 18%,
-      #BF5AF2 34%,
-      #FF2D55 52%,
-      #FF9F0A 68%,
-      #30D158 82%,
-      #0A84FF 100%
-    ) border-box;
-    object-fit: cover;
-    animation: siri-spin 6s linear infinite;
+    overflow: hidden;
+    /* New stacking context so the blend mode below cannot reach the page. */
+    isolation: isolate;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
   }
 
-  @keyframes siri-spin {
-    to { --siri-angle: 570deg; }
+  .author-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Glass: a highlight up top, darkness rolling in towards the rim. */
+  .author-orb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      radial-gradient(circle at 50% 26%, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 44%),
+      radial-gradient(circle at 50% 52%, rgba(0, 0, 0, .28) 22%, rgba(0, 0, 0, .68) 72%, rgba(0, 0, 0, .9) 100%);
+  }
+
+  /* The light itself. Three offset copies give the chromatic fringe Apple's
+     orb picks up where the band meets the glass. */
+  .author-orb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+      radial-gradient(58% 15% at 50% 55%, rgba(255, 255, 255, .95), rgba(255, 255, 255, .3) 46%, rgba(255, 255, 255, 0) 74%),
+      radial-gradient(54% 13% at 41% 53%, rgba(120, 180, 255, .55), rgba(120, 180, 255, 0) 72%),
+      radial-gradient(54% 13% at 59% 58%, rgba(255, 175, 100, .45), rgba(255, 175, 100, 0) 72%);
+    filter: blur(3px);
+    mix-blend-mode: screen;
+    animation: siri-listen 7s ease-in-out infinite;
+  }
+
+  @keyframes siri-listen {
+    0%, 100% { transform: translate3d(-2%, 1%, 0) scale(1); opacity: .82; }
+    35% { transform: translate3d(2%, -2%, 0) scale(1.14); opacity: 1; }
+    68% { transform: translate3d(1%, 2%, 0) scale(.95); opacity: .7; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .author-avatar { animation: none; }
+    .author-orb::after { animation: none; }
   }
 
   .author-intro h1 {
@@ -423,7 +443,9 @@
   <section class="author-intro">
     <p class="author-kicker">With time to tinker</p>
     <div class="author-identity">
-      <img class="author-avatar" src="Assets/optimized/totoprofile-256.webp" srcset="Assets/optimized/totoprofile-256.webp 256w, Assets/optimized/totoprofile-384.webp 384w" sizes="clamp(62px, 9vw, 104px)" width="256" height="256" alt="ToTo Antonio">
+      <span class="author-orb">
+        <img class="author-avatar" src="Assets/optimized/totoprofile-256.webp" srcset="Assets/optimized/totoprofile-256.webp 256w, Assets/optimized/totoprofile-384.webp 384w" sizes="clamp(62px, 9vw, 104px)" width="256" height="256" alt="ToTo Antonio">
+      </span>
       <h1>totoantonio</h1>
     </div>
     <p class="author-role">Squeezing useful software into the edges of a busy day job.</p>

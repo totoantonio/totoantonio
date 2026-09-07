@@ -171,11 +171,24 @@
     gap: clamp(14px, 2.4vw, 26px);
   }
 
+  /* Siri ring: the gradient paints the border box, the photo covers the
+     padding box, so the colour only ever shows as a ring. */
   .author-avatar {
     width: clamp(62px, 9vw, 104px);
     height: clamp(62px, 9vw, 104px);
     flex: 0 0 auto;
+    border: 3px solid transparent;
     border-radius: 50%;
+    background: conic-gradient(
+      from 210deg,
+      #0A84FF 0%,
+      #5E5CE6 18%,
+      #BF5AF2 34%,
+      #FF2D55 52%,
+      #FF9F0A 68%,
+      #30D158 82%,
+      #0A84FF 100%
+    ) border-box;
     object-fit: cover;
   }
 

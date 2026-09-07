@@ -203,30 +203,71 @@
       radial-gradient(circle at 50% 52%, rgba(0, 0, 0, .28) 22%, rgba(0, 0, 0, .68) 72%, rgba(0, 0, 0, .9) 100%);
   }
 
-  /* The light itself. Three offset copies give the chromatic fringe Apple's
-     orb picks up where the band meets the glass. */
-  .author-orb::after {
-    content: "";
+  /* The light itself: a sine wave that travels, the way the real orb reacts
+     to a voice. The svg is twice the orb's width and carries two full
+     periods, so sliding it exactly one period loops with no seam. */
+  .orb-wave {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     z-index: 2;
-    background:
-      radial-gradient(58% 15% at 50% 55%, rgba(255, 255, 255, .95), rgba(255, 255, 255, .3) 46%, rgba(255, 255, 255, 0) 74%),
-      radial-gradient(54% 13% at 41% 53%, rgba(120, 180, 255, .55), rgba(120, 180, 255, 0) 72%),
-      radial-gradient(54% 13% at 59% 58%, rgba(255, 175, 100, .45), rgba(255, 175, 100, 0) 72%);
-    filter: blur(3px);
+    width: 200%;
+    height: 100%;
+    filter: blur(2.5px);
     mix-blend-mode: screen;
-    animation: siri-listen 7s ease-in-out infinite;
+    /* Amplitude pulse, faster than the travel — this is what reads as audio. */
+    animation: orb-amp 1.1s ease-in-out infinite;
   }
 
-  @keyframes siri-listen {
-    0%, 100% { transform: translate3d(-2%, 1%, 0) scale(1); opacity: .82; }
-    35% { transform: translate3d(2%, -2%, 0) scale(1.14); opacity: 1; }
-    68% { transform: translate3d(1%, 2%, 0) scale(.95); opacity: .7; }
+  .orb-wave path {
+    fill: none;
+    stroke-linecap: round;
+  }
+
+  .wave-core {
+    stroke: rgba(255, 255, 255, .95);
+    stroke-width: 13;
+    animation: orb-travel 1.6s linear infinite;
+  }
+
+  /* Offset copies, each at its own speed: the colours separate and rejoin
+     instead of moving as one block. */
+  .wave-cool {
+    stroke: rgba(120, 180, 255, .6);
+    stroke-width: 9;
+    animation: orb-travel-cool 2.3s linear infinite;
+  }
+
+  .wave-warm {
+    stroke: rgba(255, 170, 95, .5);
+    stroke-width: 9;
+    animation: orb-travel-warm 1.9s linear infinite reverse;
+  }
+
+  @keyframes orb-travel {
+    to { transform: translateX(-100px); }
+  }
+
+  /* The tinted copies carry their vertical offset inside the keyframes —
+     a separate transform rule would be overwritten by the animation. */
+  @keyframes orb-travel-cool {
+    from { transform: translate(0, -3px); }
+    to { transform: translate(-100px, -3px); }
+  }
+
+  @keyframes orb-travel-warm {
+    from { transform: translate(0, 3px); }
+    to { transform: translate(-100px, 3px); }
+  }
+
+  @keyframes orb-amp {
+    0%, 100% { transform: scaleY(.7); opacity: .85; }
+    50% { transform: scaleY(1.25); opacity: 1; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .author-orb::after { animation: none; }
+    .orb-wave,
+    .orb-wave path { animation: none; }
   }
 
   .author-intro h1 {
@@ -445,6 +486,11 @@
     <div class="author-identity">
       <span class="author-orb">
         <img class="author-avatar" src="Assets/optimized/totoprofile-256.webp" srcset="Assets/optimized/totoprofile-256.webp 256w, Assets/optimized/totoprofile-384.webp 384w" sizes="clamp(62px, 9vw, 104px)" width="256" height="256" alt="ToTo Antonio">
+        <svg class="orb-wave" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="wave-cool" d="M0,50 C12.5,28 37.5,28 50,50 S87.5,72 100,50 S137.5,28 150,50 S187.5,72 200,50"/>
+          <path class="wave-warm" d="M0,50 C12.5,28 37.5,28 50,50 S87.5,72 100,50 S137.5,28 150,50 S187.5,72 200,50"/>
+          <path class="wave-core" d="M0,50 C12.5,28 37.5,28 50,50 S87.5,72 100,50 S137.5,28 150,50 S187.5,72 200,50"/>
+        </svg>
       </span>
       <h1>totoantonio</h1>
     </div>

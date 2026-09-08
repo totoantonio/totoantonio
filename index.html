@@ -164,131 +164,11 @@
     display: none;
   }
 
-  /* Portrait and name sit on one line, centred as a pair. */
   .author-identity {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: clamp(14px, 2.4vw, 26px);
-  }
-
-  /* Siri orb: the photo sits at the bottom of the stack, a glass vignette
-     darkens it, and a blurred light band drifts across the middle. */
-  .author-orb {
-    position: relative;
-    width: clamp(62px, 9vw, 104px);
-    height: clamp(62px, 9vw, 104px);
-    flex: 0 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    /* New stacking context so the blend mode below cannot reach the page. */
-    isolation: isolate;
-    /* Depth, a cool bloom leaking past the rim, and a hairline edge. */
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, .38),
-      0 0 22px rgba(130, 180, 255, .28),
-      inset 0 0 0 .5px rgba(255, 255, 255, .18);
-  }
-
-  .author-avatar {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Glass: a highlight up top, darkness rolling in towards the rim. */
-  .author-orb::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background:
-      /* Specular highlight, offset like a light source above and left. */
-      radial-gradient(38% 26% at 36% 22%, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0) 70%),
-      radial-gradient(circle at 50% 30%, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0) 46%),
-      /* The glass itself: near-black at the rim so the band is the only light. */
-      radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .55) 18%, rgba(0, 0, 0, .82) 66%, rgba(0, 0, 0, .96) 100%);
-  }
-
-  /* The light itself: a sine wave that travels, the way the real orb reacts
-     to a voice. The svg is twice the orb's width and carries two full
-     periods, so sliding it exactly one period loops with no seam. */
-  .orb-wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 200%;
-    height: 100%;
-    filter: blur(3px);
-    mix-blend-mode: screen;
-    /* Without this the wave runs straight into the rim. Masked, it reads as
-       light caught inside the glass — bright at the centre, gone by the edge. */
-    -webkit-mask-image:
-      radial-gradient(58% 46% at 50% 50%, #000 12%, rgba(0, 0, 0, .45) 52%, transparent 82%);
-    mask-image:
-      radial-gradient(58% 46% at 50% 50%, #000 12%, rgba(0, 0, 0, .45) 52%, transparent 82%);
-    /* Amplitude pulse, faster than the travel — this is what reads as audio. */
-    animation: orb-amp 2.6s ease-in-out infinite;
-  }
-
-  .orb-wave path {
-    fill: none;
-    stroke-linecap: round;
-  }
-
-  .wave-core {
-    stroke: rgba(255, 255, 255, 1);
-    stroke-width: 9;
-    animation: orb-travel 1.9s linear infinite;
-  }
-
-  /* Offset copies, each at its own speed: the colours separate and rejoin
-     instead of moving as one block. */
-  .wave-cool {
-    stroke: rgba(120, 180, 255, .7);
-    stroke-width: 7;
-    animation: orb-travel-cool 2.3s linear infinite;
-  }
-
-  .wave-warm {
-    stroke: rgba(255, 168, 92, .55);
-    stroke-width: 7;
-    animation: orb-travel-warm 1.9s linear infinite reverse;
-  }
-
-  @keyframes orb-travel {
-    to { transform: translateX(-100px); }
-  }
-
-  /* The tinted copies carry their vertical offset inside the keyframes —
-     a separate transform rule would be overwritten by the animation. */
-  @keyframes orb-travel-cool {
-    from { transform: translate(0, -3px); }
-    to { transform: translate(-100px, -3px); }
-  }
-
-  @keyframes orb-travel-warm {
-    from { transform: translate(0, 3px); }
-    to { transform: translate(-100px, 3px); }
-  }
-
-  /* Two rates at once: a quick flutter riding a slower swell, so it never
-     settles into an obvious loop the way a single sine does. */
-  @keyframes orb-amp {
-    0%   { transform: scaleY(.62); opacity: .78; }
-    17%  { transform: scaleY(1.18); opacity: 1; }
-    31%  { transform: scaleY(.78); opacity: .86; }
-    48%  { transform: scaleY(1.32); opacity: 1; }
-    63%  { transform: scaleY(.7); opacity: .82; }
-    81%  { transform: scaleY(1.1); opacity: .96; }
-    100% { transform: scaleY(.62); opacity: .78; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .orb-wave,
-    .orb-wave path { animation: none; }
   }
 
   .author-intro h1 {
@@ -505,14 +385,6 @@
   <section class="author-intro">
     <p class="author-kicker">With time to tinker</p>
     <div class="author-identity">
-      <span class="author-orb">
-        <img class="author-avatar" src="Assets/optimized/totoprofile-256.webp" srcset="Assets/optimized/totoprofile-256.webp 256w, Assets/optimized/totoprofile-384.webp 384w" sizes="clamp(62px, 9vw, 104px)" width="256" height="256" alt="ToTo Antonio">
-        <svg class="orb-wave" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
-          <path class="wave-cool" d="M0,50 C12.5,28 37.5,28 50,50 S87.5,72 100,50 S137.5,28 150,50 S187.5,72 200,50"/>
-          <path class="wave-warm" d="M0,50 C12.5,28 37.5,28 50,50 S87.5,72 100,50 S137.5,28 150,50 S187.5,72 200,50"/>
-          <path class="wave-core" d="M0,50 C12.5,28 37.5,28 50,50 S87.5,72 100,50 S137.5,28 150,50 S187.5,72 200,50"/>
-        </svg>
-      </span>
       <h1>totoantonio</h1>
     </div>
     <p class="author-role">Squeezing useful software into the edges of a busy day job.</p>

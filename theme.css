@@ -428,36 +428,36 @@ figure.reveal.visible {
 }
 
 .testimonial-item {
-  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
   padding: clamp(22px, 3vw, 30px);
   margin: 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(38px);
-  transition: opacity .55s cubic-bezier(.28, .11, .32, 1),
-              transform .55s cubic-bezier(.28, .11, .32, 1),
+  transform: translate3d(28px, 0, 0);
+  transition: opacity .55s ease,
+              transform .55s ease,
               visibility 0s linear .55s;
 }
 
 .testimonial-item:not(.active) {
-  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
 }
 
 .testimonial-item.active {
-  display: grid;
-  align-content: center;
+  position: relative;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(0);
-  transition: opacity .55s cubic-bezier(.28, .11, .32, 1),
-              transform .55s cubic-bezier(.28, .11, .32, 1),
+  transform: translate3d(0, 0, 0);
+  z-index: 1;
+  transition: opacity .55s ease,
+              transform .55s ease,
               visibility 0s linear 0s;
-}
-
-.testimonial-item[hidden] {
-  display: none !important;
 }
 
 .testimonial-item p {

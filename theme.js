@@ -63,7 +63,6 @@
         items.forEach((item, index) => {
           const isActive = index === nextIndex;
           item.classList.toggle('active', isActive);
-          item.hidden = !isActive;
           item.setAttribute('aria-hidden', String(!isActive));
         });
         dots.forEach((dot, index) => {

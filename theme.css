@@ -412,6 +412,108 @@ figure.reveal.visible {
   transform: none;
 }
 
+/* ---------- Testimonial rotator ---------- */
+
+.testimonial-rotator {
+  margin-top: 22px;
+}
+
+.testimonial-track {
+  position: relative;
+  overflow: hidden;
+  min-height: 170px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.testimonial-item {
+  display: none;
+  padding: clamp(22px, 3vw, 30px);
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(38px);
+  transition: opacity .55s cubic-bezier(.28, .11, .32, 1),
+              transform .55s cubic-bezier(.28, .11, .32, 1),
+              visibility 0s linear .55s;
+}
+
+.testimonial-item:not(.active) {
+  display: none !important;
+}
+
+.testimonial-item.active {
+  display: grid;
+  align-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  transition: opacity .55s cubic-bezier(.28, .11, .32, 1),
+              transform .55s cubic-bezier(.28, .11, .32, 1),
+              visibility 0s linear 0s;
+}
+
+.testimonial-item[hidden] {
+  display: none !important;
+}
+
+.testimonial-item p {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.4706;
+  letter-spacing: -.022em;
+}
+
+.testimonial-item cite {
+  display: block;
+  margin-top: 16px;
+  color: var(--muted);
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: -.016em;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(125, 125, 125, .45);
+  padding: 0;
+  cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+}
+
+.testimonial-dot.active {
+  background: var(--blue);
+  transform: scale(1.25);
+}
+
+.testimonial-dot:hover {
+  opacity: .9;
+}
+
+@media (max-width: 520px) {
+  .testimonial-track {
+    border-radius: 16px;
+  }
+
+  .testimonial-item {
+    padding: 18px 18px 20px;
+  }
+}
+
 /* ---------- Hero spacing: keep the badge above the fold ---------- */
 
 @media (max-height: 720px), (max-width: 520px) {

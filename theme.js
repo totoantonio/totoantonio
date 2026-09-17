@@ -46,6 +46,61 @@
       label();
     }
 
+    // --- Testimonial rotator ---
+    const rotators = document.querySelectorAll('[data-testimonial-rotator]');
+
+    rotators.forEach((rotator) => {
+      const items = Array.from(rotator.querySelectorAll('.testimonial-item'));
+      const dots = Array.from(rotator.querySelectorAll('.testimonial-dot'));
+
+      if (items.length < 2) return;
+
+      let currentIndex = 0;
+      let timerId = null;
+
+      const showSlide = (nextIndex) => {
+        currentIndex = nextIndex;
+        items.forEach((item, index) => {
+          const isActive = index === nextIndex;
+          item.classList.toggle('active', isActive);
+          item.hidden = !isActive;
+          item.setAttribute('aria-hidden', String(!isActive));
+        });
+        dots.forEach((dot, index) => {
+          const isActive = index === nextIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', String(isActive));
+          dot.setAttribute('tabindex', String(isActive ? 0 : -1));
+        });
+      };
+
+      const restartTimer = () => {
+        if (reduceMotion) return;
+        if (timerId) window.clearInterval(timerId);
+        timerId = window.setInterval(() => {
+          showSlide((currentIndex + 1) % items.length);
+        }, 4200);
+      };
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          restartTimer();
+        });
+      });
+
+      rotator.addEventListener('mouseenter', () => {
+        if (timerId) window.clearInterval(timerId);
+      });
+
+      rotator.addEventListener('mouseleave', () => {
+        restartTimer();
+      });
+
+      showSlide(0);
+      restartTimer();
+    });
+
     // --- Scroll reveal ---
     const targets = document.querySelectorAll('.reveal');
 

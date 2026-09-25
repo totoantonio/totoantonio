@@ -267,7 +267,10 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    width: fit-content;
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    text-align: center;
     /* auto pushes it to the card floor; the description's margin keeps a
        minimum gap when there is no slack to take. */
     margin-top: auto;
@@ -278,6 +281,7 @@
     background: var(--pill-bg);
     color: var(--pill-text);
     font-size: 12px;
+    line-height: 1.2;
     font-weight: 400;
     letter-spacing: .02em;
   }
@@ -285,7 +289,7 @@
   /* Two pills sit side by side; the row takes the auto margin instead. */
   .work-status-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 6px;
     margin-top: auto;
   }
@@ -294,10 +298,42 @@
     margin-top: 0;
   }
 
+  .work-status-icon {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .work-status-icon.work-status-released {
+    color: var(--text);
+  }
+
+  .work-status-icon.work-status-pending {
+    color: var(--text);
+    opacity: 1;
+  }
+
+  .apple-mark {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    color: var(--text);
+    line-height: 1;
+  }
+
   .work-status-lemon {
-    padding: 4px 10px 4px 5px;
+    padding: 0;
     background: #FFC233;
     color: #1D1D1F;
+    transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  }
+
+  .author-work a:hover .work-status-lemon {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(185, 128, 0, .28);
+    filter: saturate(1.08) brightness(1.03);
   }
 
   /* Shipping now — the one pill that gets full colour. */
@@ -312,13 +348,73 @@
     background: transparent;
     border: 1px solid var(--line);
     color: var(--pill-text);
-    opacity: .65;
+    opacity: 1;
+  }
+
+  .work-status.work-status-icon {
+    flex: 0 0 20px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .work-status-row:has(.work-status-icon) {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    min-height: 24px;
+  }
+
+  .work-status-row:has(.work-status-icon) .work-status-pending {
+    order: 1;
+  }
+
+  .work-status-row:has(.work-status-icon) .work-status-released {
+    order: 1;
+  }
+
+  .work-status-row:has(.work-status-icon) .work-status-lemon {
+    order: 2;
+  }
+
+  .work-status-row:has(.work-status-icon)::before {
+    content: "Available for download";
+    order: 0;
+    flex: 0 0 auto;
+    margin-right: 4px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .01em;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+
+  .author-work a:hover .work-status-lemon.work-status-icon {
+    transform: scale(1.08);
+    box-shadow: none;
+    filter: none;
   }
 
   .work-status img {
     width: 14px;
     height: 14px;
     flex: 0 0 auto;
+  }
+
+  .work-status-icon img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .lemon-mark {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 auto;
+  }
+
+  .lemon-mark circle {
+    display: none;
   }
 
   .author-work strong {
@@ -362,6 +458,7 @@
     .work-logo { width: 72px; height: 72px; border-radius: 16px; }
     .author-work strong { font-size: 22px; }
     .work-copy > span:not(.work-status):not(.work-status-row) { display: block; margin-top: 5px; font-size: 16px; text-align: left; }
+    .work-status-row:has(.work-status-icon)::before { font-size: 11px; }
   }
 </style>
 </head>
@@ -392,9 +489,9 @@
   <section class="author-section" aria-labelledby="selected-work">
     <h2 id="selected-work">Selected work</h2>
     <ul class="author-work">
-      <li><a href="maceq.html"><img class="work-logo" src="Assets/optimized/maceq-icon-256.webp" width="52" height="52" decoding="async" alt="macEQ app icon"><span class="work-copy"><strong>macEQ</strong><span>System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</span><span class="work-status-row"><span class="work-status work-status-lemon"><img src="Assets/lemon-squeezy-mark.svg" width="14" height="14" alt="">Lemon Squeezy</span><span class="work-status work-status-pending">App Store · Soon</span></span></span></a></li>
-      <li><a href="keyboards.html"><img class="work-logo" src="Assets/optimized/keyboards-icon-256.webp" width="52" height="52" decoding="async" alt="KeyboardS app icon"><span class="work-copy"><strong>KeyboardS</strong><span>A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</span><span class="work-status-row"><span class="work-status work-status-released">Released</span><span class="work-status work-status-lemon"><img src="Assets/lemon-squeezy-mark.svg" width="14" height="14" alt="">Lemon Squeezy</span></span></span></a></li>
-      <li><a href="upscape.html"><img class="work-logo" src="Assets/optimized/upscape-icon-256.webp" width="52" height="52" decoding="async" alt="Upscape app icon"><span class="work-copy"><strong>Upscape</strong><span>Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</span><span class="work-status-row"><span class="work-status work-status-released">Released</span><span class="work-status work-status-lemon"><img src="Assets/lemon-squeezy-mark.svg" width="14" height="14" alt="">Lemon Squeezy</span></span></span></a></li>
+      <li><a href="maceq.html"><img class="work-logo" src="Assets/optimized/maceq-icon-256.webp" width="52" height="52" decoding="async" alt="macEQ app icon"><span class="work-copy"><strong>macEQ</strong><span>System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</span><span class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></span></span></a></li>
+      <li><a href="keyboards.html"><img class="work-logo" src="Assets/optimized/keyboards-icon-256.webp" width="52" height="52" decoding="async" alt="KeyboardS app icon"><span class="work-copy"><strong>KeyboardS</strong><span>A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</span><span class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></a></li>
+      <li><a href="upscape.html"><img class="work-logo" src="Assets/optimized/upscape-icon-256.webp" width="52" height="52" decoding="async" alt="Upscape app icon"><span class="work-copy"><strong>Upscape</strong><span>Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</span><span class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></a></li>
     </ul>
   </section>
 

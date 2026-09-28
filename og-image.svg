@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F3F4F6"/>
+  <rect x="40" y="36" width="1120" height="558" rx="26" fill="#FFFFFF" stroke="#D9DBDF" stroke-width="2"/>
+
+  <circle cx="94" cy="91" r="20" fill="#1D1D1F"/>
+  <text x="94" y="98" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">t</text>
+  <text x="130" y="99" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="24" font-weight="700">totoantonio</text>
+  <path d="m286 84 8 8-8 8" fill="none" stroke="#96999F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="311" y="99" fill="#5E626B" font-family="Arial, sans-serif" font-size="23">Mac apps</text>
+
+  <text x="91" y="207" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="57" font-weight="700">Small Mac apps,</text>
+  <text x="91" y="273" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="57" font-weight="700">built with care.</text>
+  <text x="94" y="335" fill="#666A73" font-family="Arial, sans-serif" font-size="23">Useful software for everyday work.</text>
+  <text x="94" y="369" fill="#666A73" font-family="Arial, sans-serif" font-size="23">Made around the way I use my Mac.</text>
+
+  <line x1="92" y1="414" x2="1108" y2="414" stroke="#E5E6E9" stroke-width="2"/>
+
+  <g transform="translate(96 445)">
+    <rect width="48" height="48" rx="13" fill="#E8F2FF"/>
+    <path d="M12 31V23m8 8V15m8 16V19m8 12V12" fill="none" stroke="#007AFF" stroke-width="4" stroke-linecap="round"/>
+    <text x="64" y="30" fill="#292B30" font-family="Arial, sans-serif" font-size="21" font-weight="600">macEQ</text>
+  </g>
+  <g transform="translate(414 445)">
+    <rect width="48" height="48" rx="13" fill="#FFF0EC"/>
+    <rect x="10" y="10" width="28" height="28" rx="7" fill="none" stroke="#D95D45" stroke-width="3"/>
+    <path d="M16 19h16M16 25h16M16 31h10" fill="none" stroke="#D95D45" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="64" y="30" fill="#292B30" font-family="Arial, sans-serif" font-size="21" font-weight="600">KeyboardS</text>
+  </g>
+  <g transform="translate(790 445)">
+    <rect width="48" height="48" rx="13" fill="#EAF5EE"/>
+    <path d="M13 33 33 13m-13 0h13v13M13 21v12h12" fill="none" stroke="#39845A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="64" y="30" fill="#292B30" font-family="Arial, sans-serif" font-size="21" font-weight="600">Upscape</text>
+  </g>
+
+  <line x1="92" y1="523" x2="1108" y2="523" stroke="#E5E6E9" stroke-width="2"/>
+  <text x="94" y="562" fill="#777B83" font-family="Arial, sans-serif" font-size="18">totoantonio.com</text>
+  <text x="1106" y="562" fill="#777B83" font-family="Arial, sans-serif" font-size="18" text-anchor="end">Thoughtfully made for Mac.</text>
+</svg>

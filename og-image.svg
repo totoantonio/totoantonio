@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
-  <rect width="1280" height="640" fill="#F3F4F6"/>
-  <rect x="40" y="36" width="1200" height="568" rx="26" fill="#FFFFFF" stroke="#D9DBDF" stroke-width="2"/>
+  <rect width="1280" height="640" fill="#F6F8FA"/>
+  <rect x="40" y="36" width="1200" height="568" rx="26" fill="#FFFFFF" stroke="#D0D7DE" stroke-width="2"/>
 
-  <circle cx="94" cy="91" r="20" fill="#1D1D1F"/>
-  <text x="94" y="98" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">t</text>
-  <text x="130" y="99" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="24" font-weight="700">totoantonio</text>
-  <path d="m286 84 8 8-8 8" fill="none" stroke="#96999F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="311" y="99" fill="#5E626B" font-family="Arial, sans-serif" font-size="23">Mac apps</text>
+  <circle cx="94" cy="91" r="20" fill="#1F2328"/>
+  <text x="94" y="98" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">t</text>
+  <text x="130" y="101" fill="#1F2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="34" font-weight="600">totoantonio</text>
+  <path d="m322 84 8 8-8 8" fill="none" stroke="#656D76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="350" y="100" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="30">Mac apps</text>
 
-  <text x="91" y="216" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="54" font-weight="700">Small mac Apps built with care</text>
-  <text x="94" y="294" fill="#666A73" font-family="Arial, sans-serif" font-size="30" textLength="1092" lengthAdjust="spacing">I make practical Mac apps for small problems that interrupt everyday work.</text>
-  <text x="94" y="332" fill="#666A73" font-family="Arial, sans-serif" font-size="30" textLength="1092" lengthAdjust="spacing">Each starts with a need from my own day and becomes clear, useful software.</text>
-  <text x="94" y="370" fill="#666A73" font-family="Arial, sans-serif" font-size="30" textLength="1092" lengthAdjust="spacing">Thoughtful details, privacy, and straightforward pricing matter more than</text>
-  <text x="94" y="408" fill="#666A73" font-family="Arial, sans-serif" font-size="30" textLength="1092" lengthAdjust="spacing">filler features or subscriptions; every app should earn its place on your Mac.</text>
+  <text x="91" y="216" fill="#1F2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="78" font-weight="600">Small mac Apps built with care</text>
+  <text x="94" y="294" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="34">I make practical Mac apps for small problems that interrupt everyday work.</text>
+  <text x="94" y="332" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="34">Each begins with a need from my day and becomes clear, useful software.</text>
+  <text x="94" y="370" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="34">Thoughtful details, privacy, and straightforward pricing matter more than</text>
+  <text x="94" y="408" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="34">filler features or subscriptions; every app should earn its place on your Mac.</text>
 
-  <line x1="92" y1="485" x2="1188" y2="485" stroke="#E5E6E9" stroke-width="2"/>
-  <text x="94" y="562" fill="#777B83" font-family="Arial, sans-serif" font-size="18">totoantonio.com</text>
-  <text x="1188" y="562" fill="#777B83" font-family="Arial, sans-serif" font-size="18" text-anchor="end">Thoughtfully made for Mac.</text>
+  <line x1="92" y1="485" x2="1188" y2="485" stroke="#D0D7DE" stroke-width="2"/>
+  <text x="94" y="562" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="20">totoantonio.com</text>
+  <text x="1188" y="562" fill="#656D76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="20" text-anchor="end">Thoughtfully made for Mac.</text>
 </svg>

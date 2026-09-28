@@ -8,10 +8,9 @@
   <path d="m286 84 8 8-8 8" fill="none" stroke="#96999F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="311" y="99" fill="#5E626B" font-family="Arial, sans-serif" font-size="23">Mac apps</text>
 
-  <text x="91" y="207" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="57" font-weight="700">Small Mac apps,</text>
-  <text x="91" y="273" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="57" font-weight="700">built with care.</text>
-  <text x="94" y="335" fill="#666A73" font-family="Arial, sans-serif" font-size="23">Useful software for everyday work.</text>
-  <text x="94" y="369" fill="#666A73" font-family="Arial, sans-serif" font-size="23">Made around the way I use my Mac.</text>
+  <text x="91" y="216" fill="#1D1D1F" font-family="Arial, sans-serif" font-size="54" font-weight="700">Small mac Apps built with care</text>
+  <text x="94" y="294" fill="#666A73" font-family="Arial, sans-serif" font-size="20" textLength="1016" lengthAdjust="spacing">Independent Mac apps for everyday work: system-wide sound controls and keyboard-shortcut lookup,</text>
+  <text x="94" y="330" fill="#666A73" font-family="Arial, sans-serif" font-size="20" textLength="1016" lengthAdjust="spacing">plus private, on-device image upscaling. Useful details, clear pricing, and no unnecessary extras.</text>
 
   <line x1="92" y1="414" x2="1108" y2="414" stroke="#E5E6E9" stroke-width="2"/>
 

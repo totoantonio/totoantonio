@@ -7,6 +7,7 @@
   const root = document.documentElement;
   const STORAGE_KEY = 'maceq-theme';
   const CONSENT_STORAGE_KEY = 'site-privacy-consent-v1';
+  const CONSENT_DISMISSED_KEY = 'site-privacy-banner-dismissed-v1';
   const GOOGLE_TAG_ID = 'G-MVT06V95WT';
   const META_PIXEL_ID = '4743844149273433';
 
@@ -28,6 +29,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     let consent = { analytics: false, marketing: false };
     let hasSavedConsent = false;
+    let hasDismissedBanner = false;
     let googleInitialized = false;
     let metaInitialized = false;
 
@@ -44,6 +46,12 @@
       }
     } catch {
       // Treat unreadable consent state as no consent.
+    }
+
+    try {
+      hasDismissedBanner = sessionStorage.getItem(CONSENT_DISMISSED_KEY) === 'true';
+    } catch {
+      // Keep the banner visible when session storage is unavailable.
     }
 
     const removeCookies = (matches) => {
@@ -162,14 +170,14 @@
         <circle cx="16" cy="25" r="1.4" fill="#70401F" />
       </svg>
     `;
-    settingsButton.hidden = !hasSavedConsent;
+    settingsButton.hidden = !hasSavedConsent && !hasDismissedBanner;
     settingsButton.setAttribute('aria-label', 'Privacy Settings: change analytics and advertising consent');
     settingsButton.title = 'Privacy Settings';
 
     const consentPanel = document.createElement('section');
     consentPanel.className = 'privacy-consent';
     consentPanel.setAttribute('aria-label', 'Privacy Choices');
-    consentPanel.hidden = hasSavedConsent;
+    consentPanel.hidden = hasSavedConsent || hasDismissedBanner;
     consentPanel.innerHTML = `
       <h2>Privacy Choices</h2>
       <p>Google Fonts supplies this site's typeface and receives basic connection details. Analytics and advertising are optional; choose each separately. <a href="website-privacy.html">Privacy policy</a></p>
@@ -192,6 +200,7 @@
       hasSavedConsent = true;
       try {
         localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({ version: 1, ...consent, updatedAt: new Date().toISOString() }));
+        sessionStorage.removeItem(CONSENT_DISMISSED_KEY);
       } catch {
         // Keep the choice for this page view when storage is unavailable.
       }
@@ -221,6 +230,25 @@
     });
 
     document.body.append(settingsButton, consentPanel);
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (
+        consentPanel.hidden ||
+        !(target instanceof Node) ||
+        consentPanel.contains(target) ||
+        settingsButton.contains(target)
+      ) return;
+
+      consentPanel.hidden = true;
+      settingsButton.hidden = false;
+      hasDismissedBanner = true;
+      try {
+        sessionStorage.setItem(CONSENT_DISMISSED_KEY, 'true');
+      } catch {
+        // The banner still stays dismissed for the current page view.
+      }
+    });
 
     if (hasSavedConsent) {
       updateGoogleConsent(consent.analytics);

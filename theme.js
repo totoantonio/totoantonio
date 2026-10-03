@@ -151,19 +151,19 @@
 
     const consentPanel = document.createElement('section');
     consentPanel.className = 'privacy-consent';
-    consentPanel.setAttribute('aria-label', 'Privacy choices');
+    consentPanel.setAttribute('aria-label', 'Privacy Choices');
     consentPanel.hidden = hasSavedConsent;
     consentPanel.innerHTML = `
-      <h2>Privacy choices</h2>
+      <h2>Privacy Choices</h2>
       <p>Google Fonts supplies this site's typeface and receives basic connection details. Analytics and advertising are optional; choose each separately. <a href="website-privacy.html">Privacy policy</a></p>
       <div class="privacy-consent-options">
         <label><input type="checkbox" data-analytics-choice> Analytics (Google)</label>
         <label><input type="checkbox" data-marketing-choice> Advertising (Meta)</label>
       </div>
       <div class="privacy-consent-actions">
-        <button type="button" data-reject-optional>Reject optional</button>
-        <button type="button" data-save-choices>Save choices</button>
-        <button type="button" data-accept-all>Allow all</button>
+        <button type="button" data-reject-optional>Reject Optional</button>
+        <button type="button" data-save-choices>Save Choices</button>
+        <button type="button" data-accept-all>Allow All</button>
       </div>
     `;
 

@@ -667,10 +667,11 @@ figure.reveal.visible {
 
 .privacy-consent {
   position: fixed;
-  left: 16px;
+  left: 50%;
   bottom: 16px;
   z-index: 2000;
-  width: min(560px, calc(100vw - 32px));
+  width: min(1280px, calc(100vw - 48px));
+  transform: translateX(-50%);
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -760,12 +761,50 @@ figure.reveal.visible {
   box-shadow: 0 2px 10px rgba(0, 0, 0, .16);
 }
 
+/* Keep the desktop consent notice wide and shallow so it does not cover the
+   page's main content. Smaller screens retain the more readable stacked flow. */
+@media (min-width: 900px) {
+  .privacy-consent {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title copy actions"
+      ". options actions";
+    align-items: center;
+    column-gap: 18px;
+    row-gap: 8px;
+    padding: 14px 16px;
+  }
+
+  .privacy-consent h2 {
+    grid-area: title;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .privacy-consent p {
+    grid-area: copy;
+    margin: 0;
+  }
+
+  .privacy-consent-options {
+    grid-area: options;
+    margin: 0;
+  }
+
+  .privacy-consent-actions {
+    grid-area: actions;
+    flex-wrap: nowrap;
+  }
+}
+
 @media (max-width: 520px) {
   .privacy-consent {
     left: 12px;
     bottom: 12px;
     width: calc(100vw - 24px);
     padding: 16px;
+    transform: none;
   }
 
   .privacy-consent-actions {

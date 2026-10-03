@@ -208,12 +208,13 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
   }
 
   .author-role {
-    max-width: none;
-    margin: 26px 0 0;
+    max-width: 868px;
+    margin: 26px auto 0;
     color: var(--page-soft);
-    font-size: clamp(15px, 1.8vw, 19px);
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.4706;
     letter-spacing: -.022em;
+    text-align: left;
   }
 
   .author-section {
@@ -535,6 +536,12 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     .work-description { font-size: 13px; }
   }
 
+  @container (max-width: 304px) {
+    .work-status-row:has(.work-status-icon)::before {
+      display: none;
+    }
+  }
+
   @container (max-width: 260px) {
     .work-card {
       grid-template-columns: 56px minmax(0, 1fr);
@@ -576,34 +583,34 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     <h2 id="selected-work">Selected work</h2>
     <ul class="author-work">
       <li>
-        <article class="work-card">
+        <a class="work-card" href="maceq.html" aria-label="View macEQ">
           <span class="work-logo work-logo-maceq" aria-hidden="true"></span>
           <div class="work-copy">
-            <h3><a class="work-title" href="maceq.html">macEQ</a></h3>
+            <h3 class="work-title">macEQ</h3>
             <p class="work-description">System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</p>
             <div class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></div>
           </div>
-        </article>
+        </a>
       </li>
       <li>
-        <article class="work-card">
+        <a class="work-card" href="keyboards.html" aria-label="View KeyboardS">
           <span class="work-logo work-logo-keyboards" aria-hidden="true"></span>
           <div class="work-copy">
-            <h3><a class="work-title" href="keyboards.html">KeyboardS</a></h3>
+            <h3 class="work-title">KeyboardS</h3>
             <p class="work-description">A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</p>
             <div class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></div>
           </div>
-        </article>
+        </a>
       </li>
       <li>
-        <article class="work-card">
+        <a class="work-card" href="upscape.html" aria-label="View Upscape">
           <span class="work-logo work-logo-upscape" aria-hidden="true"></span>
           <div class="work-copy">
-            <h3><a class="work-title" href="upscape.html">Upscape</a></h3>
+            <h3 class="work-title">Upscape</h3>
             <p class="work-description">Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</p>
             <div class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></div>
           </div>
-        </article>
+        </a>
       </li>
     </ul>
   </section>

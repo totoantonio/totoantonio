@@ -27,6 +27,15 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="google-site-verification" content="knc6cXggIKqKZdjOSHALxoedXzTR1D6H0Jp_2SH4CgA">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVT06V95WT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MVT06V95WT');
+</script>
 
 <meta property="og:title" content="totoantonio — Squeezing useful software into the edges of a busy day job.">
 <meta property="og:description" content="Mac apps built out of need and necessity: macEQ, KeyboardS and Upscape.">
@@ -248,7 +257,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     box-shadow: 0 8px 22px var(--card-shadow-hover);
   }
 
-  .author-work a {
+  .work-card {
     display: grid;
     grid-template-columns: 72px 1fr;
     align-items: stretch;
@@ -348,7 +357,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
   }
 
-  .author-work a:hover .work-status-lemon {
+  .work-card:hover .work-status-lemon {
     transform: translateY(-1px);
     box-shadow: 0 3px 8px rgba(185, 128, 0, .28);
     filter: saturate(1.08) brightness(1.03);
@@ -408,7 +417,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     white-space: nowrap;
   }
 
-  .author-work a:hover .work-status-lemon.work-status-icon {
+  .work-card:hover .work-status-lemon.work-status-icon {
     transform: scale(1.08);
     box-shadow: none;
     filter: none;
@@ -438,6 +447,11 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
   .author-work strong {
     font-size: 20px;
     font-weight: 600;
+  }
+
+  .work-title {
+    color: var(--page-text);
+    text-decoration: none;
   }
 
   .work-copy > span:not(.work-status):not(.work-status-row) {
@@ -472,7 +486,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     .author-nav { margin-bottom: 62px; }
     .author-intro { margin-bottom: 56px; }
     .author-work { grid-template-columns: 1fr; }
-    .author-work a { grid-template-columns: 72px 1fr; align-items: flex-start; gap: 16px; min-height: 0; padding: 22px; }
+    .work-card { grid-template-columns: 72px 1fr; align-items: flex-start; gap: 16px; min-height: 0; padding: 22px; }
     .work-logo { width: 72px; height: 72px; border-radius: 16px; }
     .author-work strong { font-size: 22px; }
     .work-copy > span:not(.work-status):not(.work-status-row) { display: block; margin-top: 5px; font-size: 16px; text-align: left; }
@@ -496,6 +510,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
 </div>
 
 <main>
+  <article>
   <section class="author-intro">
     <p class="author-kicker">With time to tinker</p>
     <div class="author-identity">
@@ -507,17 +522,15 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
   <section class="author-section" aria-labelledby="selected-work">
     <h2 id="selected-work">Selected work</h2>
     <ul class="author-work">
-      <li><a href="maceq.html"><img class="work-logo" src="Assets/optimized/maceq-icon-256.webp" width="52" height="52" decoding="async" alt="macEQ app icon"><span class="work-copy"><strong>macEQ</strong><span>System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</span><span class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></span></span></a></li>
-      <li><a href="keyboards.html"><img class="work-logo" src="Assets/optimized/keyboards-icon-256.webp" width="52" height="52" decoding="async" alt="KeyboardS app icon"><span class="work-copy"><strong>KeyboardS</strong><span>A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</span><span class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></a></li>
-      <li><a href="upscape.html"><img class="work-logo" src="Assets/optimized/upscape-icon-256.webp" width="52" height="52" decoding="async" alt="Upscape app icon"><span class="work-copy"><strong>Upscape</strong><span>Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</span><span class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></a></li>
+      <li><div class="work-card"><img class="work-logo" src="Assets/optimized/maceq-icon-256.webp" width="52" height="52" decoding="async" alt="macEQ app icon"><span class="work-copy"><a class="work-title" href="maceq.html"><strong>macEQ</strong></a><span>System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</span><span class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></span></span></div></li>
+      <li><div class="work-card"><img class="work-logo" src="Assets/optimized/keyboards-icon-256.webp" width="52" height="52" decoding="async" alt="KeyboardS app icon"><span class="work-copy"><a class="work-title" href="keyboards.html"><strong>KeyboardS</strong></a><span>A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</span><span class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></div></li>
+      <li><div class="work-card"><img class="work-logo" src="Assets/optimized/upscape-icon-256.webp" width="52" height="52" decoding="async" alt="Upscape app icon"><span class="work-copy"><a class="work-title" href="upscape.html"><strong>Upscape</strong></a><span>Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</span><span class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></div></li>
     </ul>
   </section>
 
   <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story — need first, product second. It also means I am the first person who has to live with the result every day.</p>
   <p class="author-note">The apps get built in <b>odd places</b>. My work has me travelling most weeks — <b>long drives</b>, <b>boat rides</b>, <b>airports</b>, <b>hotel rooms</b> — so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
   <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. <b>No feature list padded out to look impressive</b>. Software, thoughtfully made — out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
-</main>
-
 <footer>
   <p>totoantonio · Curious, keeps figuring things out, and hopes it earns its keep.</p>
   <div class="footer-bottom">
@@ -530,6 +543,8 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     </ul>
   </div>
 </footer>
+  </article>
+</main>
 
 </body>
 </html>

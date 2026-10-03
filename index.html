@@ -239,6 +239,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
 
   .author-work li {
     position: relative;
+    container-type: inline-size;
     top: 0;
     margin: 0;
     padding: 0;
@@ -259,7 +260,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
 
   .work-card {
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 72px minmax(0, 1fr);
     align-items: stretch;
     gap: 16px;
     min-height: 132px;
@@ -303,6 +304,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
   }
 
   .work-status {
@@ -521,6 +523,28 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     .signoff-links { gap: 14px; }
     .work-status-row:has(.work-status-icon)::before { font-size: 11px; }
   }
+
+  @container (max-width: 320px) {
+    .work-card {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 12px;
+      padding: 18px;
+    }
+    .work-logo { width: 64px; height: 64px; }
+    .author-work h3 { font-size: 18px; }
+    .work-description { font-size: 13px; }
+  }
+
+  @container (max-width: 260px) {
+    .work-card {
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 10px;
+      padding: 16px;
+    }
+    .work-logo { width: 56px; height: 56px; }
+    .author-work h3 { font-size: 16px; }
+    .work-description { font-size: 12px; }
+  }
 </style>
 </head>
 <body class="author-page">
@@ -545,7 +569,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     <div class="author-identity">
       <h1>totoantonio</h1>
     </div>
-    <p class="author-role">Squeezing useful software into the edges of a busy day job.</p>
+    <p class="author-role">Squeezing useful software into the edges of a busy day job. Along the way, I've answered hundreds of emails and questions, fixed bugs, and made a few friends.</p>
   </section>
 
   <section class="author-section" aria-labelledby="selected-work">

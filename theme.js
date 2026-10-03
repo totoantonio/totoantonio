@@ -231,6 +231,18 @@
 
     document.body.append(settingsButton, consentPanel);
 
+    const dismissConsentPanel = () => {
+      if (consentPanel.hidden) return;
+      consentPanel.hidden = true;
+      settingsButton.hidden = false;
+      hasDismissedBanner = true;
+      try {
+        sessionStorage.setItem(CONSENT_DISMISSED_KEY, 'true');
+      } catch {
+        // The banner still stays dismissed for the current page view.
+      }
+    };
+
     document.addEventListener('click', (event) => {
       const target = event.target;
       if (
@@ -240,15 +252,15 @@
         settingsButton.contains(target)
       ) return;
 
-      consentPanel.hidden = true;
-      settingsButton.hidden = false;
-      hasDismissedBanner = true;
-      try {
-        sessionStorage.setItem(CONSENT_DISMISSED_KEY, 'true');
-      } catch {
-        // The banner still stays dismissed for the current page view.
-      }
+      dismissConsentPanel();
     });
+
+    let previousScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > previousScrollY) dismissConsentPanel();
+      previousScrollY = currentScrollY;
+    }, { passive: true });
 
     if (hasSavedConsent) {
       updateGoogleConsent(consent.analytics);

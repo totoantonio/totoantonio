@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="theme.css?v=7">
-<script src="theme.js?v=8"></script>
+<script src="theme.js?v=9"></script>
 <style>
   :root {
     color-scheme: light dark;
@@ -155,6 +155,10 @@
   }
 
   .author-menu-toggle {
+    display: none;
+  }
+
+  .author-nav-title {
     display: none;
   }
 
@@ -505,21 +509,60 @@
 
   @media (max-width: 600px) {
     .author-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 40;
       justify-content: space-between;
-      min-height: 36px;
+      min-height: 44px;
+      isolation: isolate;
+    }
+
+    .author-nav::before {
+      content: "";
+      position: absolute;
+      inset: -6px -10px;
+      z-index: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card-bg);
+      background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+      box-shadow: 0 8px 24px var(--card-shadow);
+      opacity: 0;
+      transform: scale(.96);
+      pointer-events: none;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .author-nav.is-docked::before {
+      opacity: 1;
+      transform: scale(1);
     }
 
     .author-nav .theme-toggle {
-      position: static;
+      position: relative;
+      top: auto;
+      right: auto;
+      z-index: 1;
+      width: 44px;
+      height: 44px;
       transform: none;
+    }
+
+    .author-nav .theme-toggle .sf-symbol {
+      width: 19px;
+      height: 19px;
     }
 
     .author-menu-toggle {
       display: grid;
-      width: 36px;
-      height: 36px;
+      position: relative;
+      z-index: 1;
+      width: 44px;
+      height: 44px;
       place-content: center;
-      gap: 4px;
+      gap: 5px;
       padding: 0;
       border: 1px solid var(--line);
       border-radius: 50%;
@@ -530,8 +573,8 @@
 
     .author-menu-toggle span {
       display: block;
-      width: 16px;
-      height: 1.5px;
+      width: 20px;
+      height: 2px;
       border-radius: 999px;
       background: currentColor;
       transition: transform .18s ease, opacity .18s ease;
@@ -544,7 +587,7 @@
     }
 
     .author-menu-toggle[aria-expanded="true"] span:first-child {
-      transform: translateY(5.5px) rotate(45deg);
+      transform: translateY(7px) rotate(45deg);
     }
 
     .author-menu-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -552,7 +595,39 @@
     }
 
     .author-menu-toggle[aria-expanded="true"] span:last-child {
-      transform: translateY(-5.5px) rotate(-45deg);
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .author-nav-title {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      color: var(--page-text);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      line-height: 1;
+      opacity: 0;
+      transform: translate(-50%, calc(-50% + 8px)) scale(.92);
+      pointer-events: none;
+      transition: opacity .25s ease, transform .32s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .author-nav.is-docked .author-nav-title {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .author-intro h1 {
+      transform-origin: center top;
+      transition: opacity .22s ease, transform .3s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .author-page.brand-docked .author-intro h1 {
+      opacity: 0;
+      transform: scale(.9);
     }
 
     .author-links {
@@ -589,7 +664,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .author-menu-toggle span {
+    .author-menu-toggle span,
+    .author-nav::before,
+    .author-nav-title,
+    .author-intro h1 {
       transition: none;
     }
   }
@@ -638,6 +716,7 @@
     <a class="author-home" href="upscape.html">Upscape</a>
     <a class="author-home" href="website-privacy.html">Website Privacy</a>
   </div>
+  <span class="author-nav-title" aria-hidden="true">totoantonio</span>
   <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
     <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
     <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
@@ -712,9 +791,13 @@
   (() => {
     const menuToggle = document.querySelector('.author-menu-toggle');
     const menu = document.getElementById('author-menu');
+    const authorNav = document.querySelector('.author-nav');
+    const pageTitle = document.querySelector('.author-intro h1');
     const mobileMenu = window.matchMedia('(max-width: 600px)');
 
-    if (!menuToggle || !menu) return;
+    if (!menuToggle || !menu || !authorNav || !pageTitle) return;
+
+    let animationFrame = 0;
 
     const setMenuOpen = (open) => {
       const isOpen = mobileMenu.matches && open;
@@ -723,7 +806,23 @@
       menu.hidden = mobileMenu.matches ? !isOpen : false;
     };
 
-    const syncMenu = () => setMenuOpen(false);
+    const updateDockedTitle = () => {
+      animationFrame = 0;
+      const shouldDock = mobileMenu.matches &&
+        pageTitle.getBoundingClientRect().top <= authorNav.getBoundingClientRect().bottom + 8;
+      authorNav.classList.toggle('is-docked', shouldDock);
+      document.body.classList.toggle('brand-docked', shouldDock);
+    };
+
+    const requestDockedTitleUpdate = () => {
+      if (animationFrame) return;
+      animationFrame = requestAnimationFrame(updateDockedTitle);
+    };
+
+    const syncMenu = () => {
+      setMenuOpen(false);
+      requestDockedTitleUpdate();
+    };
 
     menuToggle.addEventListener('click', () => {
       setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
@@ -748,6 +847,8 @@
     });
 
     mobileMenu.addEventListener('change', syncMenu);
+    window.addEventListener('scroll', requestDockedTitleUpdate, { passive: true });
+    window.addEventListener('resize', requestDockedTitleUpdate);
     syncMenu();
   })();
 </script>

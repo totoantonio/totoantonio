@@ -145,9 +145,26 @@
     const settingsButton = document.createElement('button');
     settingsButton.type = 'button';
     settingsButton.className = 'privacy-settings';
-    settingsButton.textContent = 'Privacy settings';
+    settingsButton.innerHTML = `
+      <svg class="privacy-settings-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <defs>
+          <mask id="cookie-bites">
+            <rect width="32" height="32" fill="white" />
+            <circle cx="27.5" cy="5" r="4.2" fill="black" />
+            <circle cx="29.5" cy="12.5" r="3.5" fill="black" />
+          </mask>
+        </defs>
+        <circle cx="16" cy="16" r="13" fill="#D99A52" stroke="#A9682D" stroke-width="1.5" mask="url(#cookie-bites)" />
+        <circle cx="11" cy="10" r="1.8" fill="#70401F" />
+        <circle cx="18" cy="8" r="1.5" fill="#70401F" />
+        <circle cx="20.5" cy="17" r="2" fill="#70401F" />
+        <circle cx="10" cy="20" r="1.6" fill="#70401F" />
+        <circle cx="16" cy="25" r="1.4" fill="#70401F" />
+      </svg>
+    `;
     settingsButton.hidden = !hasSavedConsent;
-    settingsButton.setAttribute('aria-label', 'Change analytics and advertising consent');
+    settingsButton.setAttribute('aria-label', 'Privacy Settings: change analytics and advertising consent');
+    settingsButton.title = 'Privacy Settings';
 
     const consentPanel = document.createElement('section');
     consentPanel.className = 'privacy-consent';

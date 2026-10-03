@@ -154,6 +154,10 @@
     color: var(--page-text);
   }
 
+  .author-menu-toggle {
+    display: none;
+  }
+
   .author-intro {
     max-width: 900px;
     margin: 0 auto 88px;
@@ -499,6 +503,97 @@
     .work-status-row:has(.work-status-icon)::before { font-size: 11px; }
   }
 
+  @media (max-width: 600px) {
+    .author-nav {
+      justify-content: space-between;
+      min-height: 36px;
+    }
+
+    .author-nav .theme-toggle {
+      position: static;
+      transform: none;
+    }
+
+    .author-menu-toggle {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-content: center;
+      gap: 4px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--card-bg);
+      color: var(--page-text);
+      cursor: pointer;
+    }
+
+    .author-menu-toggle span {
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+
+    .author-menu-toggle:focus-visible,
+    .author-home:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+
+    .author-menu-toggle[aria-expanded="true"] span:first-child {
+      transform: translateY(5.5px) rotate(45deg);
+    }
+
+    .author-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .author-menu-toggle[aria-expanded="true"] span:last-child {
+      transform: translateY(-5.5px) rotate(-45deg);
+    }
+
+    .author-links {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      z-index: 30;
+      width: min(260px, calc(100vw - 36px));
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card-bg);
+      box-shadow: 0 12px 30px var(--card-shadow);
+    }
+
+    .author-links[hidden] {
+      display: none;
+    }
+
+    .author-home {
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: var(--page-text);
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .author-home:hover {
+      background: var(--pill-bg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .author-menu-toggle span {
+      transition: none;
+    }
+  }
+
   @container (max-width: 320px) {
     .work-card {
       grid-template-columns: 64px minmax(0, 1fr);
@@ -531,7 +626,12 @@
 <body class="author-page">
 
 <div class="author-nav">
-  <div class="author-links">
+  <button class="author-menu-toggle" type="button" aria-expanded="false" aria-controls="author-menu" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+  <div class="author-links" id="author-menu">
     <a class="author-home" href="index.html">Home</a>
     <a class="author-home" href="maceq.html">macEQ</a>
     <a class="author-home" href="keyboards.html">KeyboardS</a>
@@ -607,6 +707,50 @@
 </div>
   </article>
 </main>
+
+<script>
+  (() => {
+    const menuToggle = document.querySelector('.author-menu-toggle');
+    const menu = document.getElementById('author-menu');
+    const mobileMenu = window.matchMedia('(max-width: 600px)');
+
+    if (!menuToggle || !menu) return;
+
+    const setMenuOpen = (open) => {
+      const isOpen = mobileMenu.matches && open;
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menu.hidden = mobileMenu.matches ? !isOpen : false;
+    };
+
+    const syncMenu = () => setMenuOpen(false);
+
+    menuToggle.addEventListener('click', () => {
+      setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    menu.addEventListener('click', (event) => {
+      if (event.target instanceof Element && event.target.closest('a')) setMenuOpen(false);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        menuToggle.getAttribute('aria-expanded') === 'true' &&
+        event.target instanceof Element &&
+        !event.target.closest('.author-nav')
+      ) setMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || menuToggle.getAttribute('aria-expanded') !== 'true') return;
+      setMenuOpen(false);
+      menuToggle.focus();
+    });
+
+    mobileMenu.addEventListener('change', syncMenu);
+    syncMenu();
+  })();
+</script>
 
 </body>
 </html>

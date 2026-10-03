@@ -7,10 +7,9 @@ html {
   overflow-x: hidden;
 }
 
-/* Apple devices resolve -apple-system first and never reach the web font.
-   Everything else falls through to Google Sans. */
+/* Use the platform's native system font before generic fallbacks. */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Google Sans",
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

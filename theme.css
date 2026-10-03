@@ -7,9 +7,9 @@ html {
   overflow-x: hidden;
 }
 
-/* Use the platform's native system font before generic fallbacks. */
+/* Use native Apple fonts first; other platforms use Google Sans. */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Google Sans",
     "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

@@ -277,11 +277,26 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
   }
 
   .work-logo {
+    display: block;
     width: 72px;
     height: 72px;
     flex: 0 0 auto;
     align-self: center;
     border-radius: 16px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .work-logo-maceq {
+    background-image: url("Assets/optimized/maceq-icon-256.webp");
+  }
+
+  .work-logo-keyboards {
+    background-image: url("Assets/optimized/keyboards-icon-256.webp");
+  }
+
+  .work-logo-upscape {
+    background-image: url("Assets/optimized/upscape-icon-256.webp");
   }
 
   .work-copy {
@@ -348,6 +363,10 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     font-size: 17px;
     color: var(--text);
     line-height: 1;
+  }
+
+  .apple-mark::before {
+    content: "";
   }
 
   .work-status-lemon {
@@ -444,7 +463,8 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     display: none;
   }
 
-  .author-work strong {
+  .author-work h3 {
+    margin: 0;
     font-size: 20px;
     font-weight: 600;
   }
@@ -454,8 +474,8 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     text-decoration: none;
   }
 
-  .work-copy > span:not(.work-status):not(.work-status-row) {
-    margin-bottom: 12px;
+  .work-description {
+    margin: 0 0 12px;
     color: var(--card-text);
     font-size: 14px;
     font-weight: 400;
@@ -475,10 +495,17 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     margin-top: 22px;
   }
 
-  footer {
+  .author-signoff {
     max-width: 868px;
     margin: 88px auto 0;
     text-align: left;
+  }
+
+  .signoff-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
   }
 
   @media (max-width: 520px) {
@@ -488,8 +515,9 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
     .author-work { grid-template-columns: 1fr; }
     .work-card { grid-template-columns: 72px 1fr; align-items: flex-start; gap: 16px; min-height: 0; padding: 22px; }
     .work-logo { width: 72px; height: 72px; border-radius: 16px; }
-    .author-work strong { font-size: 22px; }
-    .work-copy > span:not(.work-status):not(.work-status-row) { display: block; margin-top: 5px; font-size: 16px; text-align: left; }
+    .author-work h3 { font-size: 22px; }
+    .work-description { margin-top: 5px; font-size: 16px; text-align: left; }
+    .signoff-links { gap: 14px; }
     .work-status-row:has(.work-status-icon)::before { font-size: 11px; }
   }
 </style>
@@ -522,18 +550,45 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
   <section class="author-section" aria-labelledby="selected-work">
     <h2 id="selected-work">Selected work</h2>
     <ul class="author-work">
-      <li><div class="work-card"><img class="work-logo" src="Assets/optimized/maceq-icon-256.webp" width="52" height="52" decoding="async" alt="macEQ app icon"><span class="work-copy"><a class="work-title" href="maceq.html"><strong>macEQ</strong></a><span>System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</span><span class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></span></span></div></li>
-      <li><div class="work-card"><img class="work-logo" src="Assets/optimized/keyboards-icon-256.webp" width="52" height="52" decoding="async" alt="KeyboardS app icon"><span class="work-copy"><a class="work-title" href="keyboards.html"><strong>KeyboardS</strong></a><span>A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</span><span class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></div></li>
-      <li><div class="work-card"><img class="work-logo" src="Assets/optimized/upscape-icon-256.webp" width="52" height="52" decoding="async" alt="Upscape app icon"><span class="work-copy"><a class="work-title" href="upscape.html"><strong>Upscape</strong></a><span>Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</span><span class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></span></span></div></li>
+      <li>
+        <article class="work-card">
+          <span class="work-logo work-logo-maceq" aria-hidden="true"></span>
+          <div class="work-copy">
+            <h3><a class="work-title" href="maceq.html">macEQ</a></h3>
+            <p class="work-description">System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</p>
+            <div class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></div>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="work-card">
+          <span class="work-logo work-logo-keyboards" aria-hidden="true"></span>
+          <div class="work-copy">
+            <h3><a class="work-title" href="keyboards.html">KeyboardS</a></h3>
+            <p class="work-description">A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</p>
+            <div class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></div>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="work-card">
+          <span class="work-logo work-logo-upscape" aria-hidden="true"></span>
+          <div class="work-copy">
+            <h3><a class="work-title" href="upscape.html">Upscape</a></h3>
+            <p class="work-description">Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</p>
+            <div class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></div>
+          </div>
+        </article>
+      </li>
     </ul>
   </section>
 
   <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story — need first, product second. It also means I am the first person who has to live with the result every day.</p>
   <p class="author-note">The apps get built in <b>odd places</b>. My work has me travelling most weeks — <b>long drives</b>, <b>boat rides</b>, <b>airports</b>, <b>hotel rooms</b> — so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
   <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. <b>No feature list padded out to look impressive</b>. Software, thoughtfully made — out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
-<footer>
+<div class="author-signoff">
   <p>totoantonio · Curious, keeps figuring things out, and hopes it earns its keep.</p>
-  <div class="footer-bottom">
+  <div class="signoff-links">
     <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
     <ul class="social">
       <li><a href="https://x.com/alfiesuperhalk" aria-label="totoantonio on X" title="X" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
@@ -542,7 +597,7 @@ src="https://www.facebook.com/tr?id=4743844149273433&ev=PageView&noscript=1"
       <li><a href="#" aria-label="totoantonio on Unsplash" title="Unsplash" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 6.75V0h9v6.75zm9 3.75H24V24H0V10.5h7.5v6.75h9z"/></svg></a></li>
     </ul>
   </div>
-</footer>
+</div>
   </article>
 </main>
 

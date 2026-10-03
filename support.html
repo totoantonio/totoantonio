@@ -297,24 +297,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
-<link rel="stylesheet" href="theme.css?v=7">
-<script src="theme.js?v=9"></script>
+<link rel="stylesheet" href="theme.css?v=11">
+<script src="theme.js?v=11"></script>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="maceq.html">macEQ</a>
-  <a href="keyboards.html">KeyboardS</a>
-  <a href="upscape.html">Upscape</a>
-  <a href="privacy.html">Privacy</a>
+<nav class="site-nav">
+  <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <div class="site-nav-links" id="site-nav-menu">
+    <a href="index.html">Home</a>
+    <span class="site-nav-menu-label">macEQ</span>
+    <a href="maceq.html">macEQ Overview</a>
+    <a href="maceq.html#features">Features</a>
+    <a href="maceq.html#guide">How to Use</a>
+    <a href="support.html" aria-current="page">Support &amp; FAQ</a>
+    <span class="site-nav-menu-label">Other apps</span>
+    <a href="keyboards.html">KeyboardS</a>
+    <a href="upscape.html">Upscape</a>
+  </div>
+  <span class="site-nav-title" aria-hidden="true">macEQ Support</span>
   <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
     <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
     <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
   </button>
 </nav>
 
-<h1>Support</h1>
+<h1 class="site-page-heading">Support</h1>
 <p class="lede">Setup, fixes for the usual problems, and a way to reach a human.</p>
 
 <h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/power.png')" aria-hidden="true"></span>First run</h2>

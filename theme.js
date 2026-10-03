@@ -11,6 +11,8 @@
   const GOOGLE_TAG_ID = 'G-MVT06V95WT';
   const META_PIXEL_ID = '4743844149273433';
 
+  root.classList.add('js');
+
   // --- Apply the theme immediately, before anything renders. ---
   // Light is the default; the system preference is not followed unless the
   // visitor picks dark themselves.
@@ -52,6 +54,67 @@
       hasDismissedBanner = sessionStorage.getItem(CONSENT_DISMISSED_KEY) === 'true';
     } catch {
       // Keep the banner visible when session storage is unavailable.
+    }
+
+    const siteNav = document.querySelector('.site-nav');
+    const siteNavToggle = siteNav?.querySelector('.site-nav-toggle');
+    const siteNavLinks = siteNav?.querySelector('.site-nav-links');
+    const sitePageHeading = document.querySelector('.site-page-heading');
+    const mobileNavigation = window.matchMedia('(max-width: 600px)');
+
+    if (siteNav && siteNavToggle && siteNavLinks) {
+      let siteNavAnimationFrame = 0;
+
+      const setSiteNavOpen = (open) => {
+        const isOpen = mobileNavigation.matches && open;
+        siteNavToggle.setAttribute('aria-expanded', String(isOpen));
+        siteNavToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        siteNavLinks.classList.toggle('is-open', isOpen);
+      };
+
+      const updateDockedSiteTitle = () => {
+        siteNavAnimationFrame = 0;
+        const shouldDock = mobileNavigation.matches && sitePageHeading &&
+          sitePageHeading.getBoundingClientRect().top <= siteNav.getBoundingClientRect().bottom + 8;
+        siteNav.classList.toggle('is-docked', Boolean(shouldDock));
+        document.body.classList.toggle('site-brand-docked', Boolean(shouldDock));
+      };
+
+      const requestDockedSiteTitleUpdate = () => {
+        if (siteNavAnimationFrame) return;
+        siteNavAnimationFrame = requestAnimationFrame(updateDockedSiteTitle);
+      };
+
+      siteNavToggle.addEventListener('click', () => {
+        setSiteNavOpen(siteNavToggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      siteNavLinks.addEventListener('click', (event) => {
+        if (event.target instanceof Element && event.target.closest('a')) setSiteNavOpen(false);
+      });
+
+      document.addEventListener('click', (event) => {
+        if (
+          siteNavToggle.getAttribute('aria-expanded') === 'true' &&
+          event.target instanceof Element &&
+          !event.target.closest('.site-nav')
+        ) setSiteNavOpen(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || siteNavToggle.getAttribute('aria-expanded') !== 'true') return;
+        setSiteNavOpen(false);
+        siteNavToggle.focus();
+      });
+
+      mobileNavigation.addEventListener('change', () => {
+        setSiteNavOpen(false);
+        requestDockedSiteTitleUpdate();
+      });
+      window.addEventListener('scroll', requestDockedSiteTitleUpdate, { passive: true });
+      window.addEventListener('resize', requestDockedSiteTitleUpdate);
+      setSiteNavOpen(false);
+      requestDockedSiteTitleUpdate();
     }
 
     const removeCookies = (matches) => {

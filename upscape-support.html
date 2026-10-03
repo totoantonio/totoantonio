@@ -153,16 +153,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="theme.css?v=7">
-<script src="theme.js?v=9"></script>
+<link rel="stylesheet" href="theme.css?v=11">
+<script src="theme.js?v=11"></script>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="upscape.html">Upscape</a>
-  <a href="upscape-support.html" aria-current="page">Support</a>
-  <a href="privacy.html">Privacy</a>
+<nav class="site-nav">
+  <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <div class="site-nav-links" id="site-nav-menu">
+    <a href="index.html">Home</a>
+    <span class="site-nav-menu-label">Upscape</span>
+    <a href="upscape.html">Upscape Overview</a>
+    <a href="upscape.html#features">Features</a>
+    <a href="upscape.html#guide">How to Use</a>
+    <a href="upscape-support.html" aria-current="page">Support &amp; FAQ</a>
+    <a href="privacy.html">Privacy</a>
+    <span class="site-nav-menu-label">Other apps</span>
+    <a href="maceq.html">macEQ</a>
+    <a href="keyboards.html">KeyboardS</a>
+  </div>
+  <span class="site-nav-title" aria-hidden="true">Upscape Support</span>
   <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
     <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
     <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
@@ -170,7 +182,7 @@
 </nav>
 
 <main>
-  <h1>Upscape Support</h1>
+  <h1 class="site-page-heading">Upscape Support</h1>
   <p class="lede">Answers to common questions, and a direct line if you need a hand.</p>
 
   <section aria-labelledby="faq-heading">

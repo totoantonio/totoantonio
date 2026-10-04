@@ -6,6 +6,7 @@
 <meta name="facebook-domain-verification" content="j86vkk77hazf4a13htjlbjrb3pm8y5" />
 <title>totoantonio — Squeezing useful software into the edges of a busy day job.</title>
 <meta name="description" content="totoantonio - Squeezing useful software into the edges of a busy day job.">
+<meta name="author" content="totoantonio">
 <link rel="canonical" href="https://totoantonio.pages.dev/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#FFFFFF">
@@ -120,45 +121,49 @@
 
   nav a:hover { color: var(--text); }
 
-  .author-nav {
+  .profile-nav {
     position: relative;
+    top: auto;
+    z-index: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     max-width: 868px;
     margin: 0 auto 96px;
+    overflow: visible;
   }
 
   /* Toggle sits out of the flow so the links centre on the page, not on
      whatever is left over beside it. */
-  .author-nav .theme-toggle {
+  .profile-nav .theme-toggle {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
 
-  .author-links {
+  .profile-nav-links {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
   }
 
-  .author-home {
+  .profile-nav-link {
     color: var(--page-soft);
     font-size: 15px;
     text-decoration: none;
   }
 
-  .author-home:hover {
+  .profile-nav-link:hover {
     color: var(--page-text);
   }
 
-  .author-menu-toggle {
+  .profile-menu-toggle {
     display: none;
   }
 
-  .author-nav-title {
+  .profile-nav-title {
     display: none;
   }
 
@@ -496,7 +501,7 @@
 
   @media (max-width: 520px) {
     .author-page { padding: 28px 18px 52px; }
-    .author-nav { margin-bottom: 62px; }
+    .profile-nav { margin-bottom: 62px; }
     .author-intro { margin-bottom: 56px; }
     .author-work { grid-template-columns: 1fr; }
     .work-card { grid-template-columns: 72px 1fr; align-items: flex-start; gap: 16px; min-height: 0; padding: 22px; }
@@ -508,7 +513,7 @@
   }
 
   @media (max-width: 600px) {
-    .author-nav {
+    .profile-nav {
       position: sticky;
       top: 12px;
       z-index: 40;
@@ -517,7 +522,7 @@
       isolation: isolate;
     }
 
-    .author-nav::before {
+    .profile-nav::before {
       content: "";
       position: absolute;
       inset: -6px -10px;
@@ -535,12 +540,12 @@
       transition: opacity .25s ease, transform .25s ease;
     }
 
-    .author-nav.is-docked::before {
+    .profile-nav.is-docked::before {
       opacity: 1;
       transform: scale(1);
     }
 
-    .author-nav .theme-toggle {
+    .profile-nav .theme-toggle {
       position: relative;
       top: auto;
       right: auto;
@@ -550,12 +555,12 @@
       transform: none;
     }
 
-    .author-nav .theme-toggle .sf-symbol {
+    .profile-nav .theme-toggle .sf-symbol {
       width: 19px;
       height: 19px;
     }
 
-    .author-menu-toggle {
+    .profile-menu-toggle {
       display: grid;
       position: relative;
       z-index: 1;
@@ -571,7 +576,7 @@
       cursor: pointer;
     }
 
-    .author-menu-toggle span {
+    .profile-menu-toggle span {
       display: block;
       width: 20px;
       height: 2px;
@@ -580,25 +585,25 @@
       transition: transform .18s ease, opacity .18s ease;
     }
 
-    .author-menu-toggle:focus-visible,
-    .author-home:focus-visible {
+    .profile-menu-toggle:focus-visible,
+    .profile-nav-link:focus-visible {
       outline: 2px solid var(--blue);
       outline-offset: 2px;
     }
 
-    .author-menu-toggle[aria-expanded="true"] span:first-child {
+    .profile-menu-toggle[aria-expanded="true"] span:first-child {
       transform: translateY(7px) rotate(45deg);
     }
 
-    .author-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    .profile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
       opacity: 0;
     }
 
-    .author-menu-toggle[aria-expanded="true"] span:last-child {
+    .profile-menu-toggle[aria-expanded="true"] span:last-child {
       transform: translateY(-7px) rotate(-45deg);
     }
 
-    .author-nav-title {
+    .profile-nav-title {
       display: block;
       position: absolute;
       top: 50%;
@@ -615,7 +620,7 @@
       transition: opacity .25s ease, transform .32s cubic-bezier(.2, .8, .2, 1);
     }
 
-    .author-nav.is-docked .author-nav-title {
+    .profile-nav.is-docked .profile-nav-title {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
     }
@@ -630,7 +635,7 @@
       transform: scale(.9);
     }
 
-    .author-links {
+    .profile-nav-links {
       position: absolute;
       top: calc(100% + 10px);
       left: 0;
@@ -646,11 +651,11 @@
       box-shadow: 0 12px 30px var(--card-shadow);
     }
 
-    .author-links[hidden] {
+    .profile-nav-links[hidden] {
       display: none;
     }
 
-    .author-home {
+    .profile-nav-link {
       padding: 10px 12px;
       border-radius: 8px;
       color: var(--page-text);
@@ -658,15 +663,15 @@
       white-space: nowrap;
     }
 
-    .author-home:hover {
+    .profile-nav-link:hover {
       background: var(--pill-bg);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .author-menu-toggle span,
-    .author-nav::before,
-    .author-nav-title,
+    .profile-menu-toggle span,
+    .profile-nav::before,
+    .profile-nav-title,
     .author-intro h1 {
       transition: none;
     }
@@ -703,25 +708,25 @@
 </head>
 <body class="author-page">
 
-<div class="author-nav">
-  <button class="author-menu-toggle" type="button" aria-expanded="false" aria-controls="author-menu" aria-label="Open navigation menu">
+<nav class="profile-nav" aria-label="Main navigation">
+  <button class="profile-menu-toggle" type="button" aria-expanded="false" aria-controls="profile-menu" aria-label="Open navigation menu">
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
   </button>
-  <div class="author-links" id="author-menu">
-    <a class="author-home" href="index.html">Home</a>
-    <a class="author-home" href="maceq.html">macEQ</a>
-    <a class="author-home" href="keyboards.html">KeyboardS</a>
-    <a class="author-home" href="upscape.html">Upscape</a>
-    <a class="author-home" href="website-privacy.html">Website Privacy</a>
+  <div class="profile-nav-links" id="profile-menu">
+    <a class="profile-nav-link" href="index.html">Home</a>
+    <a class="profile-nav-link" href="maceq.html">macEQ</a>
+    <a class="profile-nav-link" href="keyboards.html">KeyboardS</a>
+    <a class="profile-nav-link" href="upscape.html">Upscape</a>
+    <a class="profile-nav-link" href="website-privacy.html">Website Privacy</a>
   </div>
-  <span class="author-nav-title" aria-hidden="true">totoantonio</span>
+  <span class="profile-nav-title" aria-hidden="true">totoantonio</span>
   <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
     <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
     <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
   </button>
-</div>
+</nav>
 
 <main>
   <article>
@@ -789,9 +794,9 @@
 
 <script>
   (() => {
-    const menuToggle = document.querySelector('.author-menu-toggle');
-    const menu = document.getElementById('author-menu');
-    const authorNav = document.querySelector('.author-nav');
+    const menuToggle = document.querySelector('.profile-menu-toggle');
+    const menu = document.getElementById('profile-menu');
+    const authorNav = document.querySelector('.profile-nav');
     const pageTitle = document.querySelector('.author-intro h1');
     const mobileMenu = window.matchMedia('(max-width: 600px)');
 
@@ -836,7 +841,7 @@
       if (
         menuToggle.getAttribute('aria-expanded') === 'true' &&
         event.target instanceof Element &&
-        !event.target.closest('.author-nav')
+        !event.target.closest('.profile-nav')
       ) setMenuOpen(false);
     });
 

@@ -1,6 +1,6 @@
 # totoantonio
 
-> totoantonio makes small, focused Mac apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; and Upscape, a private AI image upscaler. Home page: https://totoantonio.pages.dev/
+> totoantonio makes small, focused apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; and Upscape, a private AI image upscaler, all for Mac; plus Distribution App, sales and distribution software for wholesale distributors that runs on Mac and Windows. Home page: https://totoantonio.pages.dev/
 
 ## macEQ
 

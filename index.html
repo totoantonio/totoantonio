@@ -27,12 +27,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="128x128" href="favicon.png?v=2">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<script>/* Google Sans only where the Apple system font isn't available */ if (!/Mac|iPhone|iPad|iPod/.test(navigator.userAgent)) { var gf = document.createElement("link"); gf.rel = "stylesheet"; gf.href = "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap"; document.head.appendChild(gf); }</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
-<link rel="stylesheet" href="theme.css?v=12">
-<script src="theme.js?v=12"></script>
+<link rel="stylesheet" href="theme.css?v=13">
+<script src="theme.js?v=13"></script>
 <style>
   :root {
     color-scheme: light dark;
@@ -289,7 +287,7 @@
   }
 
   .work-logo-distributionapp {
-    background-image: url("Assets/optimized/distributionapp-icon-256.webp");
+    background-image: url("Assets/optimized/distributionapp-appicon-256.webp");
   }
 
   .work-copy {
@@ -730,6 +728,305 @@
     .work-description { font-size: 12px; }
   }
 </style>
+<link rel="stylesheet" href="apple.css?v=6">
+<script src="apple.js?v=6"></script>
+<style>
+  /* ---------- Home preview: apple.com/mac style line-up + "Get to know" carousel (home page) ---------- */
+  :root body .author-identity { position: relative; width: fit-content; margin-left: auto; margin-right: auto; }
+  :root body .author-kicker { display: block; position: absolute; right: 0; bottom: 100%; margin: 0 0 -9px; color: var(--muted); font-size: 15px; font-variant: all-small-caps; font-weight: 400; letter-spacing: .02em; white-space: nowrap; }
+
+  :root body .lineup,
+  :root body .know { width: var(--wide-col); margin: var(--section-gap) auto 0; }
+  :root body .lineup h2,
+  :root body .know h2 { align-items: flex-start; margin: 0 0 40px; font-size: var(--headline); text-align: left; }
+
+  /* Line-up: products float on white, no boxes, thin rules between them */
+  :root body .lineup-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+  :root body .lineup-row li { display: flex; flex-direction: column; align-items: center; margin: 0; padding: 8px 28px 0; text-align: center; border-left: 1px solid var(--line); }
+  :root body .lineup-row li:first-child { border-left: 0; }
+  :root body .lineup .work-logo { order: 0; align-self: center; width: 112px; height: 112px; margin: 0 0 22px; border-radius: 25px; filter: drop-shadow(0 8px 20px rgba(0, 0, 0, .14)); transition: transform .3s ease; }
+  :root body .lineup .work-logo:hover { transform: scale(1.05); }
+  :root body .lineup .work-logo-distributionapp { background-size: 109%; }
+  :root body .lineup-label { min-height: 20px; margin: 0; color: #BF4800; font-size: 14px; font-weight: 600; letter-spacing: -.016em; }
+  :root[data-theme="dark"] body .lineup-label { color: #F56300; }
+  :root body .lineup-name { margin: 2px 0 0; font-size: 24px; line-height: 1.17; letter-spacing: .009em; font-weight: 600; }
+  :root body .lineup-name a { color: var(--text); }
+  :root body .lineup-text { flex: 1 1 auto; margin: 12px 0 0; color: var(--text); font-size: 17px; line-height: 1.47; }
+  :root body .lineup-meta { margin: 18px 0 0; color: var(--muted); font-size: 14px; letter-spacing: -.016em; }
+  :root body .lineup-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 22px; margin: 22px 0 0; }
+  :root body .lineup-more { padding: 8px 16px; border-radius: 980px; background: var(--blue); color: #FFFFFF; font-size: 14px; letter-spacing: -.016em; }
+  :root body .lineup-more:hover { background: #0077ED; opacity: 1; }
+  :root body .lineup-get { color: var(--link); font-size: 14px; letter-spacing: -.016em; }
+
+  /* Get to know: big rounded cards that scroll sideways */
+  :root body .know { width: 100%; }
+  :root body .know h2 { width: var(--wide-col); margin-left: auto; margin-right: auto; }
+  :root body .know-row {
+    display: grid; grid-auto-flow: column; grid-auto-columns: min(400px, 80vw); gap: 20px;
+    margin: 0; padding: 4px max(var(--gutter), calc((100% - 1260px) / 2)) 28px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: max(var(--gutter), calc((100% - 1260px) / 2));
+    list-style: none; scrollbar-width: none;
+  }
+  :root body .know-row::-webkit-scrollbar { display: none; }
+  :root body .know-row li { margin: 0; scroll-snap-align: start; }
+  :root body .know-card {
+    position: relative; display: flex; flex-direction: column; height: 500px; overflow: hidden;
+    padding: 30px; border-radius: 28px; background: var(--bg-2); color: var(--text);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  :root body .know-card:hover { transform: scale(1.015); box-shadow: var(--tile-shadow); }
+  /* white screenshots sit on white cards; a hairline and soft shadow keep the card's edge */
+  :root body .know-card.is-white { background: #FFFFFF; color: #1D1D1F; border: 1px solid #E8E8ED; box-shadow: 0 2px 12px rgba(0, 0, 0, .06); }
+  :root body .know-card.is-white .know-eyebrow { color: #6E6E73; }
+  :root body .know-eyebrow { color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: -.016em; }
+  :root body .know-head { margin-top: 6px; font-size: 28px; line-height: 1.14; letter-spacing: .007em; font-weight: 600; }
+  /* the whole app window, centred in the space below the headline, same padding all round */
+  :root body .know-card img {
+    display: block; flex: 1 1 auto; width: 100%; min-height: 0; max-width: none;
+    margin: 24px 0 0; object-fit: contain; object-position: center;
+  }
+
+  :root body .story-title { margin: var(--section-gap) auto 28px; }
+  :root body article > .author-note { color: var(--muted); font-size: 21px; line-height: 1.38; letter-spacing: .011em; margin-bottom: 24px; }
+  :root body article > .author-note b { color: var(--text); }
+  :root body article > .story-title + .author-note { text-align: left; margin: 0 auto 24px; max-width: none; }
+
+  @media (max-width: 1068px) {
+    :root body .lineup-row { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 56px; }
+    :root body .lineup-row li:nth-child(3) { border-left: 0; }
+  }
+
+  @media (max-width: 734px) {
+    :root body .lineup-row { grid-template-columns: 1fr; row-gap: 0; }
+    :root body .lineup-row li { padding: 40px 0; border-left: 0; border-top: 1px solid var(--line); }
+    :root body .lineup-row li:first-child { border-top: 0; padding-top: 0; }
+    :root body .lineup .work-logo { width: 96px; height: 96px; border-radius: 22px; }
+    :root body .know-card { height: 420px; padding: 24px; }
+    :root body .know-head { font-size: 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root body .know-card, :root body .lineup .work-logo { transition: none; }
+    :root body .know-card:hover, :root body .lineup .work-logo:hover { transform: none; }
+  }
+
+  /* two groups: Mac apps, then the business app */
+  :root body .lineup-group { display: block; margin: 0 0 28px; color: var(--text); font-size: 24px; line-height: 1.17; letter-spacing: .009em; font-weight: 600; text-align: left; }
+  :root body .lineup-mac + .lineup-group { margin-top: 88px; padding-top: 56px; border-top: 1px solid var(--line); }
+  :root body .lineup-mac { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  /* the business app lies on its side: icon, then its details, left-aligned */
+  :root body .lineup-biz { grid-template-columns: 1fr; }
+  :root body .lineup-row li.lineup-wide {
+    display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 36px; align-items: start;
+    padding: 0; border-left: 0; text-align: left;
+  }
+  :root body .lineup-wide > * { grid-column: 2; }
+  :root body .lineup-wide .work-logo { grid-column: 1; grid-row: 1 / span 6; margin: 0; }
+  :root body .lineup-wide .lineup-text { max-width: 640px; }
+  :root body .lineup-wide .lineup-actions { justify-content: flex-start; }
+
+  /* Lemon Squeezy and App Store marks, as on the home page */
+  :root body .lineup-stores { display: flex; align-items: center; justify-content: center; gap: 10px; }
+  :root body .lineup-stores-label { color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: .01em; }
+  :root body .lineup-stores .work-status { flex: none; order: 0; margin: 0; }
+  :root body .lineup-stores .work-status-icon { display: inline-grid; place-items: center; width: 22px; height: 22px; padding: 0; background: transparent; border: 0; }
+  :root body .lineup-stores .apple-mark { width: 17px; height: 17px; }
+  :root body .lineup-stores .lemon-mark { width: 20px; height: 20px; }
+
+  @media (max-width: 1068px) {
+    :root body .lineup-mac { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 0; }
+    :root body .lineup-mac li:nth-child(3) { border-left: 1px solid var(--line); }
+  }
+
+  @media (max-width: 734px) {
+    :root body .lineup-mac { grid-template-columns: 1fr; }
+    :root body .lineup-mac li:nth-child(3) { border-left: 0; }
+    :root body .lineup-mac + .lineup-group { margin-top: 40px; padding-top: 40px; }
+    :root body .lineup-row li.lineup-wide { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    :root body .lineup-wide .lineup-actions { justify-content: center; }
+  }
+
+  /* Apple sizes for this page: big type only on short lines */
+  :root body .author-intro h1 { font-size: 64px; line-height: 1.06; letter-spacing: -.009em; font-weight: 600; }
+  :root body .author-role { font-size: 21px; line-height: 1.38; letter-spacing: .011em; color: var(--muted); }
+  :root body .lineup h2,
+  :root body .know h2,
+  :root body .story-title { font-size: 48px; line-height: 1.08; letter-spacing: -.003em; }
+
+  @media (max-width: 1068px) {
+    :root body .author-intro h1 { font-size: 56px; }
+    :root body .lineup h2, :root body .know h2, :root body .story-title { font-size: 40px; }
+  }
+
+  @media (max-width: 734px) {
+    :root body .author-intro h1 { font-size: 40px; }
+    :root body .author-role, :root body article > .author-note { font-size: 19px; }
+    :root body .lineup h2, :root body .know h2, :root body .story-title { font-size: 32px; }
+    :root body .lineup-name, :root body .lineup-group { font-size: 21px; }
+  }
+
+  /* key facts under each app, like apple.com's "Which Mac is right for you?" */
+  :root body .lineup-facts { width: 100%; margin: 32px 0 0; padding: 28px 0 0; border-top: 1px solid var(--line); list-style: none; }
+  :root body .lineup-row .lineup-facts li { border: 0; padding: 0; }
+  :root body .lineup-facts li { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--text); font-size: 14px; line-height: 1.43; letter-spacing: -.016em; text-align: center; }
+  :root body .lineup-facts li:last-child { margin-bottom: 0; }
+  :root body .lineup-facts .sf-symbol { width: 28px; height: 28px; color: var(--text); }
+
+  /* business app: its facts sit side by side under its details */
+  :root body .lineup-wide .lineup-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 760px; }
+  :root body .lineup-row .lineup-wide .lineup-facts li { align-items: flex-start; margin: 0; text-align: left; }
+
+  @media (max-width: 734px) {
+    :root body .lineup-wide .lineup-facts { grid-template-columns: 1fr; }
+    :root body .lineup-wide .lineup-facts li { align-items: center; text-align: center; }
+  }
+
+  /* Line-up as real cards: each app is one rounded tile, its facts a section inside it */
+  :root body .lineup-row { gap: 20px; }
+  :root body .lineup-row > li,
+  :root body .lineup-row > li:first-child,
+  :root body .lineup-row > li:nth-child(3) {
+    padding: 44px 32px 40px;
+    border: 0;
+    border-radius: 28px;
+    background: var(--bg-2);
+  }
+  :root body .lineup-row > li.lineup-wide { padding: 48px; column-gap: 40px; }
+  :root body .lineup-mac + .lineup-group { margin-top: 72px; padding-top: 0; border-top: 0; }
+  :root body .lineup-facts { border-top-color: var(--line); }
+  :root body .lineup .work-logo { filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .12)); }
+
+  @media (max-width: 734px) {
+    :root body .lineup-row { row-gap: 12px; }
+    :root body .lineup-row > li,
+    :root body .lineup-row > li:first-child { padding: 36px 24px 32px; border-radius: 22px; }
+    :root body .lineup-row > li.lineup-wide { padding: 36px 24px 32px; }
+    :root body .lineup-mac + .lineup-group { margin-top: 48px; }
+  }
+
+  /* App Store icon drawn inline, so it shows even when the page is opened from a file */
+  :root body .lineup-stores .appstore-mark { display: block; width: 20px; height: 20px; }
+
+  /* fact icons as plain images (black symbols; turned white in dark mode) */
+  :root body .lineup-facts .fact-icon { display: block; width: 28px; height: 28px; object-fit: contain; }
+  :root[data-theme="dark"] body .lineup-facts .fact-icon { filter: invert(1); }
+
+  /* ---------- Line-up cards, tightened: one group on top, an icon table at the bottom ---------- */
+  :root body .lineup-row > li { justify-content: flex-start; }
+  :root body .lineup .work-logo { order: 1; width: 96px; height: 96px; margin: 0 0 20px; border-radius: 22px; }
+  :root body .lineup-label { order: 2; min-height: 0; margin: 0 0 2px; }
+  :root body .lineup-name { order: 3; margin: 0; }
+  :root body .lineup-text { order: 4; flex: none; margin: 8px 0 0; color: var(--muted); }
+  :root body .lineup-actions { order: 5; margin: 20px 0 0; }
+  :root body .lineup-meta { order: 6; margin: 14px 0 0; }
+  :root body .lineup-facts { order: 7; margin-top: auto; }
+
+  /* facts: three icons side by side with short labels; the full sentence shows on hover */
+  :root body .lineup-row .lineup-facts {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+    width: 100%; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  :root body .lineup-row > li > .lineup-meta + .lineup-facts,
+  :root body .lineup-row > li > .lineup-actions + .lineup-facts { margin-top: 28px; }
+  :root body .lineup-row .lineup-facts li { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 0; padding: 0; border: 0; text-align: center; cursor: default; }
+  :root body .lineup-facts .fact-icon { width: 26px; height: 26px; }
+  :root body .fact-label { color: var(--text); font-size: 12px; line-height: 1.33; letter-spacing: -.01em; font-weight: 500; }
+  :root body .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* the card's top group and the icon table keep a steady gap; the table sits at the bottom so rows line up */
+  :root body .lineup-mac > li { display: flex; flex-direction: column; }
+  :root body .lineup-mac > li > .lineup-meta { margin-bottom: 28px; }
+
+  /* business card: details left, icon table under them */
+  :root body .lineup-row .lineup-wide .lineup-facts { max-width: 520px; margin-top: 28px; }
+  :root body .lineup-row .lineup-wide .lineup-facts li { align-items: center; text-align: center; }
+  :root body .lineup-wide .work-logo { align-self: start; margin: 0; }
+  :root body .lineup-wide .lineup-text { max-width: 560px; }
+
+  /* ---------- Buy area, Apple's way: where to get it, then a blue Download pill and a "Learn more ›" link ---------- */
+  :root body .lineup-meta { order: 5; margin: 18px 0 0; }
+  :root body .lineup-actions { order: 6; display: flex; align-items: center; justify-content: center; gap: 22px; margin: 16px 0 0; }
+  :root body .lineup-get {
+    order: 1; padding: 8px 18px; border-radius: 980px; background: var(--blue); color: #FFFFFF;
+    font-size: 14px; line-height: 1.29; letter-spacing: -.016em; font-weight: 400;
+  }
+  :root body .lineup-get:hover { background: #0077ED; opacity: 1; }
+  :root body .lineup-more {
+    order: 2; padding: 0; border-radius: 0; background: none; color: var(--link);
+    font-size: 14px; line-height: 1.29; letter-spacing: -.016em;
+  }
+  :root body .lineup-more:hover { background: none; opacity: 1; text-decoration: none; color: var(--link); }
+
+  :root body .lineup-stores { gap: 8px; }
+  :root body .lineup-stores-label { font-size: 14px; font-weight: 400; letter-spacing: -.016em; color: var(--muted); }
+  :root body .lineup-stores .appstore-mark { width: 20px; height: 20px; }
+  :root body .lineup-meta:not(.lineup-stores) { font-size: 14px; }
+
+  :root body .lineup-mac > li > .lineup-meta { margin-bottom: 0; }
+  :root body .lineup-mac > li > .lineup-actions { margin-bottom: 28px; }
+  :root body .lineup-wide .lineup-actions { justify-content: flex-start; }
+  @media (max-width: 734px) { :root body .lineup-wide .lineup-actions { justify-content: center; } }
+
+  /* ---------- Motion, Apple's way: things rise gently into place as you reach them, once ---------- */
+  .js-anim .anim { opacity: 0; transform: translateY(32px); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); }
+  .js-anim .anim.from-right { transform: translateX(60px); }
+  .js-anim .anim.pop { transform: scale(.6); transition-duration: .6s; }
+  .js-anim .anim.is-in { opacity: 1; transform: none; }
+  .js-anim #lineup-title { display: block; }
+  /* Get to know: card slides in, then its words and its screenshot follow; hover zooms the screenshot */
+  .js-anim .know-row > li .know-eyebrow, .js-anim .know-row > li .know-head { opacity: 0; transform: translateY(16px); transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--d, 0ms) + 250ms); }
+  .js-anim .know-row > li .know-head { transition-delay: calc(var(--d, 0ms) + 330ms); }
+  .js-anim .know-row > li .know-card img { opacity: 0; transform: translateY(60px) scale(.9); transition: opacity 1s cubic-bezier(.2, .8, .2, 1), transform 1.2s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--d, 0ms) + 420ms); }
+  .js-anim .know-row > li.is-in .know-eyebrow, .js-anim .know-row > li.is-in .know-head, .js-anim .know-row > li.is-in .know-card img { opacity: 1; transform: none; }
+  :root body .know-row > li.done .know-card img { transition: transform .6s cubic-bezier(.2, .8, .2, 1); transition-delay: 0ms; }
+  :root body .know-row > li.done .know-card:hover img { transform: scale(1.04) translateY(-6px); transition-delay: 0ms; }
+  .js-anim .anim.letter { display: inline-block; transform: translateX(80px); transition-duration: .7s; }
+  .js-anim .anim.letter.is-in { transform: none; }
+
+  /* cards answer the pointer: a soft lift, the icon leans in */
+  :root body .lineup-row > li { transition: transform .5s cubic-bezier(.2, .8, .2, 1), box-shadow .5s ease, opacity .9s cubic-bezier(.2, .8, .2, 1); }
+  :root body .lineup-row > li.is-in:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 0, 0, .10); }
+  :root body .lineup-row > li:hover .work-logo { transform: scale(1.06); }
+  :root body .lineup .work-logo { transition: transform .5s cubic-bezier(.2, .8, .2, 1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js-anim .anim { opacity: 1; transform: none; transition: none; }
+    :root body .lineup-row > li.is-in:hover, :root body .lineup-row > li:hover .work-logo { transform: none; }
+  }
+
+  /* key-fact icons and labels in Apple's secondary grey (black symbols tinted to #6E6E73 / #86868B) */
+  :root body .lineup-facts .fact-icon,
+  :root body .hero-facts .fact-icon { filter: invert(68%); }
+  :root[data-theme="dark"] body .lineup-facts .fact-icon,
+  :root[data-theme="dark"] body .hero-facts .fact-icon { filter: invert(76%); }
+  :root body .fact-label { color: #AEAEB2; }
+:root[data-theme="dark"] body .fact-label { color: #C7C7CC; }
+
+  /* business card: one-line description, full-width line, six facts in a row */
+  :root body .lineup-wide .lineup-text { max-width: none; }
+  :root body .lineup-row .lineup-wide .lineup-facts { grid-template-columns: repeat(6, minmax(0, 1fr)); max-width: none; width: 100%; }
+  @media (max-width: 1068px) { :root body .lineup-row .lineup-wide .lineup-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 22px; } }
+
+  /* Mac cards, Apple-clean: icon, name, one line, Learn more pill + Download link, quiet store row */
+  :root body .lineup-row.lineup-mac > li:nth-child(n) { padding-top: 56px; padding-bottom: 48px; }
+  :root body .lineup-mac .lineup-icon { width: 96px; height: 96px; margin-bottom: 24px; border-radius: 22px; filter: none; image-rendering: -webkit-optimize-contrast; }
+  :root body .lineup-mac .work-logo-maceq { background-image: url("Assets/optimized/maceq-icon-384.webp"); }
+  :root body .lineup-mac .work-logo-keyboards { background-image: url("Assets/optimized/keyboards-icon-384.webp"); }
+  :root body .lineup-mac .work-logo-upscape { background-image: url("Assets/optimized/upscape-icon-384.webp"); }
+  :root body .lineup-mac .lineup-name { font-size: 28px; line-height: 1.14; letter-spacing: .007em; }
+  :root body .lineup-mac .lineup-text { margin-top: 8px; font-size: 17px; }
+  :root body .lineup-mac > li > .lineup-actions { order: 5; margin: 24px 0 0; }
+  :root body .lineup-mac .lineup-more { order: 0; padding: 8px 18px; border-radius: 980px; background: var(--blue); color: #FFFFFF; font-size: 14px; line-height: 1.29; }
+  :root body .lineup-mac .lineup-more:hover { background: #0077ED; }
+  :root body .lineup-mac .lineup-get { order: 1; padding: 0; background: none; color: var(--link); }
+  :root body .lineup-mac .lineup-get:hover { background: none; text-decoration: underline; }
+  :root body .lineup-mac > li > .lineup-stores { order: 7; margin: 28px 0 0; gap: 6px; }
+  :root body .lineup-mac .lineup-stores-label { font-size: 12px; }
+  :root body .lineup-mac .lineup-stores .work-status-icon { width: 18px; height: 18px; }
+  :root body .lineup-mac .lineup-stores .appstore-mark { width: 16px; height: 16px; }
+  :root body .lineup-mac .lineup-stores .lemon-mark { width: 17px; height: 17px; }
+</style>
 </head>
 <body class="author-page">
 
@@ -744,6 +1041,7 @@
     <a class="profile-nav-link" href="maceq.html">macEQ</a>
     <a class="profile-nav-link" href="keyboards.html">KeyboardS</a>
     <a class="profile-nav-link" href="upscape.html">Upscape</a>
+    <a class="profile-nav-link" href="distributionapp.html">Distribution App</a>
     <a class="profile-nav-link" href="website-privacy.html">Website Privacy</a>
   </div>
   <span class="profile-nav-title" aria-hidden="true">totoantonio</span>
@@ -756,59 +1054,91 @@
 <main>
   <article>
   <section class="author-intro">
-    <p class="author-kicker">With time to tinker</p>
     <div class="author-identity">
+      <p class="author-kicker">With time to tinker</p>
       <h1>totoantonio</h1>
     </div>
     <p class="author-role">Squeezing useful software into the edges of a busy day job. Along the way, I've answered hundreds of emails and questions, fixed bugs, and made a few friends.</p>
   </section>
 
-  <section class="author-section" aria-labelledby="selected-work">
-    <h2 id="selected-work">Selected work</h2>
-    <ul class="author-work">
+  <section class="lineup" aria-labelledby="lineup-title">
+    <h2 id="lineup-title">Explore the line-up.</h2>
+    <h3 class="lineup-group">For your Mac.</h3>
+    <ul class="lineup-row lineup-mac">
       <li>
-        <a class="work-card" href="maceq.html" aria-label="View macEQ" data-analytics-event="select_item" data-item-id="maceq" data-item-name="macEQ">
-          <span class="work-logo work-logo-maceq" aria-hidden="true"></span>
-          <div class="work-copy">
-            <h3 class="work-title">macEQ</h3>
-            <p class="work-description">System-wide audio equalizer for macOS. One EQ for every app, with spatial effects and presets.</p>
-            <div class="work-status-row"><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span></div>
-          </div>
-        </a>
+        <a class="lineup-icon work-logo work-logo-maceq" href="maceq.html" tabindex="-1" aria-hidden="true"></a>
+        <p class="lineup-label"></p>
+        <h3 class="lineup-name"><a href="maceq.html" data-analytics-event="select_item" data-item-id="maceq" data-item-name="macEQ">macEQ</a></h3>
+        <p class="lineup-text">One equalizer for every app on your Mac.</p>
+        <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span></p>
+        <p class="lineup-actions"><a class="lineup-more" href="maceq.html">Learn more</a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/999957db-ec04-4fe0-9851-130c210706f5" target="_blank" rel="noopener">Download ›</a></p>
       </li>
       <li>
-        <a class="work-card" href="keyboards.html" aria-label="View KeyboardS" data-analytics-event="select_item" data-item-id="keyboards" data-item-name="KeyboardS">
-          <span class="work-logo work-logo-keyboards" aria-hidden="true"></span>
-          <div class="work-copy">
-            <h3 class="work-title">KeyboardS</h3>
-            <p class="work-description">A fast lookup for Mac keyboard shortcuts. Press <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</p>
-            <div class="work-status-row"><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></div>
-          </div>
-        </a>
+        <a class="lineup-icon work-logo work-logo-keyboards" href="keyboards.html" tabindex="-1" aria-hidden="true"></a>
+        <p class="lineup-label"></p>
+        <h3 class="lineup-name"><a href="keyboards.html" data-analytics-event="select_item" data-item-id="keyboards" data-item-name="KeyboardS">KeyboardS</a></h3>
+        <p class="lineup-text">Every Mac shortcut, one keystroke away.</p>
+        <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="work-status work-status-released work-status-icon" title="Available on the App Store" aria-label="Available on the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
+        <p class="lineup-actions"><a class="lineup-more" href="keyboards.html">Learn more</a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/a7ed3bb8-9b6f-4d91-94f3-5cfa2776aadd" target="_blank" rel="noopener">Download ›</a></p>
       </li>
       <li>
-        <a class="work-card" href="upscape.html" aria-label="View Upscape" data-analytics-event="select_item" data-item-id="upscape" data-item-name="Upscape">
-          <span class="work-logo work-logo-upscape" aria-hidden="true"></span>
-          <div class="work-copy">
-            <h3 class="work-title">Upscape</h3>
-            <p class="work-description">Private AI image upscaling for Mac. Local Core ML models restore detail and export up to 4x, with no uploads.</p>
-            <div class="work-status-row"><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><span class="apple-mark" aria-hidden="true"></span></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#B7B7B9"/><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></div>
-          </div>
-        </a>
+        <a class="lineup-icon work-logo work-logo-upscape" href="upscape.html" tabindex="-1" aria-hidden="true"></a>
+        <p class="lineup-label"></p>
+        <h3 class="lineup-name"><a href="upscape.html" data-analytics-event="select_item" data-item-id="upscape" data-item-name="Upscape">Upscape</a></h3>
+        <p class="lineup-text">Sharper images, privately on your Mac.</p>
+        <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" aria-label="Coming soon to the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
+        <p class="lineup-actions"><a class="lineup-more" href="upscape.html">Learn more</a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/c09293b2-94a2-4312-bc47-99985d8d56bd" target="_blank" rel="noopener">Download ›</a></p>
       </li>
-      <li>
-        <div class="work-card" aria-label="Distribution App, unreleased">
-          <span class="work-logo work-logo-distributionapp" aria-hidden="true"></span>
-          <div class="work-copy">
-            <h3 class="work-title">Distribution App</h3>
-            <p class="work-description">Sales and Distribution App for Wholesale Businesses: Customers, Orders, Invoices, Deliveries, Stock and Reports. Runs on your own computer; your team uses it in the Browser. Runs on macOS and Windows.</p>
-            <div class="work-status-row"><span class="work-status work-status-pending" style="flex:none;padding-inline:12px">Unreleased</span></div>
-          </div>
-        </div>
+    </ul>
+    <h3 class="lineup-group">For your Business.</h3>
+    <ul class="lineup-row lineup-biz">
+      <li class="lineup-wide">
+        <a class="lineup-icon work-logo work-logo-distributionapp" href="distributionapp.html" tabindex="-1" aria-hidden="true"></a>
+        <p class="lineup-label">Early Access</p>
+        <h3 class="lineup-name"><a href="distributionapp.html" data-analytics-event="select_item" data-item-id="distributionapp" data-item-name="Distribution App">Distribution App</a></h3>
+        <p class="lineup-text">Sales and distribution for wholesale businesses: orders, invoices, deliveries, stock and reports.</p>
+        <p class="lineup-meta">Free trial · Mac and Windows</p>
+        <p class="lineup-actions"><a class="lineup-more" href="distributionapp.html">Learn more ›</a><a class="lineup-get" href="https://github.com/totoantonio/DistributionApp/releases/latest" target="_blank" rel="noopener">Free Trial</a></p>
+        <ul class="lineup-facts"><li title="Orders, deliveries and payments in one place"><img class="fact-icon" src="Assets/Symbols/apps.png" width="28" height="28" alt=""><span class="fact-label">All in one place</span><span class="visually-hidden">: Orders, deliveries and payments in one place</span></li><li title="Salesmen, staff and drivers use it on their phones"><img class="fact-icon" src="Assets/Symbols/menubar.png" width="28" height="28" alt=""><span class="fact-label">Team on phones</span><span class="visually-hidden">: Salesmen, staff and drivers use it on their phones</span></li><li title="A soft chime when an order needs your OK"><img class="fact-icon" src="Assets/Symbols/volume.png" width="28" height="28" alt=""><span class="fact-label">Approval chime</span><span class="visually-hidden">: A soft chime when an order needs your OK</span></li><li title="Keeps working when the internet is down"><img class="fact-icon" src="Assets/Symbols/power.png" width="28" height="28" alt=""><span class="fact-label">Works offline</span><span class="visually-hidden">: Keeps working when the internet is down</span></li><li title="Your data stays on your own computer"><img class="fact-icon" src="Assets/Symbols/save.png" width="28" height="28" alt=""><span class="fact-label">On your computer</span><span class="visually-hidden">: Your data stays on your own computer</span></li><li title="One flat price, no per-user fees"><img class="fact-icon" src="Assets/Symbols/balance.png" width="28" height="28" alt=""><span class="fact-label">No per-user fees</span><span class="visually-hidden">: One flat price, no per-user fees</span></li></ul>
       </li>
     </ul>
   </section>
 
+  <section class="know" aria-labelledby="know-title">
+    <h2 id="know-title">Get to know the apps.</h2>
+    <ul class="know-row">
+      <li>
+        <a class="know-card" href="maceq.html">
+          <span class="know-eyebrow">macEQ</span>
+          <span class="know-head">The ten-band equalizer for every app on your Mac.</span>
+          <img src="Assets/optimized/maceq-main-640.webp" srcset="Assets/optimized/maceq-main-640.webp 640w, Assets/optimized/maceq-main-1280.webp 1280w, Assets/optimized/maceq-main-hd.webp 1600w" sizes="(max-width: 734px) 80vw, 560px" loading="lazy" alt="">
+        </a>
+      </li>
+      <li>
+        <a class="know-card is-white" href="keyboards.html">
+          <span class="know-eyebrow">KeyboardS</span>
+          <span class="know-head">Every Mac shortcut, one keystroke away.</span>
+          <img src="Assets/optimized/keyboards-main-640.webp" srcset="Assets/optimized/keyboards-main-640.webp 640w, Assets/optimized/keyboards-main-1280.webp 1280w, Assets/optimized/keyboards-main-hd.webp 1600w" sizes="(max-width: 734px) 80vw, 560px" loading="lazy" alt="">
+        </a>
+      </li>
+      <li>
+        <a class="know-card" href="upscape.html">
+          <span class="know-eyebrow">Upscape</span>
+          <span class="know-head">Sharper images that never leave your Mac.</span>
+          <img src="Assets/optimized/upscape-compare-640.webp" srcset="Assets/optimized/upscape-compare-640.webp 640w, Assets/optimized/upscape-compare-1280.webp 1280w, Assets/optimized/upscape-compare-hd.webp 1600w" sizes="(max-width: 734px) 80vw, 560px" loading="lazy" alt="">
+        </a>
+      </li>
+      <li>
+        <a class="know-card is-white" href="distributionapp.html">
+          <span class="know-eyebrow">Distribution App</span>
+          <span class="know-head">Run your whole distribution business from one computer.</span>
+          <img src="Assets/optimized/distributionapp-approvals-640.webp" srcset="Assets/optimized/distributionapp-approvals-640.webp 640w, Assets/optimized/distributionapp-approvals-1280.webp 1280w, Assets/optimized/distributionapp-approvals-hd.webp 1600w" sizes="(max-width: 734px) 80vw, 560px" loading="lazy" alt="">
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <h2 class="story-title">Made out of need.</h2>
   <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story — need first, product second. It also means I am the first person who has to live with the result every day.</p>
   <p class="author-note">The apps get built in <b>odd places</b>. My work has me travelling most weeks — <b>long drives</b>, <b>boat rides</b>, <b>airports</b>, <b>hotel rooms</b> — so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
   <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. <b>No feature list padded out to look impressive</b>. Software, thoughtfully made — out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
@@ -894,5 +1224,77 @@
   })();
 </script>
 
+<script>
+/* Apple-style motion for this page: the hero rises in on load; sections, cards, icons and story
+   rise into place one after another as they come into view. Plays once. Off for Reduce Motion. */
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('js-anim');
+  function mark(list, extra, step) {
+    Array.prototype.forEach.call(list, function (el, i) {
+      el.classList.add('anim');
+      if (extra) el.classList.add(extra);
+      el.style.transitionDelay = (i * (step || 0)) + 'ms';
+    });
+  }
+  mark(document.querySelectorAll('.author-kicker, .author-intro h1, .author-role'), null, 120);
+  /* "Explore the line-up." letters slide in from the right, one by one */
+  var lt = document.getElementById('lineup-title');
+  lt.setAttribute('aria-label', lt.textContent);
+  lt.innerHTML = lt.textContent.split('').map(function (ch, i) {
+    return ch === ' ' ? ' ' : '<span class="anim from-right letter" aria-hidden="true" style="transition-delay:' + (i * 45) + 'ms">' + ch + '</span>';
+  }).join('');
+  mark(document.querySelectorAll('.lineup-group, .know h2, .story-title, .author-note'));
+  document.querySelectorAll('.lineup-row').forEach(function (row) { mark(row.children, null, 110); });
+  document.querySelectorAll('.lineup-facts').forEach(function (f) {
+    Array.prototype.forEach.call(f.children, function (li, i) { li.classList.add('anim', 'pop'); li.style.transitionDelay = (450 + i * 90) + 'ms'; });
+  });
+  mark(document.querySelectorAll('.know-row > li'), 'from-right', 100);
+  document.querySelectorAll('.know-row > li').forEach(function (li, i) { li.style.setProperty('--d', (i * 100) + 'ms'); });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      e.target.querySelectorAll('.anim').forEach(function (c) { c.classList.add('is-in'); });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.anim').forEach(function (el) { if (!el.closest('.lineup-facts')) io.observe(el); });
+
+  /* the hero plays straight away */
+  requestAnimationFrame(function () {
+    document.querySelectorAll('.author-intro .anim').forEach(function (el) { el.classList.add('is-in'); });
+  });
+  /* after a card has risen in, its hover lift should feel instant, not delayed */
+  /* Get to know: every 4 seconds the row slides one card to the left; the card that leaves
+     is moved to the end, so it never runs out. Pauses while pointed at, touched, focused, or off screen. */
+  var row = document.querySelector('.know-row');
+  if (row) {
+    var paused = false, seen = false;
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (t) { row.addEventListener(t, function () { paused = true; }, { passive: true }); });
+    ['mouseleave', 'focusout', 'touchend'].forEach(function (t) { row.addEventListener(t, function () { paused = false; }, { passive: true }); });
+    new IntersectionObserver(function (e) { seen = e[0].isIntersecting; }, { threshold: 0.5 }).observe(row);
+    setInterval(function () {
+      if (paused || !seen || document.hidden) return;
+      var first = row.children[0], step = row.children[1].offsetLeft - first.offsetLeft;
+      row.scrollTo({ left: row.scrollLeft + step, behavior: 'smooth' });
+      setTimeout(function () {
+        row.style.scrollSnapType = 'none';
+        row.appendChild(first);
+        row.scrollLeft -= step;
+        row.style.scrollSnapType = '';
+      }, 900);
+    }, 4000);
+  }
+  document.querySelectorAll('.know-row > li').forEach(function (li) {
+    var img = li.querySelector('img');
+    if (img) img.addEventListener('transitionend', function (e) { if (e.propertyName === 'transform') li.classList.add('done'); });
+  });
+  document.querySelectorAll('.lineup-row > li').forEach(function (li) {
+    li.addEventListener('transitionend', function () { li.style.transitionDelay = '0ms'; }, { once: true });
+  });
+})();
+</script>
 </body>
 </html>

@@ -234,14 +234,14 @@
         <circle cx="16" cy="25" r="1.4" fill="#70401F" />
       </svg>
     `;
-    settingsButton.hidden = !hasSavedConsent && !hasDismissedBanner;
+    settingsButton.hidden = false; /* cookie icon only, no pop-up banner (owner, 2026-10-13) */
     settingsButton.setAttribute('aria-label', 'Privacy Settings: change analytics and advertising consent');
     settingsButton.title = 'Privacy Settings';
 
     const consentPanel = document.createElement('section');
     consentPanel.className = 'privacy-consent';
     consentPanel.setAttribute('aria-label', 'Privacy Choices');
-    consentPanel.hidden = hasSavedConsent || hasDismissedBanner;
+    consentPanel.hidden = true; /* opens only from the cookie icon; optional cookies stay off until chosen */
     consentPanel.innerHTML = `
       <h2>Privacy Choices</h2>
       <p>Google Fonts supplies this site's typeface and receives basic connection details. Analytics and advertising are optional; choose each separately. <a href="website-privacy.html">Privacy policy</a></p>

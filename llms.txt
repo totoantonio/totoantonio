@@ -101,11 +101,16 @@ Upscape improves low-resolution, compressed and pixelated images, but it cannot 
 
 Coming soon to Lemon Squeezy.
 
+## Distribution App
+
+> Distribution App is sales and distribution software for wholesale distributors. Customers with credit terms, sales orders with approval, automatic invoices, delivery steps and Delivery Receipts, payments by cash, bank transfer, GCash, Maya and post-dated checks, stock in units and cases with suggested purchase orders, payroll with SSS, PhilHealth and Pag-IBIG, BIR tax estimates, and accounting books worked out from the documents. Runs on one office Mac or Windows computer; staff use it in their phone's browser, and salesmen can write orders without signal. One flat price per company, no per-user fees: Startup (3 users) PHP 990/month, Enterprise (10 users) PHP 1,990/month, Superuser (20 users) PHP 2,990/month; yearly plans 2 months free; one-time purchase PHP 19,900 / 39,900 / 59,900. 15-day free trial. Early access: now welcoming founding users, who get a direct line to the maker and first say in new features. Testers who use it in their business and send feedback get 30% off their plan. Page: https://totoantonio.pages.dev/distributionapp · User Guide: https://totoantonio.github.io/DistributionApp/ · Download: https://github.com/totoantonio/DistributionApp/releases/latest
+
 ## Pages
 
 - [Home](https://totoantonio.pages.dev/): who totoantonio is and every app in one place
 - [macEQ](https://totoantonio.pages.dev/maceq.html): overview, features, presets, and how to use macEQ
 - [KeyboardS](https://totoantonio.pages.dev/keyboards.html): features, categories, privacy, and how to use KeyboardS
 - [Upscape](https://totoantonio.pages.dev/upscape.html): features, models, use cases, privacy, and FAQ
+- [Distribution App](https://totoantonio.pages.dev/distributionapp): features, Philippine features, how it works, pricing, and FAQ
 - [Support](https://totoantonio.pages.dev/support.html): first-run setup, troubleshooting steps, and a contact form
 - [Privacy policy](https://totoantonio.pages.dev/privacy.html): full privacy terms

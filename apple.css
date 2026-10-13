@@ -1,0 +1,1590 @@
+/* ---------------------------------------------------------------
+   Apple.com look for every page (design only, no content changes).
+   Loaded last, after each page's own <style> and theme.css.
+   Rules start with ":root body" so they win over the older page styles.
+   To undo: remove the apple.css / apple.js lines from each page.
+
+   Apple's type scale (large ≥1069px · medium 735–1068px · small ≤734px):
+     hero 80/64/48 · headline 56/48/40 · subhead 28/24/21 · tile title 24/24/21
+     body 17 · caption 14 · nav 12. Weight 600 for headings, 400 for text.
+   --------------------------------------------------------------- */
+
+/* ---------- Tokens ---------- */
+
+:root,
+:root[data-theme="light"] {
+  --bg: #FFFFFF;
+  --bg-2: #F5F5F7;
+  --text: #1D1D1F;
+  --muted: #6E6E73;
+  --line: #D2D2D7;
+  --blue: #0071E3;
+  --link: #0066CC;
+  --navbar: rgba(255, 255, 255, .8);
+  --tile-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+  --page-bg: #FFFFFF;
+  --page-text: #1D1D1F;
+  --page-soft: #6E6E73;
+  --card-bg: #F5F5F7;
+  --card-text: #6E6E73;
+  --card-shadow: rgba(0, 0, 0, 0);
+  --card-shadow-hover: rgba(0, 0, 0, .08);
+}
+
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --bg-2: #1D1D1F;
+  --text: #F5F5F7;
+  --muted: #86868B;
+  --line: #424245;
+  --blue: #0A84FF;
+  --link: #2997FF;
+  --navbar: rgba(22, 22, 23, .8);
+  --tile-shadow: 0 4px 24px rgba(0, 0, 0, .5);
+  --page-bg: #000000;
+  --page-text: #F5F5F7;
+  --page-soft: #86868B;
+  --card-bg: #1D1D1F;
+  --card-text: #86868B;
+  --card-shadow: rgba(0, 0, 0, 0);
+  --card-shadow-hover: rgba(0, 0, 0, .5);
+}
+
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Google Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --gutter: clamp(22px, 6vw, 80px);
+  --text-col: min(980px, calc(100% - 2 * var(--gutter)));
+  --wide-col: min(1260px, calc(100% - 2 * var(--gutter)));
+  --hero: 80px;
+  --headline: 56px;
+  --subhead: 28px;
+  --tile-title: 24px;
+  --eyebrow: 21px;
+  --section-gap: 140px;
+}
+
+@media (max-width: 1068px) {
+  :root { --hero: 64px; --headline: 48px; --subhead: 24px; --eyebrow: 19px; --section-gap: 112px; }
+}
+
+@media (max-width: 734px) {
+  :root { --hero: 48px; --headline: 40px; --subhead: 21px; --tile-title: 21px; --eyebrow: 17px; --section-gap: 88px; }
+}
+
+/* ---------- Page ---------- */
+
+html { scroll-padding-top: 64px; }
+
+:root body {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.47059;
+  letter-spacing: -.022em;
+  font-weight: 400;
+}
+
+/* Every block sits in the text column; wide blocks use the wide column */
+body > :where(:not(nav):not(script):not(style):not(.logo-lockup):not([class*="privacy"])) {
+  width: var(--text-col);
+}
+
+body > :not(nav):not(script):not(style):not(.logo-lockup):not([class*="privacy"]) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body > main { width: 100%; }
+
+:root body > .category-grid,
+:root body > ul.tiles,
+:root body > .price-wrap,
+:root body > .testimonial-rotator,
+:root body article > .author-section {
+  width: var(--wide-col);
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:root body article > .author-intro,
+:root body article > .author-note {
+  width: var(--text-col);
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Global nav: full-width frosted bar ---------- */
+
+:root body nav.site-nav,
+:root body nav.profile-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: none;
+  height: 48px;
+  min-height: 48px;
+  margin: 0;
+  padding: 0 64px;
+  justify-content: center;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: var(--navbar);
+  box-shadow: none;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  overflow: visible;
+  pointer-events: auto;
+  transition: border-color .25s ease;
+}
+
+:root body nav.is-scrolled,
+:root body nav.is-docked { border-bottom-color: var(--line); background: var(--navbar); box-shadow: none; }
+
+:root body nav.site-nav::before,
+:root body nav.profile-nav::before { display: none; }
+
+:root body nav.profile-nav .profile-nav-links {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+:root body .site-nav-links,
+:root body .profile-nav-links { gap: clamp(20px, 3vw, 40px); }
+
+:root body nav a,
+:root body .profile-nav-link {
+  color: var(--text);
+  opacity: .8;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -.01em;
+  font-weight: 400;
+  transition: opacity .2s ease;
+}
+
+:root body nav a:hover { opacity: 1; color: var(--text); }
+:root body .site-nav-links a[aria-current="page"] { opacity: 1; }
+
+:root body .theme-toggle {
+  position: fixed;
+  top: 8px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+:root body .profile-nav .theme-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  :root body nav.site-nav,
+  :root body nav.profile-nav { justify-content: space-between; padding: 0 8px; }
+
+  :root body .site-nav .theme-toggle,
+  :root body .profile-nav .theme-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 44px;
+    height: 44px;
+    transform: none;
+  }
+
+  :root body .site-nav-links,
+  :root body #profile-menu {
+    border-radius: 0 0 18px 18px;
+    background: var(--bg);
+    box-shadow: var(--tile-shadow);
+  }
+
+  :root body nav .site-nav-links a,
+  :root body #profile-menu a { font-size: 17px; line-height: 1.3; }
+
+  :root body .site-nav-title,
+  :root body .profile-nav-title { font-size: 17px; font-weight: 600; letter-spacing: -.022em; }
+}
+
+/* ---------- Hero ---------- */
+
+:root body .logo-lockup { margin: 72px auto 20px; }
+
+:root body .app-icon { width: 128px; height: 128px; filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .12)); }
+
+@media (max-width: 734px) {
+  :root body .logo-lockup { margin-top: 48px; }
+  :root body .app-icon { width: 104px; height: 104px; }
+}
+
+:root body .platform-badge { font-size: 10px; letter-spacing: .06em; }
+
+:root body h1,
+:root body .site-page-heading {
+  margin: 0 auto;
+  max-width: 1040px;
+  font-size: var(--hero);
+  line-height: 1.05;
+  letter-spacing: -.015em;
+  font-weight: 600;
+  text-align: center;
+}
+
+:root body .eyebrow,
+:root body .author-kicker {
+  margin: 0 0 8px;
+  color: #BF4800;
+  font-size: var(--eyebrow);
+  line-height: 1.19;
+  letter-spacing: .011em;
+  font-weight: 600;
+  text-align: center;
+}
+
+:root[data-theme="dark"] body .eyebrow { color: #F56300; }
+
+:root body .tagline,
+:root body .author-role,
+:root body h2 + p {
+  max-width: 800px;
+  margin: 20px auto 0;
+  color: var(--text);
+  font-size: var(--subhead);
+  line-height: 1.17;
+  letter-spacing: .007em;
+  font-weight: 400;
+  text-align: center;
+}
+
+:root body h2 + p { margin-bottom: 40px; color: var(--muted); }
+
+:root body .requirements {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -.016em;
+  text-align: center;
+}
+
+/* Buttons: Apple pill */
+:root body .download { margin-top: 32px; }
+
+:root body .gh-badge {
+  width: auto;
+  min-width: 180px;
+  height: 50px;
+  padding: 0 24px;
+  border-radius: 980px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+:root body .gh-badge { background: var(--blue); color: #FFFFFF; }
+
+:root body .gh-badge:hover { opacity: 1; transform: scale(1.03); }
+
+/* Links: Apple blue */
+:root body p a,
+:root body li a,
+:root body footer a { color: var(--link); font-weight: 400; }
+
+:root body a,
+:root body a:hover { text-decoration: none; }
+
+:root body p a:hover,
+:root body li a:hover { opacity: .7; }
+
+:root body strong,
+:root body b { font-weight: 600; }
+
+/* ---------- Text ---------- */
+
+/* plain paragraphs and steps keep Apple's 692px reading width */
+:root body > p,
+:root body > ol { width: min(692px, calc(100% - 2 * var(--gutter))); }
+
+:root body > h1 { width: var(--wide-col); }
+
+:root body p,
+:root body li {
+  font-size: 17px;
+  line-height: 1.47059;
+  letter-spacing: -.022em;
+}
+
+/* ---------- Screenshots: grey band, never larger than their sharp size ---------- */
+
+:root body > figure {
+  margin-top: var(--section-gap);
+  margin-bottom: 0;
+  padding: 64px 0 40px;
+  background: var(--bg-2);
+  box-shadow: 0 0 0 100vmax var(--bg-2);
+  clip-path: inset(0 -100vmax);
+}
+
+:root body > figure img {
+  display: block;
+  width: min(880px, 100%);
+  max-width: none;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, .12);
+}
+
+/* screenshots without a high-resolution copy stay at their sharp size */
+:root body > figure img.is-lowres { width: min(640px, 100%); }
+
+:root body > figure figcaption {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -.016em;
+  text-align: center;
+}
+
+:root body > figure + p { margin-top: var(--section-gap); }
+
+@media (max-width: 734px) {
+  :root body > figure { padding: 40px 0 28px; }
+  :root body > figure img { border-radius: 8px; }
+}
+
+/* ---------- Section headings ---------- */
+
+:root body h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: var(--section-gap) auto 16px;
+  padding: 0;
+  border: 0;
+  font-size: var(--headline);
+  line-height: 1.07143;
+  letter-spacing: -.005em;
+  font-weight: 600;
+  text-align: center;
+}
+
+:root body h2 .sf-symbol { display: none; }
+
+:root body h2 + ul,
+:root body h2 + ol,
+:root body h2 + .category-grid,
+:root body h2 + .price-wrap { margin-top: 40px; }
+
+:root body h3 {
+  font-size: var(--tile-title);
+  line-height: 1.16667;
+  letter-spacing: .009em;
+  font-weight: 600;
+}
+
+/* ---------- Feature lists as tiles (class added by apple.js) ---------- */
+
+:root body ul.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+:root body ul.tiles > li {
+  margin: 0;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--bg-2);
+  color: var(--muted);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+:root body ul.tiles > li:hover { transform: scale(1.015); box-shadow: var(--tile-shadow); }
+
+:root body ul.tiles > li > strong:first-of-type {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: var(--tile-title);
+  line-height: 1.16667;
+  letter-spacing: .009em;
+  font-weight: 600;
+}
+
+@media (max-width: 734px) {
+  :root body ul.tiles { gap: 12px; }
+  :root body ul.tiles > li { padding: 24px; }
+}
+
+/* ---------- Steps: numbered circles ---------- */
+
+:root body > ol {
+  counter-reset: step;
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+:root body > ol > li {
+  position: relative;
+  min-height: 36px;
+  margin: 0 0 20px;
+  padding: 6px 0 0 56px;
+  counter-increment: step;
+}
+
+:root body > ol > li::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* ---------- Short-label grids ---------- */
+
+:root body .category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+:root body .category-grid li {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  margin: 0;
+  padding: 20px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--bg-2);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.29;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 734px) {
+  :root body .category-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  :root body .category-grid li { min-height: 76px; padding: 14px 10px; font-size: 15px; }
+}
+
+/* ---------- Pricing table ---------- */
+
+:root body .price-wrap {
+  padding: 24px 32px;
+  border-radius: 18px;
+  background: var(--bg-2);
+}
+
+:root body .price-table { font-size: 17px; letter-spacing: -.022em; }
+:root body .price-table th { color: var(--muted); font-size: 14px; font-weight: 600; }
+:root body .price-table td,
+:root body .price-table th { padding: 14px 12px; border-bottom-color: var(--line); }
+:root body .price-table tr:last-child td { border-bottom: 0; }
+
+/* ---------- Home page ---------- */
+
+:root body .author-intro { margin-top: 88px; margin-bottom: 0; }
+
+:root body .author-section h2 { display: none; }
+
+:root body article > .author-section {
+  width: min(1680px, calc(100% - 24px));
+  margin-top: 64px;
+}
+
+/* Apple home page tiles: edge to edge, 12px apart, two across */
+:root body .author-work {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: stretch;
+  gap: 12px;
+  margin: 0;
+}
+
+:root body .author-work li {
+  top: 0;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--bg-2);
+  box-shadow: none;
+}
+
+:root body .author-work li:hover { top: 0; box-shadow: none; }
+
+:root body .work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+  min-height: 620px;
+  padding: 56px 24px 0;
+  text-align: center;
+}
+
+:root body .work-logo {
+  align-self: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+}
+
+:root body .work-logo-distributionapp { background-size: 109%; }
+
+:root body .work-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+:root body .work-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 48px;
+  line-height: 1.08349;
+  letter-spacing: -.003em;
+  font-weight: 600;
+}
+
+:root body .work-description {
+  max-width: 520px;
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: 21px;
+  line-height: 1.38095;
+  letter-spacing: .011em;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* order inside the tile: name, line, button, where to get it, picture */
+:root body .work-card::after {
+  content: "Learn more";
+  order: 3;
+  margin-top: 22px;
+  padding: 10px 22px;
+  border-radius: 980px;
+  background: var(--blue);
+  color: #FFFFFF;
+  font-size: 17px;
+  line-height: 1.17648;
+  letter-spacing: -.022em;
+  font-weight: 400;
+  transition: background-color .2s ease;
+}
+
+:root body .work-card:hover::after { background: #0077ED; }
+
+:root body .work-copy { order: 2; }
+:root body .work-logo { order: 1; }
+
+:root body .work-status-row {
+  order: 4;
+  justify-content: center;
+  margin-top: 14px;
+  margin-bottom: 40px;
+  padding-top: 0;
+  min-height: 20px;
+}
+
+:root body .work-status-row:has(.work-status-icon)::before { display: block; font-size: 12px; color: var(--muted); }
+
+:root body .work-status-row .work-status:not(.work-status-icon) {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #BF4800;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.016em;
+}
+
+:root[data-theme="dark"] body .work-status-row .work-status:not(.work-status-icon) { color: #F56300; }
+
+/* the app's screenshot rises from the bottom edge of the tile (added by apple.js) */
+:root body .work-shot {
+  order: 5;
+  display: block;
+  width: min(86%, 600px);
+  height: auto;
+  margin-top: auto;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 16 / 9;
+  transform: translateY(8px);
+  transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+:root body .work-card:hover .work-shot { transform: translateY(0); }
+
+@media (max-width: 1068px) {
+  :root body .work-card { min-height: 560px; padding-top: 48px; }
+  :root body .work-title { font-size: 40px; }
+  :root body .work-description { font-size: 19px; }
+}
+
+@media (max-width: 734px) {
+  :root body article > .author-section { width: 100%; margin-top: 48px; }
+  :root body .author-work { grid-template-columns: 1fr; gap: 12px; }
+  :root body .work-card { min-height: 520px; padding: 44px 20px 0; }
+  :root body .work-title { font-size: 32px; }
+  :root body .work-description { font-size: 17px; }
+  :root body .work-logo { width: 56px; height: 56px; border-radius: 12px; }
+}
+
+:root body .author-note {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+:root body .author-section + .author-note { margin-top: var(--section-gap); }
+
+:root body .author-note b { color: var(--text); font-weight: 600; }
+
+/* ---------- Testimonials ---------- */
+
+:root body .testimonial-rotator {
+  padding: 48px 32px;
+  border-radius: 18px;
+  background: var(--bg-2);
+}
+
+:root body .testimonial-item p {
+  font-size: var(--subhead);
+  line-height: 1.17;
+  letter-spacing: .007em;
+}
+
+:root body .testimonial-item cite { color: var(--muted); font-size: 14px; }
+
+/* ---------- Footer: grey fine-print band ---------- */
+
+:root body > footer,
+:root body article > .author-signoff {
+  width: var(--wide-col);
+  max-width: none;
+  margin-top: var(--section-gap);
+  margin-bottom: 0;
+  padding: 20px 0 24px;
+  background: var(--bg-2);
+  box-shadow: 0 0 0 100vmax var(--bg-2);
+  clip-path: inset(0 -100vmax -100vmax); /* grey runs to the very bottom of the page */
+  color: var(--muted);
+  text-align: left;
+}
+
+:root body > footer p,
+:root body > footer li,
+:root body article > .author-signoff p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.33337;
+  letter-spacing: -.01em;
+}
+
+:root body > footer .footer-bottom,
+:root body article > .author-signoff .signoff-links {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+:root body .social a { color: var(--muted); }
+:root body .social svg { width: 16px; height: 16px; }
+
+/* ---------- Cookie icon (no pop-up banner) ---------- */
+
+:root body .privacy-settings {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 90;
+  width: 40px;
+  height: 40px;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--navbar);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: var(--tile-shadow);
+}
+
+:root body .privacy-settings svg { width: 24px; height: 24px; }
+
+/* ---------- Reduce Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  :root body ul.tiles > li,
+  :root body .author-work li,
+  :root body .lemon-badge,
+  :root body .gh-badge { transition: none; }
+  :root body ul.tiles > li:hover,
+  :root body .author-work li:hover,
+  :root body .lemon-badge:hover,
+  :root body .gh-badge:hover { transform: none; }
+}
+
+
+/* =================================================================
+   Audit fixes (2026-10-13)
+   ================================================================= */
+
+/* 1. Buttons: the App Store and Lemon Squeezy badges stay as they are (owner); the GitHub button is a blue pill */
+
+:root body .download-options .gh-badge {
+  position: relative;
+  justify-content: center;
+  min-width: 0;
+  height: auto;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 980px;
+  background: var(--blue);
+  color: #FFFFFF;
+}
+
+:root body .download-options .gh-badge > * { display: none; }
+
+:root body .download-options .gh-badge::after {
+  content: "Download";
+  display: block;
+  position: static;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #FFFFFF;
+  font-size: 17px;
+  line-height: 1.17648;
+  letter-spacing: -.022em;
+  font-weight: 400;
+}
+
+:root body .download-options .gh-badge::after { content: "Download Free Trial"; }
+
+:root body .download-options .gh-badge:hover { transform: none; background: #0077ED; }
+
+:root body .download-options .badge img { height: 50px; width: auto; }
+
+/* 2. Product bar under the site menu (built by apple.js) */
+:root body .local-nav { display: none; }
+
+@media (min-width: 601px) {
+  :root body.has-local-nav nav.site-nav { position: relative; }
+  :root body nav.site-nav .theme-toggle { position: absolute; }
+  :root body .site-nav-links .is-section { display: none; }
+
+  :root body .local-nav {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 52px;
+    margin: 0;
+    padding: 0 max(var(--gutter), calc((100% - 1260px) / 2));
+    border-bottom: 1px solid var(--line);
+    background: var(--navbar);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  :root body .local-nav-name {
+    color: var(--text);
+    font-size: 21px;
+    line-height: 1.14;
+    letter-spacing: .011em;
+    font-weight: 600;
+  }
+
+  :root body .local-nav-links { display: flex; align-items: center; gap: 24px; }
+
+  :root body .local-nav-links a {
+    color: var(--text);
+    opacity: .8;
+    font-size: 12px;
+    letter-spacing: -.01em;
+  }
+
+  :root body .local-nav-links a:hover,
+  :root body .local-nav-links a[aria-current="page"] { opacity: 1; }
+
+  :root body .local-nav-links a.local-nav-buy {
+    padding: 4px 11px;
+    border-radius: 980px;
+    background: var(--blue);
+    color: #FFFFFF;
+    opacity: 1;
+  }
+
+  :root body .local-nav-links a.local-nav-buy:hover { background: #0077ED; }
+}
+
+/* 3. Rhythm: mixed tile sizes, later screenshots inside rounded tiles */
+:root body ul.tiles > li.is-featured {
+  grid-column: span 2;
+  padding: 44px;
+  background: var(--bg-2);
+}
+
+:root body ul.tiles > li.is-featured .sf-symbol {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  color: var(--blue);
+}
+
+:root body ul.tiles > li.is-featured > strong:first-of-type { font-size: var(--headline); line-height: 1.07; letter-spacing: -.005em; margin-bottom: 14px; }
+:root body ul.tiles > li.is-featured { font-size: 21px; line-height: 1.38; }
+
+@media (max-width: 734px) {
+  :root body ul.tiles > li.is-featured { grid-column: auto; padding: 28px; }
+  :root body ul.tiles > li.is-featured > strong:first-of-type { font-size: 32px; }
+}
+
+:root body > figure.is-card {
+  width: var(--wide-col);
+  margin-top: 64px;
+  padding: 56px 24px 0;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: none;
+  clip-path: none;
+}
+
+:root body > figure.is-card img {
+  width: min(820px, 100%);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, .1);
+}
+
+:root body > figure.is-card figcaption {
+  order: -1;
+  margin: 0 auto 28px;
+  max-width: 600px;
+  color: var(--text);
+  font-size: 21px;
+  line-height: 1.38;
+  letter-spacing: .011em;
+}
+
+:root body > figure.is-card { display: flex; flex-direction: column; }
+
+@media (max-width: 734px) {
+  :root body > figure.is-card { padding: 36px 16px 0; border-radius: 22px; }
+  :root body > figure.is-card figcaption { font-size: 17px; }
+}
+
+/* 4. Made For cards: settle in once as you reach them (script in distributionapp.html) */
+:root body #made-for-grid li { box-shadow: none; }
+
+/* 6. Intro after the hero: Apple's large grey text with the product name in black */
+:root body > figure:first-of-type + p,
+:root body > figure:first-of-type + p + p,
+:root body > p.is-intro {
+  color: var(--muted);
+  font-size: var(--subhead);
+  line-height: 1.25;
+  letter-spacing: .007em;
+  text-align: center;
+}
+
+:root body > figure:first-of-type + p strong,
+:root body > figure:first-of-type + p + p strong,
+:root body > p.is-intro strong { color: var(--text); }
+
+:root body > figure:first-of-type + p code,
+:root body > figure:first-of-type + p + p code,
+:root body > p.is-intro code { font-size: .8em; }
+
+:root body > figure:first-of-type + p, :root body > .gallery + p.is-intro { width: var(--text-col); max-width: 860px; }
+:root body > figure:first-of-type + p + p, :root body > p.is-intro + p.is-intro { width: var(--text-col); max-width: 860px; margin-top: 24px; }
+
+/* 7. Help and policy pages: Apple Support's quieter scale */
+:root body.is-doc { --hero: 48px; --headline: 32px; --section-gap: 64px; }
+
+@media (max-width: 734px) {
+  :root body.is-doc { --hero: 40px; --headline: 28px; --section-gap: 48px; }
+}
+
+:root body.is-doc h2 {
+  align-items: flex-start;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+:root body.is-doc h2 + p {
+  margin: 0 0 20px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.47;
+  text-align: left;
+}
+
+:root body.is-doc h3 { margin: 36px 0 10px; font-size: 21px; line-height: 1.19; }
+
+:root body.is-doc > ol { list-style: decimal; padding-left: 22px; margin-top: 14px; }
+:root body.is-doc > ol > li { padding: 0; margin-bottom: 10px; min-height: 0; }
+:root body.is-doc > ol > li::before { display: none; }
+:root body.is-doc .tagline { font-size: 21px; color: var(--muted); }
+
+/* 8. Forms: Apple's tall rounded fields and a blue pill button */
+:root body input[type="text"],
+:root body input[type="email"],
+:root body select,
+:root body textarea {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid #86868B;
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 17px;
+  letter-spacing: -.022em;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+:root body textarea { min-height: 140px; }
+
+:root body input:focus,
+:root body select:focus,
+:root body textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--blue) 25%, transparent);
+}
+
+:root body form label { display: block; margin: 18px 0 6px; color: var(--text); font-size: 14px; font-weight: 600; letter-spacing: -.016em; }
+
+:root body form button[type="submit"],
+:root body form input[type="submit"] {
+  margin-top: 22px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 980px;
+  background: var(--blue);
+  color: #FFFFFF;
+  font: inherit;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+:root body form button[type="submit"]:hover { background: #0077ED; }
+
+/* 9. Platform line above the headline (the chip moved here) */
+:root body .eyebrow.is-quiet { color: var(--muted); }
+
+/* 10. Phones: the page name always shows in the bar */
+@media (max-width: 600px) {
+  :root body .site-nav-title,
+  :root body .profile-nav-title {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 11. Footer link row */
+:root body .footer-links {
+  position: static;
+  width: 100%;
+  max-width: none;
+  justify-content: flex-start;
+  overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 14px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+:root body .footer-links a {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -.01em;
+}
+
+:root body .footer-links a:hover { color: var(--text); }
+
+/* KeyboardS screenshots have a thick white border built in: show them on white, without a frame shadow */
+:root body.page-keyboards > figure,
+:root body.page-keyboards > figure.is-card {
+  background: #FFFFFF;
+  box-shadow: 0 0 0 100vmax #FFFFFF;
+}
+
+:root body.page-keyboards > figure.is-card { box-shadow: none; }
+
+:root body.page-keyboards > figure img { border-radius: 0; box-shadow: none; }
+
+:root body.page-keyboards > figure figcaption { color: #6E6E73; }
+:root body.page-keyboards > figure.is-card figcaption { color: #1D1D1F; }
+
+
+/* =================================================================
+   Product pages built like the new home page (2026-10-13)
+   ================================================================= */
+
+/* Type: the home page's calmer Apple sizes */
+:root { --hero: 64px; --headline: 48px; --subhead: 21px; }
+@media (max-width: 1068px) { :root { --hero: 56px; --headline: 40px; --subhead: 21px; } }
+@media (max-width: 734px) { :root { --hero: 40px; --headline: 32px; --subhead: 19px; } }
+
+:root body .tagline { color: var(--muted); line-height: 1.38; letter-spacing: .011em; }
+:root body h2 + p { line-height: 1.38; letter-spacing: .011em; }
+
+/* Hero buy area: where to get it, then a blue Download pill */
+:root body .hero-buy { margin: 28px auto 0; text-align: center; }
+:root body .hero-stores { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; color: var(--muted); font-size: 14px; letter-spacing: -.016em; }
+:root body .hero-stores .lemon-mark,
+:root body .hero-stores .appstore-mark { display: block; width: 20px; height: 20px; }
+:root body .hero-actions { display: flex; justify-content: center; gap: 22px; margin: 16px 0 0; }
+:root body .hero-get { padding: 12px 24px; border-radius: 980px; background: var(--blue); color: #FFFFFF; font-size: 17px; line-height: 1.18; letter-spacing: -.022em; }
+:root body .hero-get:hover { background: #0077ED; opacity: 1; }
+:root body > .requirements { margin-top: 14px; font-size: 12px; }
+
+/* Icon table under the hero, same as the home page cards */
+:root body .hero-facts {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+  width: min(480px, calc(100% - 2 * var(--gutter))); margin: 36px auto 0; padding: 0; list-style: none;
+}
+:root body .hero-facts li { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 0; text-align: center; cursor: default; }
+:root body .hero-facts .fact-icon { display: block; width: 28px; height: 28px; object-fit: contain; }
+:root[data-theme="dark"] body .hero-facts .fact-icon { filter: invert(1); }
+:root body .fact-label { color: var(--text); font-size: 12px; line-height: 1.33; letter-spacing: -.01em; font-weight: 500; }
+:root body .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Screenshots: every one in a rounded card (no grey bands) */
+:root body > figure.is-card:first-of-type { margin-top: 88px; }
+
+/* Feature tiles match the home page cards */
+:root body ul.tiles > li { border-radius: 28px; padding: 36px; transition: transform .5s cubic-bezier(.2, .8, .2, 1), box-shadow .5s ease, opacity .9s cubic-bezier(.2, .8, .2, 1); }
+:root body ul.tiles > li:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 0, 0, .10); }
+:root body .category-grid li { border-radius: 22px; }
+@media (max-width: 734px) { :root body ul.tiles > li { border-radius: 22px; padding: 28px; } }
+
+/* Motion (apple.js adds the classes) */
+.js-anim .anim { opacity: 0; transform: translateY(32px); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); }
+.js-anim .anim.pop { transform: scale(.6); transition-duration: .6s; }
+.js-anim .anim.is-in { opacity: 1; transform: none; }
+.js-anim ul.tiles > li.anim.is-in:hover { transform: translateY(-4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .anim { opacity: 1; transform: none; transition: none; }
+  :root body ul.tiles > li:hover { transform: none; }
+}
+
+/* White-background screenshots get white cards; a hairline and soft shadow keep the card's edge */
+:root body > figure.is-card.is-white {
+  background: #FFFFFF;
+  border: 1px solid #E8E8ED;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  clip-path: none;
+}
+:root body > figure.is-card.is-white figcaption { color: #1D1D1F; }
+
+/* key-fact icons and labels in Apple's secondary grey (black symbols tinted to #6E6E73 / #86868B) */
+:root body .lineup-facts .fact-icon,
+:root body .hero-facts .fact-icon { filter: invert(68%); }
+:root[data-theme="dark"] body .lineup-facts .fact-icon,
+:root[data-theme="dark"] body .hero-facts .fact-icon { filter: invert(76%); }
+:root body .fact-label { color: #AEAEB2; }
+:root[data-theme="dark"] body .fact-label { color: #C7C7CC; }
+
+/* ---------- Cookie choices: a full-width banner along the bottom, like Apple's ---------- */
+:root body .privacy-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas: "title options actions" "text options actions";
+  align-items: center;
+  column-gap: 36px;
+  width: 100%;
+  margin: 0;
+  padding: 18px max(var(--gutter), calc((100% - 1260px) / 2));
+  transform: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--navbar);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, .08);
+  color: var(--text);
+  text-align: left;
+}
+
+:root body .privacy-consent h2 {
+  grid-area: title;
+  display: block;
+  align-self: end;
+  margin: 0 0 2px;
+  padding: 0;
+  border: 0;
+  font-size: 15px;
+  line-height: 1.33;
+  letter-spacing: -.016em;
+  font-weight: 600;
+  text-align: left;
+}
+
+:root body .privacy-consent p,
+:root body .privacy-consent h2 + p {
+  grid-area: text;
+  align-self: start;
+  width: auto;
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -.01em;
+  text-align: left;
+}
+
+:root body .privacy-consent p a { color: var(--link); text-decoration: none; }
+
+/* choices: name and an Apple switch, side by side */
+:root body .privacy-consent-options { grid-area: options; display: flex; gap: 24px; margin: 0; border: 0; }
+:root body .privacy-consent-options label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -.016em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+:root body .privacy-consent-options input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex: none;
+  width: 44px;
+  min-height: 0;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 13px;
+  background: #E9E9EB;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+:root[data-theme="dark"] body .privacy-consent-options input { background: #39393D; }
+:root body .privacy-consent-options input::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  transition: transform .2s ease;
+}
+:root body .privacy-consent-options input:checked { background: #34C759; }
+:root body .privacy-consent-options input:checked::before { transform: translateX(18px); }
+:root body .privacy-consent-options input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; box-shadow: none; }
+
+/* buttons in a row: Reject Optional (link), Save Choices (grey), Allow All (blue, last) */
+:root body .privacy-consent-actions { grid-area: actions; display: flex; align-items: center; gap: 10px; margin: 0; }
+:root body .privacy-consent-actions button {
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 980px;
+  background: var(--bg-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: -.016em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+:root[data-theme="dark"] body .privacy-consent-actions button { background: #2C2C2E; }
+:root body .privacy-consent-actions [data-reject-optional] { order: 1; padding: 8px 6px; background: transparent; color: var(--link); }
+:root[data-theme="dark"] body .privacy-consent-actions [data-reject-optional] { background: transparent; }
+:root body .privacy-consent-actions [data-save-choices] { order: 2; }
+:root body .privacy-consent-actions [data-accept-all] { order: 3; background: var(--blue); color: #FFFFFF; }
+:root body .privacy-consent-actions [data-accept-all]:hover { background: #0077ED; }
+
+/* tablets and phones: the same parts, stacked */
+@media (max-width: 1068px) {
+  :root body .privacy-consent {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "text" "options" "actions";
+    row-gap: 12px;
+    padding: 18px var(--gutter) calc(18px + env(safe-area-inset-bottom));
+  }
+  :root body .privacy-consent h2 { margin: 0; }
+  :root body .privacy-consent-options { flex-wrap: wrap; gap: 12px 28px; }
+  :root body .privacy-consent-options label { flex-direction: row-reverse; justify-content: flex-end; }
+  :root body .privacy-consent-actions { flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  :root body .privacy-consent-options { flex-direction: column; gap: 10px; }
+  :root body .privacy-consent-options label { justify-content: space-between; }
+  :root body .privacy-consent-actions { flex-direction: column; align-items: stretch; }
+  :root body .privacy-consent-actions [data-accept-all] { order: 1; }
+  :root body .privacy-consent-actions [data-save-choices] { order: 2; }
+  :root body .privacy-consent-actions [data-reject-optional] { order: 3; }
+  :root body .privacy-consent-actions button { padding: 11px 18px; font-size: 15px; }
+}
+
+/* Banner slides up when opened and down off the screen when closed; while closed it can't be clicked */
+:root body .privacy-consent {
+  transition: transform .45s cubic-bezier(.2, .8, .2, 1), opacity .45s ease, visibility 0s linear 0s;
+}
+:root body .privacy-consent[hidden] {
+  display: grid;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(110%);
+  pointer-events: none;
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1), opacity .45s ease, visibility 0s linear .45s;
+}
+
+/* the cookie button pops in when the banner goes away */
+:root body .privacy-settings { transition: transform .35s cubic-bezier(.2, .8, .2, 1), opacity .35s ease; }
+:root body .privacy-settings[hidden] { display: grid; opacity: 0; transform: scale(.5); pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root body .privacy-consent,
+  :root body .privacy-consent[hidden],
+  :root body .privacy-settings { transition: none; }
+}
+
+/* ---------- macEQ hero, Apple app-page style: icon, name, big headline, grey subhead, buttons, small print, highlights ---------- */
+:root body.is-product .app-icon { width: 112px; height: 112px; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .10)); }
+:root body.is-product .site-page-heading { margin: 20px auto 0; font-size: 28px; line-height: 1.14; letter-spacing: .007em; font-weight: 600; }
+:root body.is-product .tagline { max-width: 900px; margin: 8px auto 0; color: var(--text); font-size: var(--hero); line-height: 1.05; letter-spacing: -.015em; font-weight: 600; }
+:root body.is-product .hero-sub { max-width: 780px; margin: 20px auto 0; color: var(--muted); font-size: var(--subhead); line-height: 1.38; letter-spacing: .011em; text-align: center; }
+:root body.is-product .hero-buy { display: flex; flex-direction: column; align-items: center; margin-top: 36px; }
+:root body.is-product .hero-actions { order: 0; align-items: center; margin: 0; }
+:root body.is-product .hero-stores { order: 1; margin-top: 22px; font-size: 12px; gap: 6px; }
+:root body.is-product .hero-stores .lemon-mark, :root body.is-product .hero-stores .appstore-mark { width: 16px; height: 16px; }
+:root body.is-product .hero-more { color: var(--link); font-size: 17px; letter-spacing: -.022em; }
+:root body.is-product .hero-more:hover { text-decoration: underline; }
+:root body.is-product > .requirements { margin-top: 6px; color: var(--muted); font-size: 12px; }
+:root body.is-product .hero-facts { width: min(880px, calc(100% - 2 * var(--gutter))); gap: 40px; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
+:root body.is-product .hero-facts li { gap: 10px; }
+:root body.is-product .hero-facts .fact-icon { width: 32px; height: 32px; filter: none; }
+:root[data-theme="dark"] body.is-product .hero-facts .fact-icon { filter: invert(1); }
+:root body.is-product .fact-label { color: var(--text); font-size: 17px; font-weight: 600; letter-spacing: -.022em; }
+:root body.is-product .hero-facts .fact-text { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; color: var(--muted); font-size: 14px; line-height: 1.43; letter-spacing: -.016em; }
+@media (max-width: 734px) {
+  :root body.is-product .hero-facts { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* macEQ screenshots: smaller window inside the card, whole window shown, more air around it */
+:root body.is-product > figure.is-card { padding: 48px 24px 56px; }
+:root body.is-product > figure.is-card img { width: auto; max-width: min(600px, 100%); height: auto; max-height: 460px; align-self: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, .14); }
+:root body.is-product > figure.is-card.main-figure img { max-width: min(720px, 100%); max-height: 540px; }
+:root body.is-product > figure.is-card figcaption { margin-bottom: 32px; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+@media (max-width: 734px) {
+  :root body.is-product > figure.is-card { padding: 32px 16px 36px; }
+}
+:root body.is-product > figure.is-card.is-white img { box-shadow: none; }
+
+/* ---------- Screenshot gallery (macEQ): Apple's sideways gallery with the dot pill and round arrows ---------- */
+:root body > .gallery { width: 100%; margin: var(--section-gap) 0 0; }
+:root body .gallery-row {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(540px, 84vw); gap: 20px;
+  margin: 0; padding: 0 max(var(--gutter), calc((100% - 1260px) / 2));
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: max(var(--gutter), calc((100% - 1260px) / 2));
+  list-style: none; scrollbar-width: none; overscroll-behavior-x: contain;
+}
+:root body .gallery-row::-webkit-scrollbar { display: none; }
+:root body .gallery-row > li { margin: 0; scroll-snap-align: start; }
+:root body .gallery-row figure.is-card { display: flex; flex-direction: column; box-sizing: border-box; width: 100%; height: 100%; margin: 0; padding: 28px 24px 32px; overflow: hidden; border-radius: 28px; background: var(--card-bg); }
+:root body .gallery-row figure.is-card.is-white { background: #FFFFFF; }
+:root body .gallery-row figure.is-card img { width: auto; max-width: 100%; height: auto; max-height: 300px; margin: auto; align-self: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, .14); }
+:root body .gallery-row figure.is-card.is-white img { box-shadow: none; }
+:root body .gallery-row figure.is-card figcaption { order: -1; text-align: center; max-width: 440px; margin: 0 auto 20px; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+:root body .gallery-row figure.is-card.is-white { border: 1px solid #E8E8ED; }
+:root body .gallery-nav { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 28px 0 var(--section-gap); }
+:root body .gallery-dots { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 24px; border-radius: 28px; background: rgba(232, 232, 237, .72); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+:root body .gallery-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 4px; background: rgba(0, 0, 0, .42); cursor: pointer; transition: width .4s cubic-bezier(.2, .8, .2, 1), background .3s ease; }
+:root body .gallery-dot:hover { background: rgba(0, 0, 0, .64); }
+:root body .gallery-dot[aria-selected="true"] { width: 48px; background: rgba(0, 0, 0, .8); }
+:root body .gallery-arrow { display: grid; place-items: center; width: 56px; height: 56px; padding: 0; border: 0; border-radius: 50%; background: rgba(232, 232, 237, .72); color: rgba(0, 0, 0, .56); cursor: pointer; transition: background .2s ease, color .2s ease; }
+:root body .gallery-arrow:hover:not(:disabled) { background: rgba(223, 223, 227, .9); color: rgba(0, 0, 0, .8); }
+:root body .gallery-arrow:disabled { color: rgba(0, 0, 0, .2); cursor: default; }
+:root body .gallery-arrow svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+:root body .gallery-dot:focus-visible, :root body .gallery-arrow:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+:root[data-theme="dark"] body .gallery-dots, :root[data-theme="dark"] body .gallery-arrow { background: rgba(66, 66, 69, .72); }
+:root[data-theme="dark"] body .gallery-dot { background: rgba(255, 255, 255, .42); }
+:root[data-theme="dark"] body .gallery-dot[aria-selected="true"] { background: rgba(255, 255, 255, .8); }
+:root[data-theme="dark"] body .gallery-arrow { color: rgba(255, 255, 255, .64); }
+:root[data-theme="dark"] body .gallery-arrow:disabled { color: rgba(255, 255, 255, .24); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body .gallery-dots, :root:not([data-theme="light"]) body .gallery-arrow { background: rgba(66, 66, 69, .72); }
+  :root:not([data-theme="light"]) body .gallery-dot { background: rgba(255, 255, 255, .42); }
+  :root:not([data-theme="light"]) body .gallery-dot[aria-selected="true"] { background: rgba(255, 255, 255, .8); }
+  :root:not([data-theme="light"]) body .gallery-arrow { color: rgba(255, 255, 255, .64); }
+}
+@media (max-width: 734px) {
+  :root body .gallery-row figure.is-card { padding: 28px 16px 32px; }
+  :root body .gallery-row figure.is-card img { max-height: 300px; }
+  :root body .gallery-arrow { display: none; }
+}
+
+/* ---------- macEQ below the gallery ---------- */
+/* intro: Apple's big statement text, grey with the product name in black */
+:root body.is-product > p.is-intro { width: min(692px, calc(100% - 2 * var(--gutter))); max-width: none; font-size: 19px; line-height: 1.42; letter-spacing: .012em; font-weight: 400; text-align: left; }
+:root body.is-product > p.is-intro strong { font-weight: 600; }
+:root body.is-product > p.is-intro + p.is-intro { width: min(692px, calc(100% - 2 * var(--gutter))); max-width: none; margin-top: 20px; }
+/* section headlines: no symbol, Apple's headline size with a full stop feel */
+:root body.is-product > h2 .sf-symbol { display: none; }
+/* presets: names as soft pills */
+:root body.is-product .preset-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: var(--text-col); max-width: 760px; margin: 32px auto 0; padding: 0; list-style: none; }
+:root body.is-product .preset-chips li { margin: 0; padding: 8px 16px; border-radius: 980px; background: var(--card-bg); color: var(--text); font-size: 14px; line-height: 1.29; letter-spacing: -.016em; }
+:root body.is-product .preset-chips + p { max-width: 640px; margin-top: 28px; color: var(--muted); font-size: 17px; line-height: 1.47; text-align: center; }
+/* how to use: one grey card, steps divided by hairlines, quiet grey numbers */
+:root body.is-product > ol { width: min(760px, calc(100% - 2 * var(--gutter))); margin-top: 40px; padding: 8px 32px; border-radius: 28px; background: var(--card-bg); }
+:root body.is-product > ol > li { margin: 0; padding: 20px 0 20px 52px; border-top: 1px solid var(--line); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+:root body.is-product > ol > li:first-child { border-top: 0; }
+:root body.is-product > ol > li::before { top: 18px; width: 32px; height: 32px; background: transparent; border: 1.5px solid var(--muted); color: var(--muted); font-size: 15px; font-weight: 600; }
+/* testimonials: Apple's big quote */
+:root body.is-product .testimonial-rotator { padding: 64px 48px 40px; border-radius: 28px; background: var(--card-bg); text-align: center; }
+:root body.is-product .testimonial-item p { max-width: 720px; margin: 0 auto; color: var(--text); font-size: 21px; line-height: 1.43; letter-spacing: .011em; font-weight: 400; }
+:root body.is-product .testimonial-item cite { display: block; margin-top: 20px; font-style: normal; font-size: 17px; }
+/* closing: a headline before the last Download */
+:root body.is-product > .closing-title { margin-top: var(--section-gap); font-size: var(--headline); }
+:root body.is-product > .closing-sub { margin: 12px auto 0; color: var(--muted); font-size: var(--subhead); line-height: 1.38; text-align: center; }
+:root body.is-product > .closing-sub + .hero-buy { margin-top: 32px; }
+@media (max-width: 734px) {
+  :root body.is-product > p.is-intro { font-size: 17px; }
+  :root body.is-product .testimonial-item p { font-size: 21px; }
+  :root body.is-product > ol { padding: 4px 20px; }
+  :root body.is-product .testimonial-rotator { padding: 40px 24px 28px; }
+}
+
+/* ---------- macEQ, matched to the home page: left headlines with a full stop, labelled gallery cards, full grids ---------- */
+:root body.is-product > h2:not(.closing-title) { width: var(--wide-col); margin-left: auto; margin-right: auto; align-items: flex-start; justify-content: flex-start; text-align: left; font-size: var(--headline); }
+:root body.is-product > h2#look { margin-bottom: 0; }
+:root body.is-product > .gallery { margin-top: 40px; }
+:root body .gallery-row figure.is-card figcaption { display: block; width: 100%; max-width: none; margin: 0 0 24px; text-align: left; }
+:root body .gallery-row .cap-eyebrow { display: block; color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: -.016em; }
+:root body .gallery-row .cap-head { display: block; margin-top: 6px; color: var(--text); font-size: 24px; line-height: 1.17; letter-spacing: .009em; font-weight: 600; }
+:root body .gallery-row figure.is-card.is-white .cap-head { color: #1D1D1F; }
+:root body .gallery-row figure.is-card.is-white .cap-eyebrow { color: #6E6E73; }
+/* presets: pills inside one grey card, left aligned */
+:root body.is-product > .preset-card { width: var(--wide-col); margin: 40px auto 0; padding: 40px; border-radius: 28px; background: var(--card-bg); }
+:root body.is-product .preset-lead { margin: 0; color: var(--text); font-size: 24px; line-height: 1.25; letter-spacing: .009em; font-weight: 600; text-align: left; max-width: 640px; }
+:root body.is-product .preset-card .preset-chips { justify-content: flex-start; width: auto; max-width: none; margin: 28px 0 0; }
+:root body.is-product .preset-card .preset-chips li { background: var(--bg, #FFFFFF); }
+:root body.is-product > .preset-card > p.preset-note, :root body.is-product > .preset-card > p.preset-lead { text-align: left; }
+:root body.is-product .preset-note { max-width: 640px; margin: 24px 0 0; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; text-align: left; }
+/* three steps side by side, each its own card */
+:root body.is-product > ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; width: var(--wide-col); margin-top: 40px; padding: 0; border-radius: 0; background: none; }
+:root body.is-product > ol > li { margin: 0; padding: 32px 28px 36px; border: 0; border-radius: 28px; background: var(--card-bg); color: var(--muted); font-size: 17px; line-height: 1.47; }
+:root body.is-product > ol > li strong { display: block; margin-bottom: 6px; color: var(--text); font-size: 24px; line-height: 1.17; letter-spacing: .009em; font-weight: 600; }
+:root body.is-product > ol > li::before { position: static; display: grid; margin-bottom: 20px; }
+/* closing: the app icon above the last headline */
+:root body.is-product > .closing-icon { display: block; width: 72px; height: 72px; margin: var(--section-gap) auto 0; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .10)); }
+:root body.is-product > .closing-icon + .closing-title { margin-top: 20px; }
+@media (max-width: 734px) {
+  :root body.is-product > ol { grid-template-columns: 1fr; }
+  :root body.is-product > .preset-card { padding: 28px 24px; }
+  :root body.is-product .preset-lead { font-size: 21px; }
+}
+:root body.is-product > p.is-intro { margin-left: calc((100% - var(--wide-col)) / 2); margin-right: auto; width: min(692px, var(--wide-col)); }
+/* macEQ: everything that isn't a headline feature, as pills in one card */
+:root body.is-product > .more-card { width: var(--wide-col); margin: 20px auto 0; padding: 40px; border-radius: 28px; background: var(--card-bg); }
+:root body.is-product > .more-card > p.more-lead { margin: 0; color: var(--text); font-size: 24px; line-height: 1.17; letter-spacing: .009em; font-weight: 600; text-align: left; }
+:root body.is-product .more-card .preset-chips { justify-content: flex-start; width: auto; max-width: none; margin: 24px 0 0; }
+:root body.is-product .more-card .preset-chips li { background: var(--bg); }
+@media (max-width: 734px) { :root body.is-product > .more-card { padding: 28px 24px; } }
+
+/* ---------- macEQ motion and type, matched to the home page ---------- */
+.js-anim .anim.from-right { transform: translateX(80px); }
+.js-anim .anim.letter { display: inline-block; transform: translateX(80px); transition-duration: .7s; }
+.js-anim .anim.letter.is-in, .js-anim .anim.from-right.is-in { transform: none; }
+.js-anim h2#look { display: block; }
+.js-anim .gallery-row > li .cap-eyebrow, .js-anim .gallery-row > li .cap-head { opacity: 0; transform: translateY(16px); transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--d, 0ms) + 250ms); }
+.js-anim .gallery-row > li .cap-head { transition-delay: calc(var(--d, 0ms) + 330ms); }
+.js-anim .gallery-row > li figure img { opacity: 0; transform: translateY(50px) scale(.92); transition: opacity 1s cubic-bezier(.2, .8, .2, 1), transform 1.2s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--d, 0ms) + 420ms); }
+.js-anim .gallery-row > li.is-in .cap-eyebrow, .js-anim .gallery-row > li.is-in .cap-head, .js-anim .gallery-row > li.is-in figure img { opacity: 1; transform: none; }
+.js-anim .preset-chips > li.anim.pop { transform: scale(.8); }
+.js-anim .preset-chips > li.anim.pop.is-in { transform: none; }
+:root body .gallery-row .cap-head { font-size: 28px; line-height: 1.14; letter-spacing: .007em; }
+:root body.is-product > .more-card > p.more-lead { font-size: 28px; line-height: 1.14; letter-spacing: .007em; }
+:root body.is-product ul.tiles > li { font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+:root body.is-product ul.tiles > li > strong:first-of-type { font-size: 24px; }
+:root body.is-product ul.tiles > li.is-featured > strong:first-of-type { font-size: var(--headline); }
+@media (max-width: 734px) {
+  :root body .gallery-row .cap-head, :root body.is-product > .more-card > p.more-lead { font-size: 24px; }
+  :root body.is-product ul.tiles > li.is-featured > strong:first-of-type { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .gallery-row > li .cap-eyebrow, .js-anim .gallery-row > li .cap-head, .js-anim .gallery-row > li figure img { opacity: 1; transform: none; transition: none; }
+}
+:root body.is-product ul.tiles > li.is-featured { font-size: 21px; line-height: 1.38; letter-spacing: .011em; }
+/* macEQ type check: card titles 24, quote names 14 */
+:root body.is-product > .more-card > p.more-lead { font-size: 24px; line-height: 1.17; letter-spacing: .009em; }
+:root body.is-product .testimonial-item cite { margin-top: 16px; font-size: 14px; letter-spacing: -.016em; }
+
+/* macEQ feature cards: each card grows up into place in turn, then its title slides up a beat later */
+.js-anim body.is-product ul.tiles > li.anim { transform: translateY(48px) scale(.94); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform 1s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease; }
+.js-anim body.is-product ul.tiles > li.anim > strong:first-of-type { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1); transition-delay: inherit; }
+.js-anim body.is-product ul.tiles > li.anim.is-in { transform: none; }
+.js-anim body.is-product ul.tiles > li.anim.is-in > strong:first-of-type { opacity: 1; transform: none; transition-delay: calc(var(--td, 0ms) + 200ms); }
+.js-anim body.is-product ul.tiles > li.anim.is-in:hover { transform: translateY(-4px) scale(1.01); }
+@media (prefers-reduced-motion: reduce) {
+  .js-anim body.is-product ul.tiles > li.anim, .js-anim body.is-product ul.tiles > li.anim > strong:first-of-type { opacity: 1; transform: none; transition: none; }
+}
+:root body .gallery.is-static .gallery-nav { display: none; }
+:root body.is-product .tagline { width: min(1040px, calc(100% - 2 * var(--gutter))); max-width: none; }
+:root body .gallery.is-static .gallery-row { justify-content: center; }
+
+/* ---------- Distribution App sales sections in the product style ---------- */
+:root body.is-product > .eyebrow { margin: 0 auto 4px; color: #BF4800; font-size: 14px; font-weight: 600; letter-spacing: -.016em; text-align: center; }
+:root[data-theme="dark"] body.is-product > .eyebrow { color: #FF9F0A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.is-product > .eyebrow { color: #FF9F0A; } }
+:root body.is-product > .eyebrow + .site-page-heading { margin-top: 4px; }
+:root body.is-product > p.guide-link, :root body.is-product > p.pricing-lead { width: var(--wide-col); max-width: none; margin: 20px auto 0; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; text-align: left; }
+:root body.is-product > p.pricing-lead { margin-top: 12px; font-size: 21px; line-height: 1.38; letter-spacing: .011em; }
+/* founding user and tester: two cards side by side */
+:root body.is-product .offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; width: var(--wide-col); margin: 40px auto 0; }
+:root body.is-product .offer-card { padding: 40px; border-radius: 28px; background: var(--card-bg); color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+:root body.is-product .offer-card > * { margin: 0; text-align: left; }
+:root body.is-product .offer-eyebrow { color: #BF4800; font-size: 14px; font-weight: 600; letter-spacing: -.016em; }
+:root body.is-product .offer-card h3 { margin-top: 6px; color: var(--text); font-size: 28px; line-height: 1.14; letter-spacing: .007em; font-weight: 600; }
+:root body.is-product .offer-card h3 + p { margin-top: 14px; }
+:root body.is-product .offer-card ul { margin: 24px 0 0; padding: 0; list-style: none; }
+:root body.is-product .offer-card li { margin: 0; padding: 14px 0; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.43; letter-spacing: -.016em; }
+:root body.is-product .offer-card li strong, :root body.is-product .offer-card p strong { color: var(--text); font-weight: 600; }
+:root body.is-product .offer-card .offer-cta { margin-top: 12px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.43; }
+/* pricing: three plan cards, Apple store style */
+:root body.is-product .plan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; width: var(--wide-col); margin: 40px auto 0; }
+:root body.is-product .plan-card { padding: 36px 32px; border-radius: 28px; background: var(--card-bg); text-align: left; }
+:root body.is-product .plan-card > p { margin: 0; text-align: left; }
+:root body.is-product .plan-name { color: var(--text); font-size: 24px; line-height: 1.17; font-weight: 600; letter-spacing: .009em; }
+:root body.is-product .plan-users { margin-top: 4px !important; color: var(--muted); font-size: 17px; }
+:root body.is-product .plan-price { margin-top: 28px !important; color: var(--text); font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -.01em; }
+:root body.is-product .plan-price span { color: var(--muted); font-size: 17px; font-weight: 400; letter-spacing: -.022em; }
+:root body.is-product .plan-alt { margin-top: 10px !important; color: var(--muted); font-size: 14px; letter-spacing: -.016em; }
+:root body.is-product .price-notes { width: var(--wide-col); margin: 28px auto 0; color: var(--muted); font-size: 14px; line-height: 1.43; letter-spacing: -.016em; }
+:root body.is-product .price-notes ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 40px; }
+:root body.is-product .price-notes li { margin: 0; }
+:root body.is-product .price-notes strong { color: var(--text); font-weight: 600; }
+:root body.is-product .price-notes > p { margin: 20px 0 0; text-align: left; }
+/* FAQ: Apple's hairline accordion */
+:root body.is-product .faq-list { width: var(--wide-col); margin: 32px auto 0; border-bottom: 1px solid var(--line); }
+:root body.is-product .faq-list details { border-top: 1px solid var(--line); }
+:root body.is-product .faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0; color: var(--text); font-size: 21px; line-height: 1.24; font-weight: 600; letter-spacing: .011em; cursor: pointer; list-style: none; }
+:root body.is-product .faq-list summary::-webkit-details-marker { display: none; }
+:root body.is-product .faq-list summary::after { content: "+"; flex: none; color: var(--muted); font-size: 28px; font-weight: 300; line-height: 1; transition: transform .3s ease; }
+:root body.is-product .faq-list details[open] summary::after { transform: rotate(45deg); }
+:root body.is-product .faq-list details p { max-width: 760px; margin: -8px 0 24px; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; text-align: left; }
+/* Made for: same width and left start as the other sections */
+:root body.is-product #made-for-grid { width: var(--wide-col); margin-top: 40px; }
+@media (max-width: 1068px) { :root body.is-product .plan-grid { grid-template-columns: 1fr; } }
+@media (max-width: 734px) {
+  :root body.is-product .offer-grid, :root body.is-product .price-notes ul { grid-template-columns: 1fr; }
+  :root body.is-product .offer-card { padding: 28px 24px; }
+  :root body.is-product .faq-list summary { font-size: 19px; }
+}
+/* add-ons: one card, four tiles with a paid / included tag */
+:root body.is-product .addon-card { width: var(--wide-col); margin: 20px auto 0; padding: 40px; border-radius: 28px; background: var(--card-bg); }
+:root body.is-product .addon-card > p { margin: 0; text-align: left; }
+:root body.is-product .addon-lead { color: var(--text); font-size: 24px; line-height: 1.17; font-weight: 600; letter-spacing: .009em; }
+:root body.is-product .addon-sub { margin-top: 8px !important; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+:root body.is-product .addon-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
+:root body.is-product .addon-grid li { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 20px; border-radius: 18px; background: var(--bg); }
+:root body.is-product .addon-name { color: var(--text); font-size: 17px; line-height: 1.29; font-weight: 600; letter-spacing: -.022em; }
+:root body.is-product .addon-tag { align-self: flex-start; padding: 3px 10px; border-radius: 980px; background: var(--card-bg); color: var(--muted); font-size: 12px; font-weight: 600; }
+:root body.is-product .addon-tag.is-included { background: rgba(52, 199, 89, .14); color: #248A3D; }
+@media (max-width: 1068px) { :root body.is-product .addon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 734px) { :root body.is-product .addon-card { padding: 28px 24px; } }
+/* "grow": cards rise from slightly smaller, like the feature cards */
+.js-anim .anim.grow { transform: translateY(48px) scale(.94); transition-duration: .9s, 1s; }
+.js-anim .anim.grow.is-in { transform: none; }
+.js-anim .faq-list > details.anim { transform: translateY(20px); }
+.js-anim .faq-list > details.anim.is-in { transform: none; }
+:root[data-theme="dark"] body.is-product .addon-tag.is-included { color: #30D158; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.is-product .addon-tag.is-included { color: #30D158; } }
+/* accent words in Apple blue */
+:root body .accent-word { color: #0071E3; white-space: nowrap; }
+:root[data-theme="dark"] body .accent-word { color: #2997FF; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body .accent-word { color: #2997FF; } }
+:root body.is-product > h2#founding { display: block; }
+/* add-on names stay on one line so the four tiles keep the same rhythm */
+:root body.is-product .addon-name { white-space: nowrap; }
+@media (max-width: 1200px) { :root body.is-product .addon-name { font-size: 15px; } :root body.is-product .addon-grid li { padding: 18px 16px; } }
+/* Upscape models: six small cards, three across */
+:root body.is-product .model-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; width: var(--wide-col); margin: 40px auto 20px; }
+:root body.is-product .model-grid > div { padding: 32px 28px; border-radius: 28px; background: var(--card-bg); }
+:root body.is-product .model-grid p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; text-align: left; }
+:root body.is-product .model-grid p.model-name { margin-bottom: 8px; color: var(--text); font-size: 24px; line-height: 1.17; font-weight: 600; letter-spacing: .009em; }
+@media (max-width: 1068px) { :root body.is-product .model-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 734px) { :root body.is-product .model-grid { grid-template-columns: 1fr; } }
+/* hero eyebrow: regular weight, Apple's light grey */
+:root body.is-product > .eyebrow { color: #86868B; font-weight: 400; }
+:root[data-theme="dark"] body.is-product > .eyebrow { color: #86868B; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.is-product > .eyebrow { color: #86868B; } }

@@ -278,12 +278,12 @@
     .tagline { font-size: 17px; }
   }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<script>/* Google Sans only where the Apple system font isn't available */ if (!/Mac|iPhone|iPad|iPod/.test(navigator.userAgent)) { var gf = document.createElement("link"); gf.rel = "stylesheet"; gf.href = "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap"; document.head.appendChild(gf); }</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
-<link rel="stylesheet" href="theme.css?v=12">
-<script src="theme.js?v=12"></script>
+<link rel="stylesheet" href="theme.css?v=13">
+<script src="theme.js?v=13"></script>
+<link rel="stylesheet" href="apple.css?v=6">
+<script src="apple.js?v=6"></script>
 </head>
 <body>
 
@@ -311,14 +311,12 @@
 </nav>
 
 <div class="logo-lockup">
-  <div class="platform-badge" aria-label="Requires macOS">
-    <span>macOS</span>
-  </div>
   <img class="app-icon" src="Assets/optimized/upscape-icon-256.webp" srcset="Assets/optimized/upscape-icon-256.webp 256w, Assets/optimized/upscape-icon-384.webp 384w" sizes="(max-width: 520px) 132px, 168px" width="128" height="128" fetchpriority="high" alt="Upscape app icon">
 </div>
 
-<h1 class="site-page-heading">Upscale images privately on your Mac</h1>
-<p class="tagline">Upscape uses local AI models to restore detail, sharpen images, and create high-resolution exports without sending your files to the cloud.</p>
+<h1 class="site-page-heading">Upscape</h1>
+<p class="tagline">Sharper images. Made on your Mac.</p>
+<p class="hero-sub">Private AI upscaling up to 4x. Nothing is ever uploaded.</p>
 
 <p class="download download-options">
   <a class="badge badge-soon" href="#" aria-disabled="true" aria-label="Upscape is coming soon to the App Store" data-soon="SOON"><img src="Assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store"></a>
@@ -330,108 +328,85 @@
     </span>
   </a>
 </p>
-<p class="requirements">Runs locally with Core ML · No uploads · No account required</p>
+<p class="requirements">Requires macOS · No account</p>
 
+<h2 id="look">Take a closer look.</h2>
 <figure class="reveal main-figure">
   <img src="Assets/optimized/upscape-main-640.webp" srcset="Assets/optimized/upscape-main-640.webp 640w, Assets/optimized/upscape-main-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1924" height="1486" fetchpriority="high" alt="Upscape with an image loaded, showing the model, enhancement, output size, and export format controls">
-  <figcaption>Choose an image, pick a model, set the output size, and export.</figcaption>
+  <figcaption><span class="cap-eyebrow">Upscale</span><span class="cap-head">Pick a model and a size, then export.</span></figcaption>
 </figure>
 
 <figure class="reveal">
   <img src="Assets/optimized/upscape-upscaling-640.webp" srcset="Assets/optimized/upscape-upscaling-640.webp 640w, Assets/optimized/upscape-upscaling-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1924" height="1486" loading="lazy" decoding="async" alt="Upscape upscaling a portrait with the Nomos 8K model, showing progress at 89 percent">
-  <figcaption>Upscaling runs on your Mac with live progress, and can be stopped at any point.</figcaption>
+  <figcaption><span class="cap-eyebrow">Progress</span><span class="cap-head">Watch it work. Stop any time.</span></figcaption>
 </figure>
-
-<p>
-  <strong>Upscape</strong> increases image resolution and rebuilds detail using AI models that run
-  entirely on your Mac. Photos, client work, product shots and personal images never leave the
-  machine — there is nothing to upload and nothing to sign into.
-</p>
-
-<h2 id="features" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/apps.png')" aria-hidden="true"></span>Features</h2>
-<ul class="reveal">
-  <li><strong>Private by Design</strong> — your images stay on your Mac. Upscape processes files locally using Core ML, so photos, client work, product shots, and personal images are never uploaded for processing.</li>
-  <li><strong>AI Upscaling up to 4x</strong> — increase image resolution while reconstructing realistic detail. Built for low-resolution photos, web images, artwork, screenshots, and compressed files.</li>
-  <li><strong>Multiple Specialized Models</strong> — balanced photo enhancement, illustration cleanup, portrait-friendly smoothing, maximum edge clarity, or punchy micro-detail and texture.</li>
-  <li><strong>Before and After Comparison</strong> — inspect your result with an interactive comparison slider before exporting. Check texture, edges, faces, and fine detail side by side.</li>
-  <li><strong>Batch Upscaling</strong> — process multiple images in one run and save upscaled files automatically with clean filenames and your preferred output format.</li>
-  <li><strong>Flexible Export Formats</strong> — export as PNG, JPEG, TIFF, HEIC, or WebP. Choose the format that fits publishing, archiving, sharing, or web use.</li>
-  <li><strong>Optimized for Apple Silicon</strong> — Upscape uses Apple's Core ML framework to run efficiently on supported Mac hardware, including GPU, Apple Neural Engine, and CPU execution paths.</li>
-</ul>
-
-<h2 id="models" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/preset.png')" aria-hidden="true"></span>Models</h2>
-<p>
-  Every image is different, so Upscape ships six models. Pick the one that matches what you
-  are upscaling.
-</p>
-<ul class="reveal">
-  <li><strong>Standard Photo</strong> — your go-to model for everyday images. Recovers sharp detail from small or compressed photos, product shots, and screenshots. Balanced and ready for any content.</li>
-  <li><strong>Illustration</strong> — built for anime, comics, and flat artwork. Keeps bold edges crisp and color areas smooth without adding noise or texture where there shouldn't be any.</li>
-  <li><strong>UltraSharp</strong> — for images where every detail counts. Pushes edge clarity to the maximum, ideal for architecture, landscapes, technical drawings, and high-detail scenes that need to look razor sharp.</li>
-  <li><strong>NMKD Siax CX</strong> — a versatile, commercially unrestricted model that handles almost anything. Smooth gradient transitions, clean lines, and natural-looking skin on portraits and faces.</li>
-  <li><strong>Nomos 8K</strong> — the portrait specialist. Recovers fine texture and micro-detail with a punchy, lifelike quality. Perfect for people, digital art, and any subject where subtle detail makes the difference.</li>
-  <li><strong>General v3</strong> — the conservative choice for real-world photos. Keeps enhancement controlled and natural, reducing halos, jagged edges, and over-sharpening artifacts that other models can introduce.</li>
-</ul>
 
 <figure class="reveal">
   <img src="Assets/optimized/upscape-compare-640.webp" srcset="Assets/optimized/upscape-compare-640.webp 640w, Assets/optimized/upscape-compare-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1924" height="1496" loading="lazy" decoding="async" alt="Upscape comparison slider showing the original image next to the upscaled result">
-  <figcaption>Drag the comparison slider to check texture, edges and faces before you export.</figcaption>
+  <figcaption><span class="cap-eyebrow">Compare</span><span class="cap-head">Before and after, side by side.</span></figcaption>
 </figure>
-
-<h2 id="uses" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/quick-actions.png')" aria-hidden="true"></span>Use cases</h2>
-<ul class="category-grid reveal">
-  <li>Restore old web images</li>
-  <li>Improve compressed JPEGs</li>
-  <li>Upscale product photos</li>
-  <li>Enhance social media images</li>
-  <li>Clean up screenshots</li>
-  <li>Prepare images for print</li>
-  <li>Improve portraits and headshots</li>
-  <li>Upscale anime, comics, and illustrations</li>
-  <li>Create higher-resolution assets for design work</li>
-</ul>
-
-<h2 id="privacy" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/shield.png')" aria-hidden="true"></span>Privacy</h2>
-<p>
-  Most AI upscalers are websites — you hand over the file and hope for the best. Upscape runs the
-  models on your own Mac, so the image never travels anywhere.
-</p>
-<ul class="reveal">
-  <li><strong>No uploads</strong> — every image is processed locally with Core ML.</li>
-  <li><strong>No account</strong> — nothing to sign up for and nothing to log into.</li>
-  <li><strong>Works offline</strong> — once installed with its models, Upscape needs no internet connection.</li>
-</ul>
-<p class="reveal"><a href="privacy.html">Read the full privacy policy for Upscape</a>.</p>
 
 <figure class="reveal">
   <img src="Assets/optimized/upscape-open-640.webp" srcset="Assets/optimized/upscape-open-640.webp 640w, Assets/optimized/upscape-open-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1924" height="1496" loading="lazy" decoding="async" alt="Upscape open with an empty drop zone, listing the supported JPEG, PNG, TIFF, HEIC, WebP and RAW formats">
-  <figcaption>Open Upscape, drop in an image, and the five steps run top to bottom.</figcaption>
+  <figcaption><span class="cap-eyebrow">Start</span><span class="cap-head">Drop in an image to begin.</span></figcaption>
 </figure>
 
-<h2 id="guide" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/power.png')" aria-hidden="true"></span>How to use</h2>
-<ol class="reveal">
-  <li>Choose an image, or drop several in for a batch run.</li>
-  <li>Pick the model that fits it — Standard Photo works for most images.</li>
-  <li>Set an enhancement level and the output size, up to 4x.</li>
-  <li>Upscale, then check the result in the before and after comparison.</li>
-  <li>Export as PNG, JPEG, TIFF, HEIC, or WebP.</li>
-</ol>
-
-<h2 id="faq" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/fidelity.png')" aria-hidden="true"></span>FAQ</h2>
+<h2 id="features" class="reveal">Features.</h2>
 <ul class="reveal">
-  <li><strong>What is Upscape?</strong> — Upscape is an AI image upscaler for Mac. It increases image resolution and enhances detail using local Core ML models.</li>
-  <li><strong>Does Upscape upload my images?</strong> — No. Upscape processes images locally on your Mac. Your files are not uploaded for image processing.</li>
-  <li><strong>What image types does Upscape support?</strong> — Common image formats including JPEG, PNG, TIFF, HEIC, WebP, RAW, and other image files supported by macOS.</li>
-  <li><strong>How much can Upscape upscale an image?</strong> — Upscape uses 4x AI upscaling models and can export at different output sizes depending on your chosen scale.</li>
-  <li><strong>Which model should I choose?</strong> — Standard Photo for most images, Illustration for anime or artwork, UltraSharp for architecture and landscapes, NMKD Siax CX for portraits and smooth gradients, Nomos 8K for punchy micro-detail and texture, and General v3 for real-world photos with fewer halos and artifacts.</li>
-  <li><strong>Does Upscape work offline?</strong> — Yes. Once installed with its models, Upscape can process images locally without an internet connection.</li>
-  <li><strong>Is Upscape good for blurry photos?</strong> — It can improve low-resolution and compressed images, but it cannot fully recover detail that was never present. It works best on images that are small, compressed, or pixelated rather than severely out of focus.</li>
-  <li><strong>Can I process multiple images?</strong> — Yes. Upscape supports batch upscaling so you can process multiple files in one run.</li>
-  <li><strong>What export formats are available?</strong> — PNG, JPEG, TIFF, HEIC, and WebP.</li>
-  <li><strong>Who made Upscape?</strong> — Upscape is made by totoantonio.</li>
+  <li><strong>Private by design.</strong> — your images stay on your Mac. Upscape works locally with Core ML, so photos, client work and personal images are never uploaded.</li>
+  <li><strong>Up to 4x</strong> — more resolution with realistic detail rebuilt, for small photos, web images, artwork and screenshots.</li>
+  <li><strong>Six models</strong> — one for photos, artwork, portraits, edges and texture. Pick the one that fits.</li>
+  <li><strong>Before and after</strong> — drag the comparison slider to check texture, edges and faces before you export.</li>
+  <li><strong>Batch upscaling</strong> — drop in several images and save them all in one run, with clean filenames.</li>
 </ul>
 
-<h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/apps.png')" aria-hidden="true"></span>What users say</h2>
+<div class="more-card">
+<p class="more-lead">And so much more.</p>
+<ul class="preset-chips" aria-label="More features">
+  <li>Export PNG, JPEG, TIFF, HEIC or WebP</li><li>Opens RAW files</li><li>Optimized for Apple silicon</li><li>Uses GPU and Neural Engine</li><li>Works offline</li><li>No account</li><li>Live progress</li>
+</ul>
+</div>
+<p class="guide-link reveal"><a href="privacy.html">Read the privacy policy for Upscape ›</a></p>
+
+<h2 id="models" class="reveal">Six models.</h2>
+<div class="model-grid">
+  <div><p class="model-name">Standard Photo</p><p>Your go-to for everyday images, product shots and screenshots.</p></div>
+  <div><p class="model-name">Illustration</p><p>Anime, comics and flat artwork, with crisp edges and clean colour.</p></div>
+  <div><p class="model-name">UltraSharp</p><p>Maximum edge clarity for architecture, landscapes and drawings.</p></div>
+  <div><p class="model-name">NMKD Siax CX</p><p>Smooth gradients, clean lines and natural skin on portraits.</p></div>
+  <div><p class="model-name">Nomos 8K</p><p>Fine texture and punchy micro-detail for people and digital art.</p></div>
+  <div><p class="model-name">General v3</p><p>Controlled, natural results with fewer halos on real-world photos.</p></div>
+</div>
+
+<div class="more-card">
+<p class="more-lead">Made for every kind of image.</p>
+<ul class="preset-chips" aria-label="Use cases">
+  <li>Old web images</li><li>Compressed JPEGs</li><li>Product photos</li><li>Social media images</li><li>Screenshots</li><li>Print</li><li>Portraits and headshots</li><li>Anime, comics and illustrations</li><li>Design assets</li>
+</ul>
+</div>
+
+<h2 id="guide" class="reveal">Ready in 3 steps.</h2>
+<ol class="reveal">
+  <li><strong>Drop it in.</strong> Choose an image, or drop several in for a batch run.</li>
+  <li><strong>Pick a model.</strong> Standard Photo works for most. Set the enhancement and size, up to 4x.</li>
+  <li><strong>Check and export.</strong> Compare before and after, then save as PNG, JPEG, TIFF, HEIC or WebP.</li>
+</ol>
+
+<h2 id="faq" class="reveal">Questions.</h2>
+<div class="faq-list">
+  <details><summary>What is Upscape?</summary><p>Upscape is an AI image upscaler for Mac. It increases image resolution and enhances detail using local Core ML models.</p></details>
+  <details><summary>Does Upscape upload my images?</summary><p>No. Upscape processes images locally on your Mac. Your files are not uploaded for image processing.</p></details>
+  <details><summary>What image types does Upscape support?</summary><p>Common image formats including JPEG, PNG, TIFF, HEIC, WebP, RAW, and other image files supported by macOS.</p></details>
+  <details><summary>How much can Upscape upscale an image?</summary><p>Upscape uses 4x AI upscaling models and can export at different output sizes depending on your chosen scale.</p></details>
+  <details><summary>Which model should I choose?</summary><p>Standard Photo for most images, Illustration for anime or artwork, UltraSharp for architecture and landscapes, NMKD Siax CX for portraits and smooth gradients, Nomos 8K for punchy micro-detail and texture, and General v3 for real-world photos with fewer halos and artifacts.</p></details>
+  <details><summary>Does Upscape work offline?</summary><p>Yes. Once installed with its models, Upscape can process images locally without an internet connection.</p></details>
+  <details><summary>Is Upscape good for blurry photos?</summary><p>It can improve low-resolution and compressed images, but it cannot fully recover detail that was never present. It works best on images that are small, compressed, or pixelated rather than severely out of focus.</p></details>
+  <details><summary>Can I process multiple images?</summary><p>Yes. Upscape supports batch upscaling so you can process multiple files in one run.</p></details>
+  <details><summary>What export formats are available?</summary><p>PNG, JPEG, TIFF, HEIC, and WebP.</p></details>
+  <details><summary>Who made Upscape?</summary><p>Upscape is made by totoantonio.</p></details>
+</div>
+
+<h2 class="reveal">What people are saying.</h2>
 <div class="testimonial-rotator reveal" data-testimonial-rotator>
   <div class="testimonial-track">
     <blockquote class="testimonial-item active" aria-live="polite">
@@ -454,6 +429,9 @@
   </div>
 </div>
 
+<img class="closing-icon" src="Assets/optimized/upscape-icon-256.webp" width="72" height="72" alt="" loading="lazy">
+<h2 class="closing-title">See the detail.</h2>
+<p class="closing-sub">Sharper images, made privately on your Mac.</p>
 <p class="download guide-download download-options">
   <a class="badge badge-soon" href="#" aria-disabled="true" aria-label="Upscape is coming soon to the App Store" data-soon="SOON"><img src="Assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store"></a>
   <a class="lemon-badge badge-soon badge-live" href="https://totoantonio.lemonsqueezy.com/checkout/buy/c09293b2-94a2-4312-bc47-99985d8d56bd" aria-label="Download Upscape from Lemon Squeezy" data-analytics-event="begin_checkout" data-item-id="upscape" data-item-name="Upscape" data-soon="RELEASED">
@@ -464,7 +442,7 @@
     </span>
   </a>
 </p>
-<p class="requirements">Requires macOS · No Account · No Uploads · Works Offline</p>
+<p class="requirements">Requires macOS · Works offline</p>
 
 <footer>
   <p>Upscape · Private AI image upscaling for Mac.</p>

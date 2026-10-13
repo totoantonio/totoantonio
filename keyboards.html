@@ -262,12 +262,12 @@
     .tagline { font-size: 17px; }
   }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<script>/* Google Sans only where the Apple system font isn't available */ if (!/Mac|iPhone|iPad|iPod/.test(navigator.userAgent)) { var gf = document.createElement("link"); gf.rel = "stylesheet"; gf.href = "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap"; document.head.appendChild(gf); }</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap"></noscript>
-<link rel="stylesheet" href="theme.css?v=12">
-<script src="theme.js?v=12"></script>
+<link rel="stylesheet" href="theme.css?v=13">
+<script src="theme.js?v=13"></script>
+<link rel="stylesheet" href="apple.css?v=6">
+<script src="apple.js?v=6"></script>
 </head>
 <body>
 
@@ -294,14 +294,12 @@
 </nav>
 
 <div class="logo-lockup">
-  <div class="platform-badge" aria-label="Requires macOS">
-    <span>macOS</span>
-  </div>
   <img class="app-icon" src="Assets/optimized/keyboards-icon-256.webp?v=20261004" srcset="Assets/optimized/keyboards-icon-256.webp?v=20261004 256w, Assets/optimized/keyboards-icon-384.webp?v=20261004 384w" sizes="(max-width: 520px) 132px, 168px" width="128" height="128" fetchpriority="high" alt="KeyboardS app icon">
 </div>
 
 <h1 class="site-page-heading">KeyboardS</h1>
-<p class="tagline">A fast lookup for Mac keyboard shortcuts. <kbd>⌘</kbd> + <kbd>K</kbd>, find the one you want, get back to work.</p>
+<p class="tagline">Every shortcut. One keystroke.</p>
+<p class="hero-sub">Press ⌘ + K in any app to find the Mac shortcut you need.</p>
 
 <p class="download download-options">
   <a class="lemon-badge badge-soon badge-live" href="https://totoantonio.lemonsqueezy.com/checkout/buy/a7ed3bb8-9b6f-4d91-94f3-5cfa2776aadd" aria-label="Download KeyboardS from Lemon Squeezy" data-analytics-event="begin_checkout" data-item-id="keyboards" data-item-name="KeyboardS" data-soon="RELEASED">
@@ -312,84 +310,44 @@
     </span>
   </a>
 </p>
-<p class="requirements">Requires macOS · No Account · No Subscription · Works Offline</p>
+<p class="requirements">Requires macOS · Works offline</p>
+
+<h2 id="look">Take a closer look.</h2>
 
 <figure class="reveal main-figure">
   <img src="Assets/optimized/keyboards-main-640.webp" srcset="Assets/optimized/keyboards-main-640.webp 640w, Assets/optimized/keyboards-main-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="2076" height="1476" fetchpriority="high" alt="KeyboardS shortcut panel showing the Most Used category with twenty shortcuts">
-  <figcaption>The panel opens on Most Used — the twenty shortcuts you reach for daily.</figcaption>
+  <figcaption><span class="cap-eyebrow">Most used</span><span class="cap-head">Your twenty everyday shortcuts, first.</span></figcaption>
 </figure>
-
-<p>
-  <strong>KeyboardS</strong> lives in the menu bar and stays out of the way until you need it.
-  Press <kbd>⌘</kbd> + <kbd>K</kbd> from any app and the panel appears with every macOS keyboard
-  shortcut, organized and searchable. Press it again and it's gone.
-</p>
-
-<p>
-  It is a <em>static reference</em>, not a keystroke tool. KeyboardS never reads what you type,
-  and it never asks for the Input Monitoring permission that shortcut utilities usually demand.
-</p>
-
-<h2 id="features" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/apps.png')" aria-hidden="true"></span>Features</h2>
-<ul class="reveal">
-  <li><strong>Menu Bar App</strong> — lives quietly in the menu bar, no Dock clutter.</li>
-  <li><strong>Global Hotkey</strong> — <kbd>⌘</kbd> + <kbd>K</kbd> summons the shortcuts panel from anywhere, in any app.</li>
-  <li><strong>Instant Search</strong> — type to find any shortcut across all categories in real time.</li>
-  <li><strong>200+ Shortcuts</strong> — organized and labeled in plain language, not Apple's documentation phrasing.</li>
-  <li><strong>14 Categories</strong> — the full macOS workflow, from Finder navigation to accessibility.</li>
-  <li><strong>Privacy-First</strong> — no keystroke recording, no Input Monitoring permission required.</li>
-  <li><strong>Apple Reference Link</strong> — one click to Apple's official shortcut support page.</li>
-  <li><strong>Lightweight</strong> — no subscriptions, no accounts, no internet required.</li>
-</ul>
-
-<h2 id="categories" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/preset.png')" aria-hidden="true"></span>Categories</h2>
-<p>
-  Every shortcut sits in one of fourteen categories, with a running count so you always know
-  how much is in there.
-</p>
-<ul class="category-grid reveal">
-  <li>Most Used</li>
-  <li>Basics</li>
-  <li>Power</li>
-  <li>Modifier Keys</li>
-  <li>Screenshots</li>
-  <li>System</li>
-  <li>Spaces</li>
-  <li>Text</li>
-  <li>Text Selection</li>
-  <li>Finder</li>
-  <li>Finder Navigation</li>
-  <li>Accessibility</li>
-  <li>Function Keys</li>
-  <li>Advanced</li>
-</ul>
 
 <figure class="reveal">
   <img src="Assets/optimized/keyboards-screenshots-640.webp" srcset="Assets/optimized/keyboards-screenshots-640.webp 640w, Assets/optimized/keyboards-screenshots-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="2076" height="1476" loading="lazy" decoding="async" alt="KeyboardS showing the Screenshots category with seven macOS screen capture shortcuts">
-  <figcaption>Pick a category from the sidebar, or just start typing to search across all of them.</figcaption>
+  <figcaption><span class="cap-eyebrow">Search</span><span class="cap-head">Pick a category, or just start typing.</span></figcaption>
 </figure>
 
-<h2 id="privacy" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/shield.png')" aria-hidden="true"></span>Privacy</h2>
-<p>
-  Most shortcut apps watch your keyboard to work. KeyboardS doesn't need to. It is a reference
-  list you open on purpose, so there is nothing to monitor and nothing to send anywhere.
-</p>
+<h2 id="features" class="reveal">Features.</h2>
 <ul class="reveal">
-  <li><strong>No keystroke recording</strong> — the app never observes what you type.</li>
-  <li><strong>No Input Monitoring permission</strong> — nothing to approve in Privacy &amp; Security.</li>
-  <li><strong>No account, no internet</strong> — the full shortcut list ships inside the app and works offline.</li>
+  <li><strong>⌘ + K, anywhere.</strong> — one keystroke brings up every macOS shortcut, in any app. Press it again and it's gone.</li>
+  <li><strong>Instant search</strong> — type a word like "screenshot" and results filter as you go.</li>
+  <li><strong>200+ shortcuts</strong> — labelled in plain language, not Apple's documentation phrasing.</li>
+  <li><strong>Menu bar app</strong> — sits quietly in the menu bar, with no Dock icon and no clutter.</li>
+  <li id="privacy"><strong>Private by design</strong> — never reads what you type and never asks for Input Monitoring.</li>
 </ul>
 
-<h2 id="guide" class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/power.png')" aria-hidden="true"></span>How to use</h2>
+<div class="more-card">
+<p class="more-lead">14 categories, one panel.</p>
+<ul class="preset-chips" aria-label="Shortcut categories">
+  <li>Most Used</li><li>Basics</li><li>Power</li><li>Modifier Keys</li><li>Screenshots</li><li>System</li><li>Spaces</li><li>Text</li><li>Text Selection</li><li>Finder</li><li>Finder Navigation</li><li>Accessibility</li><li>Function Keys</li><li>Advanced</li>
+</ul>
+</div>
+
+<h2 id="guide" class="reveal">Ready in 3 steps.</h2>
 <ol class="reveal">
-  <li>Open KeyboardS. It settles into the menu bar — no Dock icon appears.</li>
-  <li>Press <kbd>⌘</kbd> + <kbd>K</kbd> from any app to bring up the panel.</li>
-  <li>Type what you're after — "screenshot", "spaces", "select" — and results filter as you go.</li>
-  <li>Or pick a category from the sidebar to browse the whole set.</li>
-  <li>Press <kbd>⌘</kbd> + <kbd>K</kbd> again or click anywhere to dismiss it and carry on.</li>
+  <li><strong>Open it.</strong> KeyboardS settles into the menu bar, out of your way.</li>
+  <li><strong>Press ⌘ + K.</strong> The panel appears over whatever app you're in.</li>
+  <li><strong>Find it.</strong> Type a word or pick a category, then press ⌘ + K again to carry on.</li>
 </ol>
 
-<h2 class="reveal"><span class="sf-symbol" style="--sf:url('Assets/Symbols/apps.png')" aria-hidden="true"></span>What users say</h2>
+<h2 class="reveal">What people are saying.</h2>
 <div class="testimonial-rotator reveal" data-testimonial-rotator>
   <div class="testimonial-track">
     <blockquote class="testimonial-item active" aria-live="polite">
@@ -412,6 +370,9 @@
   </div>
 </div>
 
+<img class="closing-icon" src="Assets/optimized/keyboards-icon-256.webp?v=20261004" width="72" height="72" alt="" loading="lazy">
+<h2 class="closing-title">Find it faster.</h2>
+<p class="closing-sub">Stop hunting through menus. Get back to work.</p>
 <p class="download guide-download download-options">
   <a class="lemon-badge badge-soon badge-live" href="https://totoantonio.lemonsqueezy.com/checkout/buy/a7ed3bb8-9b6f-4d91-94f3-5cfa2776aadd" aria-label="Download KeyboardS from Lemon Squeezy" data-analytics-event="begin_checkout" data-item-id="keyboards" data-item-name="KeyboardS" data-soon="RELEASED">
     <img src="Assets/lemon-squeezy-mark.svg" width="28" height="28" alt="">
@@ -421,10 +382,10 @@
     </span>
   </a>
 </p>
-<p class="requirements">Requires macOS · No Account · No Subscription</p>
+<p class="requirements">Requires macOS · Works offline</p>
 
 <footer>
-  <p>Every Mac shortcut, One Keystroke Away.</p>
+  <p>Every Mac shortcut. One keystroke away.</p>
   <div class="footer-bottom">
     <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
     <ul class="social">

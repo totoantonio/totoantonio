@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="36" viewBox="0 0 140 36" role="img" aria-label="User Guide">
+  <rect width="140" height="36" rx="18" fill="#e8e8ed"/>
+  <g fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(20 10)">
+    <path d="M8 3.2C6.4 2 4.2 1.5 1 1.5v11.5c3.2 0 5.4.5 7 1.7 1.6-1.2 3.8-1.7 7-1.7V1.5c-3.2 0-5.4.5-7 1.7zM8 3.2v11.5"/>
+  </g>
+  <text x="44" y="23" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1d1d1f">User Guide</text>
+</svg>

@@ -1,0 +1,1136 @@
+{"0": {
+    "doc": "Approvals",
+    "title": "Approvals",
+    "content": "The Approvals page collects everything waiting for a decision: sales orders, purchase orders, new customers and payment deductions. The sidebar shows how many are waiting. ",
+    "url": "/distribution/userguide/selling/approvals/",
+    
+    "relUrl": "/selling/approvals/"
+  },"1": {
+    "doc": "Approvals",
+    "title": "Approve a Sales Order",
+    "content": "Open the order from Approvals and choose: . | Approve — the app checks the customer’s credit and your stock, takes the stock, and makes the invoice automatically. | Return for Changes — back to Draft with your note, so the writer can fix it. | Reject / Cancel — the order is stopped. | . Approval is refused if the customer is on credit hold or there isn’t enough stock. When two orders want the same last items, the first one approved gets them. ",
+    "url": "/distribution/userguide/selling/approvals/#approve-a-sales-order",
+    
+    "relUrl": "/selling/approvals/#approve-a-sales-order"
+  },"2": {
+    "doc": "Approvals",
+    "title": "Hear New Approvals",
+    "content": "When something new arrives, approvers hear a soft chime and see “● New Approval” in the browser tab. On a computer you can turn on My Account → Desktop Notifications to get the Mac or Windows alert sound instead. Not hearing anything? See My Account → Notifications → “Not hearing new approvals?” for the steps for your browser. ",
+    "url": "/distribution/userguide/selling/approvals/#hear-new-approvals",
+    
+    "relUrl": "/selling/approvals/#hear-new-approvals"
+  },"3": {
+    "doc": "Approvals",
+    "title": "Who Can Approve",
+    "content": "Admins approve everything. Staff can approve sales orders only if the admin gives them permission to approve orders in Settings → Users &amp; Permissions. See Also . | Sales Orders | Invoices and Delivery | Users and Permissions | . ",
+    "url": "/distribution/userguide/selling/approvals/#who-can-approve",
+    
+    "relUrl": "/selling/approvals/#who-can-approve"
+  },"4": {
+    "doc": "Backups and Updates",
+    "title": "Backups and Updates",
+    "content": " ",
+    "url": "/distribution/userguide/settings/backups-updates/",
+    
+    "relUrl": "/settings/backups-updates/"
+  },"5": {
+    "doc": "Backups and Updates",
+    "title": "Automatic Backups",
+    "content": "The app saves a backup every day and every time it quits, and keeps the last 14. You can also click Back Up Now in Settings → Backup &amp; Restore. ",
+    "url": "/distribution/userguide/settings/backups-updates/#automatic-backups",
+    
+    "relUrl": "/settings/backups-updates/#automatic-backups"
+  },"6": {
+    "doc": "Backups and Updates",
+    "title": "Keep a Copy Somewhere Else",
+    "content": "A backup on the same computer won’t help if that computer is lost. Under Also Copy Backups To, pick a USB drive or your Google Drive, OneDrive or Dropbox folder. Every backup is then copied there too. If the copy fails (e.g. the USB drive is unplugged), Settings shows an orange note. Your backups on the computer are still made. ",
+    "url": "/distribution/userguide/settings/backups-updates/#keep-a-copy-somewhere-else",
+    
+    "relUrl": "/settings/backups-updates/#keep-a-copy-somewhere-else"
+  },"7": {
+    "doc": "Backups and Updates",
+    "title": "Restore a Backup",
+    "content": "Pick a backup → Restore. The app checks the file first, restarts, and comes back with that day’s data. Your current data is kept aside until the restore is complete. ",
+    "url": "/distribution/userguide/settings/backups-updates/#restore-a-backup",
+    
+    "relUrl": "/settings/backups-updates/#restore-a-backup"
+  },"8": {
+    "doc": "Backups and Updates",
+    "title": "Updates",
+    "content": "The app checks for a new version once a day. Admins see Update Available at the top. Settings → About → Install Update. The app downloads the new version, checks it’s genuine, saves a backup, replaces itself and restarts. Your data isn’t touched. With a one-time purchase, updates are included until the date on your license. After that the app keeps working on your version; Renew to get newer ones. ",
+    "url": "/distribution/userguide/settings/backups-updates/#updates",
+    
+    "relUrl": "/settings/backups-updates/#updates"
+  },"9": {
+    "doc": "Backups and Updates",
+    "title": "Your License",
+    "content": "Click your picture → License to see your plan, add-ons, user limit and updates date, or to paste a new activation code. See Also . | Keep It Running | Troubleshooting | . ",
+    "url": "/distribution/userguide/settings/backups-updates/#your-license",
+    
+    "relUrl": "/settings/backups-updates/#your-license"
+  },"10": {
+    "doc": "Books and BIR",
+    "title": "Books and BIR",
+    "content": " ",
+    "url": "/distribution/userguide/money/books/",
+    
+    "relUrl": "/money/books/"
+  },"11": {
+    "doc": "Books and BIR",
+    "title": "Your Books, Kept for You",
+    "content": "You don’t post journal entries. The app builds the books from your invoices, payments, stock arrivals, supplier payments and expenses — so they always match. Reports → Financial Statements (admin): . | General Journal — every entry | General Ledger — all accounts or one, with running balances. Export CSV gives your bookkeeper the whole ledger. | Trial Balance | Balance Sheet | Income Statement | . ",
+    "url": "/distribution/userguide/money/books/#your-books-kept-for-you",
+    
+    "relUrl": "/money/books/#your-books-kept-for-you"
+  },"12": {
+    "doc": "Books and BIR",
+    "title": "BIR Taxes",
+    "content": "Reports → Accounts Payable → BIR Taxes estimates the tax on what you collected, per quarter: . | VAT-registered — 12/112 output VAT (Form 2550Q) | Non-VAT — 3% percentage tax (Form 2551Q) | . Each quarter’s tax is due on the 25th day after the quarter ends, and it shows in Accounts Payable until it’s paid. ",
+    "url": "/distribution/userguide/money/books/#bir-taxes",
+    
+    "relUrl": "/money/books/#bir-taxes"
+  },"13": {
+    "doc": "Books and BIR",
+    "title": "Record a BIR Payment",
+    "content": "Open BIR Payments from the BIR Taxes view → Record Payment: date, amount, method and reference. The quarter’s balance drops, and so does your money on hand. Input VAT on your purchases isn’t deducted yet, and this app is not a BIR-registered accounting system (CAS). Ask your accountant or RDO before relying on it for filing. See Also . | Reports | Pay Suppliers | . ",
+    "url": "/distribution/userguide/money/books/#record-a-bir-payment",
+    
+    "relUrl": "/money/books/#record-a-bir-payment"
+  },"14": {
+    "doc": "Post-Dated Checks",
+    "title": "Post-Dated Checks",
+    "content": "A post-dated check is not money yet. The app holds it as Pending until it clears. ",
+    "url": "/distribution/userguide/collecting/checks/",
+    
+    "relUrl": "/collecting/checks/"
+  },"15": {
+    "doc": "Post-Dated Checks",
+    "title": "Receive a Check",
+    "content": "Record the payment with method Check, the bank and the check date: . | Dated today or earlier — saved as a payment right away. | Dated later — saved as a pending check. The invoice balance doesn’t change, but an invoice fully covered by checks isn’t shown as overdue. | . ",
+    "url": "/distribution/userguide/collecting/checks/#receive-a-check",
+    
+    "relUrl": "/collecting/checks/#receive-a-check"
+  },"16": {
+    "doc": "Post-Dated Checks",
+    "title": "The Checks Page",
+    "content": "Checks in the sidebar lists every pending check — from customers and the ones you issued to suppliers. The number beside it counts checks dated tomorrow or earlier, so you get a day’s notice to deposit them. For each pending check, pick an action: . | Action | What Happens | . | Mark Cleared | Becomes a real payment, dated the day it cleared | . | Bounced | Stays unpaid and the customer goes on credit hold | . | Cancel Check | The check was replaced or given back — no hold | . A customer whose check bounced stays on hold until the admin clicks Remove Credit Hold on the customer page (reason required). See Also . | Receive a Payment | Pay Suppliers | Customers | . ",
+    "url": "/distribution/userguide/collecting/checks/#the-checks-page",
+    
+    "relUrl": "/collecting/checks/#the-checks-page"
+  },"17": {
+    "doc": "Customers",
+    "title": "Customers",
+    "content": " ",
+    "url": "/distribution/userguide/selling/customers/",
+    
+    "relUrl": "/selling/customers/"
+  },"18": {
+    "doc": "Customers",
+    "title": "Add a Customer",
+    "content": "Go to Customers and click the New Customer button at the top right. Fill in the business name (required), contact person, owner, mobile, address and ID details, then save. Have their customer information sheet as a PDF? Click the round upload icon at the top of the form and pick the PDF. The app fills in the fields it recognizes (they flash blue). Check them before saving. Scanned pictures can’t be read; type those by hand. ",
+    "url": "/distribution/userguide/selling/customers/#add-a-customer",
+    
+    "relUrl": "/selling/customers/#add-a-customer"
+  },"19": {
+    "doc": "Customers",
+    "title": "Approval",
+    "content": "A customer added by staff or a salesman starts as Pending and can’t be used on orders yet. The admin approves or rejects them on the Approvals page — a rejection needs a reason, and the person who added the customer can fix it and send it again. Changing an approved customer’s ID details sends them back to Pending for another check. ",
+    "url": "/distribution/userguide/selling/customers/#approval",
+    
+    "relUrl": "/selling/customers/#approval"
+  },"20": {
+    "doc": "Customers",
+    "title": "Terms, Credit Limit and Discount",
+    "content": "Only the admin can set these on the customer form: . | Payment terms — days to pay, counted from delivery (0 = cash on delivery). | Credit limit — the most the customer may owe (0 = no limit). | Discount — a % off the SRP, applied to every new order for this customer. | . ",
+    "url": "/distribution/userguide/selling/customers/#terms-credit-limit-and-discount",
+    
+    "relUrl": "/selling/customers/#terms-credit-limit-and-discount"
+  },"21": {
+    "doc": "Customers",
+    "title": "Credit Hold",
+    "content": "A customer is on hold when they have an overdue invoice or a bounced check, or when an order would take them over their credit limit. Their orders can be saved as Draft but can’t be approved until the problem is sorted out. ",
+    "url": "/distribution/userguide/selling/customers/#credit-hold",
+    
+    "relUrl": "/selling/customers/#credit-hold"
+  },"22": {
+    "doc": "Customers",
+    "title": "The Customer Page",
+    "content": "Click a customer to see their details, sales this month, brands they carry, attachments (ID picture, information sheet) and history. From here you can also print a Statement of Account (what they owe, with aging) or open their Customer Ledger (every invoice, payment and credit, with a running balance). ",
+    "url": "/distribution/userguide/selling/customers/#the-customer-page",
+    
+    "relUrl": "/selling/customers/#the-customer-page"
+  },"23": {
+    "doc": "Customers",
+    "title": "Assign a Salesman",
+    "content": "Admins: Customers → Assign Salesman lists every customer with a salesman menu. A sale is credited to the salesman when the order is approved, so reassigning a customer only affects new orders. A salesman sees only their own customers — the ones assigned to them or added by them. See Also . | Sales Orders | Approvals | Who Owes What | . ",
+    "url": "/distribution/userguide/selling/customers/#assign-a-salesman",
+    
+    "relUrl": "/selling/customers/#assign-a-salesman"
+  },"24": {
+    "doc": "Deductions",
+    "title": "Deductions",
+    "content": "Sometimes a customer pays less than the invoice amount and tells you why. Record that as a deduction on the Receive Payment page so the invoice closes properly. ",
+    "url": "/distribution/userguide/collecting/deductions/",
+    
+    "relUrl": "/collecting/deductions/"
+  },"25": {
+    "doc": "Deductions",
+    "title": "Types",
+    "content": "| Type | When | Reference | . | Withholding Tax | The customer withheld tax and paid it to BIR for you | BIR Form 2307 | . | Wrong Pricing | The invoice price was wrong | Their debit memo | . | Support | Agreed support, e.g. a promo allowance | Their debit memo | . ",
+    "url": "/distribution/userguide/collecting/deductions/#types",
+    
+    "relUrl": "/collecting/deductions/#types"
+  },"26": {
+    "doc": "Deductions",
+    "title": "Add a Deduction",
+    "content": "On Receive Payment, beside the invoice, pick the deduction type, type the amount, the reference no. and a reason. | Admin — the deduction applies right away. | Staff (with permission to record deductions) — it waits on the Approvals page. If the admin rejects it, the amount stays owed. | . ",
+    "url": "/distribution/userguide/collecting/deductions/#add-a-deduction",
+    
+    "relUrl": "/collecting/deductions/#add-a-deduction"
+  },"27": {
+    "doc": "Deductions",
+    "title": "No Debit Memo From the Customer?",
+    "content": "Some customers don’t send a debit memo. They just tell your office about the deduction. In that case, click the document icon beside the reference box to make an In-house Debit Memo (DM-00001). The app fills in the customer, invoice, type and amount, and gives you a printable form for the customer to sign. Have the customer’s own debit memo? Click the paperclip to attach a photo or PDF of it. ",
+    "url": "/distribution/userguide/collecting/deductions/#no-debit-memo-from-the-customer",
+    
+    "relUrl": "/collecting/deductions/#no-debit-memo-from-the-customer"
+  },"28": {
+    "doc": "Deductions",
+    "title": "Where Deductions Show",
+    "content": "On the invoice, the Statement of Account (own column) and Reports → Sales → Customer Deductions. Withholding tax is money the customer paid to BIR on your behalf, so it counts toward your BIR estimate. Wrong pricing lowers your sales, and support is recorded as an expense. See Also . | Receive a Payment | Approvals | Books and BIR | . ",
+    "url": "/distribution/userguide/collecting/deductions/#where-deductions-show",
+    
+    "relUrl": "/collecting/deductions/#where-deductions-show"
+  },"29": {
+    "doc": "Try the Demo",
+    "title": "Try the Demo",
+    "content": "Not ready to enter your own company details yet? Explore a complete sample business first — customers, products, orders in every stage, payments and reports. ",
+    "url": "/distribution/userguide/getting-started/demo/",
+    
+    "relUrl": "/getting-started/demo/"
+  },"30": {
+    "doc": "Try the Demo",
+    "title": "Start the Demo",
+    "content": "On the Welcome screen, click Explore. The app fills itself with Demo Auto Parts, a made-up distributor in Quezon City, and shows the sign-in screen. ",
+    "url": "/distribution/userguide/getting-started/demo/#start-the-demo",
+    
+    "relUrl": "/getting-started/demo/#start-the-demo"
+  },"31": {
+    "doc": "Try the Demo",
+    "title": "Demo Logins",
+    "content": "Sign in as different people to see what each one sees. The password is demo123 for all of them. The sign-in screen lists them too. | Username | Who | What They See | . | demo | Admin (owner) | Everything | . | staff | Office staff | Customers, orders, invoices, payments | . | sales | Salesman | Only their own customers and orders | . | warehouse | Warehouse staff | Packing, stock arrivals, stock adjustments | . | driver | Delivery | Only the Delivery page | . The dark bar at the top reminds you that you’re in the demo and lists these logins. ",
+    "url": "/distribution/userguide/getting-started/demo/#demo-logins",
+    
+    "relUrl": "/getting-started/demo/#demo-logins"
+  },"32": {
+    "doc": "Try the Demo",
+    "title": "Leave the Demo",
+    "content": "In the dark bar, click Exit Demo to go back to the Welcome screen, or Exit &amp; Set Up My Company to go straight to setting up your real company. Either way, all sample data is removed. Nothing you do in the demo is kept, so try anything — approve orders, record payments, print invoices. ",
+    "url": "/distribution/userguide/getting-started/demo/#leave-the-demo",
+    
+    "relUrl": "/getting-started/demo/#leave-the-demo"
+  },"33": {
+    "doc": "Customer Deposits",
+    "title": "Customer Deposits",
+    "content": "A deposit is money a customer pays before there’s an invoice to apply it to. ",
+    "url": "/distribution/userguide/collecting/deposits/",
+    
+    "relUrl": "/collecting/deposits/"
+  },"34": {
+    "doc": "Customer Deposits",
+    "title": "Record a Deposit",
+    "content": "Open the customer → Deposits card → Record Deposit. Type the date, amount, method and reference. It gets its own number (DEP-00001). ",
+    "url": "/distribution/userguide/collecting/deposits/#record-a-deposit",
+    
+    "relUrl": "/collecting/deposits/#record-a-deposit"
+  },"35": {
+    "doc": "Customer Deposits",
+    "title": "Use It on an Invoice",
+    "content": "On the invoice, click Pay from Deposit. It’s recorded like a normal payment (method “Deposit”), so balances and statements stay right. The card shows how much of the deposit is left. ",
+    "url": "/distribution/userguide/collecting/deposits/#use-it-on-an-invoice",
+    
+    "relUrl": "/collecting/deposits/#use-it-on-an-invoice"
+  },"36": {
+    "doc": "Customer Deposits",
+    "title": "Refund or Remove (Admin)",
+    "content": ". | Refund — gives back whatever is left (date, method, reference). | Remove — for mistakes only. It works only on a deposit that hasn’t been used or refunded, and needs a reason. | . See Also . | Receive a Payment | Who Owes What | . ",
+    "url": "/distribution/userguide/collecting/deposits/#refund-or-remove-admin",
+    
+    "relUrl": "/collecting/deposits/#refund-or-remove-admin"
+  },"37": {
+    "doc": "Expenses",
+    "title": "Expenses",
+    "content": "Go to Expenses → +. Fill in the date, category, payee, description, amount, method and reference no. | Categories — pick one from the list or type a new one. | Charged to Salesman — link a cost (fuel, allowance) to a salesman so it shows in their performance report. | . Filter the list by date, category or person, print it, or export it to a spreadsheet (CSV). Deleting an expense needs a reason. Expenses made by payroll can’t be edited here — reopen the payroll instead. See Also . | Payroll | Reports | . ",
+    "url": "/distribution/userguide/money/expenses/",
+    
+    "relUrl": "/money/expenses/"
+  },"38": {
+    "doc": "Features and Add-ons",
+    "title": "Features and Add-ons",
+    "content": "Settings → Features has a switch for each optional feature. | Feature | What It Does | Default | . | Privacy Screen | Blurs the page after 1–10 idle minutes; any touch or key brings it back | On | . | Require Proof of Order | A salesman’s order stays a Draft until a signed PO or photo is attached | Off | . | Payment QR Code (add-on) | Your GCash / QR Ph code on a printable “Scan to Pay” sheet | Off | . | Salesman Locations (add-on, Beta) | Check-ins at customers, where orders were taken, and asking a salesman where they are — only after they agree | Off | . | Signed Delivery Receipts (add-on) | Drivers photograph the signed receipt on the Delivery page | Off | . ",
+    "url": "/distribution/userguide/settings/features/",
+    
+    "relUrl": "/settings/features/"
+  },"39": {
+    "doc": "Features and Add-ons",
+    "title": "Add-ons",
+    "content": "Add-ons are paid extras. They’re included in your activation code — buying one later means a new code, pasted in License the same way. During the free trial and in the demo, every add-on is on so you can try it. ",
+    "url": "/distribution/userguide/settings/features/#add-ons",
+    
+    "relUrl": "/settings/features/#add-ons"
+  },"40": {
+    "doc": "Features and Add-ons",
+    "title": "Payment QR Code",
+    "content": "After turning it on, upload your QR in Company Profile with the account name and number. Everyone can then open Downloads → Payment QR Code to print it or save it as a picture for customers. ",
+    "url": "/distribution/userguide/settings/features/#payment-qr-code",
+    
+    "relUrl": "/settings/features/#payment-qr-code"
+  },"41": {
+    "doc": "Features and Add-ons",
+    "title": "Salesman Locations",
+    "content": "Each salesman is asked once whether to share their location, and can turn it off in My Account. Location is taken only while the app is open on their phone — never in the background — and only when they save an order or payment, check in, or answer your request. Phones share location only over a secure (https) address — turn on Remote Access first. See Also . | Connect Your Staff | Invoices and Delivery | Receive a Payment | . ",
+    "url": "/distribution/userguide/settings/features/#salesman-locations",
+    
+    "relUrl": "/settings/features/#salesman-locations"
+  },"42": {
+    "doc": "Set Up Your Company",
+    "title": "Set Up Your Company",
+    "content": "It takes about 5 minutes. Have your business registration details and TIN ready. ",
+    "url": "/distribution/userguide/getting-started/first-setup/",
+    
+    "relUrl": "/getting-started/first-setup/"
+  },"43": {
+    "doc": "Set Up Your Company",
+    "title": "1. Start Setup",
+    "content": "On the Welcome screen, click Set Up Company. One page opens with two parts: Admin Account and Company Profile. ",
+    "url": "/distribution/userguide/getting-started/first-setup/#1-start-setup",
+    
+    "relUrl": "/getting-started/first-setup/#1-start-setup"
+  },"44": {
+    "doc": "Set Up Your Company",
+    "title": "2. Create Your Admin Account",
+    "content": "This is your login as the owner — it can do everything, including adding staff later. | Username — for example your first name. | Password — at least 6 characters. Type it twice. | . Write the password down somewhere safe. Only an admin can add or reset other users. ",
+    "url": "/distribution/userguide/getting-started/first-setup/#2-create-your-admin-account",
+    
+    "relUrl": "/getting-started/first-setup/#2-create-your-admin-account"
+  },"45": {
+    "doc": "Set Up Your Company",
+    "title": "3. Enter Your Company Profile",
+    "content": "These details print on your invoices, sales orders and statements. Fields marked * are required: . | Registered business name, and your trade name if you use one | City / municipality and Province (plus street, barangay and ZIP code) | Contact number(s) | TIN and VAT status (VAT-registered or Non-VAT) | . Optional: company logo, a short name and tagline (shown in the sidebar), email, website, Facebook page, and your bank details (printed under “Payment Details” so customers know where to pay). ",
+    "url": "/distribution/userguide/getting-started/first-setup/#3-enter-your-company-profile",
+    
+    "relUrl": "/getting-started/first-setup/#3-enter-your-company-profile"
+  },"46": {
+    "doc": "Set Up Your Company",
+    "title": "4. Finish",
+    "content": "Click Finish Setup. You’re signed in and the app opens. You can change any of this later in Settings → Company Profile. ",
+    "url": "/distribution/userguide/getting-started/first-setup/#4-finish",
+    
+    "relUrl": "/getting-started/first-setup/#4-finish"
+  },"47": {
+    "doc": "Set Up Your Company",
+    "title": "Free Trial and Activation",
+    "content": "The app is free to use for 15 days, with every feature on. After that it turns read-only: you can still view, print and export, but not make changes. To keep working, buy a plan and you’ll receive an activation code. Click your picture (top right) → License, paste the code in Activation Code, and click Activate. Your data stays as it is. The code is made for your company name. If you rename the company later, ask for a new code. Next: Connect Your Staff. ",
+    "url": "/distribution/userguide/getting-started/first-setup/#free-trial-and-activation",
+    
+    "relUrl": "/getting-started/first-setup/#free-trial-and-activation"
+  },"48": {
+    "doc": "How It All Connects",
+    "title": "How It All Connects",
+    "content": "Distribution App is one system, not separate modules. Every document you save — an order, a payment, a stock arrival — updates stock, balances, statements and your books at the same moment, so nothing is typed twice and nothing goes out of step. ",
+    "url": "/distribution/userguide/how-it-connects/",
+    
+    "relUrl": "/how-it-connects/"
+  },"49": {
+    "doc": "How It All Connects",
+    "title": "The Whole App at a Glance",
+    "content": "Distribution App | /distribution/userguide/how-it-connects/ Selling | /distribution/userguide/selling/ Customers | /distribution/userguide/selling/customers/ Sales Orders | /distribution/userguide/selling/sales-orders/ Approvals | /distribution/userguide/selling/approvals/ Invoices | /distribution/userguide/selling/invoices-delivery/ Delivery | /distribution/userguide/selling/invoices-delivery/ Returns and Credit Memos | /distribution/userguide/selling/returns/ Collecting | /distribution/userguide/collecting/ Payments | /distribution/userguide/collecting/payments/ Deductions and Debit Memos | /distribution/userguide/collecting/deductions/ Post-Dated Checks | /distribution/userguide/collecting/checks/ Deposits | /distribution/userguide/collecting/deposits/ Statement of Account | /distribution/userguide/collecting/statements/ Customer Ledger | /distribution/userguide/collecting/statements/ Buying and Stock | /distribution/userguide/buying/ Products | /distribution/userguide/buying/products/ Purchase Orders | /distribution/userguide/buying/purchase-orders/ Stock Arrivals | /distribution/userguide/buying/stock-arrivals/ Stock Count | /distribution/userguide/buying/stock-count/ Suppliers and Supplier Ledger | /distribution/userguide/buying/suppliers/ Money and Books | /distribution/userguide/money/ Expenses | /distribution/userguide/money/expenses/ Payroll | /distribution/userguide/money/payroll/ BIR Taxes | /distribution/userguide/money/books/ Accounting Books | /distribution/userguide/money/books/ Reports | /distribution/userguide/money/reports/ Sales | /distribution/userguide/money/reports/ Receivables and Payables | /distribution/userguide/money/reports/ Inventory | /distribution/userguide/money/reports/ Income Statement and Balance Sheet | /distribution/userguide/money/reports/ People and Settings | /distribution/userguide/settings/ Users and Permissions | /distribution/userguide/settings/users/ Salesmen and Visits | /distribution/userguide/settings/features/ Backups and Updates | /distribution/userguide/settings/backups-updates/ Staff Access | /distribution/userguide/getting-started/staff-access/ . Drag any bubble — everything connected follows, and it springs back when you let go. Click a bubble to open its page. ",
+    "url": "/distribution/userguide/how-it-connects/#the-whole-app-at-a-glance",
+    
+    "relUrl": "/how-it-connects/#the-whole-app-at-a-glance"
+  },"50": {
+    "doc": "How It All Connects",
+    "title": "From Order to Cash",
+    "content": "Customer -&gt; Sales Order Sales Order -&gt; Approval : Submit Approval -&gt; Invoice : Credit and stock OK Approval -&gt; Sales Order : Return for changes Invoice -&gt; Packed Packed -&gt; For Delivery For Delivery -&gt; Delivered Delivered -&gt; Payment Delivered -&gt; Deduction Payment -&gt; Paid Deduction -&gt; Paid Delivered ..&gt; Credit Memo : Goods come back Credit Memo ..&gt; Paid . Drag any step and let go — it springs back. What happens along the way: . | Approval checks the customer’s credit (overdue invoices, credit limit, bounced checks) and the stock. Approving creates the invoice and takes the stock out — all at once. | Delivered starts the payment terms: the due date is the delivery date plus the customer’s terms (for example 30 days). | Payments can come in cash, bank transfer, GCash, Maya, MariBank, Atome or checks. Post-dated checks wait until you mark them cleared. | Deductions — withholding tax (BIR 2307), support or wrong pricing — close the part of an invoice the customer won’t pay, with a reference and a reason. | Every step shows up on the customer’s Statement of Account and Customer Ledger, and in Accounts Receivable. | . ",
+    "url": "/distribution/userguide/how-it-connects/#from-order-to-cash",
+    
+    "relUrl": "/how-it-connects/#from-order-to-cash"
+  },"51": {
+    "doc": "How It All Connects",
+    "title": "From Purchase to Payment",
+    "content": "Suggested or Manual PO -&gt; Approval : Submit Approval -&gt; Sent to Supplier Sent to Supplier -&gt; Stock Arrival Stock Arrival -&gt; Count What Came Count What Came -&gt; Pay only what arrived : Short Count What Came -&gt; Free goods or billed overage : Extra Count What Came -&gt; Receive Stock : As ordered Pay only what arrived -&gt; Receive Stock Free goods or billed overage -&gt; Receive Stock Receive Stock -&gt; Supplier Bill Supplier Bill -&gt; Pay Supplier Supplier Bill ..&gt; On Hold : Hold a line On Hold ..&gt; Pay Supplier : Release . Drag any step and let go — it springs back. What happens along the way: . | Suggested POs are worked out from what you sold in the last 30 days, the supplier’s lead time and how many days of stock you want to keep. | Receive Stock adds what you counted to inventory and updates each product’s cost to the weighted average. | The supplier bill is for what you counted — never more than the delivery receipt — unless you mark extras as a billed overage. | Lines you don’t want to pay yet (for example, items that weren’t on the PO) can be held; they stay owed but can’t be paid by mistake. | Every step shows up on the Supplier Ledger and in Accounts Payable. | . ",
+    "url": "/distribution/userguide/how-it-connects/#from-purchase-to-payment",
+    
+    "relUrl": "/how-it-connects/#from-purchase-to-payment"
+  },"52": {
+    "doc": "How It All Connects",
+    "title": "Where the Money Goes",
+    "content": "Each document feeds the right reports and your accounting books by itself — no journal entries to type. # Documents Invoice Customer Payment Deduction Credit Memo Stock Arrival Supplier Payment Expense and Payroll BIR Payment # Books and Reports Accounts Receivable Sales and VAT Inventory Accounts Payable Cash, Bank and E-Wallets Withholding Tax Credit Income Statement Invoice -&gt; Accounts Receivable Invoice -&gt; Sales and VAT Invoice -&gt; Inventory Customer Payment -&gt; Cash, Bank and E-Wallets Customer Payment -&gt; Accounts Receivable Deduction -&gt; Accounts Receivable Deduction -&gt; Withholding Tax Credit Deduction -&gt; Income Statement Credit Memo -&gt; Sales and VAT Credit Memo -&gt; Inventory Stock Arrival -&gt; Inventory Stock Arrival -&gt; Accounts Payable Supplier Payment -&gt; Accounts Payable Supplier Payment -&gt; Cash, Bank and E-Wallets Expense and Payroll -&gt; Income Statement Expense and Payroll -&gt; Cash, Bank and E-Wallets BIR Payment -&gt; Cash, Bank and E-Wallets Sales and VAT -&gt; Income Statement . Point at a document to see where it goes. Drag any bubble and let go — it springs back. What Each Document Does . | Invoice — the customer owes you (receivables), the sale and its VAT are recorded, and the cost of the goods leaves inventory. | Customer payment — money into cash, bank or e-wallets; receivables go down. | Deduction — withholding tax becomes a tax credit you claim from BIR; wrong pricing lowers sales; support is an expense. | Stock arrival — inventory goes up and you owe the supplier (payables). | Expenses and payroll — on the Income Statement and out of cash. | . The General Ledger, Trial Balance, Balance Sheet and Income Statement are all built from these documents, so they always agree with what you see on each page. ",
+    "url": "/distribution/userguide/how-it-connects/#where-the-money-goes",
+    
+    "relUrl": "/how-it-connects/#where-the-money-goes"
+  },"53": {
+    "doc": "Settings",
+    "title": "Settings",
+    "content": "Settings (admin only) is in the sidebar under Admin. Pick a section on the left: . | Section | What It’s For | . | Company Profile | Name, logo, address, TIN, bank details and invoice fine print — printed on your forms | . | Appearance | App font; show or hide the demo bar | . | Features | Turn optional features on or off — see Features and Add-ons | . | Document Numbering | Prefixes for numbers like SO-, INV-, CUST- (new records only) | . | Users &amp; Permissions | See Users and Permissions | . | Backup &amp; Restore | See Backups and Updates | . | Start Up | Start the app when the computer starts — see Keep It Running | . | Remote Access | Reach the app outside the office with Tailscale | . | About | Version, updates and license | . | Legal &amp; Regulatory | License agreement, warranty, privacy | . | Danger Zone | Delete the company and start over | . | Quit | Stop the app (a backup is saved) | . Everyone, including staff, also has My Account under their picture. Danger Zone → Delete Company erases everything. It asks for the company name and your password, and saves a backup first — but treat it as final. ",
+    "url": "/distribution/userguide/settings/",
+    
+    "relUrl": "/settings/"
+  },"54": {
+    "doc": "Money and Books",
+    "title": "Money and Books",
+    "content": ". | Expenses — rent, fuel, salaries and everything else you spend. | Payroll — employees, cut-offs, government deductions and payslips. | Reports — sales, profit, salesmen, inventory and more. | Books and BIR — the general ledger, balance sheet and BIR payments. | . Tax and payroll figures are estimates to help you plan. Have your accountant check them before filing. ",
+    "url": "/distribution/userguide/money/",
+    
+    "relUrl": "/money/"
+  },"55": {
+    "doc": "Getting Started",
+    "title": "Getting Started",
+    "content": "Distribution App runs on one main computer in your office. Everyone else — staff, salesmen and drivers — opens it in the web browser on their own phone or computer. There’s nothing to install on their devices. Follow these pages in order: . | Install the app on your main computer — Mac or Windows. | Try the Demo — explore with a sample company first (optional). | Set Up Your Company — your admin account and business details. | Connect Your Staff — phones and computers in the office, and outside. | Keep It Running — so the app is always there when staff need it. | . Check the System Requirements before you start: macOS 13 or later, or Windows 10/11 (64-bit). ",
+    "url": "/distribution/userguide/getting-started/",
+    
+    "relUrl": "/getting-started/"
+  },"56": {
+    "doc": "Collecting",
+    "title": "Collecting",
+    "content": "This chapter covers getting paid and keeping track of who still owes you. | Receive a Payment — cash, bank transfer, GCash, Maya or check, over one or several invoices. | Deductions — when a customer pays less because of withholding tax, wrong pricing or support. | Post-Dated Checks — hold them until they clear. | Customer Deposits — money received before there’s an invoice. | Who Owes What — statements, ledgers and receivables reports. | . Payment terms count from delivery. An invoice isn’t due — and can’t be overdue — until it’s marked Delivered. ",
+    "url": "/distribution/userguide/collecting/",
+    
+    "relUrl": "/collecting/"
+  },"57": {
+    "doc": "Buying and Stock",
+    "title": "Buying and Stock",
+    "content": "How products come in, how stock is counted, and how suppliers get paid. | Products — your product list, units, prices and stock. | Suppliers — terms, contacts and bank details. | Purchase Orders — let the app suggest what to order, or write one yourself. | Stock Arrivals — count what came in; stock and cost update. | Pay Suppliers — bills, payments, checks issued and what you owe. | Stock Count — count the shelves and fix differences. | . ",
+    "url": "/distribution/userguide/buying/",
+    
+    "relUrl": "/buying/"
+  },"58": {
+    "doc": "Selling",
+    "title": "Selling",
+    "content": "Every sale follows the same path, from the first order to the delivered goods: . | Customers — add a customer; the admin approves them. | Sales Orders — a salesman or staff member writes the order and submits it. | Approvals — the approver checks credit and stock, then approves. The invoice is made automatically. | Invoices and Delivery — the warehouse packs, the driver delivers, and payment terms start counting. | Returns and Cancelling — credit memos for goods sent back, and cancelling an invoice. | . Getting paid is in the next chapter, Collecting. ",
+    "url": "/distribution/userguide/selling/",
+    
+    "relUrl": "/selling/"
+  },"59": {
+    "doc": "Home",
+    "title": "Distribution App User Guide",
+    "content": "Everything you need to run your distribution business in Distribution App — from installing it on your office computer to taking orders, collecting payments and reading your reports. Get Started Download the App . ",
+    "url": "/distribution/userguide/#distribution-app-user-guide",
+    
+    "relUrl": "/#distribution-app-user-guide"
+  },"60": {
+    "doc": "Home",
+    "title": "Contents",
+    "content": "Getting Started . Install, set up your company and connect your staff. | Install on a Mac | Install on Windows | Try the Demo | Set Up Your Company | Connect Your Staff | Keep It Running | . Selling . From the first order to delivered goods. | Customers | Sales Orders | Approvals | Invoices and Delivery | Returns and Cancelling | . Collecting . Get paid and know who still owes you. | Receive a Payment | Deductions | Post-Dated Checks | Customer Deposits | Who Owes What | . Buying and Stock . Order from suppliers, receive and count stock. | Products | Suppliers | Purchase Orders | Stock Arrivals | Pay Suppliers | Stock Count | . Money and Books . Expenses, payroll, reports and your books. | Expenses | Payroll | Reports | Books and BIR | . Settings . Users, features, backups and updates. | Users and Permissions | Features and Add-ons | Backups and Updates | My Account | . More . The big picture, and help when you’re stuck. | How It All Connects | Troubleshooting | . Every page is one task, with a picture of what you’ll see. Most pictures show the Demo Company — every name, address and price in them is made up. ",
+    "url": "/distribution/userguide/#contents",
+    
+    "relUrl": "/#contents"
+  },"61": {
+    "doc": "Home",
+    "title": "Need Help?",
+    "content": "Email alfiesuperhalk@gmail.com — we reply within one business day. ",
+    "url": "/distribution/userguide/#need-help",
+    
+    "relUrl": "/#need-help"
+  },"62": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/distribution/userguide/",
+    
+    "relUrl": "/"
+  },"63": {
+    "doc": "Install on a Mac",
+    "title": "Install on a Mac",
+    "content": "It takes about 2 minutes. You need macOS 13 Ventura or later. ",
+    "url": "/distribution/userguide/getting-started/install-mac/",
+    
+    "relUrl": "/getting-started/install-mac/"
+  },"64": {
+    "doc": "Install on a Mac",
+    "title": "1. Download",
+    "content": "On the Distribution App page, click Download the Latest Version →. Then click the file ending in -mac.zip (for example DistributionApp-1.3.0-build31-mac.zip). ",
+    "url": "/distribution/userguide/getting-started/install-mac/#1-download",
+    
+    "relUrl": "/getting-started/install-mac/#1-download"
+  },"65": {
+    "doc": "Install on a Mac",
+    "title": "2. Unzip",
+    "content": "Open your Downloads folder and double-click the zip. A DistributionApp folder opens with two items: the DistributionApp app and HOW-TO-UPDATE.txt. ",
+    "url": "/distribution/userguide/getting-started/install-mac/#2-unzip",
+    
+    "relUrl": "/getting-started/install-mac/#2-unzip"
+  },"66": {
+    "doc": "Install on a Mac",
+    "title": "3. Move It to Applications",
+    "content": "Drag DistributionApp into the Applications folder. Keep the app outside your Documents and Desktop folders — macOS asks for extra permission there, and the app may not start. ",
+    "url": "/distribution/userguide/getting-started/install-mac/#3-move-it-to-applications",
+    
+    "relUrl": "/getting-started/install-mac/#3-move-it-to-applications"
+  },"67": {
+    "doc": "Install on a Mac",
+    "title": "4. Open It",
+    "content": "Double-click DistributionApp in Applications. The first time, macOS asks whether you’re sure — click Open. (The app is notarized by Apple, so this is the normal question for any downloaded app.) . The app opens in its own browser window and shows the Welcome screen. Next: Try the Demo or Set Up Your Company. ",
+    "url": "/distribution/userguide/getting-started/install-mac/#4-open-it",
+    
+    "relUrl": "/getting-started/install-mac/#4-open-it"
+  },"68": {
+    "doc": "Install on a Mac",
+    "title": "Good to Know",
+    "content": ". | No Dock icon. The app runs quietly in the background. To open the window again, double-click DistributionApp in Applications. | Quitting: Settings → Quit. A backup is saved every time you quit. | Your data lives in ~/Library/Application Support/DistributionApp — separate from the app, so updating never touches it. | . ",
+    "url": "/distribution/userguide/getting-started/install-mac/#good-to-know",
+    
+    "relUrl": "/getting-started/install-mac/#good-to-know"
+  },"69": {
+    "doc": "Install on Windows",
+    "title": "Install on Windows",
+    "content": "It takes about 2 minutes. You need Windows 10 or 11, 64-bit. ",
+    "url": "/distribution/userguide/getting-started/install-windows/",
+    
+    "relUrl": "/getting-started/install-windows/"
+  },"70": {
+    "doc": "Install on Windows",
+    "title": "1. Download",
+    "content": "On the Distribution App page, click Download the Latest Version →. Then click the file ending in -windows.zip (for example DistributionApp-1.3.0-build31-windows.zip). ",
+    "url": "/distribution/userguide/getting-started/install-windows/#1-download",
+    
+    "relUrl": "/getting-started/install-windows/#1-download"
+  },"71": {
+    "doc": "Install on Windows",
+    "title": "2. Extract",
+    "content": "Right-click the zip → Extract All → Extract. Move the extracted DistributionApp folder somewhere permanent, for example C:\\DistributionApp. ",
+    "url": "/distribution/userguide/getting-started/install-windows/#2-extract",
+    
+    "relUrl": "/getting-started/install-windows/#2-extract"
+  },"72": {
+    "doc": "Install on Windows",
+    "title": "3. Open It",
+    "content": "In the DistributionApp folder, double-click DistributionApp (Type: Application). The first time, Windows shows “Windows protected your PC” — click More info, then Run anyway. ",
+    "url": "/distribution/userguide/getting-started/install-windows/#3-open-it",
+    
+    "relUrl": "/getting-started/install-windows/#3-open-it"
+  },"73": {
+    "doc": "Install on Windows",
+    "title": "4. Allow Staff to Connect",
+    "content": "Windows Firewall asks whether to allow the app on networks. Tick Private networks and click Allow access — this is what lets staff phones and computers reach it. ",
+    "url": "/distribution/userguide/getting-started/install-windows/#4-allow-staff-to-connect",
+    
+    "relUrl": "/getting-started/install-windows/#4-allow-staff-to-connect"
+  },"74": {
+    "doc": "Install on Windows",
+    "title": "5. Leave the Black Window Open",
+    "content": "A small black window shows the app’s addresses. Keep it open (you can minimize it) — closing it quits the app. The app opens in Microsoft Edge on the Welcome screen. Next: Try the Demo or Set Up Your Company. ",
+    "url": "/distribution/userguide/getting-started/install-windows/#5-leave-the-black-window-open",
+    
+    "relUrl": "/getting-started/install-windows/#5-leave-the-black-window-open"
+  },"75": {
+    "doc": "Install on Windows",
+    "title": "Good to Know",
+    "content": ". | Quitting: Settings → Quit, or close the black window. A backup is saved either way. | Your data lives in %AppData%\\DistributionApp — separate from the app, so updating never touches it. | . The Windows version is new. If anything on this page looks different on your PC, email us and we’ll help. ",
+    "url": "/distribution/userguide/getting-started/install-windows/#good-to-know",
+    
+    "relUrl": "/getting-started/install-windows/#good-to-know"
+  },"76": {
+    "doc": "Invoices and Delivery",
+    "title": "Invoices and Delivery",
+    "content": " ",
+    "url": "/distribution/userguide/selling/invoices-delivery/",
+    
+    "relUrl": "/selling/invoices-delivery/"
+  },"77": {
+    "doc": "Invoices and Delivery",
+    "title": "The Invoice",
+    "content": "Every approved order gets an invoice (INV-00001) automatically. Open it from Invoices to see the items, payments, delivery steps and the printable Sales Invoice. Payment terms count from delivery. Until the goods are delivered, the invoice shows “After Delivery” and can’t become overdue. ",
+    "url": "/distribution/userguide/selling/invoices-delivery/#the-invoice",
+    
+    "relUrl": "/selling/invoices-delivery/#the-invoice"
+  },"78": {
+    "doc": "Invoices and Delivery",
+    "title": "Pack and Ship",
+    "content": "Delivery moves one step at a time on the invoice page: . Pending → Packed → For Delivery → Delivered . Warehouse staff click the next step as they go. The Invoices count in the sidebar shows how many are waiting to be packed. ",
+    "url": "/distribution/userguide/selling/invoices-delivery/#pack-and-ship",
+    
+    "relUrl": "/selling/invoices-delivery/#pack-and-ship"
+  },"79": {
+    "doc": "Invoices and Delivery",
+    "title": "The Delivery Page",
+    "content": "Drivers use the Delivery page in the sidebar. It lists every invoice ready to go, with its delivery instructions and a green round Mark Delivered button (✓). Marking an invoice delivered sets its due date: the delivery date plus the customer’s terms. A Delivery login sees only this page and nothing else in the app. ",
+    "url": "/distribution/userguide/selling/invoices-delivery/#the-delivery-page",
+    
+    "relUrl": "/selling/invoices-delivery/#the-delivery-page"
+  },"80": {
+    "doc": "Invoices and Delivery",
+    "title": "Print the Invoice or Delivery Receipt",
+    "content": "On the invoice page, switch between Sales Invoice and Delivery Receipt, then click the printer. Both print on A4 with your company details. Drivers can open the Delivery Receipt from their Delivery page. ",
+    "url": "/distribution/userguide/selling/invoices-delivery/#print-the-invoice-or-delivery-receipt",
+    
+    "relUrl": "/selling/invoices-delivery/#print-the-invoice-or-delivery-receipt"
+  },"81": {
+    "doc": "Invoices and Delivery",
+    "title": "Signed Delivery Receipts (Add-on)",
+    "content": "With this add-on turned on in Settings → Features, the Delivery page lists recent deliveries, each with a paperclip. Take a photo of the signed receipt (or choose a file), and it’s kept with the invoice. ",
+    "url": "/distribution/userguide/selling/invoices-delivery/#signed-delivery-receipts-add-on",
+    
+    "relUrl": "/selling/invoices-delivery/#signed-delivery-receipts-add-on"
+  },"82": {
+    "doc": "Invoices and Delivery",
+    "title": "Editing an Invoice",
+    "content": "Notes can always change. The date and terms lock once the invoice is delivered or has a payment — after that only the admin can change them, with a reason. See Also . | Receive a Payment | Returns and Cancelling | Features and Add-ons | . ",
+    "url": "/distribution/userguide/selling/invoices-delivery/#editing-an-invoice",
+    
+    "relUrl": "/selling/invoices-delivery/#editing-an-invoice"
+  },"83": {
+    "doc": "Keep It Running",
+    "title": "Keep It Running",
+    "content": "Staff can only open the app while the main computer is on and the app is running. Set this up once. ",
+    "url": "/distribution/userguide/getting-started/keep-running/",
+    
+    "relUrl": "/getting-started/keep-running/"
+  },"84": {
+    "doc": "Keep It Running",
+    "title": "Start When the Computer Starts",
+    "content": "Go to Settings → Start Up and turn on Start When Computer Starts. The app then starts by itself every time the computer is switched on — no need to open it. ",
+    "url": "/distribution/userguide/getting-started/keep-running/#start-when-the-computer-starts",
+    
+    "relUrl": "/getting-started/keep-running/#start-when-the-computer-starts"
+  },"85": {
+    "doc": "Keep It Running",
+    "title": "Three Computer Settings",
+    "content": "The same page lists these for your computer. Do them once: . |   | Mac | Windows | . | Never sleep | System Settings → Energy → turn on Prevent automatic sleeping when the display is off | Settings → System → Power → set Sleep to Never when plugged in | . | After a brownout | System Settings → Energy → turn on Start up automatically after a power failure | Set Restore on AC Power Loss to Power On in the computer’s BIOS (ask your technician) | . | No password screen at start | System Settings → Users &amp; Groups → Automatically log in as this user (not available while FileVault is on) | Sign in automatically to this Windows account (ask your technician) | . Reserve the main computer’s address in your Wi-Fi router so it never changes, and connect it by cable or 5 GHz Wi-Fi for the fastest response on staff phones. ",
+    "url": "/distribution/userguide/getting-started/keep-running/#three-computer-settings",
+    
+    "relUrl": "/getting-started/keep-running/#three-computer-settings"
+  },"86": {
+    "doc": "My Account",
+    "title": "My Account",
+    "content": "Everyone has My Account — click your picture at the top right. ",
+    "url": "/distribution/userguide/settings/my-account/",
+    
+    "relUrl": "/settings/my-account/"
+  },"87": {
+    "doc": "My Account",
+    "title": "Change Your Password",
+    "content": "Type your current password, then the new one twice. You’ll be signed out on your other devices. ",
+    "url": "/distribution/userguide/settings/my-account/#change-your-password",
+    
+    "relUrl": "/settings/my-account/#change-your-password"
+  },"88": {
+    "doc": "My Account",
+    "title": "Appearance and Accessibility",
+    "content": "Saved for you, on every device you use: . | Light, Dark or Automatic | Increase Contrast, Bold Text, Button Shapes | Reduce Motion, Reduce Transparency | Display Zoom — Default, Larger or Largest | . ",
+    "url": "/distribution/userguide/settings/my-account/#appearance-and-accessibility",
+    
+    "relUrl": "/settings/my-account/#appearance-and-accessibility"
+  },"89": {
+    "doc": "My Account",
+    "title": "Notifications",
+    "content": ". | Desktop Notifications (computers) — approvals come with the Mac or Windows alert sound. | Lock-Screen Notifications (salesmen’s phones) — needs the app on the Home Screen over a secure address. | . ",
+    "url": "/distribution/userguide/settings/my-account/#notifications",
+    
+    "relUrl": "/settings/my-account/#notifications"
+  },"90": {
+    "doc": "My Account",
+    "title": "Lock or Log Out",
+    "content": "From the same menu: Lock Screen when you step away (sign in again to return), or Log Out. See Also . | Users and Permissions | Approvals | . ",
+    "url": "/distribution/userguide/settings/my-account/#lock-or-log-out",
+    
+    "relUrl": "/settings/my-account/#lock-or-log-out"
+  },"91": {
+    "doc": "Pay Suppliers",
+    "title": "Pay Suppliers",
+    "content": "Every received stock arrival is a bill. Its due date is the supplier’s invoice date (or the arrival date, depending on the supplier) plus their terms. ",
+    "url": "/distribution/userguide/buying/pay-suppliers/",
+    
+    "relUrl": "/buying/pay-suppliers/"
+  },"92": {
+    "doc": "Pay Suppliers",
+    "title": "Pay a Bill",
+    "content": "On the arrival, use Pay Supplier: date, amount, method and reference no. The supplier’s bank details are shown so you know where to send it. ",
+    "url": "/distribution/userguide/buying/pay-suppliers/#pay-a-bill",
+    
+    "relUrl": "/buying/pay-suppliers/#pay-a-bill"
+  },"93": {
+    "doc": "Pay Suppliers",
+    "title": "Issue a Post-Dated Check",
+    "content": "Choose method Check with a later date — the check is pending until you Mark Cleared on the Checks page. The bill shows “Check Issued” and isn’t overdue meanwhile. ",
+    "url": "/distribution/userguide/buying/pay-suppliers/#issue-a-post-dated-check",
+    
+    "relUrl": "/buying/pay-suppliers/#issue-a-post-dated-check"
+  },"94": {
+    "doc": "Pay Suppliers",
+    "title": "What You Owe",
+    "content": "Reports → Accounts Payable: . | View | Shows | . | All Payables | Every unpaid bill with its due date | . | Due This Month | What to pay this month, including overdue | . | By Supplier | Aging per supplier | . | Checks Issued | Your checks by date — pending, due today, cleared | . | BIR Taxes | Estimated VAT or percentage tax per quarter | . See Also . | Stock Arrivals | Post-Dated Checks | Books and BIR | . ",
+    "url": "/distribution/userguide/buying/pay-suppliers/#what-you-owe",
+    
+    "relUrl": "/buying/pay-suppliers/#what-you-owe"
+  },"95": {
+    "doc": "Receive a Payment",
+    "title": "Receive a Payment",
+    "content": " ",
+    "url": "/distribution/userguide/collecting/payments/",
+    
+    "relUrl": "/collecting/payments/"
+  },"96": {
+    "doc": "Receive a Payment",
+    "title": "One Payment, Several Invoices",
+    "content": "Go to Payments → Receive Payment. | Pick the customer (or type an invoice number). Their open invoices appear, oldest first. | Type the amount received. It’s spread over the invoices, oldest first. Change the split if the customer asks. | Choose the method — Cash, Bank Transfer, GCash, Maya, MariBank, Atome, Check or Other — and type the reference no. (OR, transfer or check number). The reference is required. | Click Save Payment. | . The payment gets its own number (PAY-00001). An invoice that isn’t fully paid shows Partial with what’s still owed. You can attach one photo or PDF to the payment, such as a deposit slip or a BIR Form 2307. ",
+    "url": "/distribution/userguide/collecting/payments/#one-payment-several-invoices",
+    
+    "relUrl": "/collecting/payments/#one-payment-several-invoices"
+  },"97": {
+    "doc": "Receive a Payment",
+    "title": "Pay One Invoice",
+    "content": "On an invoice page you can also record a payment for just that invoice. A payment can never be more than the balance. ",
+    "url": "/distribution/userguide/collecting/payments/#pay-one-invoice",
+    
+    "relUrl": "/collecting/payments/#pay-one-invoice"
+  },"98": {
+    "doc": "Receive a Payment",
+    "title": "The Acknowledgment Receipt",
+    "content": "Each payment has a printable Acknowledgment of Payment (A4): who paid, the amount in words, the invoices it covered and who received it. This is not an Official Receipt. An Official or Collection Receipt must be a BIR-registered form — keep issuing yours as usual. ",
+    "url": "/distribution/userguide/collecting/payments/#the-acknowledgment-receipt",
+    
+    "relUrl": "/collecting/payments/#the-acknowledgment-receipt"
+  },"99": {
+    "doc": "Receive a Payment",
+    "title": "Removing a Payment",
+    "content": "Only the admin can remove a payment, with a reason. It’s kept in the Activity Log. See Also . | Deductions | Post-Dated Checks | Who Owes What | . ",
+    "url": "/distribution/userguide/collecting/payments/#removing-a-payment",
+    
+    "relUrl": "/collecting/payments/#removing-a-payment"
+  },"100": {
+    "doc": "Payroll",
+    "title": "Payroll",
+    "content": "Payroll (admin only) works out your people’s pay twice a month: the 1st–15th and the 16th–end of month. ",
+    "url": "/distribution/userguide/money/payroll/",
+    
+    "relUrl": "/money/payroll/"
+  },"101": {
+    "doc": "Payroll",
+    "title": "1. Add Employees",
+    "content": "Payroll → Add Employee: name, position, contact and emergency contact, monthly salary or daily rate, TIN, SSS, PhilHealth and Pag-IBIG numbers, and a photo. You can also give them an app login. ",
+    "url": "/distribution/userguide/money/payroll/#1-add-employees",
+    
+    "relUrl": "/money/payroll/#1-add-employees"
+  },"102": {
+    "doc": "Payroll",
+    "title": "2. Prepare a Payroll",
+    "content": "Prepare the cut-off. The app works out each person’s pay and deductions: SSS, PhilHealth, Pag-IBIG and withholding tax. Type any absences, then Recompute. ",
+    "url": "/distribution/userguide/money/payroll/#2-prepare-a-payroll",
+    
+    "relUrl": "/money/payroll/#2-prepare-a-payroll"
+  },"103": {
+    "doc": "Payroll",
+    "title": "3. Post It",
+    "content": "Post locks the payroll and records the salaries and employer contributions as expenses. Print the payslips — one A4 page per employee. Found a mistake after posting? Reopen for Editing (reason required) removes those expenses and returns it to Draft. ",
+    "url": "/distribution/userguide/money/payroll/#3-post-it",
+    
+    "relUrl": "/money/payroll/#3-post-it"
+  },"104": {
+    "doc": "Payroll",
+    "title": "Government Rates",
+    "content": "The SSS, PhilHealth, Pag-IBIG and BIR tables can be updated when the government changes them: Payroll → Government Rates → Edit. Each change starts on the date you choose and needs a source note. The page links to the official sites. See Also . | Expenses | Users and Permissions | . ",
+    "url": "/distribution/userguide/money/payroll/#government-rates",
+    
+    "relUrl": "/money/payroll/#government-rates"
+  },"105": {
+    "doc": "Products",
+    "title": "Products",
+    "content": " ",
+    "url": "/distribution/userguide/buying/products/",
+    
+    "relUrl": "/buying/products/"
+  },"106": {
+    "doc": "Products",
+    "title": "Add a Product",
+    "content": "Go to Products → add a product. Fill in: . | Name, part number, brand and supplier | Unit — the single unit you count in (Pc, Can, Bottle, Set…) | Case (optional) — e.g. Box of 12. Orders can then be entered in cases. | SRP, cost and selling price | Reorder level, MOQ and ideal stock days — used by suggested purchase orders | . Stock, costs and prices are always per single unit. Cases are only a shortcut for entering and showing quantities — “2 Boxes (24 Cans)”. ",
+    "url": "/distribution/userguide/buying/products/#add-a-product",
+    
+    "relUrl": "/buying/products/#add-a-product"
+  },"107": {
+    "doc": "Products",
+    "title": "Price Helper",
+    "content": "Type the SRP and a target margin — the app fills in the cost and selling price. Example: ₱100 SRP and 40% margin → ₱60 cost, ₱100 selling price. ",
+    "url": "/distribution/userguide/buying/products/#price-helper",
+    
+    "relUrl": "/buying/products/#price-helper"
+  },"108": {
+    "doc": "Products",
+    "title": "Import a Price List",
+    "content": "Have a supplier’s price list as PDF, Excel or CSV? Products → Import Price List reads it, shows a preview (remove rows you don’t want) and imports. Existing products (matched by part number) get the new SRP and cost; new ones are added with zero stock. ",
+    "url": "/distribution/userguide/buying/products/#import-a-price-list",
+    
+    "relUrl": "/buying/products/#import-a-price-list"
+  },"109": {
+    "doc": "Products",
+    "title": "Change Stock",
+    "content": "Stock isn’t typed on the product form. It changes only through sales, stock arrivals, returns, Adjust Stock (with a reason) or a Stock Count — so every change has a record. ",
+    "url": "/distribution/userguide/buying/products/#change-stock",
+    
+    "relUrl": "/buying/products/#change-stock"
+  },"110": {
+    "doc": "Products",
+    "title": "Who Sees Costs",
+    "content": "Cost and margins show only to people allowed to see costs. Salesmen see the SRP only. See Also . | Stock Count | Purchase Orders | Sales Orders | . ",
+    "url": "/distribution/userguide/buying/products/#who-sees-costs",
+    
+    "relUrl": "/buying/products/#who-sees-costs"
+  },"111": {
+    "doc": "Purchase Orders",
+    "title": "Purchase Orders",
+    "content": " ",
+    "url": "/distribution/userguide/buying/purchase-orders/",
+    
+    "relUrl": "/buying/purchase-orders/"
+  },"112": {
+    "doc": "Purchase Orders",
+    "title": "Let the App Suggest",
+    "content": "Purchase Orders → pick a supplier → Generate Suggested PO. For each product the app works out: . sales of the last 30 days × (supplier lead time + ideal stock days) − stock on hand − already on order . It then raises the quantity to the MOQ if needed. You can change any quantity before sending. Each change needs a reason: Promo, Special Discount or Accommodated Sales (a big customer order to cover). ",
+    "url": "/distribution/userguide/buying/purchase-orders/#let-the-app-suggest",
+    
+    "relUrl": "/buying/purchase-orders/#let-the-app-suggest"
+  },"113": {
+    "doc": "Purchase Orders",
+    "title": "Write One Yourself",
+    "content": "Manual PO → pick the supplier or brand → type quantities next to the products you want → Create PO. ",
+    "url": "/distribution/userguide/buying/purchase-orders/#write-one-yourself",
+    
+    "relUrl": "/buying/purchase-orders/#write-one-yourself"
+  },"114": {
+    "doc": "Purchase Orders",
+    "title": "From Draft to Arrival",
+    "content": "Draft → For Approval → Approved → Sent → Closed . | Submit it for approval. | The approver approves or returns it for changes. | Send it to the supplier and click Mark as Sent. Print it or save it as PDF first if you need to. | When the goods arrive, click Create Stock Arrival — the lines are copied over. | . See Also . | Stock Arrivals | Suppliers | Products | . ",
+    "url": "/distribution/userguide/buying/purchase-orders/#from-draft-to-arrival",
+    
+    "relUrl": "/buying/purchase-orders/#from-draft-to-arrival"
+  },"115": {
+    "doc": "Reports",
+    "title": "Reports",
+    "content": "Reports opens with four headline cards — Sales, Receivables, Payables and Inventory Health — and every other report grouped below. Every report has date shortcuts, filters that apply as you change them, Print / Save PDF and Export CSV. ",
+    "url": "/distribution/userguide/money/reports/",
+    
+    "relUrl": "/money/reports/"
+  },"116": {
+    "doc": "Reports",
+    "title": "The Main Ones",
+    "content": "| Group | Reports | . | Financial (admin) | Income Statement, Cash &amp; Collections, General Ledger, Trial Balance, Balance Sheet | . | Sales | Sales Analysis, Sales Summary, Invoice Summary, Customer Sales, Accounts Receivable, Collection Forecast, Statement of Account, Credit Memos, Customer Deductions | . | Payables | Accounts Payable, BIR Taxes | . | Inventory | Inventory Report, Days Covered | . | Accounting &amp; Tax | Taxes Invoiced | . | Expenses | Expense Summary | . | Team | Salesman Performance, User Summary | . ",
+    "url": "/distribution/userguide/money/reports/#the-main-ones",
+    
+    "relUrl": "/money/reports/#the-main-ones"
+  },"117": {
+    "doc": "Reports",
+    "title": "Sales Analysis",
+    "content": "Group sales by supplier, brand, product, part number, customer or day — with gross profit for people allowed to see it. ",
+    "url": "/distribution/userguide/money/reports/#sales-analysis",
+    
+    "relUrl": "/money/reports/#sales-analysis"
+  },"118": {
+    "doc": "Reports",
+    "title": "Salesman Performance",
+    "content": "Each salesman sees My Performance: their monthly sales chart, sales by brand and their expenses. The admin can pick any salesman and also see gross profit, costs and the profit they made for the company. ",
+    "url": "/distribution/userguide/money/reports/#salesman-performance",
+    
+    "relUrl": "/money/reports/#salesman-performance"
+  },"119": {
+    "doc": "Reports",
+    "title": "Who Sees Which Report",
+    "content": "The admin picks, per person, which report cards they see: Settings → Users &amp; Permissions. See Also . | Books and BIR | Users and Permissions | . ",
+    "url": "/distribution/userguide/money/reports/#who-sees-which-report",
+    
+    "relUrl": "/money/reports/#who-sees-which-report"
+  },"120": {
+    "doc": "Returns and Cancelling",
+    "title": "Returns and Cancelling",
+    "content": " ",
+    "url": "/distribution/userguide/selling/returns/",
+    
+    "relUrl": "/selling/returns/"
+  },"121": {
+    "doc": "Returns and Cancelling",
+    "title": "Goods Sent Back — Credit Memo",
+    "content": "On a delivered invoice, click Create Credit Memo. Type how many of each item came back and the reason, then save. The app: . | puts the stock back, | lowers the invoice (and the customer’s balance, sales and the salesman’s figures), | gives the credit memo its own number (CM-00001) and a printable form. | . If the customer already paid more than the new total, the invoice shows a customer credit. See all credit memos in Reports → Sales → Credit Memos. ",
+    "url": "/distribution/userguide/selling/returns/#goods-sent-back--credit-memo",
+    
+    "relUrl": "/selling/returns/#goods-sent-back--credit-memo"
+  },"122": {
+    "doc": "Returns and Cancelling",
+    "title": "Cancel an Invoice",
+    "content": "Before delivery, an invoice with no payments can be cancelled (with permission to cancel orders; reason required). The order is cancelled too and the stock goes back. After delivery, only the admin can void an invoice, and only if it has no payments. To change what a customer receives before delivery, edit the order instead — or cancel and make a new one. See Also . | Invoices and Delivery | Who Owes What | . ",
+    "url": "/distribution/userguide/selling/returns/#cancel-an-invoice",
+    
+    "relUrl": "/selling/returns/#cancel-an-invoice"
+  },"123": {
+    "doc": "Sales Orders",
+    "title": "Sales Orders",
+    "content": " ",
+    "url": "/distribution/userguide/selling/sales-orders/",
+    
+    "relUrl": "/selling/sales-orders/"
+  },"124": {
+    "doc": "Sales Orders",
+    "title": "Write an Order",
+    "content": "Go to Sales Orders → + New Sales Order. | Pick the customer and the order date. | Add items — choose from the product list (grouped by brand) or search by name or part number. | Type the quantity. Products sold by the case let you pick Case or the single unit, e.g. “2 Boxes (24 Cans)”. | Add delivery instructions or notes if needed. | . Prices fill in automatically: the SRP less the customer’s discount. You can type a different price if needed. An order can never ask for more than you have in stock. If it does, the line turns red and the order can’t be saved until you lower the quantity. ",
+    "url": "/distribution/userguide/selling/sales-orders/#write-an-order",
+    
+    "relUrl": "/selling/sales-orders/#write-an-order"
+  },"125": {
+    "doc": "Sales Orders",
+    "title": "Save or Submit",
+    "content": ". | Save Draft — keep it to finish later. | Submit for Approval — send it to the approver. | . Nothing is saved until you click one of these. ",
+    "url": "/distribution/userguide/selling/sales-orders/#save-or-submit",
+    
+    "relUrl": "/selling/sales-orders/#save-or-submit"
+  },"126": {
+    "doc": "Sales Orders",
+    "title": "Order Status",
+    "content": "| Status | Meaning | . | Draft | Still being written | . | For Approval | Waiting for the approver | . | Approved | Final — stock is taken and the invoice is made | . | Cancelled | Stopped; any stock is returned | . ",
+    "url": "/distribution/userguide/selling/sales-orders/#order-status",
+    
+    "relUrl": "/selling/sales-orders/#order-status"
+  },"127": {
+    "doc": "Sales Orders",
+    "title": "Change an Order",
+    "content": "To edit a Draft or For Approval order, open it and click Edit. It opens the same form as a new order. Approved orders are final: extra items go on a new sales order. Only the delivery instructions can still change until delivery. ",
+    "url": "/distribution/userguide/selling/sales-orders/#change-an-order",
+    
+    "relUrl": "/selling/sales-orders/#change-an-order"
+  },"128": {
+    "doc": "Sales Orders",
+    "title": "Proof of Order (Optional)",
+    "content": "You can attach a signed PO or a photo when creating the order (phones offer the camera). If the admin turns on Settings → Features → Require Proof of Order, a salesman’s order stays a Draft until a file is attached. ",
+    "url": "/distribution/userguide/selling/sales-orders/#proof-of-order-optional",
+    
+    "relUrl": "/selling/sales-orders/#proof-of-order-optional"
+  },"129": {
+    "doc": "Sales Orders",
+    "title": "No Signal? (Salesmen)",
+    "content": "If the phone has no connection when you save, the order is kept on the phone and an orange “orders waiting to send” note appears. It sends itself once you’re back online. The main computer still checks stock, credit and prices when it arrives. The New Sales Order page must already be open on the phone before the signal drops. See Also . | Approvals | Customers | Products | . ",
+    "url": "/distribution/userguide/selling/sales-orders/#no-signal-salesmen",
+    
+    "relUrl": "/selling/sales-orders/#no-signal-salesmen"
+  },"130": {
+    "doc": "Connect Your Staff",
+    "title": "Connect Your Staff",
+    "content": "Staff, salesmen and drivers use the app in their phone’s or computer’s web browser. You give each person a login, and they open the app’s address. ",
+    "url": "/distribution/userguide/getting-started/staff-access/",
+    
+    "relUrl": "/getting-started/staff-access/"
+  },"131": {
+    "doc": "Connect Your Staff",
+    "title": "1. Add Each Person",
+    "content": "Go to Settings → Users &amp; Permissions and add a user for each person, with the role that fits: Staff, Salesman or Delivery. Tick what each staff member may do. (A full page on users and permissions is coming in the Settings chapter.) . ",
+    "url": "/distribution/userguide/getting-started/staff-access/#1-add-each-person",
+    
+    "relUrl": "/getting-started/staff-access/#1-add-each-person"
+  },"132": {
+    "doc": "Connect Your Staff",
+    "title": "2. Give Them the Address",
+    "content": "Open Staff Access (bottom of the sidebar). It shows the address to open — with a QR code, Copy Address and Share. | In the Office — works on the same Wi-Fi or office network. No internet needed. Under the address is a second one ending in .local — it keeps working even when the router changes the number. | Outside the Office — appears after you turn on Settings → Remote Access (uses a free Tailscale account). Salesmen can then use the app on mobile data. | . ",
+    "url": "/distribution/userguide/getting-started/staff-access/#2-give-them-the-address",
+    
+    "relUrl": "/getting-started/staff-access/#2-give-them-the-address"
+  },"133": {
+    "doc": "Connect Your Staff",
+    "title": "3. Open It on a Phone",
+    "content": "On the phone, open the camera and point it at the QR code, then tap the link. Sign in with the username and password you gave them. ",
+    "url": "/distribution/userguide/getting-started/staff-access/#3-open-it-on-a-phone",
+    
+    "relUrl": "/getting-started/staff-access/#3-open-it-on-a-phone"
+  },"134": {
+    "doc": "Connect Your Staff",
+    "title": "4. Add It to the Home Screen (iPhone)",
+    "content": "In Safari, tap Share → Add to Home Screen → Add. The app then opens full screen from its own icon, like any other app. On Android, open the browser menu (⋮) → Add to Home screen. The main computer must be on and the app running for staff to connect — see Keep It Running. ",
+    "url": "/distribution/userguide/getting-started/staff-access/#4-add-it-to-the-home-screen-iphone",
+    
+    "relUrl": "/getting-started/staff-access/#4-add-it-to-the-home-screen-iphone"
+  },"135": {
+    "doc": "Who Owes What",
+    "title": "Who Owes What",
+    "content": " ",
+    "url": "/distribution/userguide/collecting/statements/",
+    
+    "relUrl": "/collecting/statements/"
+  },"136": {
+    "doc": "Who Owes What",
+    "title": "Statement of Account",
+    "content": "For one customer: open the customer → Statement of Account. It lists every open invoice with what’s been paid, the balance and days overdue, plus aging (Current, 1–30, 31–60, 61–90, over 90 days), pending checks and recent payments. Print it or save it as PDF to send. For everyone: Reports → Sales → Statement of Account → All Customers — one line per customer. ",
+    "url": "/distribution/userguide/collecting/statements/#statement-of-account",
+    
+    "relUrl": "/collecting/statements/#statement-of-account"
+  },"137": {
+    "doc": "Who Owes What",
+    "title": "Customer Ledger",
+    "content": "Open the customer → Ledger: every invoice, payment, deduction and credit memo in a date range, with the running balance. Print it or export it to a spreadsheet (CSV). ",
+    "url": "/distribution/userguide/collecting/statements/#customer-ledger",
+    
+    "relUrl": "/collecting/statements/#customer-ledger"
+  },"138": {
+    "doc": "Who Owes What",
+    "title": "Reports",
+    "content": "| Report | Shows | . | Accounts Receivable | All unpaid invoices, those due this month, or aging by customer | . | Collection Forecast | What should come in, by due date — overdue, next 30 / 60 / 90 days | . | Cash &amp; Collections (admin) | Collected today, this week, this month; money on hand; a 4-week cash forecast | . | Customer Deductions | Every deduction by type and customer | . Cash &amp; Collections needs your starting balances (cash, bank, e-wallets) entered once on that page before its Money on Hand is right. See Also . | Receive a Payment | Reports | . ",
+    "url": "/distribution/userguide/collecting/statements/#reports",
+    
+    "relUrl": "/collecting/statements/#reports"
+  },"139": {
+    "doc": "Stock Arrivals",
+    "title": "Stock Arrivals",
+    "content": "A stock arrival is what the supplier delivered — and also their bill. ",
+    "url": "/distribution/userguide/buying/stock-arrivals/",
+    
+    "relUrl": "/buying/stock-arrivals/"
+  },"140": {
+    "doc": "Stock Arrivals",
+    "title": "Receive Stock",
+    "content": "Open the arrival (from a PO, or Stock Arrivals → New). For each line you’ll see: . | Ordered — what the PO asked for | DR Qty — what the supplier’s delivery receipt says | Received — type what you actually counted | . Add the supplier’s invoice date and number, an optional note, then Receive Stock. Stock goes up by what you counted, and each product’s cost becomes the average of old and new stock. ",
+    "url": "/distribution/userguide/buying/stock-arrivals/#receive-stock",
+    
+    "relUrl": "/buying/stock-arrivals/#receive-stock"
+  },"141": {
+    "doc": "Stock Arrivals",
+    "title": "Short or Extra",
+    "content": "| You Counted | What Happens | . | Less than the DR | Shown in red; you only pay for what arrived | . | More than the DR | Choose: free goods (promo, e.g. 10+1) or overage the supplier bills | . Lines that weren’t on the PO get a red dot so they’re easy to question. ",
+    "url": "/distribution/userguide/buying/stock-arrivals/#short-or-extra",
+    
+    "relUrl": "/buying/stock-arrivals/#short-or-extra"
+  },"142": {
+    "doc": "Stock Arrivals",
+    "title": "Hold a Line From Payment",
+    "content": "Untick Pay on a line to keep it out of payments until it’s sorted out with the supplier. It’s still owed. ",
+    "url": "/distribution/userguide/buying/stock-arrivals/#hold-a-line-from-payment",
+    
+    "relUrl": "/buying/stock-arrivals/#hold-a-line-from-payment"
+  },"143": {
+    "doc": "Stock Arrivals",
+    "title": "Undo Receive (Admin)",
+    "content": "Received by mistake? Undo Receive (reason required) takes the stock off and returns the arrival to Draft — only if nothing was paid on it and the stock hasn’t been sold. See Also . | Pay Suppliers | Purchase Orders | Stock Count | . ",
+    "url": "/distribution/userguide/buying/stock-arrivals/#undo-receive-admin",
+    
+    "relUrl": "/buying/stock-arrivals/#undo-receive-admin"
+  },"144": {
+    "doc": "Stock Count",
+    "title": "Stock Count",
+    "content": "Count your shelves and let the app fix the differences. | Products → the clipboard icon (Stock Count). | Filter by supplier or search to find products. Print the count sheet if you count on paper. | Type what you counted — cases and pieces. The difference shows as you type. Leave a row blank to skip it. | Add a note and Save Count. | . Each changed product gets a stock adjustment (reason “Count Correction”) in its history. You need permission to adjust stock. For a single product, use Adjust Stock on the product instead. ",
+    "url": "/distribution/userguide/buying/stock-count/",
+    
+    "relUrl": "/buying/stock-count/"
+  },"145": {
+    "doc": "Stock Count",
+    "title": "Inventory Reports",
+    "content": "Reports → Inventory: stock on hand and its value, and Days Covered — how many days your stock will last at the current sales rate (Critical under 7 days, Low under 14). See Also . | Products | Reports | . ",
+    "url": "/distribution/userguide/buying/stock-count/#inventory-reports",
+    
+    "relUrl": "/buying/stock-count/#inventory-reports"
+  },"146": {
+    "doc": "Suppliers",
+    "title": "Suppliers",
+    "content": "Suppliers lists everyone you buy from. Open one to see or edit: . | Terms (days to pay) and the due date basis — counted from their invoice date or from the day the goods arrived | Lead time — days from ordering to arrival (used by suggested purchase orders) | Contact person, numbers, email and address | Bank or e-wallet details for paying them | Brands carried and recent arrivals | . The Supplier Ledger button shows every bill, short delivery and payment with the running balance — what you owe them. Bank details show only to people who can pay suppliers. See Also . | Purchase Orders | Pay Suppliers | . ",
+    "url": "/distribution/userguide/buying/suppliers/",
+    
+    "relUrl": "/buying/suppliers/"
+  },"147": {
+    "doc": "Troubleshooting",
+    "title": "Troubleshooting",
+    "content": " ",
+    "url": "/distribution/userguide/troubleshooting/",
+    
+    "relUrl": "/troubleshooting/"
+  },"148": {
+    "doc": "Troubleshooting",
+    "title": "The App Won’t Open on My Mac",
+    "content": ". | Make sure the app is in Applications — not in Documents, Desktop or Downloads. macOS blocks it from starting in those folders. | After an update, the first start can take about 10 seconds while macOS checks it. | There’s no Dock icon — it runs in the background. Double-click DistributionApp in Applications to open the window again. | . ",
+    "url": "/distribution/userguide/troubleshooting/#the-app-wont-open-on-my-mac",
+    
+    "relUrl": "/troubleshooting/#the-app-wont-open-on-my-mac"
+  },"149": {
+    "doc": "Troubleshooting",
+    "title": "Staff Can’t Connect",
+    "content": ". | Is the main computer on, awake and the app running? See Keep It Running. | Are they on the same Wi-Fi as the main computer? | The address may have changed after a router restart — use the .local address on Staff Access, or reserve the main computer’s address in your router. | On Windows, allow the app through the firewall for Private networks. | . ",
+    "url": "/distribution/userguide/troubleshooting/#staff-cant-connect",
+    
+    "relUrl": "/troubleshooting/#staff-cant-connect"
+  },"150": {
+    "doc": "Troubleshooting",
+    "title": "It Doesn’t Work Outside the Office",
+    "content": ". | Is Tailscale on, on both the phone and the main computer? | The secure (https) address needs MagicDNS and HTTPS Certificates turned on in Tailscale — Settings → Remote Access shows how. | A DNS or ad-blocking profile on the phone can block the address. Try the number address under it, or remove the profile. | . ",
+    "url": "/distribution/userguide/troubleshooting/#it-doesnt-work-outside-the-office",
+    
+    "relUrl": "/troubleshooting/#it-doesnt-work-outside-the-office"
+  },"151": {
+    "doc": "Troubleshooting",
+    "title": "“Read-only — Activate the App”",
+    "content": "The free trial has ended, or the license couldn’t be checked. Paste your activation code in License. If you renamed your company, the old code won’t match — ask for a new one. ",
+    "url": "/distribution/userguide/troubleshooting/#read-only--activate-the-app",
+    
+    "relUrl": "/troubleshooting/#read-only--activate-the-app"
+  },"152": {
+    "doc": "Troubleshooting",
+    "title": "I Can’t Approve an Order",
+    "content": ". | The customer may be on credit hold (overdue invoice, bounced check or over the credit limit) — the order page says why. | There may not be enough stock — another order may have been approved first. | You may not have permission to approve — ask your admin. | . ",
+    "url": "/distribution/userguide/troubleshooting/#i-cant-approve-an-order",
+    
+    "relUrl": "/troubleshooting/#i-cant-approve-an-order"
+  },"153": {
+    "doc": "Troubleshooting",
+    "title": "No Sound for New Approvals",
+    "content": "Open My Account → Notifications → “Not hearing new approvals?” for the steps for your browser, or turn on Desktop Notifications. ",
+    "url": "/distribution/userguide/troubleshooting/#no-sound-for-new-approvals",
+    
+    "relUrl": "/troubleshooting/#no-sound-for-new-approvals"
+  },"154": {
+    "doc": "Troubleshooting",
+    "title": "I Deleted or Changed Something by Mistake",
+    "content": "Check the Activity Log to see what changed. If needed, the admin can restore a backup from before it happened — remember that work done after that backup is lost. ",
+    "url": "/distribution/userguide/troubleshooting/#i-deleted-or-changed-something-by-mistake",
+    
+    "relUrl": "/troubleshooting/#i-deleted-or-changed-something-by-mistake"
+  },"155": {
+    "doc": "Troubleshooting",
+    "title": "Still Stuck?",
+    "content": "Email alfiesuperhalk@gmail.com with a screenshot and what you were doing. We reply within one business day. See Also . | Connect Your Staff | Keep It Running | Backups and Updates | . ",
+    "url": "/distribution/userguide/troubleshooting/#still-stuck",
+    
+    "relUrl": "/troubleshooting/#still-stuck"
+  },"156": {
+    "doc": "Users and Permissions",
+    "title": "Users and Permissions",
+    "content": " ",
+    "url": "/distribution/userguide/settings/users/",
+    
+    "relUrl": "/settings/users/"
+  },"157": {
+    "doc": "Users and Permissions",
+    "title": "Roles",
+    "content": "| Role | Can Do | . | Admin | Everything, including Settings, approving customers, payroll and removing records | . | Staff | Only what the admin ticks for them | . | Salesman | Their own customers, orders and performance — no costs, suppliers or company-wide reports | . | Delivery | Only the Delivery page: Mark Delivered and the Delivery Receipt | . ",
+    "url": "/distribution/userguide/settings/users/#roles",
+    
+    "relUrl": "/settings/users/#roles"
+  },"158": {
+    "doc": "Users and Permissions",
+    "title": "Add a User",
+    "content": "Settings → Users &amp; Permissions → add a user: username, password, role. For staff, tick what they may do, grouped by area (sales, payments, stock, reports…). Hover over a permission to see what it allows. Your plan sets how many users can be active: Startup 3, Enterprise 10, Superuser 20. ",
+    "url": "/distribution/userguide/settings/users/#add-a-user",
+    
+    "relUrl": "/settings/users/#add-a-user"
+  },"159": {
+    "doc": "Users and Permissions",
+    "title": "Start Page",
+    "content": "Open a user to choose the page they see after signing in — e.g. Stock Arrivals for the warehouse. ",
+    "url": "/distribution/userguide/settings/users/#start-page",
+    
+    "relUrl": "/settings/users/#start-page"
+  },"160": {
+    "doc": "Users and Permissions",
+    "title": "Review Permissions",
+    "content": "Review Permissions shows every permission against every user in one table. Click a box to give or take a permission. ",
+    "url": "/distribution/userguide/settings/users/#review-permissions",
+    
+    "relUrl": "/settings/users/#review-permissions"
+  },"161": {
+    "doc": "Users and Permissions",
+    "title": "Someone Leaves",
+    "content": "Deactivate the user — they’re signed out everywhere and can’t sign in. Their past work stays in the records and the Activity Log. Every change in the app is kept in the Activity Log (Admin → Activity Log): who, when, from which device, and what changed. It can’t be edited or deleted. See Also . | My Account | Approvals | . ",
+    "url": "/distribution/userguide/settings/users/#someone-leaves",
+    
+    "relUrl": "/settings/users/#someone-leaves"
+  }
+}

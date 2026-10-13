@@ -1670,5 +1670,9 @@ html.apple-pending body { visibility: hidden; }
   :root body .theme-toggle .sf-symbol { width: 22px; height: 22px; }
 }
 /* Apple and Windows marks after the Distribution App name, as a small superscript */
-:root body .os-marks { display: inline-flex; gap: .18em; margin-left: .2em; vertical-align: super; font-size: .5em; line-height: 0; }
-:root body .os-marks svg { width: 1em; height: 1em; fill: #86868B; }
+/* (moved to the app icon: top-right corner, like a superscript) */
+:root body .logo-lockup, :root body .icon-with-marks { position: relative; }
+:root body .icon-with-marks { display: inline-block; align-self: center; line-height: 0; }
+:root body .os-marks { position: absolute; top: -4px; left: calc(100% + 6px); display: flex; gap: 5px; margin: 0; line-height: 0; }
+:root body .logo-lockup .os-marks { left: calc(50% + 62px); }
+:root body .os-marks svg { width: 16px; height: 16px; fill: #86868B; }

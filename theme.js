@@ -77,6 +77,7 @@
         const shouldDock = mobileNavigation.matches && sitePageHeading &&
           sitePageHeading.getBoundingClientRect().top <= siteNav.getBoundingClientRect().bottom + 8;
         siteNav.classList.toggle('is-docked', Boolean(shouldDock));
+        siteNav.classList.toggle('is-scrolled', window.scrollY > 4);
         document.body.classList.toggle('site-brand-docked', Boolean(shouldDock));
       };
 

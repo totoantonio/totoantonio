@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------- Product pages, built like the home page cards ---------- */
   var STORE_ICONS = { lemon: '<svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg>', appstore: '<svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg>' };
   var FACTS = {
-    maceq: [['eq-curve', 'Every app', 'One EQ for every app on your Mac'], ['shield', 'No driver', 'Uses Apple’s built-in audio tap'], ['spatial', 'Spatial audio', 'Spatial effects and built-in presets']],
-    keyboards: [['quick-actions', '⌘ + K anywhere', 'Press ⌘ + K from any app'], ['apps', '200+ shortcuts', '200+ shortcuts in 14 categories'], ['shield', 'Private', 'Never reads what you type']],
-    upscape: [['fidelity', 'Up to 4x', 'Upscale images up to 4x'], ['preset', '6 AI models', 'Six specialized AI models'], ['shield', 'No uploads', 'Nothing is ever uploaded']],
-    distributionapp: [['apps', 'All in one place', 'Orders, deliveries and payments in one place'], ['save', 'On your computer', 'Your data stays on your own computer'], ['balance', 'No per-user fees', 'One flat price, no per-user fees']]
+    maceq: [['eq-curve', 'Every App', 'One EQ for every app on your Mac'], ['shield', 'No Driver', 'Uses Apple’s built-in audio tap'], ['spatial', 'Spatial Audio', 'Spatial effects and built-in presets']],
+    keyboards: [['quick-actions', '⌘ + K Anywhere', 'Press ⌘ + K from any app'], ['apps', '200+ Shortcuts', '200+ shortcuts in 14 categories'], ['shield', 'Private', 'Never reads what you type']],
+    upscape: [['fidelity', 'Up to 4x', 'Upscale images up to 4x'], ['preset', '6 AI Models', 'Six specialized AI models'], ['shield', 'No Uploads', 'Nothing is ever uploaded']],
+    distributionapp: [['apps', 'All in One Place', 'Orders, deliveries and payments in one place'], ['save', 'On Your Computer', 'Your data stays on your own computer'], ['balance', 'No Per-User Fees', 'One flat price, no per-user fees']]
   };
   var appKey = page.replace('.html', '');
   /* product pages redesigned in the macEQ style (hero, gallery, full grids) */

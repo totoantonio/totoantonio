@@ -1646,3 +1646,12 @@ html.apple-pending body { visibility: hidden; }
   :root body .gallery-row { grid-auto-columns: 84vw; gap: 12px; padding-left: 8vw; padding-right: 8vw; scroll-padding-inline: 8vw; }
   :root body .gallery-row > li { scroll-snap-align: center; }
 }
+/* Help and policy pages: "At a glance" summary card */
+:root body.is-doc > .glance { width: var(--text-col); max-width: 692px; margin: 40px auto 8px; padding: 32px; border-radius: 28px; background: var(--card-bg); box-sizing: border-box; }
+:root body.is-doc .glance-title { margin: 0 0 16px; color: var(--text); font-size: 21px; line-height: 1.19; font-weight: 600; text-align: left; }
+:root body.is-doc .glance ul { margin: 0; padding: 0; list-style: none; }
+:root body.is-doc .glance li { margin: 0; padding: 14px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
+:root body.is-doc .glance li strong { display: block; color: var(--text); font-weight: 600; }
+:root body.is-doc > .effective { margin: 8px auto 0; color: #86868B; font-size: 14px; text-align: center; }
+:root body.is-doc > .lede { width: var(--text-col); max-width: 692px; margin: 24px auto 0; color: var(--muted); font-size: 21px; line-height: 1.38; text-align: center; }
+@media (max-width: 734px) { :root body.is-doc > .glance { padding: 24px; } :root body.is-doc > .lede { font-size: 19px; } }

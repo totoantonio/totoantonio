@@ -313,6 +313,15 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.gallery-row > li').forEach(function (li, i) { li.style.setProperty('--d', (i * 100) + 'ms'); });
     mark(document.querySelectorAll('.gallery-row > li'), 'from-right', 100);
     mark(document.querySelectorAll('.gallery-nav'), null, 0, 300);
+    /* all gallery cards appear together once the gallery is in view, so the ones peeking at the edges aren't blank */
+    document.querySelectorAll('.gallery-row').forEach(function (r) {
+      var all = new IntersectionObserver(function (e) {
+        if (!e[0].isIntersecting) return;
+        Array.prototype.forEach.call(r.children, function (li) { li.classList.add('is-in'); });
+        all.disconnect();
+      }, { threshold: 0.2 });
+      all.observe(r);
+    });
     /* pills pop in one by one, steps rise in turn, the closing icon pops */
     mark(document.querySelectorAll('.preset-chips > li'), 'pop', 30, 200);
     mark(document.querySelectorAll('body > ol > li'), null, 100);
@@ -336,6 +345,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!e.isIntersecting) return;
         e.target.classList.add('is-in');
         io.unobserve(e.target);
+        /* a carousel reveals all its cards at once, so the ones peeking at the edges aren't blank */
+        if (e.target.parentNode && e.target.parentNode.classList && e.target.parentNode.classList.contains('gallery-row')) {
+          Array.prototype.forEach.call(e.target.parentNode.children, function (li) { li.classList.add('is-in'); io.unobserve(li); });
+        }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.anim').forEach(function (el) { if (!el.closest('.hero-facts')) io.observe(el); });

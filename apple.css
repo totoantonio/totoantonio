@@ -1640,3 +1640,9 @@ html.apple-pending body { visibility: hidden; }
   :root body.is-product .hero-facts .fact-label { font-size: 14px; letter-spacing: -.016em; }
   :root body.is-product ul.tiles > li.is-featured { font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
 }
+@media (max-width: 734px) { .js-anim .gallery-row > li.anim.from-right { transform: none; } .js-anim .gallery-row > li.anim { transition-delay: 0ms !important; } }
+/* phones: gallery card centred with a sliver of its neighbours, like the home page carousel */
+@media (max-width: 734px) {
+  :root body .gallery-row { grid-auto-columns: 84vw; gap: 12px; padding-left: 8vw; padding-right: 8vw; scroll-padding-inline: 8vw; }
+  :root body .gallery-row > li { scroll-snap-align: center; }
+}

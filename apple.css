@@ -1590,3 +1590,44 @@ body > main { width: 100%; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.is-product > .eyebrow { color: #86868B; } }
 /* Android: Google Sans everywhere except code */
 html.android body, html.android body :not(code):not(kbd):not(pre):not(samp) { font-family: "Google Sans", Roboto, Arial, sans-serif; }
+
+/* ================= Design tightening (audit, 2026-10-13): one radius, padding, gap, grey, blue, speed and hover ================= */
+/* 1. corners: 28 for cards, 18 for small tiles */
+:root body ul.tiles > li, :root body .testimonial-rotator, :root body.is-product .offer-card, :root body.is-product .plan-card,
+:root body.is-product .model-grid > div, :root body.is-product > ol > li, :root body.is-product .more-card, :root body.is-product .addon-card,
+:root body .gallery-row figure.is-card, :root body > figure.is-card { border-radius: 28px; }
+:root body .category-grid li, :root body.is-product .addon-grid li { border-radius: 18px; }
+/* 2. card padding: 40 on computers, 28 on phones */
+:root body ul.tiles > li, :root body.is-product .offer-card, :root body.is-product .plan-card, :root body.is-product .model-grid > div,
+:root body.is-product > ol > li, :root body.is-product > .more-card, :root body.is-product .addon-card, :root body .gallery-row figure.is-card { padding: 40px; }
+@media (max-width: 734px) {
+  :root body ul.tiles > li, :root body.is-product .offer-card, :root body.is-product .plan-card, :root body.is-product .model-grid > div,
+  :root body.is-product > ol > li, :root body.is-product > .more-card, :root body.is-product .addon-card, :root body .gallery-row figure.is-card { padding: 28px; }
+}
+/* 3. 40px between a section title and what follows (a title's own grey line keeps its 12px) */
+:root body.is-product > h2:not(.closing-title) { margin-bottom: 0; }
+:root body.is-product > h2:not(.closing-title) + :not(.pricing-lead) { margin-top: 40px; }
+:root body.is-product > p.pricing-lead + * { margin-top: 40px; }
+/* 4. two greys: #6E6E73 (theme grey) for text, #86868B for small print */
+:root body .fact-label, :root[data-theme="dark"] body .fact-label { color: var(--muted); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body .fact-label { color: var(--muted); } }
+:root body.is-product > .requirements, :root body .hero-stores, :root body.is-product .plan-alt, :root body.is-product > .eyebrow { color: #86868B; }
+/* 5. one blue: the theme link blue (lighter in dark mode) */
+:root body .accent-word, :root[data-theme="dark"] body .accent-word { color: var(--link); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body .accent-word { color: var(--link); } }
+/* 6. eyebrows ("Early Access", "Founding users", "Testers") in small-print grey */
+:root body.is-product .offer-eyebrow { color: #86868B; }
+/* 9. motion: 0.8s everywhere (phones stay quicker) */
+.js-anim .anim, .js-anim .anim.grow, .js-anim .anim.letter { transition-duration: .8s; }
+.js-anim body.is-product ul.tiles > li.anim { transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease; }
+.js-anim .gallery-row > li .cap-eyebrow, .js-anim .gallery-row > li .cap-head, .js-anim .gallery-row > li figure img { transition-duration: .8s; }
+.js-anim body.is-product ul.tiles > li.anim > strong:first-of-type { transition-duration: .8s; }
+/* 10. one hover: lift 4px */
+:root body ul.tiles > li:hover, .js-anim ul.tiles > li.anim.is-in:hover, .js-anim body.is-product ul.tiles > li.anim.is-in:hover { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) { :root body ul.tiles > li:hover, .js-anim ul.tiles > li.anim.is-in:hover { transform: none; } }
+/* 11. help and policy pages: titles, lists and the form line up with the text column; more air under the menu */
+:root body.is-doc > h2, :root body.is-doc > h3, :root body.is-doc > ol, :root body.is-doc > ul, :root body.is-doc > form,
+:root body.is-doc > .support-form, :root body.is-doc > hr { width: var(--text-col); max-width: 692px; margin-left: auto; margin-right: auto; box-sizing: border-box; }
+:root body.is-doc > ol, :root body.is-doc > ul { padding-left: 22px; }
+:root body.is-doc > h1 { margin-top: 64px; }
+@media (max-width: 734px) { :root body.is-doc > h1 { margin-top: 40px; } }

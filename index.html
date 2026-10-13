@@ -728,8 +728,8 @@
     .work-description { font-size: 12px; }
   }
 </style>
-<link rel="stylesheet" href="apple.css?v=7">
-<script src="apple.js?v=7"></script>
+<link rel="stylesheet" href="apple.css?v=8">
+<script src="apple.js?v=8"></script>
 <style>
   /* ---------- Home preview: apple.com/mac style line-up + "Get to know" carousel (home page) ---------- */
   :root body .author-identity { position: relative; width: fit-content; margin-left: auto; margin-right: auto; }
@@ -1041,8 +1041,22 @@
     /* motion: shorter and without the long one-after-another waits */
     .js-anim .anim { transition-duration: .55s !important; }
     .js-anim .lineup-row > li.anim, .js-anim .know-row > li.anim { transition-delay: 0ms !important; }
+    .js-anim .know-row > li.anim.from-right { transform: none; }
     .js-anim .know-row > li .know-eyebrow, .js-anim .know-row > li .know-head, .js-anim .know-row > li .know-card img { transition-duration: .55s; transition-delay: 120ms; }
   }
+
+  /* ---------- Design tightening (audit): same radius, padding, grey, buttons, speed and hover as the app pages ---------- */
+  :root body .know-card { border-radius: 28px; padding: 40px; }
+  :root body .know-card:hover { transform: translateY(-4px); }
+  :root body .lineup-label { color: #86868B; font-weight: 400; }
+  /* Distribution App card: same pair as the Mac cards, "Learn more" pill + "Free Trial ›" link */
+  :root body .lineup-biz .lineup-more { order: 0; padding: 8px 18px; border-radius: 980px; background: var(--blue); color: #FFFFFF; font-size: 14px; line-height: 1.29; }
+  :root body .lineup-biz .lineup-more:hover { background: #0077ED; }
+  :root body .lineup-biz .lineup-get { order: 1; padding: 0; border-radius: 0; background: none; color: var(--link); }
+  :root body .lineup-biz .lineup-get:hover { background: none; text-decoration: underline; }
+  .js-anim .anim { transition-duration: .8s; }
+  .js-anim .know-row > li .know-eyebrow, .js-anim .know-row > li .know-head, .js-anim .know-row > li .know-card img { transition-duration: .8s; }
+  @media (max-width: 734px) { :root body .know-card { padding: 28px; } }
 </style>
 </head>
 <body class="author-page">
@@ -1107,7 +1121,7 @@
         <p class="lineup-actions"><a class="lineup-more" href="upscape.html">Learn more</a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/c09293b2-94a2-4312-bc47-99985d8d56bd" target="_blank" rel="noopener">Download ›</a></p>
       </li>
     </ul>
-    <h3 class="lineup-group">For your Business.</h3>
+    <h3 class="lineup-group">For your business.</h3>
     <ul class="lineup-row lineup-biz">
       <li class="lineup-wide">
         <a class="lineup-icon work-logo work-logo-distributionapp" href="distributionapp.html" tabindex="-1" aria-hidden="true"></a>
@@ -1115,7 +1129,7 @@
         <h3 class="lineup-name"><a href="distributionapp.html" data-analytics-event="select_item" data-item-id="distributionapp" data-item-name="Distribution App">Distribution App</a></h3>
         <p class="lineup-text">Sales and distribution for wholesale businesses: orders, invoices, deliveries, stock and reports.</p>
         <p class="lineup-meta">Free trial · Mac and Windows</p>
-        <p class="lineup-actions"><a class="lineup-more" href="distributionapp.html">Learn more ›</a><a class="lineup-get" href="https://github.com/totoantonio/DistributionApp/releases/latest" target="_blank" rel="noopener">Free Trial</a></p>
+        <p class="lineup-actions"><a class="lineup-more" href="distributionapp.html">Learn more</a><a class="lineup-get" href="https://github.com/totoantonio/DistributionApp/releases/latest" target="_blank" rel="noopener">Free Trial ›</a></p>
         <ul class="lineup-facts"><li title="Orders, deliveries and payments in one place"><img class="fact-icon" src="Assets/Symbols/apps.png" width="28" height="28" alt=""><span class="fact-label">All in one place</span><span class="visually-hidden">: Orders, deliveries and payments in one place</span></li><li title="Salesmen, staff and drivers use it on their phones"><img class="fact-icon" src="Assets/Symbols/menubar.png" width="28" height="28" alt=""><span class="fact-label">Team on phones</span><span class="visually-hidden">: Salesmen, staff and drivers use it on their phones</span></li><li title="A soft chime when an order needs your OK"><img class="fact-icon" src="Assets/Symbols/volume.png" width="28" height="28" alt=""><span class="fact-label">Approval chime</span><span class="visually-hidden">: A soft chime when an order needs your OK</span></li><li title="Keeps working when the internet is down"><img class="fact-icon" src="Assets/Symbols/power.png" width="28" height="28" alt=""><span class="fact-label">Works offline</span><span class="visually-hidden">: Keeps working when the internet is down</span></li><li title="Your data stays on your own computer"><img class="fact-icon" src="Assets/Symbols/save.png" width="28" height="28" alt=""><span class="fact-label">On your computer</span><span class="visually-hidden">: Your data stays on your own computer</span></li><li title="One flat price, no per-user fees"><img class="fact-icon" src="Assets/Symbols/balance.png" width="28" height="28" alt=""><span class="fact-label">No per-user fees</span><span class="visually-hidden">: One flat price, no per-user fees</span></li></ul>
       </li>
     </ul>
@@ -1262,9 +1276,9 @@
     return ch === ' ' ? ' ' : '<span class="anim from-right letter" aria-hidden="true" style="transition-delay:' + (i * 45) + 'ms">' + ch + '</span>';
   }).join('');
   mark(document.querySelectorAll('.lineup-group, .know h2, .story-title, .author-note'));
-  document.querySelectorAll('.lineup-row').forEach(function (row) { mark(row.children, null, 110); });
+  document.querySelectorAll('.lineup-row').forEach(function (row) { mark(row.children, null, 100); });
   document.querySelectorAll('.lineup-facts').forEach(function (f) {
-    Array.prototype.forEach.call(f.children, function (li, i) { li.classList.add('anim', 'pop'); li.style.transitionDelay = (450 + i * 90) + 'ms'; });
+    Array.prototype.forEach.call(f.children, function (li, i) { li.classList.add('anim', 'pop'); li.style.transitionDelay = (400 + i * 100) + 'ms'; });
   });
   mark(document.querySelectorAll('.know-row > li'), 'from-right', 100);
   document.querySelectorAll('.know-row > li').forEach(function (li, i) { li.style.setProperty('--d', (i * 100) + 'ms'); });
@@ -1288,6 +1302,13 @@
      is moved to the end, so it never runs out. Pauses while pointed at, touched, focused, or off screen. */
   var row = document.querySelector('.know-row');
   if (row) {
+    /* all cards appear together once the row is in view, so the ones peeking at the edges aren't blank */
+    var showAll = new IntersectionObserver(function (e) {
+      if (!e[0].isIntersecting) return;
+      Array.prototype.forEach.call(row.children, function (li) { li.classList.add('is-in'); li.querySelectorAll('.anim').forEach(function (c) { c.classList.add('is-in'); }); });
+      showAll.disconnect();
+    }, { threshold: 0.2 });
+    showAll.observe(row);
     var paused = false, seen = false;
     ['mouseenter', 'focusin', 'touchstart'].forEach(function (t) { row.addEventListener(t, function () { paused = true; }, { passive: true }); });
     ['mouseleave', 'focusout', 'touchend'].forEach(function (t) { row.addEventListener(t, function () { paused = false; }, { passive: true }); });

@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         get.href = main.href;
         get.target = '_blank';
         get.rel = 'noopener';
-        get.textContent = gh ? 'Download Free Trial' : 'Download';
+        get.textContent = gh ? 'Free Trial' : 'Download';
         act.appendChild(get);
       }
       if (IS_PRODUCT && !opts.classList.contains('guide-download') && document.getElementById('features')) {
@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mark(hero, null, 100);
     document.querySelectorAll('.hero-facts > li').forEach(function (li, i) { li.classList.add('anim', 'pop'); li.style.transitionDelay = (600 + i * 90) + 'ms'; });
     mark(document.querySelectorAll('body > h2, body > h2 + p, body > figure, body > .gallery-nav-wrap, body > .preset-card, body > .more-card, body > .price-notes, body > .faq-list, body > .guide-link, body > .pricing-lead, body > .closing-icon, body > .closing-sub, body > ol, body > .price-wrap, body > .testimonial-rotator, body > p:not(.requirements):not(.tagline):not(.eyebrow)'));
-    document.querySelectorAll('body > ul.tiles, body > .category-grid').forEach(function (ul) { mark(ul.children, null, 120); Array.prototype.forEach.call(ul.children, function (li, i) { li.style.setProperty('--td', (i * 120) + 'ms'); }); });
+    document.querySelectorAll('body > ul.tiles, body > .category-grid').forEach(function (ul) { mark(ul.children, null, 100); Array.prototype.forEach.call(ul.children, function (li, i) { li.style.setProperty('--td', (i * 100) + 'ms'); }); });
     /* the gallery title spells itself in from the right, like the home page's "Explore the line-up." */
     var look = document.getElementById('look');
     if (look) {
@@ -308,14 +308,14 @@ document.addEventListener('DOMContentLoaded', function () {
     mark(document.querySelectorAll('.gallery-nav'), null, 0, 300);
     /* pills pop in one by one, steps rise in turn, the closing icon pops */
     mark(document.querySelectorAll('.preset-chips > li'), 'pop', 30, 200);
-    mark(document.querySelectorAll('body > ol > li'), null, 120);
+    mark(document.querySelectorAll('body > ol > li'), null, 100);
     /* sales cards rise in turn: offers, plans, add-ons, questions */
-    mark(document.querySelectorAll('.offer-grid > div'), 'grow', 140);
-    mark(document.querySelectorAll('.plan-grid > div'), 'grow', 120);
+    mark(document.querySelectorAll('.offer-grid > div'), 'grow', 100);
+    mark(document.querySelectorAll('.plan-grid > div'), 'grow', 100);
     mark(document.querySelectorAll('.addon-card'), 'grow', 0);
     mark(document.querySelectorAll('.addon-grid > li'), 'pop', 70, 250);
-    mark(document.querySelectorAll('.faq-list > details'), null, 70);
-    mark(document.querySelectorAll('.model-grid > div'), 'grow', 90);
+    mark(document.querySelectorAll('.faq-list > details'), null, 100);
+    mark(document.querySelectorAll('.model-grid > div'), 'grow', 100);
     /* blue accent words ("Access", "Tester") spell in letter by letter from the right */
     document.querySelectorAll('.accent-word').forEach(function (w) {
       w.innerHTML = w.textContent.split('').map(function (ch, i) {

@@ -11,3 +11,9 @@
 
 /theme.js
   Cache-Control: public, max-age=31536000, immutable
+
+/apple.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple.js
+  Cache-Control: public, max-age=31536000, immutable

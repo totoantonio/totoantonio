@@ -1,13 +1,20 @@
+/* No jumps on load: keep the page hidden for the split second until the layout below is built
+   (a timer shows it anyway if anything goes wrong) */
+document.documentElement.classList.add('apple-pending');
+var applePendingTimer = setTimeout(function () { document.documentElement.classList.remove('apple-pending'); }, 1500);
 /* Android: Google Sans instead of the Apple system font (same as the User Guide) */
 if (/Android/i.test(navigator.userAgent)) {
   document.documentElement.classList.add('android');
+  if (!document.querySelector('link[href*="Google+Sans"]')) { /* the page may already load it */
   var gs = document.createElement('link');
   gs.rel = 'stylesheet';
   gs.href = 'https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap';
   document.head.appendChild(gs);
+  }
 }
 /* Apple look helpers (apple.css). Design only. */
 document.addEventListener('DOMContentLoaded', function () {
+  try {
   var page = location.pathname.split('/').pop() || 'index.html';
   document.body.classList.add('page-' + page.replace('.html', '')); /* for page-specific touches in apple.css */
 
@@ -339,5 +346,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('ul.tiles > li').forEach(function (li) {
       li.addEventListener('transitionend', function () { li.style.transitionDelay = '0ms'; }, { once: true });
     });
+  }
+  } finally {
+    clearTimeout(applePendingTimer);
+    document.documentElement.classList.remove('apple-pending');
   }
 });

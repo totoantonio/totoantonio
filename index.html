@@ -516,6 +516,27 @@
     .work-status-row:has(.work-status-icon)::before { font-size: 11px; }
   }
 
+  /* Computers: the menu follows the page and gets a frosted pill once you scroll,
+     the same as the product pages (theme.css .site-nav.is-scrolled). */
+  @media (min-width: 601px) {
+    .profile-nav { position: sticky; top: 12px; z-index: 40; pointer-events: none; }
+    .profile-nav > * { pointer-events: auto; }
+    .profile-nav-links {
+      padding: 8px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .profile-nav.is-scrolled .profile-nav-links {
+      border-color: var(--line);
+      background: var(--card-bg);
+      background: color-mix(in srgb, var(--card-bg) 80%, transparent);
+      box-shadow: 0 8px 24px var(--card-shadow);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+  }
+
   @media (max-width: 600px) {
     .profile-nav {
       position: sticky;
@@ -830,6 +851,7 @@
       const shouldDock = mobileMenu.matches &&
         pageTitle.getBoundingClientRect().top <= authorNav.getBoundingClientRect().bottom + 8;
       authorNav.classList.toggle('is-docked', shouldDock);
+      authorNav.classList.toggle('is-scrolled', window.scrollY > 4);
       document.body.classList.toggle('brand-docked', shouldDock);
     };
 

@@ -1669,3 +1669,6 @@ html.apple-pending body { visibility: hidden; }
   :root body .site-nav .theme-toggle, :root body .profile-nav .theme-toggle { border: 1px solid var(--line); border-radius: 50%; background: var(--bg); }
   :root body .theme-toggle .sf-symbol { width: 22px; height: 22px; }
 }
+/* Apple and Windows marks after the Distribution App name, as a small superscript */
+:root body .os-marks { display: inline-flex; gap: .18em; margin-left: .2em; vertical-align: super; font-size: .5em; line-height: 0; }
+:root body .os-marks svg { width: 1em; height: 1em; fill: #86868B; }

@@ -1662,3 +1662,10 @@ html.apple-pending body { visibility: hidden; }
 @media (max-width: 734px) {
   :root body.is-product ul.tiles > li.is-featured > strong:first-of-type { font-size: clamp(22px, 6.2vw, 32px); white-space: nowrap; }
 }
+/* theme switcher in proportion: a bigger symbol, and on phones the same circle as the menu button */
+:root body .theme-toggle .sf-symbol { width: 24px; height: 24px; }
+:root body .theme-toggle { color: var(--text); }
+@media (max-width: 600px) {
+  :root body .site-nav .theme-toggle, :root body .profile-nav .theme-toggle { border: 1px solid var(--line); border-radius: 50%; background: var(--bg); }
+  :root body .theme-toggle .sf-symbol { width: 22px; height: 22px; }
+}

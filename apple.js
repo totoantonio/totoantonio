@@ -1,3 +1,11 @@
+/* Android: Google Sans instead of the Apple system font (same as the User Guide) */
+if (/Android/i.test(navigator.userAgent)) {
+  document.documentElement.classList.add('android');
+  var gs = document.createElement('link');
+  gs.rel = 'stylesheet';
+  gs.href = 'https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap';
+  document.head.appendChild(gs);
+}
 /* Apple look helpers (apple.css). Design only. */
 document.addEventListener('DOMContentLoaded', function () {
   var page = location.pathname.split('/').pop() || 'index.html';

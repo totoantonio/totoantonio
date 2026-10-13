@@ -1588,3 +1588,5 @@ body > main { width: 100%; }
 :root body.is-product > .eyebrow { color: #86868B; font-weight: 400; }
 :root[data-theme="dark"] body.is-product > .eyebrow { color: #86868B; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.is-product > .eyebrow { color: #86868B; } }
+/* Android: Google Sans everywhere except code */
+html.android body, html.android body :not(code):not(kbd):not(pre):not(samp) { font-family: "Google Sans", Roboto, Arial, sans-serif; }

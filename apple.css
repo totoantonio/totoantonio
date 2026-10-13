@@ -1631,3 +1631,4 @@ html.android body, html.android body :not(code):not(kbd):not(pre):not(samp) { fo
 :root body.is-doc > ol, :root body.is-doc > ul { padding-left: 22px; }
 :root body.is-doc > h1 { margin-top: 64px; }
 @media (max-width: 734px) { :root body.is-doc > h1 { margin-top: 40px; } }
+@media (max-width: 734px) { :root body.is-product .addon-grid { grid-template-columns: 1fr; } :root body.is-product .addon-grid li { flex-direction: row; justify-content: space-between; align-items: center; } }

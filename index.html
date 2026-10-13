@@ -1042,6 +1042,7 @@
     .js-anim .anim { transition-duration: .55s !important; }
     .js-anim .lineup-row > li.anim, .js-anim .know-row > li.anim { transition-delay: 0ms !important; }
     .js-anim .know-row > li.anim.from-right { transform: none; }
+    :root body .author-kicker { margin-bottom: -2px; } /* a little higher above the name on phones */
     .js-anim .know-row > li .know-eyebrow, .js-anim .know-row > li .know-head, .js-anim .know-row > li .know-card img { transition-duration: .55s; transition-delay: 120ms; }
   }
 
@@ -1057,6 +1058,8 @@
   .js-anim .anim { transition-duration: .8s; }
   .js-anim .know-row > li .know-eyebrow, .js-anim .know-row > li .know-head, .js-anim .know-row > li .know-card img { transition-duration: .8s; }
   @media (max-width: 734px) { :root body .know-card { padding: 28px; } }
+  :root body .know-nav { margin-bottom: 0; }
+  :root body article > .author-sign { color: var(--text); font-weight: 600; }
 </style>
 </head>
 <body class="author-page">
@@ -1167,14 +1170,18 @@
         </a>
       </li>
     </ul>
+    <div class="gallery-nav know-nav"><div class="gallery-dots" role="tablist" aria-label="Apps"></div>
+      <button class="gallery-arrow" type="button" aria-label="Previous app" data-dir="-1"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M21 11l-7 7 7 7"/></svg></button>
+      <button class="gallery-arrow" type="button" aria-label="Next app" data-dir="1"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M15 11l7 7-7 7"/></svg></button>
+    </div>
   </section>
 
   <h2 class="story-title">Made out of need.</h2>
   <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story — need first, product second. It also means I am the first person who has to live with the result every day.</p>
   <p class="author-note">The apps get built in <b>odd places</b>. My work has me travelling most weeks — <b>long drives</b>, <b>boat rides</b>, <b>airports</b>, <b>hotel rooms</b> — so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
   <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. <b>No feature list padded out to look impressive</b>. Software, thoughtfully made — out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
+<p class="author-note author-sign">totoantonio · Curious, keeps figuring things out, and hopes it earns its keep.</p>
 <div class="author-signoff">
-  <p>totoantonio · Curious, keeps figuring things out, and hopes it earns its keep.</p>
   <div class="signoff-links">
     <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
     <ul class="social">
@@ -1316,7 +1323,7 @@
     ['mouseleave', 'focusout', 'touchend'].forEach(function (t) { row.addEventListener(t, function () { paused = false; }, { passive: true }); });
     new IntersectionObserver(function (e) { seen = e[0].isIntersecting; }, { threshold: 0.5 }).observe(row);
     setInterval(function () {
-      if (paused || !seen || document.hidden) return;
+      if (paused || !seen || document.hidden || Date.now() - (window.knowTouched || 0) < 8000) return;
       var first = row.children[0], step = row.children[1].offsetLeft - first.offsetLeft;
       row.scrollTo({ left: row.scrollLeft + step, behavior: 'smooth' });
       setTimeout(function () {
@@ -1334,6 +1341,68 @@
   document.querySelectorAll('.lineup-row > li').forEach(function (li) {
     li.addEventListener('transitionend', function () { li.style.transitionDelay = '0ms'; }, { once: true });
   });
+})();
+</script>
+<script>
+/* Get to know: dots and ‹ › under the carousel, like the app pages. The row is endless,
+   so the arrows wrap around and the dots follow whichever app is in front. */
+(function () {
+  var row = document.querySelector('.know-row'), nav = document.querySelector('.know-nav');
+  if (!row || !nav) return;
+  var dots = nav.querySelector('.gallery-dots'), n = row.children.length;
+  var smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  Array.prototype.forEach.call(row.children, function (li, i) {
+    li.dataset.i = i;
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'gallery-dot';
+    d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', (li.querySelector('.know-eyebrow') || {}).textContent || 'App ' + (i + 1));
+    d.addEventListener('click', function () {
+      touched();
+      var k = (i - Number(front().dataset.i) + n) % n;
+      if (!k) return;
+      if (k > n / 2) { k -= n; } /* go the short way round */
+      var dir = k > 0 ? 1 : -1;
+      for (var j = Math.abs(k); j > 1; j--) move(dir, true);
+      move(dir);
+    });
+    dots.appendChild(d);
+  });
+  function touched() { window.knowTouched = Date.now(); }
+  function step() { return row.children[1].offsetLeft - row.children[0].offsetLeft; }
+  function front() { /* the card nearest the snap point (left edge, or centre on phones) */
+    var r = row.getBoundingClientRect(), best = null, bestD = 1e9;
+    var centre = getComputedStyle(row.children[0]).scrollSnapAlign.indexOf('center') > -1;
+    var pad = parseFloat(getComputedStyle(row).paddingLeft) || 0;
+    Array.prototype.forEach.call(row.children, function (li) {
+      var b = li.getBoundingClientRect();
+      var d = centre ? Math.abs((b.left + b.right) / 2 - (r.left + r.right) / 2) : Math.abs(b.left - r.left - pad);
+      if (d < bestD) { bestD = d; best = li; }
+    });
+    return best;
+  }
+  function sync() {
+    var f = front(), at = f ? Number(f.dataset.i) : 0;
+    Array.prototype.forEach.call(dots.children, function (d, i) { d.setAttribute('aria-selected', i === at ? 'true' : 'false'); });
+  }
+  /* move one card; recycle a card first when the row lacks room, so it never gets stuck */
+  function move(dir, instant) {
+    var st = step();
+    row.style.scrollSnapType = 'none';
+    if (dir < 0 && row.scrollLeft < st - 4) { row.insertBefore(row.lastElementChild, row.firstElementChild); row.scrollLeft += st; }
+    if (dir > 0 && row.scrollLeft + row.clientWidth + st > row.scrollWidth + 4) { row.appendChild(row.firstElementChild); row.scrollLeft -= st; }
+    if (instant) { row.scrollLeft += dir * st; row.style.scrollSnapType = ''; return; }
+    row.style.scrollSnapType = '';
+    row.scrollBy({ left: dir * st, behavior: smooth });
+  }
+  nav.querySelectorAll('.gallery-arrow').forEach(function (b) {
+    b.addEventListener('click', function () { touched(); move(Number(b.dataset.dir)); });
+  });
+  ['touchstart', 'wheel'].forEach(function (t) { row.addEventListener(t, touched, { passive: true }); });
+  row.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  sync();
 })();
 </script>
 </body>

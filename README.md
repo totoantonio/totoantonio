@@ -12,7 +12,7 @@
 [![Repo size](https://img.shields.io/github/repo-size/totoantonio/totoantonio?color=6E6E73)](https://github.com/totoantonio/totoantonio)
 [![Build](https://img.shields.io/badge/build-none-30D158)](#structure)
 
-Personal site for totoantonio — Mac apps built out of need and necessity, sold without subscriptions or accounts.
+Personal site for totoantonio — Mac apps and business software built out of need and necessity, sold without subscriptions or accounts. Designed to Apple's Human Interface Guidelines.
 
 Live at **https://totoantonio.pages.dev**
 
@@ -23,16 +23,18 @@ Live at **https://totoantonio.pages.dev**
 | macEQ | [`maceq.html`](maceq.html) | System-wide audio equalizer for macOS |
 | KeyboardS | [`keyboards.html`](keyboards.html) | Fast lookup for Mac keyboard shortcuts |
 | Upscape | [`upscape.html`](upscape.html) | Private AI image upscaler, runs on-device |
+| Distribution App | [`distributionapp.html`](distributionapp.html) | Sales and distribution software for wholesale distributors (Mac and Windows, Early Access) |
 
-Plus [`index.html`](index.html) (home), [`support.html`](support.html) and [`privacy.html`](privacy.html).
+Plus [`index.html`](index.html) (home), [`support.html`](support.html), [`upscape-support.html`](upscape-support.html), [`privacy.html`](privacy.html), [`website-privacy.html`](website-privacy.html) and [`404.html`](404.html).
 
 ## Structure
 
 Static HTML, no build step.
 
-- `theme.css` / `theme.js` — shared styling, theme toggle, scroll reveal
+- `theme.css` / `theme.js` — base styling, light/dark theme, cookie choices
+- `apple.css` / `apple.js` — the Apple-style layer, loaded last on every page: frosted nav, product bar, hero and buy area, screenshot gallery with dots, full feature grids, FAQ rows and scroll animations (all off with Reduce Motion)
 - each page — its own layout in a `<style>` block
 - `Assets/` — images, with WebP versions in `Assets/optimized/` served via `srcset`
 - `tools/` — Swift script that regenerates the SF Symbol PNGs
 
-Edit a file, commit to `main`, Cloudflare Pages deploys it.
+Edit a file, commit to `main`, Cloudflare Pages deploys it. After changing `apple.css` or `apple.js`, bump the `?v=` number on every page so browsers load the new version.

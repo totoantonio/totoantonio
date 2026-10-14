@@ -1676,3 +1676,16 @@ html.apple-pending body { visibility: hidden; }
 :root body .os-marks { position: absolute; top: -4px; left: calc(100% + 6px); display: flex; gap: 5px; margin: 0; line-height: 0; }
 :root body .logo-lockup .os-marks { left: calc(50% + 62px); }
 :root body .os-marks svg { width: 16px; height: 16px; fill: #86868B; }
+
+/* Distribution App, phones: zoom the screenshots inside the closer-look cards; the card keeps its size and clips the overflow. */
+@media (max-width: 680px) {
+  :root body.page-distributionapp .gallery-row figure.is-card { isolation: isolate; } /* Safari: keeps the zoomed image clipped to the rounded card */
+  :root body.page-distributionapp .gallery-row figure.is-card img { transform: scale(1.5); transform-origin: 75% 0; }
+}
+/* Phones: slimmer page indicator under the galleries, like iOS page dots. */
+@media (max-width: 680px) {
+  :root body .gallery-nav { margin-top: 20px; }
+  :root body .gallery-dots { height: 28px; gap: 9px; padding: 0 14px; border-radius: 14px; }
+  :root body .gallery-dot { width: 7px; height: 7px; border-radius: 3.5px; }
+  :root body .gallery-dot[aria-selected="true"] { width: 28px; }
+}

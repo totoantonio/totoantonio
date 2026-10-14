@@ -244,7 +244,7 @@
     consentPanel.hidden = true; /* opens only from the cookie icon; optional cookies stay off until chosen */
     consentPanel.innerHTML = `
       <h2>Privacy Choices</h2>
-      <p>Google Fonts supplies this site's typeface and receives basic connection details. Analytics and advertising are optional; choose each separately. <a href="website-privacy.html">Privacy policy</a></p>
+      <p>Google Fonts supplies this site's typeface and receives basic connection details. Analytics and advertising are optional; choose each separately. <a href="website-privacy">Privacy policy</a></p>
       <div class="privacy-consent-options">
         <label><input type="checkbox" data-analytics-choice> Analytics (Google)</label>
         <label><input type="checkbox" data-marketing-choice> Advertising (Meta)</label>

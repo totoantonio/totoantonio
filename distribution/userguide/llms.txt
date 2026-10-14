@@ -1,11 +1,11 @@
 # Distribution App User Guide
 
-> How to install and use Distribution App, wholesale distribution software for Philippine distributors, step by step. The app runs on one office Mac or Windows PC; staff, salesmen and drivers use it in their phone's web browser. Download: https://github.com/totoantonio/DistributionApp/releases/latest
+> How to install and use Distribution App, wholesale distribution software for distributors, step by step. The app runs on one office Mac or Windows PC; staff, salesmen and drivers use it in their phone's web browser. Download: https://github.com/totoantonio/DistributionApp/releases/latest
 
 
 ## Home
 
-- [Home](https://totoantonio.pages.dev/distribution/userguide/): User guide for Distribution App, wholesale software for Philippine distributors: orders, invoices, collections, stock, payroll and BIR books.
+- [Home](https://totoantonio.pages.dev/distribution/userguide/): User guide for Distribution App, wholesale software for distributors: orders, invoices, collections, stock, payroll and BIR books.
 
 ## How It All Connects
 

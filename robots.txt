@@ -47,4 +47,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://totoantonio.pages.dev/sitemap.xml
+Sitemap: https://totoantonio.pages.dev/sitemap_index.xml

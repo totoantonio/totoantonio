@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navLinks) {
     var have = {};
     navLinks.querySelectorAll('a').forEach(function (l) { have[(l.getAttribute('href') || '').split('#')[0]] = true; });
-    [['macEQ', 'maceq.html'], ['KeyboardS', 'keyboards.html'], ['Upscape', 'upscape.html'], ['Distribution App', 'distributionapp.html']].forEach(function (p) {
+    [['macEQ', 'maceq'], ['KeyboardS', 'keyboards'], ['Upscape', 'upscape'], ['Distribution App', 'distributionapp']].forEach(function (p) {
       if (have[p[1]]) return;
       var a = document.createElement('a');
       a.href = p[1];
@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var row = document.createElement('nav');
     row.className = 'footer-links';
     row.setAttribute('aria-label', 'Site');
-    [['Home', 'index.html'], ['macEQ', 'maceq.html'], ['KeyboardS', 'keyboards.html'], ['Upscape', 'upscape.html'],
-     ['Distribution App', 'distributionapp.html'], ['macEQ Support', 'support.html'], ['Upscape Support', 'upscape-support.html'],
-     ['Website Privacy', 'website-privacy.html']].forEach(function (l) {
+    [['Home', '/'], ['macEQ', 'maceq'], ['KeyboardS', 'keyboards'], ['Upscape', 'upscape'],
+     ['Distribution App', 'distributionapp'], ['macEQ Support', 'support'], ['Upscape Support', 'upscape-support'],
+     ['Website Privacy', 'website-privacy']].forEach(function (l) {
       var a = document.createElement('a');
       a.href = l[1];
       a.textContent = l[0];

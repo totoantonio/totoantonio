@@ -1680,12 +1680,8 @@ html.apple-pending body { visibility: hidden; }
 /* Distribution App closer-look cards: one-line titles (7.1cqi fits the longest, 13.2em wide). */
 :root body.page-distributionapp .gallery-row figure.is-card { container-type: inline-size; }
 :root body.page-distributionapp .gallery-row .cap-head { white-space: nowrap; font-size: min(28px, 7.1cqi); }
-/* Phones: the screenshot gets the freed title space + bottom padding, is cropped to the useful part and zoomed past the card edges.
-   Card height stays ~339px; isolation keeps Safari clipping the zoomed image to the rounded card. */
-@media (max-width: 680px) {
-  :root body.page-distributionapp .gallery-row figure.is-card { padding-bottom: 0; isolation: isolate; }
-  :root body.page-distributionapp .gallery-row figure.is-card img { width: 100%; height: 238px; max-height: none; margin: 0; object-fit: cover; object-position: 55% 0; transform: scale(1.3); transform-origin: 55% 0; }
-}
+/* Closer-look images are Mac + iPhone mock-ups on a transparent background: no box shadow or rounded box. */
+:root body.page-distributionapp .gallery-row figure.is-card img { border-radius: 0; box-shadow: none; }
 /* Phones: slimmer page indicator under the galleries, like iOS page dots. */
 @media (max-width: 680px) {
   :root body .gallery-nav { margin-top: 20px; }

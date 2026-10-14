@@ -1689,3 +1689,5 @@ html.apple-pending body { visibility: hidden; }
   :root body .gallery-dot { width: 7px; height: 7px; border-radius: 3.5px; }
   :root body .gallery-dot[aria-selected="true"] { width: 28px; }
 }
+/* The top bar's padding counts inside its width on every page (website-privacy lacked a global border-box, so the bar was 128px too wide and pushed the appearance button off-screen). */
+:root body nav.site-nav { box-sizing: border-box; }

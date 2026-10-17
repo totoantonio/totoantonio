@@ -1053,6 +1053,16 @@ body > main { width: 100%; }
 
 :root body .footer-links a:hover { color: var(--text); }
 
+/* Footer small print: Apple's own footer grey, passes WCAG AA contrast on the light grey band */
+:root[data-theme="light"] body .footer-links a,
+:root[data-theme="light"] body > footer p,
+:root[data-theme="light"] body article > .author-signoff p { color: #6e6e73; opacity: 1; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) body .footer-links a,
+  :root:not([data-theme="dark"]) body > footer p,
+  :root:not([data-theme="dark"]) body article > .author-signoff p { color: #6e6e73; opacity: 1; }
+}
+
 /* KeyboardS screenshots have a thick white border built in: show them on white, without a frame shadow */
 :root body.page-keyboards > figure,
 :root body.page-keyboards > figure.is-card {
@@ -1367,24 +1377,27 @@ body > main { width: 100%; }
 :root body .gallery-row figure.is-card figcaption { order: -1; text-align: center; max-width: 440px; margin: 0 auto 20px; color: var(--muted); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; }
 :root body .gallery-row figure.is-card.is-white { border: 1px solid #E8E8ED; }
 :root body .gallery-nav { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 28px 0 var(--section-gap); }
-:root body .gallery-dots { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 24px; border-radius: 28px; background: rgba(232, 232, 237, .72); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
-:root body .gallery-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 4px; background: rgba(0, 0, 0, .42); cursor: pointer; transition: width .4s cubic-bezier(.2, .8, .2, 1), background .3s ease; }
-:root body .gallery-dot:hover { background: rgba(0, 0, 0, .64); }
-:root body .gallery-dot[aria-selected="true"] { width: 48px; background: rgba(0, 0, 0, .8); }
+:root body .gallery-dots { display: flex; align-items: center; gap: 0; height: 56px; padding: 0 16px; border-radius: 28px; background: rgba(232, 232, 237, .72); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+/* 24px tap target (WCAG), the visible dot is ::before */
+:root body .gallery-dot { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; transition: width .4s cubic-bezier(.2, .8, .2, 1); }
+:root body .gallery-dot::before { content: ""; width: 8px; height: 8px; border-radius: 4px; background: rgba(0, 0, 0, .42); transition: width .4s cubic-bezier(.2, .8, .2, 1), background .3s ease; }
+:root body .gallery-dot:hover::before { background: rgba(0, 0, 0, .64); }
+:root body .gallery-dot[aria-selected="true"] { width: 64px; }
+:root body .gallery-dot[aria-selected="true"]::before { width: 48px; background: rgba(0, 0, 0, .8); }
 :root body .gallery-arrow { display: grid; place-items: center; width: 56px; height: 56px; padding: 0; border: 0; border-radius: 50%; background: rgba(232, 232, 237, .72); color: rgba(0, 0, 0, .56); cursor: pointer; transition: background .2s ease, color .2s ease; }
 :root body .gallery-arrow:hover:not(:disabled) { background: rgba(223, 223, 227, .9); color: rgba(0, 0, 0, .8); }
 :root body .gallery-arrow:disabled { color: rgba(0, 0, 0, .2); cursor: default; }
 :root body .gallery-arrow svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 :root body .gallery-dot:focus-visible, :root body .gallery-arrow:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 :root[data-theme="dark"] body .gallery-dots, :root[data-theme="dark"] body .gallery-arrow { background: rgba(66, 66, 69, .72); }
-:root[data-theme="dark"] body .gallery-dot { background: rgba(255, 255, 255, .42); }
-:root[data-theme="dark"] body .gallery-dot[aria-selected="true"] { background: rgba(255, 255, 255, .8); }
+:root[data-theme="dark"] body .gallery-dot::before { background: rgba(255, 255, 255, .42); }
+:root[data-theme="dark"] body .gallery-dot[aria-selected="true"]::before { background: rgba(255, 255, 255, .8); }
 :root[data-theme="dark"] body .gallery-arrow { color: rgba(255, 255, 255, .64); }
 :root[data-theme="dark"] body .gallery-arrow:disabled { color: rgba(255, 255, 255, .24); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) body .gallery-dots, :root:not([data-theme="light"]) body .gallery-arrow { background: rgba(66, 66, 69, .72); }
-  :root:not([data-theme="light"]) body .gallery-dot { background: rgba(255, 255, 255, .42); }
-  :root:not([data-theme="light"]) body .gallery-dot[aria-selected="true"] { background: rgba(255, 255, 255, .8); }
+  :root:not([data-theme="light"]) body .gallery-dot::before { background: rgba(255, 255, 255, .42); }
+  :root:not([data-theme="light"]) body .gallery-dot[aria-selected="true"]::before { background: rgba(255, 255, 255, .8); }
   :root:not([data-theme="light"]) body .gallery-arrow { color: rgba(255, 255, 255, .64); }
 }
 @media (max-width: 734px) {
@@ -1685,9 +1698,10 @@ html.apple-pending body { visibility: hidden; }
 /* Phones: slimmer page indicator under the galleries, like iOS page dots. */
 @media (max-width: 680px) {
   :root body .gallery-nav { margin-top: 20px; }
-  :root body .gallery-dots { height: 28px; gap: 9px; padding: 0 14px; border-radius: 14px; }
-  :root body .gallery-dot { width: 7px; height: 7px; border-radius: 3.5px; }
-  :root body .gallery-dot[aria-selected="true"] { width: 28px; }
+  :root body .gallery-dots { height: 28px; gap: 0; padding: 0 6px; border-radius: 14px; }
+  :root body .gallery-dot::before { width: 7px; height: 7px; border-radius: 3.5px; }
+  :root body .gallery-dot[aria-selected="true"] { width: 44px; }
+  :root body .gallery-dot[aria-selected="true"]::before { width: 28px; }
 }
 /* The top bar's padding counts inside its width on every page (website-privacy lacked a global border-box, so the bar was 128px too wide and pushed the appearance button off-screen). */
 :root body nav.site-nav { box-sizing: border-box; }

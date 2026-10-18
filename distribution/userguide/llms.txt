@@ -5,67 +5,67 @@
 
 ## Home
 
-- [Home](https://totoantonio.pages.dev/distribution/userguide/): User guide for Distribution App, wholesale software for distributors: orders, invoices, collections, stock, payroll and BIR books.
+- [Home](https://totoantonio.cloud/distribution/userguide/): User guide for Distribution App, wholesale software for distributors: orders, invoices, collections, stock, payroll and BIR books.
 
 ## How It All Connects
 
-- [How It All Connects](https://totoantonio.pages.dev/distribution/userguide/how-it-connects/): See how sales orders, invoices, payments, stock arrivals and expenses flow into stock, receivables, payables and accounting books in Distribution App.
+- [How It All Connects](https://totoantonio.cloud/distribution/userguide/how-it-connects/): See how sales orders, invoices, payments, stock arrivals and expenses flow into stock, receivables, payables and accounting books in Distribution App.
 
 ## Getting Started
 
-- [Getting Started](https://totoantonio.pages.dev/distribution/userguide/getting-started/): Install Distribution App on one office Mac or Windows PC, set up your company, and let staff, salesmen and drivers use it from their phone's browser.
-- [Install on a Mac](https://totoantonio.pages.dev/distribution/userguide/getting-started/install-mac/): How to download and install Distribution App on a Mac running macOS 13 Ventura or later, step by step, in about two minutes.
-- [Install on Windows](https://totoantonio.pages.dev/distribution/userguide/getting-started/install-windows/): How to download and install Distribution App on a Windows 10 or 11 (64-bit) PC, including SmartScreen and firewall prompts.
-- [Try the Demo](https://totoantonio.pages.dev/distribution/userguide/getting-started/demo/): Try Distribution App with a ready-made Demo Company — sample customers, products, orders, payments and reports — before entering your own data.
-- [Set Up Your Company](https://totoantonio.pages.dev/distribution/userguide/getting-started/first-setup/): Set up your company in Distribution App in about five minutes: business details, TIN, the admin account, plus the free trial and activation.
-- [Connect Your Staff](https://totoantonio.pages.dev/distribution/userguide/getting-started/staff-access/): Give staff, salesmen and drivers their own logins and connect their phones or computers to Distribution App through the web browser.
-- [Keep It Running](https://totoantonio.pages.dev/distribution/userguide/getting-started/keep-running/): Keep Distribution App available to your staff all day: start it automatically with the computer and stop the main computer from sleeping.
+- [Getting Started](https://totoantonio.cloud/distribution/userguide/getting-started/): Install Distribution App on one office Mac or Windows PC, set up your company, and let staff, salesmen and drivers use it from their phone's browser.
+- [Install on a Mac](https://totoantonio.cloud/distribution/userguide/getting-started/install-mac/): How to download and install Distribution App on a Mac running macOS 13 Ventura or later, step by step, in about two minutes.
+- [Install on Windows](https://totoantonio.cloud/distribution/userguide/getting-started/install-windows/): How to download and install Distribution App on a Windows 10 or 11 (64-bit) PC, including SmartScreen and firewall prompts.
+- [Try the Demo](https://totoantonio.cloud/distribution/userguide/getting-started/demo/): Try Distribution App with a ready-made Demo Company — sample customers, products, orders, payments and reports — before entering your own data.
+- [Set Up Your Company](https://totoantonio.cloud/distribution/userguide/getting-started/first-setup/): Set up your company in Distribution App in about five minutes: business details, TIN, the admin account, plus the free trial and activation.
+- [Connect Your Staff](https://totoantonio.cloud/distribution/userguide/getting-started/staff-access/): Give staff, salesmen and drivers their own logins and connect their phones or computers to Distribution App through the web browser.
+- [Keep It Running](https://totoantonio.cloud/distribution/userguide/getting-started/keep-running/): Keep Distribution App available to your staff all day: start it automatically with the computer and stop the main computer from sleeping.
 
 ## Selling
 
-- [Selling](https://totoantonio.pages.dev/distribution/userguide/selling/): How selling works in Distribution App, from customer and sales order through approval, invoice and delivery to returns and credit memos.
-- [Customers](https://totoantonio.pages.dev/distribution/userguide/selling/customers/): Add and manage customers in Distribution App: business details, credit limits, payment terms and new-customer approval.
-- [Sales Orders](https://totoantonio.pages.dev/distribution/userguide/selling/sales-orders/): Create sales orders in Distribution App, add products and quantities, and submit them for approval — from the office or a salesman's phone.
-- [Approvals](https://totoantonio.pages.dev/distribution/userguide/selling/approvals/): Approve, return or reject sales orders, purchase orders, new customers and deductions in Distribution App, with credit and stock checks built in.
-- [Invoices and Delivery](https://totoantonio.pages.dev/distribution/userguide/selling/invoices-delivery/): Invoices are created automatically from approved orders. Print the Sales Invoice and track each delivery from packed to delivered.
-- [Returns and Cancelling](https://totoantonio.pages.dev/distribution/userguide/selling/returns/): Handle returned goods with credit memos, and cancel orders or invoices in Distribution App without breaking stock or customer balances.
+- [Selling](https://totoantonio.cloud/distribution/userguide/selling/): How selling works in Distribution App, from customer and sales order through approval, invoice and delivery to returns and credit memos.
+- [Customers](https://totoantonio.cloud/distribution/userguide/selling/customers/): Add and manage customers in Distribution App: business details, credit limits, payment terms and new-customer approval.
+- [Sales Orders](https://totoantonio.cloud/distribution/userguide/selling/sales-orders/): Create sales orders in Distribution App, add products and quantities, and submit them for approval — from the office or a salesman's phone.
+- [Approvals](https://totoantonio.cloud/distribution/userguide/selling/approvals/): Approve, return or reject sales orders, purchase orders, new customers and deductions in Distribution App, with credit and stock checks built in.
+- [Invoices and Delivery](https://totoantonio.cloud/distribution/userguide/selling/invoices-delivery/): Invoices are created automatically from approved orders. Print the Sales Invoice and track each delivery from packed to delivered.
+- [Returns and Cancelling](https://totoantonio.cloud/distribution/userguide/selling/returns/): Handle returned goods with credit memos, and cancel orders or invoices in Distribution App without breaking stock or customer balances.
 
 ## Collecting
 
-- [Collecting](https://totoantonio.pages.dev/distribution/userguide/collecting/): Get paid and track receivables in Distribution App: payments, deductions, post-dated checks, deposits and statements of account.
-- [Receive a Payment](https://totoantonio.pages.dev/distribution/userguide/collecting/payments/): Record customer payments in Distribution App by cash, check, bank transfer or e-wallet, and apply them to one or more open invoices.
-- [Deductions](https://totoantonio.pages.dev/distribution/userguide/collecting/deductions/): Record deductions when a customer pays less than the invoice — such as withholding tax — so the invoice closes properly.
-- [Post-Dated Checks](https://totoantonio.pages.dev/distribution/userguide/collecting/checks/): Track post-dated checks in Distribution App: hold them as pending, deposit them on their date, and handle checks that bounce.
-- [Customer Deposits](https://totoantonio.pages.dev/distribution/userguide/collecting/deposits/): Record money a customer pays before there's an invoice, and apply the deposit to their invoices later in Distribution App.
-- [Who Owes What](https://totoantonio.pages.dev/distribution/userguide/collecting/statements/): See who owes what: statements of account, aging (current, 1–30, 31–60, 61–90, over 90 days), customer ledgers and overdue balances.
+- [Collecting](https://totoantonio.cloud/distribution/userguide/collecting/): Get paid and track receivables in Distribution App: payments, deductions, post-dated checks, deposits and statements of account.
+- [Receive a Payment](https://totoantonio.cloud/distribution/userguide/collecting/payments/): Record customer payments in Distribution App by cash, check, bank transfer or e-wallet, and apply them to one or more open invoices.
+- [Deductions](https://totoantonio.cloud/distribution/userguide/collecting/deductions/): Record deductions when a customer pays less than the invoice — such as withholding tax — so the invoice closes properly.
+- [Post-Dated Checks](https://totoantonio.cloud/distribution/userguide/collecting/checks/): Track post-dated checks in Distribution App: hold them as pending, deposit them on their date, and handle checks that bounce.
+- [Customer Deposits](https://totoantonio.cloud/distribution/userguide/collecting/deposits/): Record money a customer pays before there's an invoice, and apply the deposit to their invoices later in Distribution App.
+- [Who Owes What](https://totoantonio.cloud/distribution/userguide/collecting/statements/): See who owes what: statements of account, aging (current, 1–30, 31–60, 61–90, over 90 days), customer ledgers and overdue balances.
 
 ## Buying and Stock
 
-- [Buying and Stock](https://totoantonio.pages.dev/distribution/userguide/buying/): How buying works in Distribution App: products, suppliers, purchase orders, stock arrivals, supplier payments and stock counts.
-- [Products](https://totoantonio.pages.dev/distribution/userguide/buying/products/): Add products in Distribution App: units and cases, SRP, cost and selling price, reorder points, and importing a supplier's price list.
-- [Suppliers](https://totoantonio.pages.dev/distribution/userguide/buying/suppliers/): Manage suppliers in Distribution App: contact details, payment terms and the supplier ledger of bills and payments.
-- [Purchase Orders](https://totoantonio.pages.dev/distribution/userguide/buying/purchase-orders/): Create purchase orders in Distribution App, including suggested POs worked out from your stock levels and sales, and send them to suppliers.
-- [Stock Arrivals](https://totoantonio.pages.dev/distribution/userguide/buying/stock-arrivals/): Receive supplier deliveries in Distribution App: count what came, handle short or extra items, and turn the arrival into a supplier bill.
-- [Pay Suppliers](https://totoantonio.pages.dev/distribution/userguide/buying/pay-suppliers/): Pay supplier bills in Distribution App: every stock arrival is a bill, due by the supplier's terms, and tracked in accounts payable.
-- [Stock Count](https://totoantonio.pages.dev/distribution/userguide/buying/stock-count/): Count your shelves and let Distribution App adjust stock for the differences, with a record of every adjustment.
+- [Buying and Stock](https://totoantonio.cloud/distribution/userguide/buying/): How buying works in Distribution App: products, suppliers, purchase orders, stock arrivals, supplier payments and stock counts.
+- [Products](https://totoantonio.cloud/distribution/userguide/buying/products/): Add products in Distribution App: units and cases, SRP, cost and selling price, reorder points, and importing a supplier's price list.
+- [Suppliers](https://totoantonio.cloud/distribution/userguide/buying/suppliers/): Manage suppliers in Distribution App: contact details, payment terms and the supplier ledger of bills and payments.
+- [Purchase Orders](https://totoantonio.cloud/distribution/userguide/buying/purchase-orders/): Create purchase orders in Distribution App, including suggested POs worked out from your stock levels and sales, and send them to suppliers.
+- [Stock Arrivals](https://totoantonio.cloud/distribution/userguide/buying/stock-arrivals/): Receive supplier deliveries in Distribution App: count what came, handle short or extra items, and turn the arrival into a supplier bill.
+- [Pay Suppliers](https://totoantonio.cloud/distribution/userguide/buying/pay-suppliers/): Pay supplier bills in Distribution App: every stock arrival is a bill, due by the supplier's terms, and tracked in accounts payable.
+- [Stock Count](https://totoantonio.cloud/distribution/userguide/buying/stock-count/): Count your shelves and let Distribution App adjust stock for the differences, with a record of every adjustment.
 
 ## Money and Books
 
-- [Money and Books](https://totoantonio.pages.dev/distribution/userguide/money/): Track expenses, run payroll, read reports and keep BIR-ready books in Distribution App. Tax and payroll figures are estimates for planning.
-- [Expenses](https://totoantonio.pages.dev/distribution/userguide/money/expenses/): Record business expenses in Distribution App by category, payee and payment method so they flow into your books and income statement.
-- [Payroll](https://totoantonio.pages.dev/distribution/userguide/money/payroll/): Run semi-monthly payroll in Distribution App (1st–15th and 16th–end of month) with SSS, PhilHealth, Pag-IBIG and withholding tax estimates.
-- [Reports](https://totoantonio.pages.dev/distribution/userguide/money/reports/): Read Distribution App reports: sales, receivables, payables, inventory health, income statement and balance sheet.
-- [Books and BIR](https://totoantonio.pages.dev/distribution/userguide/money/books/): Distribution App builds your accounting books and BIR records automatically from invoices, payments, arrivals and expenses — no journal entries.
+- [Money and Books](https://totoantonio.cloud/distribution/userguide/money/): Track expenses, run payroll, read reports and keep BIR-ready books in Distribution App. Tax and payroll figures are estimates for planning.
+- [Expenses](https://totoantonio.cloud/distribution/userguide/money/expenses/): Record business expenses in Distribution App by category, payee and payment method so they flow into your books and income statement.
+- [Payroll](https://totoantonio.cloud/distribution/userguide/money/payroll/): Run semi-monthly payroll in Distribution App (1st–15th and 16th–end of month) with SSS, PhilHealth, Pag-IBIG and withholding tax estimates.
+- [Reports](https://totoantonio.cloud/distribution/userguide/money/reports/): Read Distribution App reports: sales, receivables, payables, inventory health, income statement and balance sheet.
+- [Books and BIR](https://totoantonio.cloud/distribution/userguide/money/books/): Distribution App builds your accounting books and BIR records automatically from invoices, payments, arrivals and expenses — no journal entries.
 
 ## Settings
 
-- [Settings](https://totoantonio.pages.dev/distribution/userguide/settings/): Admin settings in Distribution App: users and permissions, optional features, backups, updates and your own account.
-- [Users and Permissions](https://totoantonio.pages.dev/distribution/userguide/settings/users/): Add users in Distribution App, choose their role, and tick exactly what each staff member may do in sales, payments, stock and reports.
-- [Features and Add-ons](https://totoantonio.pages.dev/distribution/userguide/settings/features/): Switch optional Distribution App features on or off: privacy screen, proof of order, payment QR code, salesman locations and signed delivery receipts.
-- [Backups and Updates](https://totoantonio.pages.dev/distribution/userguide/settings/backups-updates/): Distribution App backs up daily and on quit, keeping the last 14. Learn to back up now, restore a backup and install updates.
-- [My Account](https://totoantonio.pages.dev/distribution/userguide/settings/my-account/): Change your own password, picture and notification settings in Distribution App from My Account.
+- [Settings](https://totoantonio.cloud/distribution/userguide/settings/): Admin settings in Distribution App: users and permissions, optional features, backups, updates and your own account.
+- [Users and Permissions](https://totoantonio.cloud/distribution/userguide/settings/users/): Add users in Distribution App, choose their role, and tick exactly what each staff member may do in sales, payments, stock and reports.
+- [Features and Add-ons](https://totoantonio.cloud/distribution/userguide/settings/features/): Switch optional Distribution App features on or off: privacy screen, proof of order, payment QR code, salesman locations and signed delivery receipts.
+- [Backups and Updates](https://totoantonio.cloud/distribution/userguide/settings/backups-updates/): Distribution App backs up daily and on quit, keeping the last 14. Learn to back up now, restore a backup and install updates.
+- [My Account](https://totoantonio.cloud/distribution/userguide/settings/my-account/): Change your own password, picture and notification settings in Distribution App from My Account.
 
 ## Troubleshooting
 
-- [Troubleshooting](https://totoantonio.pages.dev/distribution/userguide/troubleshooting/): Fixes for common Distribution App problems: trial and activation, staff who can't connect, missing alerts, backups and stock that doesn't match.
+- [Troubleshooting](https://totoantonio.cloud/distribution/userguide/troubleshooting/): Fixes for common Distribution App problems: trial and activation, staff who can't connect, missing alerts, backups and stock that doesn't match.
 

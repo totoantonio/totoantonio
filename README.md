@@ -7,14 +7,14 @@
 [![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-F38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/totoantonio/totoantonio)
 
-[![Live site](https://img.shields.io/website?url=https%3A%2F%2Ftotoantonio.pages.dev&up_message=totoantonio.pages.dev&up_color=0A84FF&down_message=offline&label=live)](https://totoantonio.pages.dev)
+[![Live site](https://img.shields.io/website?url=https%3A%2F%2Ftotoantonio.cloud&up_message=totoantonio.cloud&up_color=0A84FF&down_message=offline&label=live)](https://totoantonio.cloud)
 [![Last commit](https://img.shields.io/github/last-commit/totoantonio/totoantonio?color=30D158)](https://github.com/totoantonio/totoantonio/commits/main)
 [![Repo size](https://img.shields.io/github/repo-size/totoantonio/totoantonio?color=6E6E73)](https://github.com/totoantonio/totoantonio)
 [![Build](https://img.shields.io/badge/build-none-30D158)](#structure)
 
 Personal site for totoantonio — Mac apps and business software built out of need and necessity, sold without subscriptions or accounts. Designed to Apple's Human Interface Guidelines.
 
-Live at **https://totoantonio.pages.dev**
+Live at **https://totoantonio.cloud**
 
 ## Apps
 

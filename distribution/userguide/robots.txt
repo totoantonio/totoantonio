@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://totoantonio.pages.dev/distribution/userguide/sitemap.xml
+Sitemap: https://totoantonio.cloud/distribution/userguide/sitemap.xml

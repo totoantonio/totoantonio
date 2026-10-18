@@ -1,10 +1,10 @@
 # totoantonio
 
-> totoantonio makes small, focused apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; and Upscape, a private AI image upscaler, all for Mac; plus Distribution App, sales and distribution software for wholesale distributors that runs on Mac and Windows. Home page: https://totoantonio.pages.dev/
+> totoantonio makes small, focused apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; and Upscape, a private AI image upscaler, all for Mac; plus Distribution App, sales and distribution software for wholesale distributors that runs on Mac and Windows. Home page: https://totoantonio.cloud/
 
 ## macEQ
 
-> macEQ is a system-wide audio equalizer for macOS 27, sold as a one-time USD 14.99 purchase with no subscription. It shapes the sound of every app at once — Spotify, Apple Music, YouTube, Safari, Chrome — with a 10-band EQ, studio stereo processing, and a live spectrum analyzer. It installs no virtual audio driver. Page: https://totoantonio.pages.dev/maceq
+> macEQ is a system-wide audio equalizer for macOS 27, sold as a one-time USD 14.99 purchase with no subscription. It shapes the sound of every app at once — Spotify, Apple Music, YouTube, Safari, Chrome — with a 10-band EQ, studio stereo processing, and a live spectrum analyzer. It installs no virtual audio driver. Page: https://totoantonio.cloud/maceq
 
 ### What makes macEQ different
 
@@ -40,7 +40,7 @@ Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/checkout/buy/99
 
 ## KeyboardS
 
-> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌘K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Tagline: "Every Mac Shortcut, One Keystroke Away". Page: https://totoantonio.pages.dev/keyboards
+> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌘K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Tagline: "Every Mac Shortcut, One Keystroke Away". Page: https://totoantonio.cloud/keyboards
 
 ### What makes KeyboardS different
 
@@ -69,7 +69,7 @@ Released. Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/check
 
 ## Upscape
 
-> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with seven specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Tagline: "Upscale images privately on your Mac". Page: https://totoantonio.pages.dev/upscape
+> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with seven specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Tagline: "Upscale images privately on your Mac". Page: https://totoantonio.cloud/upscape
 
 ### What makes Upscape different
 
@@ -103,14 +103,14 @@ Coming soon to Lemon Squeezy.
 
 ## Distribution App
 
-> Distribution App is sales and distribution software for wholesale distributors. Customers with credit terms, sales orders with approval, automatic invoices, delivery steps and Delivery Receipts, payments by cash, bank transfer, GCash, Maya and post-dated checks, stock in units and cases with suggested purchase orders, payroll with SSS, PhilHealth and Pag-IBIG, BIR tax estimates, and accounting books worked out from the documents. Runs on one office Mac or Windows computer; staff use it in their phone's browser, and salesmen can write orders without signal. One flat price per company, no per-user fees, billed monthly: Startup (3 users) USD 19/month, Enterprise (10 users) USD 39/month, Superuser (20 users) USD 59/month, each with updates and support. 15-day free trial; the license key arrives by email after subscribing. Latest version: 1.4.0. Early access: now welcoming founding users, who get a direct line to the maker and first say in new features. Testers who use it in their business and send feedback get 30% off their plan. Page: https://totoantonio.pages.dev/distributionapp · User Guide: https://totoantonio.pages.dev/distribution/userguide/ · Download: https://github.com/totoantonio/DistributionApp/releases/latest · Subscribe: https://totoantonio.lemonsqueezy.com/checkout/buy/0cbf4e13-03bb-48c3-9239-ef3ea46a7a95
+> Distribution App is sales and distribution software for wholesale distributors. Customers with credit terms, sales orders with approval, automatic invoices, delivery steps and Delivery Receipts, payments by cash, bank transfer, GCash, Maya and post-dated checks, stock in units and cases with suggested purchase orders, payroll with SSS, PhilHealth and Pag-IBIG, BIR tax estimates, and accounting books worked out from the documents. Runs on one office Mac or Windows computer; staff use it in their phone's browser, and salesmen can write orders without signal. One flat price per company, no per-user fees, billed monthly: Startup (3 users) USD 19/month, Enterprise (10 users) USD 39/month, Superuser (20 users) USD 59/month, each with updates and support. 15-day free trial; the license key arrives by email after subscribing. Latest version: 1.4.0. Early access: now welcoming founding users, who get a direct line to the maker and first say in new features. Testers who use it in their business and send feedback get 30% off their plan. Page: https://totoantonio.cloud/distributionapp · User Guide: https://totoantonio.cloud/distribution/userguide/ · Download: https://github.com/totoantonio/DistributionApp/releases/latest · Subscribe: https://totoantonio.lemonsqueezy.com/checkout/buy/0cbf4e13-03bb-48c3-9239-ef3ea46a7a95
 
 ## Pages
 
-- [Home](https://totoantonio.pages.dev/): who totoantonio is and every app in one place
-- [macEQ](https://totoantonio.pages.dev/maceq): overview, features, presets, and how to use macEQ
-- [KeyboardS](https://totoantonio.pages.dev/keyboards): features, categories, privacy, and how to use KeyboardS
-- [Upscape](https://totoantonio.pages.dev/upscape): features, models, use cases, privacy, and FAQ
-- [Distribution App](https://totoantonio.pages.dev/distributionapp): features, Philippine features, how it works, pricing, and FAQ
-- [Support](https://totoantonio.pages.dev/support): first-run setup, troubleshooting steps, and a contact form
-- [Privacy policy](https://totoantonio.pages.dev/privacy): full privacy terms
+- [Home](https://totoantonio.cloud/): who totoantonio is and every app in one place
+- [macEQ](https://totoantonio.cloud/maceq): overview, features, presets, and how to use macEQ
+- [KeyboardS](https://totoantonio.cloud/keyboards): features, categories, privacy, and how to use KeyboardS
+- [Upscape](https://totoantonio.cloud/upscape): features, models, use cases, privacy, and FAQ
+- [Distribution App](https://totoantonio.cloud/distributionapp): features, Philippine features, how it works, pricing, and FAQ
+- [Support](https://totoantonio.cloud/support): first-run setup, troubleshooting steps, and a contact form
+- [Privacy policy](https://totoantonio.cloud/privacy): full privacy terms

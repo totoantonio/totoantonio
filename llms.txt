@@ -69,12 +69,12 @@ Released. Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/check
 
 ## Upscape
 
-> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with seven specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Tagline: "Upscale images privately on your Mac". Page: https://totoantonio.cloud/upscape
+> Upscape is a private AI image upscaler for Mac. It enhances photos, illustrations, portraits, screenshots and compressed images locally with Core ML, upscaling up to 4x with six specialized models, batch processing, a before and after comparison slider, and PNG, JPEG, TIFF, HEIC and WebP export. Images are never uploaded and no account is required. Tagline: "Upscale images privately on your Mac". Page: https://totoantonio.cloud/upscape
 
 ### What makes Upscape different
 
 - **Private by design.** Every image is processed locally with Core ML. Files are never uploaded for processing.
-- **Seven specialized models** rather than one general-purpose network, so the model matches the source material.
+- **Six specialized models** rather than one general-purpose network, so the model matches the source material.
 - **Built for Apple Silicon**, running across the GPU, Neural Engine and CPU.
 - **Works offline.** Once installed with its models, no internet connection and no account are needed.
 
@@ -99,11 +99,11 @@ Upscape improves low-resolution, compressed and pixelated images, but it cannot 
 
 ### Upscape availability
 
-Coming soon to Lemon Squeezy.
+Submitted to the App Store; release coming soon.
 
 ## Distribution App
 
-> Distribution App is sales and distribution software for wholesale distributors. Customers with credit terms, sales orders with approval, automatic invoices, delivery steps and Delivery Receipts, payments by cash, bank transfer, GCash, Maya and post-dated checks, stock in units and cases with suggested purchase orders, payroll with SSS, PhilHealth and Pag-IBIG, BIR tax estimates, and accounting books worked out from the documents. Runs on one office Mac or Windows computer; staff use it in their phone's browser, and salesmen can write orders without signal. One flat price per company, no per-user fees, billed monthly: Startup (3 users) USD 19/month, Enterprise (10 users) USD 39/month, Superuser (20 users) USD 59/month, each with updates and support. 15-day free trial; the license key arrives by email after subscribing. Latest version: 1.4.0. Early access: now welcoming founding users, who get a direct line to the maker and first say in new features. Testers who use it in their business and send feedback get 30% off their plan. Page: https://totoantonio.cloud/distributionapp · User Guide: https://totoantonio.cloud/distribution/userguide/ · Download: https://github.com/totoantonio/DistributionApp/releases/latest · Subscribe: https://totoantonio.lemonsqueezy.com/checkout/buy/0cbf4e13-03bb-48c3-9239-ef3ea46a7a95
+> Distribution App is sales and distribution software for wholesale distributors. Customers with credit terms, sales orders with approval, automatic invoices, delivery steps and Delivery Receipts, payments by cash, bank transfer, GCash, Maya and post-dated checks, stock in units and cases with suggested purchase orders, payroll with SSS, PhilHealth and Pag-IBIG, BIR tax estimates, and accounting books worked out from the documents. Runs on one office Mac or Windows computer; staff use it in their phone's browser, and salesmen can write orders without signal. One flat price per company, no per-user fees, billed monthly: Startup (3 users) USD 19/month, Enterprise (10 users) USD 39/month, Superuser (20 users) USD 59/month, each with updates and support. 15-day free trial; the license key arrives by email after subscribing. Latest version: 1.5.0. Early access: now welcoming founding users, who get a direct line to the maker and first say in new features. Testers who use it in their business and send feedback get 30% off their plan. Page: https://totoantonio.cloud/distributionapp · User Guide: https://totoantonio.cloud/distribution/userguide/ · Download: https://github.com/totoantonio/DistributionApp/releases/latest · Subscribe: https://totoantonio.lemonsqueezy.com/checkout/buy/0cbf4e13-03bb-48c3-9239-ef3ea46a7a95
 
 ## Pages
 

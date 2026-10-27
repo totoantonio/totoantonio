@@ -1066,20 +1066,27 @@
   @media (min-width: 735px) { :root body .lineup-wide .icon-with-marks .os-marks { left: auto; right: -4px; top: -24px; } }
   @media (max-width: 734px) { :root body .lineup-wide > .icon-with-marks { align-self: center; margin-bottom: 20px; } :root body .lineup-wide .icon-with-marks .work-logo { margin: 0; } }
   :root body article > .author-sign { color: var(--muted); font-weight: 400; }
-  /* phones: two ID-badge cards side by side (slot punched at the top), the third centred below */
+  /* phones: icon left, name / tagline / store marks right; the whole card is the link (like sindresorhus.com/apps).
+     One per row on phones, two per row once there's room for the text beside the icon. */
   @media (max-width: 734px) {
-    :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    :root body .lineup-row.lineup-mac > li:nth-child(n) { padding: 14px 12px 16px; border-radius: 20px; }
-    :root body .lineup-row.lineup-mac > li:nth-child(3) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
-    :root body .lineup-mac > li::before { content: ""; order: -1; width: 32px; height: 6px; margin: 0 0 16px; border-radius: 3px; background: var(--bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .12); }
-    :root body .lineup-mac > li > .lineup-icon { width: 64px; height: 64px; margin-bottom: 12px; border-radius: 14px; }
-    :root body .lineup-mac > li > .lineup-name { font-size: 17px; line-height: 1.24; }
-    :root body .lineup-mac > li > .lineup-text { margin-top: 4px; font-size: 13px; line-height: 1.38; }
-    :root body .lineup-mac > li > .lineup-actions { flex-direction: column; gap: 6px; margin-top: 12px; }
-    :root body .lineup-mac .lineup-more { padding: 6px 14px; font-size: 13px; }
-    :root body .lineup-mac .lineup-get { font-size: 13px; }
-    :root body .lineup-mac > li > .lineup-stores { margin-top: 10px; }
-    :root body .lineup-mac .lineup-stores-label { font-size: 11px; }
+    :root body .lineup-row.lineup-mac { grid-template-columns: 1fr; gap: 12px; }
+    :root body .lineup-row.lineup-mac > li:nth-child(n) {
+      position: relative; display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 16px; align-content: center;
+      padding: 18px; border-radius: 20px; text-align: left;
+    }
+    :root body .lineup-mac > li > * { grid-column: 2; }
+    :root body .lineup-mac > li > .lineup-icon { grid-column: 1; grid-row: 1 / span 4; align-self: center; width: 72px; height: 72px; margin: 0; border-radius: 16px; }
+    :root body .lineup-mac > li > .lineup-label:empty,
+    :root body .lineup-mac > li > .lineup-actions,
+    :root body .lineup-mac .lineup-stores-label { display: none; }
+    :root body .lineup-mac > li > .lineup-name { margin: 0; font-size: 19px; line-height: 1.21; }
+    :root body .lineup-mac .lineup-name a { font-weight: 700; }
+    :root body .lineup-mac .lineup-name a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+    :root body .lineup-mac > li > .lineup-text { margin: 2px 0 0; color: var(--text); font-size: 15px; line-height: 1.33; }
+    :root body .lineup-mac > li > .lineup-stores { justify-content: flex-start; margin: 8px 0 0; }
+  }
+  @media (min-width: 580px) and (max-width: 734px) {
+    :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 </style>
 </head>

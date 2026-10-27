@@ -1066,6 +1066,17 @@
   @media (min-width: 735px) { :root body .lineup-wide .icon-with-marks .os-marks { left: auto; right: -4px; top: -24px; } }
   @media (max-width: 734px) { :root body .lineup-wide > .icon-with-marks { align-self: center; margin-bottom: 20px; } :root body .lineup-wide .icon-with-marks .work-logo { margin: 0; } }
   :root body article > .author-sign { color: var(--muted); font-weight: 400; }
+  /* phones: the desktop cards scaled down, two side by side, the third centred below */
+  @media (max-width: 734px) {
+    :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    :root body .lineup-row.lineup-mac > li:nth-child(n) { padding: 28px 12px 24px; border-radius: 22px; }
+    :root body .lineup-row.lineup-mac > li:nth-child(3) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
+    :root body .lineup-mac > li > .lineup-icon { width: 72px; height: 72px; margin-bottom: 16px; border-radius: 16px; }
+    :root body .lineup-mac > li > .lineup-name { font-size: 19px; line-height: 1.21; }
+    :root body .lineup-mac > li > .lineup-text { margin-top: 6px; font-size: 14px; line-height: 1.43; }
+    :root body .lineup-mac > li > .lineup-actions { flex-direction: column; gap: 10px; margin-top: 16px; }
+    :root body .lineup-mac > li > .lineup-stores { margin-top: 16px; }
+  }
 </style>
 </head>
 <body class="author-page">

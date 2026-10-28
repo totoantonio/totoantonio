@@ -36,5 +36,18 @@ Static HTML, no build step.
 - each page — its own layout in a `<style>` block
 - `Assets/` — images, with WebP versions in `Assets/optimized/` served via `srcset`
 - `tools/` — Swift script that regenerates the SF Symbol PNGs
+- `distribution/userguide/` — Distribution App User Guide (a built copy, served at `/distribution/userguide`)
+
+## Preview
+
+```sh
+python3 -m http.server 8765
+```
+
+Open http://localhost:8765, or `http://<your Mac's IP>:8765` on an iPhone on the same Wi-Fi. Opening the files directly (`file://`) hides the SF Symbol icons, which are drawn with CSS masks.
+
+## Publish
 
 Edit a file, commit to `main`, Cloudflare Pages deploys it. After changing `apple.css` or `apple.js`, bump the `?v=` number on every page so browsers load the new version.
+
+Links, canonicals, the sitemap and `llms.txt` use clean URLs (`/maceq`, not `/maceq.html`) — Cloudflare redirects `.html` and Google skips redirected pages.

@@ -1705,3 +1705,10 @@ html.apple-pending body { visibility: hidden; }
 }
 /* The top bar's padding counts inside its width on every page (website-privacy lacked a global border-box, so the bar was 128px too wide and pushed the appearance button off-screen). */
 :root body nav.site-nav { box-sizing: border-box; }
+/* macEQ on phones: stacked trial and buy buttons, then the features link */
+@media (max-width: 640px) {
+  :root body.is-product .hero-buy:has(.hero-more[href*="lemonsqueezy"]) { width: 100%; }
+  :root body.is-product .hero-actions:has(.hero-more[href*="lemonsqueezy"]) { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; max-width: 340px; text-align: center; }
+  :root body.is-product .hero-more[href*="lemonsqueezy"] { box-sizing: border-box; padding: 11px 24px; border: 1px solid var(--link); border-radius: 980px; line-height: 1.18; }
+  :root body.is-product .hero-more[href*="lemonsqueezy"]:hover { text-decoration: none; }
+}

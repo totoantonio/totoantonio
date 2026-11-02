@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (get) {
       var pill = document.createElement('a');
       pill.className = 'local-nav-buy';
-      pill.href = get.href;
+      pill.href = get.closest('.download-options').getAttribute('data-trial') || get.href;
       if (get.target) { pill.target = get.target; pill.rel = 'noopener'; }
       pill.textContent = 'Download';
       links.appendChild(pill);
@@ -80,14 +80,24 @@ document.addEventListener('DOMContentLoaded', function () {
       var act = document.createElement('p');
       act.className = 'hero-actions';
       var main = gh || lemon;
+      var trial = opts.getAttribute('data-trial');
       if (main) {
         var get = document.createElement('a');
         get.className = 'hero-get';
-        get.href = main.href;
+        get.href = trial || main.href;
         get.target = '_blank';
         get.rel = 'noopener';
-        get.textContent = gh ? 'Free Trial' : 'Download';
+        get.textContent = trial ? 'Download Free Trial' : gh ? 'Free Trial' : 'Download';
         act.appendChild(get);
+      }
+      if (trial && lemon) {
+        var buyNow = document.createElement('a');
+        buyNow.className = 'hero-more';
+        buyNow.href = lemon.href;
+        buyNow.target = '_blank';
+        buyNow.rel = 'noopener';
+        buyNow.textContent = 'Buy for USD 14.99 ›';
+        act.appendChild(buyNow);
       }
       if (IS_PRODUCT && !opts.classList.contains('guide-download') && document.getElementById('features')) {
         var more = document.createElement('a');

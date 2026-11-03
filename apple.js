@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         buyNow.href = lemon.href;
         buyNow.target = '_blank';
         buyNow.rel = 'noopener';
-        buyNow.textContent = 'Buy for USD 14.99 ›';
+        buyNow.textContent = 'Buy for USD ' + (opts.getAttribute('data-price') || '14.99') + ' ›';
         act.appendChild(buyNow);
       }
       if (IS_PRODUCT && !opts.classList.contains('guide-download') && document.getElementById('features')) {

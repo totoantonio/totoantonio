@@ -40,7 +40,7 @@ Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/checkout/buy/99
 
 ## KeyboardS
 
-> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌘K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Tagline: "Every Mac Shortcut, One Keystroke Away". Page: https://totoantonio.cloud/keyboards
+> KeyboardS is a menu bar app for macOS that lists 200+ keyboard shortcuts across 14 categories. A global ⌃⌥K hotkey opens an instant search panel from any app. It is a static reference — it does not record keystrokes and needs no Input Monitoring permission. Tagline: "Every Mac Shortcut, One Keystroke Away". Page: https://totoantonio.cloud/keyboards
 
 ### What makes KeyboardS different
 
@@ -52,7 +52,7 @@ Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/checkout/buy/99
 ### KeyboardS features
 
 - Menu bar app with no Dock icon
-- Global ⌘K hotkey that opens the panel from any app
+- Global ⌃⌥K hotkey that opens the panel from any app
 - Instant search across every category at once
 - 200+ macOS shortcuts written in plain language
 - 14 categories, each with a running count: Most Used, Basics, Power, Modifier Keys, Screenshots, System, Spaces, Text, Text Selection, Finder, Finder Navigation, Accessibility, Function Keys, Advanced

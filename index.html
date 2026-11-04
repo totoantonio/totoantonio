@@ -1076,9 +1076,14 @@
   :root body .lineup-mac .appstore-mark { filter: grayscale(1); opacity: .7; }
   :root body .lineup-mac .lineup-stores::after { content: ""; order: 9; width: 20px; height: 20px; background: var(--muted); -webkit-mask: var(--macbook) center / contain no-repeat; mask: var(--macbook) center / contain no-repeat; }
   :root body .lineup-mac { --macbook: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4.5' y='5.5' width='15' height='10' rx='1.5'/%3E%3Cpath d='M2.5 18.5h19'/%3E%3C/svg%3E"); }
-  /* reserved slot for the next app: an empty card fills the fourth spot */
-  :root body .lineup-row.lineup-mac::after { content: ""; border: 1px dashed var(--line); border-radius: 22px; }
-  @media (max-width: 734px) { :root body .lineup-row.lineup-mac::after { display: none; } }
+  /* DiskCleaner: featured, with a ribbon in the top-right corner; opens diskcleaner.pro */
+  :root body .lineup-mac .work-logo-diskcleaner { background-image: url("Assets/optimized/diskcleaner-icon-384.png"); }
+  :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: hidden; border-color: var(--blue); }
+  :root body .lineup-mac > li.lineup-featured > .lineup-label { position: absolute; top: 14px; right: -34px; width: 130px; margin: 0; padding: 4px 0; transform: rotate(45deg); background: var(--blue); color: #FFFFFF; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-align: center; text-transform: uppercase; }
+  @media (max-width: 734px) {
+    :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: visible; }
+    :root body .lineup-mac > li.lineup-featured > .lineup-label { position: static; width: auto; padding: 0; transform: none; background: none; color: var(--link); text-align: left; }
+  }
   :root body .lineup-mac > li > * { grid-column: 2; }
   :root body .lineup-mac > li > .lineup-icon { grid-column: 1; grid-row: 1 / span 4; align-self: center; width: 80px; height: 80px; margin: 0; border-radius: 18px; }
   :root body .lineup-mac > li > .lineup-label:empty,
@@ -1166,6 +1171,13 @@
         <p class="lineup-text">Sharper images, privately on your Mac.</p>
         <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" role="img" aria-label="Coming soon to the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" role="img" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
         <p class="lineup-actions"><a class="lineup-more" href="upscape">Learn more<span class="visually-hidden"> about Upscape</span></a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/c09293b2-94a2-4312-bc47-99985d8d56bd" target="_blank" rel="noopener">Download ›</a></p>
+      </li>
+      <li class="lineup-featured">
+        <a class="lineup-icon work-logo work-logo-diskcleaner" href="https://diskcleaner.pro" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"></a>
+        <p class="lineup-label">Featured</p>
+        <h3 class="lineup-name"><a href="https://diskcleaner.pro" target="_blank" rel="noopener" data-analytics-event="select_item" data-item-id="diskcleaner" data-item-name="DiskCleaner">DiskCleaner</a></h3>
+        <p class="lineup-text">A review-first Mac cleaner. Everything moves to Trash.</p>
+        <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" role="img" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
       </li>
     </ul>
     <h3 class="lineup-group">For Your Business.</h3>

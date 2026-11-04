@@ -1,6 +1,6 @@
 # totoantonio
 
-> totoantonio makes small, focused apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; and Upscape, a private AI image upscaler, all for Mac; plus Distribution App, sales and distribution software for wholesale distributors that runs on Mac and Windows. Home page: https://totoantonio.cloud/
+> totoantonio makes small, focused apps sold without subscriptions or accounts: macEQ, a system-wide audio equalizer; KeyboardS, a keyboard shortcut reference; Upscape, a private AI image upscaler; and DiskCleaner, a review-first Mac cleaner, all for Mac; plus Distribution App, sales and distribution software for wholesale distributors that runs on Mac and Windows. Home page: https://totoantonio.cloud/
 
 ## macEQ
 
@@ -99,7 +99,11 @@ Upscape improves low-resolution, compressed and pixelated images, but it cannot 
 
 ### Upscape availability
 
-Submitted to the App Store; release coming soon.
+One-time USD 9.99 purchase with a 7-day free trial and no subscription. Sold through Lemon Squeezy: https://totoantonio.lemonsqueezy.com/checkout/buy/c09293b2-94a2-4312-bc47-99985d8d56bd — App Store release coming soon.
+
+## DiskCleaner
+
+> DiskCleaner is a review-first Mac cleaner. It shows every cache, log, leftover and large file across 21 scan categories before anything is removed, and everything it removes goes to the Trash, so it can be restored until the Trash is emptied. Free Core Cleaning; full version is a one-time USD 9.99 purchase with no subscription. Website: https://diskcleaner.pro
 
 ## Distribution App
 
@@ -112,5 +116,7 @@ Submitted to the App Store; release coming soon.
 - [KeyboardS](https://totoantonio.cloud/keyboards): features, categories, privacy, and how to use KeyboardS
 - [Upscape](https://totoantonio.cloud/upscape): features, models, use cases, privacy, and FAQ
 - [Distribution App](https://totoantonio.cloud/distributionapp): features, local payments and taxes, how it works, pricing, and FAQ
+- [Upscape Support](https://totoantonio.cloud/upscape-support): help and answers for Upscape
+- [DiskCleaner](https://diskcleaner.pro): DiskCleaner's own website
 - [Support](https://totoantonio.cloud/support): first-run setup, troubleshooting steps, and a contact form
 - [Privacy policy](https://totoantonio.cloud/privacy): full privacy terms

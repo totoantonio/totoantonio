@@ -1710,3 +1710,12 @@ html.apple-pending body { visibility: hidden; }
   :root body.is-product .hero-more[href*="lemonsqueezy"] { box-sizing: border-box; padding: 11px 24px; border: 1px solid var(--link); border-radius: 980px; line-height: 1.18; }
   :root body.is-product .hero-more[href*="lemonsqueezy"]:hover { text-decoration: none; }
 }
+
+/* Site-wide, matching the home page: headline scale, gray App Store mark, Xcode-style capsules */
+:root { --headline: 40px; }
+@media (max-width: 1068px) { :root { --headline: 34px; } }
+@media (max-width: 734px) { :root { --headline: 28px; } }
+:root body .appstore-mark { filter: grayscale(1); opacity: .7; }
+:root body > .requirements { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 14px; }
+:root body .requirements .cap { display: inline-flex; align-items: center; justify-content: center; height: 24px; padding: 0 11px; border: .5px solid rgba(0, 0, 0, .08); border-radius: 980px; background: linear-gradient(#FFFFFF, #FAFAFA); box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04), inset 0 1px 0 rgba(255, 255, 255, .9); color: var(--text); font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap; }
+:root[data-theme="dark"] body .requirements .cap { border-color: rgba(255, 255, 255, .12); background: linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .06)); box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .1); }

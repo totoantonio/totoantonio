@@ -1072,6 +1072,10 @@
     position: relative; display: grid; grid-template-columns: 80px minmax(0, 1fr); column-gap: 18px; align-content: center;
     padding: 22px; border: 1px solid var(--line); border-radius: 22px; text-align: left;
   }
+  /* store marks in gray; a MacBook outline says it is a Mac app */
+  :root body .lineup-mac .appstore-mark { filter: grayscale(1); opacity: .7; }
+  :root body .lineup-mac .lineup-stores::after { content: ""; order: 9; width: 20px; height: 20px; background: var(--muted); -webkit-mask: var(--macbook) center / contain no-repeat; mask: var(--macbook) center / contain no-repeat; }
+  :root body .lineup-mac { --macbook: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4.5' y='5.5' width='15' height='10' rx='1.5'/%3E%3Cpath d='M2.5 18.5h19'/%3E%3C/svg%3E"); }
   /* reserved slot for the next app: an empty card fills the fourth spot */
   :root body .lineup-row.lineup-mac::after { content: ""; border: 1px dashed var(--line); border-radius: 22px; }
   @media (max-width: 734px) { :root body .lineup-row.lineup-mac::after { display: none; } }

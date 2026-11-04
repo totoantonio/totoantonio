@@ -1116,7 +1116,8 @@
   }
   /* promise line, and price / trial pills in the Mac cards */
   :root body .author-promise { display: block; margin-bottom: 4px; color: var(--text); font-weight: 600; }
-  :root body .lineup-mac .lineup-tag { order: 0; display: inline-flex; align-items: center; justify-content: center; height: 20px; padding: 0 9px; border-radius: 980px; background: var(--line); color: var(--text); font-size: 12px; font-weight: 600; line-height: 1; white-space: nowrap; }
+  :root body .lineup-mac .lineup-tag { order: 0; display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 10px; border: .5px solid rgba(0, 0, 0, .08); border-radius: 980px; background: linear-gradient(#FFFFFF, #FAFAFA); box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04), inset 0 1px 0 rgba(255, 255, 255, .9); color: var(--text); font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap; }
+  :root[data-theme="dark"] body .lineup-mac .lineup-tag { border-color: rgba(255, 255, 255, .12); background: linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .06)); box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .1); }
 </style>
 </head>
 <body class="author-page">

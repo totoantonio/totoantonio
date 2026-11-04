@@ -1067,22 +1067,23 @@
   :root body article > .author-sign { color: var(--muted); font-weight: 400; }
   /* Mac apps: icon left, name / tagline / store marks right; the whole card is the link (like sindresorhus.com/apps).
      Big screens: rounded cards, two per row. Phones: a plain list with hairlines between rows. */
-  :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (min-width: 1069px) { :root body .lineup-row.lineup-mac { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   :root body .lineup-row.lineup-mac > li:nth-child(n) {
-    position: relative; display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 28px; align-content: center;
-    padding: 32px; border: 1px solid var(--line); border-radius: 28px; text-align: left;
+    position: relative; display: grid; grid-template-columns: 80px minmax(0, 1fr); column-gap: 18px; align-content: center;
+    padding: 22px; border: 1px solid var(--line); border-radius: 22px; text-align: left;
   }
-  :root body .lineup-row.lineup-mac > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  @media (max-width: 1068px) { :root body .lineup-row.lineup-mac > li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
   :root body .lineup-mac > li > * { grid-column: 2; }
-  :root body .lineup-mac > li > .lineup-icon { grid-column: 1; grid-row: 1 / span 4; align-self: center; width: 112px; height: 112px; margin: 0; border-radius: 25px; }
+  :root body .lineup-mac > li > .lineup-icon { grid-column: 1; grid-row: 1 / span 4; align-self: center; width: 80px; height: 80px; margin: 0; border-radius: 18px; }
   :root body .lineup-mac > li > .lineup-label:empty,
   :root body .lineup-mac > li > .lineup-actions,
   :root body .lineup-mac .lineup-stores-label { display: none; }
-  :root body .lineup-mac > li > .lineup-name { margin: 0; font-size: 28px; line-height: 1.14; }
+  :root body .lineup-mac > li > .lineup-name { margin: 0; font-size: 21px; line-height: 1.19; }
   :root body .lineup-mac .lineup-name a { font-weight: 700; }
   :root body .lineup-mac .lineup-name a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
-  :root body .lineup-mac > li > .lineup-text { margin: 6px 0 0; color: var(--text); font-size: 19px; line-height: 1.32; }
-  :root body .lineup-mac > li > .lineup-stores { justify-content: flex-start; margin: 14px 0 0; }
+  :root body .lineup-mac > li > .lineup-text { margin: 2px 0 0; color: var(--text); font-size: 16px; line-height: 1.32; }
+  :root body .lineup-mac > li > .lineup-stores { justify-content: flex-start; margin: 10px 0 0; }
   @media (max-width: 734px) {
     :root body .lineup-row.lineup-mac { grid-template-columns: 1fr; gap: 0; }
     :root body .lineup-row.lineup-mac > li:nth-child(n) {

@@ -1071,7 +1071,7 @@
   :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   :root body .lineup-row.lineup-mac > li:nth-child(n) {
     position: relative; display: grid; grid-template-columns: 68px minmax(0, 1fr); column-gap: 18px; align-content: center;
-    padding: 22px; border: 1px solid var(--line); border-radius: 22px; text-align: left;
+    padding: 22px; border: 0; border-radius: 22px; text-align: left;
   }
   /* store marks in gray; a MacBook outline says it is a Mac app */
   :root body .lineup-mac .appstore-mark { filter: grayscale(1); opacity: .7; }
@@ -1081,7 +1081,7 @@
   :root body .lineup-mac { --macbook: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4.5' y='5.5' width='15' height='10' rx='1.5'/%3E%3Cpath d='M2.5 18.5h19'/%3E%3C/svg%3E"); }
   /* DiskCleaner: featured, with a ribbon in the top-right corner; opens diskcleaner.pro */
   :root body .lineup-mac .work-logo-diskcleaner { background-image: url("Assets/optimized/diskcleaner-icon-384.png"); }
-  :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: hidden; border-color: var(--blue); }
+  :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: hidden; }
   :root body .lineup-mac > li.lineup-featured > .lineup-label { position: absolute; top: 14px; right: -34px; width: 130px; margin: 0; padding: 4px 0; transform: rotate(45deg); background: var(--blue); color: #FFFFFF; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-align: center; text-transform: uppercase; }
   @media (max-width: 734px) {
     :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: visible; }

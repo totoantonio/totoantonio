@@ -1099,7 +1099,7 @@
     :root body .lineup-row.lineup-mac { grid-template-columns: 1fr; gap: 0; }
     :root body .lineup-row.lineup-mac > li:nth-child(n) {
       grid-template-columns: 80px minmax(0, 1fr); column-gap: 18px;
-      padding: 22px 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none;
+      padding: 22px 0; border: 0; border-top: .5px solid color-mix(in srgb, var(--line) 55%, transparent); border-radius: 0; background: none;
     }
     :root body .lineup-row.lineup-mac > li:first-child { border-top: 0; padding-top: 0; }
     :root body .lineup-mac > li > .lineup-icon { width: 80px; height: 80px; border-radius: 18px; }

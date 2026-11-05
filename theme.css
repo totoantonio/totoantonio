@@ -658,6 +658,8 @@ figure.reveal.visible {
 }
 
 .testimonial-track {
+  /* All quotes share one grid cell, so the box is always as tall as the longest quote — no jump when they rotate */
+  display: grid;
   position: relative;
   overflow: hidden;
   min-height: 170px;
@@ -667,8 +669,8 @@ figure.reveal.visible {
 }
 
 .testimonial-item {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
+  position: relative;
   width: 100%;
   padding: clamp(22px, 3vw, 30px);
   margin: 0;

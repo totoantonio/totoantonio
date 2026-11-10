@@ -210,15 +210,24 @@ body > main { width: 100%; }
 
   :root body .site-nav-links,
   :root body #profile-menu {
-    padding: 8px; /* the desktop bar rule above zeroes these for the home menu */
-    border: 1px solid var(--line);
-    border-radius: 0 0 18px 18px;
-    background: var(--bg);
-    box-shadow: var(--tile-shadow);
+    /* iOS-style menu: floats 8px off the edges, 44px rows (the desktop bar rules above zero padding/border and set a wide gap) */
+    left: 8px;
+    top: calc(100% + 6px);
+    width: min(280px, calc(100vw - 16px));
+    gap: 0;
+    padding: 6px;
+    border: .5px solid var(--line);
+    border-radius: 14px;
+    background: var(--bg); /* solid: the nav's own backdrop blur stops a nested one from blurring the page */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .16);
+    transform-origin: 16px 0;
+    animation: menu-in .2s cubic-bezier(.2, .9, .3, 1.1);
   }
 
   :root body nav .site-nav-links a,
-  :root body #profile-menu a { font-size: 17px; line-height: 1.3; }
+  :root body #profile-menu a { font-size: 17px; line-height: 22px; padding: 11px 12px; border-radius: 8px; }
+
+  :root body .site-nav-menu-label { padding: 12px 12px 4px; }
 
   :root body .site-nav-title,
   :root body .profile-nav-title { font-size: 17px; font-weight: 600; letter-spacing: -.022em; }
@@ -1721,3 +1730,8 @@ html.apple-pending body { visibility: hidden; }
 :root body > .requirements { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 14px; }
 :root body .requirements .cap { display: inline-flex; align-items: center; justify-content: center; height: 24px; padding: 0 11px; border: .5px solid rgba(0, 0, 0, .08); border-radius: 980px; background: linear-gradient(#FFFFFF, #FAFAFA); box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04), inset 0 1px 0 rgba(255, 255, 255, .9); color: var(--text); font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap; }
 :root[data-theme="dark"] body .requirements .cap { border-color: rgba(255, 255, 255, .12); background: linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .06)); box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .1); }
+
+@keyframes menu-in { from { opacity: 0; transform: scale(.94); } }
+@media (prefers-reduced-motion: reduce) {
+  :root body .site-nav-links, :root body #profile-menu { animation: none; }
+}

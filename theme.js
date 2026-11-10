@@ -28,6 +28,19 @@
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.addEventListener('DOMContentLoaded', () => {
+    /* Skip link: first thing a keyboard user tabs to, jumps past the menus to the page's main heading */
+    const skipTarget = document.querySelector('main') || document.querySelector('h1');
+    if (skipTarget) {
+      if (!skipTarget.id) skipTarget.id = 'content';
+      if (!skipTarget.hasAttribute('tabindex')) skipTarget.tabIndex = -1;
+      skipTarget.classList.add('skip-target');
+      const skip = document.createElement('a');
+      skip.className = 'skip-link';
+      skip.href = '#' + skipTarget.id;
+      skip.textContent = 'Skip to Content';
+      document.body.prepend(skip);
+    }
+
     let consent = { analytics: false, marketing: false };
     let hasSavedConsent = false;
     let googleInitialized = false;

@@ -294,9 +294,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (look) {
       look.classList.remove('anim');
       look.setAttribute('aria-label', look.textContent);
-      look.innerHTML = look.textContent.split('').map(function (ch, i) {
-        return ch === ' ' ? ' ' : '<span class="anim letter" aria-hidden="true" style="transition-delay:' + (i * 40) + 'ms">' + ch + '</span>';
-      }).join('');
+      var li = 0; /* letters grouped per word (.word) so a narrow phone wraps between words, never inside one */
+      look.innerHTML = look.textContent.split(' ').map(function (word) {
+        var html = '<span class="word">' + word.split('').map(function (ch) {
+          return '<span class="anim letter" aria-hidden="true" style="transition-delay:' + (li++ * 40) + 'ms">' + ch + '</span>';
+        }).join('') + '</span>';
+        li++;
+        return html;
+      }).join(' ');
     }
     /* gallery cards slide in from the right one after another, their screenshot rising just after */
     document.querySelectorAll('.gallery-row > li').forEach(function (li, i) { li.style.setProperty('--d', (i * 100) + 'ms'); });
@@ -323,9 +328,9 @@ document.addEventListener('DOMContentLoaded', function () {
     mark(document.querySelectorAll('.model-grid > div'), 'grow', 100);
     /* blue accent words ("Access", "Tester") spell in letter by letter from the right */
     document.querySelectorAll('.accent-word').forEach(function (w) {
-      w.innerHTML = w.textContent.split('').map(function (ch, i) {
+      w.innerHTML = '<span class="word">' + w.textContent.split('').map(function (ch, i) {
         return '<span class="anim letter" style="transition-delay:' + (300 + i * 60) + 'ms">' + ch + '</span>';
-      }).join('');
+      }).join('') + '</span>';
     });
     var ci = document.querySelector('.closing-icon');
     if (ci) ci.classList.add('pop');

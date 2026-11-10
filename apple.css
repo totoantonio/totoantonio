@@ -1735,3 +1735,13 @@ html.apple-pending body { visibility: hidden; }
 @media (prefers-reduced-motion: reduce) {
   :root body .site-nav-links, :root body #profile-menu { animation: none; }
 }
+
+/* Skip link: hidden until a keyboard user tabs to it */
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 1000; padding: 10px 16px; border-radius: 980px; background: var(--blue); color: #fff; font-size: 15px; text-decoration: none; transform: translateY(-200%); }
+.skip-link:focus { transform: none; }
+.skip-target:focus { outline: none; }
+
+/* No lone last word on headlines; no double-tap zoom delay on taps */
+h1, h2, h3 { text-wrap: balance; }
+a, button, input, select, textarea, label, summary { touch-action: manipulation; }
+.word { white-space: nowrap; }

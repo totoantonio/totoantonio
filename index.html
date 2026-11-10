@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="theme.css?v=15">
-<script src="theme.js?v=14"></script>
+<script src="theme.js?v=15"></script>
 <style>
   :root {
     color-scheme: light dark;
@@ -731,8 +731,8 @@
     .work-description { font-size: 12px; }
   }
 </style>
-<link rel="stylesheet" href="apple.css?v=29">
-<script src="apple.js?v=27"></script>
+<link rel="stylesheet" href="apple.css?v=30">
+<script src="apple.js?v=28"></script>
 <style>
   /* ---------- Home preview: apple.com/mac style line-up + "Get to know" carousel (home page) ---------- */
   :root body .author-identity { position: relative; width: fit-content; margin-left: auto; margin-right: auto; }
@@ -1240,9 +1240,9 @@
   </section>
 
   <h2 class="story-title">Made Out of Need.</h2>
-  <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story — need first, product second. It also means I am the first person who has to live with the result every day.</p>
-  <p class="author-note">The apps get built in <b>odd places</b>. My work has me travelling most weeks — <b>long drives</b>, <b>boat rides</b>, <b>airports</b>, <b>hotel rooms</b> — so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
-  <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. <b>No feature list padded out to look impressive</b>. Software, thoughtfully made — out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
+  <p class="author-note">Every app here started as something I needed myself. I hit a problem on my own Mac, looked for a fix, and ended up building one because nothing out there did it the way I wanted. That is the whole origin story: need first, product second. It also means I am the first person who has to live with the result every day.</p>
+  <p class="author-note">The apps get built in <b>odd places</b>. My work has me travelling most weeks (<b>long drives</b>, <b>boat rides</b>, <b>airports</b>, <b>hotel rooms</b>), so a lot of this was written on a laptop somewhere far from home. Being away is the hard part. My wife and our kids are the reason I work the way I do, and they are the reason I keep building on the side too. Everything here, in one way or another, is for them.</p>
+  <p class="author-note">So I care about software that stays out of the way, explains itself clearly, and earns a place in your everyday tools. No account to create before you can try it. No subscription for something that should just work. <b>No feature list padded out to look impressive</b>. Software, thoughtfully made: out of need and necessity, and kept small enough that I can still stand behind every part of it.</p>
 <p class="author-note author-sign">totoantonio · Curious, keeps figuring things out, and hopes it earns its keep.</p>
 <div class="author-signoff">
   <div class="signoff-links">
@@ -1342,9 +1342,14 @@
   /* "Explore the line-up." letters slide in from the right, one by one */
   var lt = document.getElementById('lineup-title');
   lt.setAttribute('aria-label', lt.textContent);
-  lt.innerHTML = lt.textContent.split('').map(function (ch, i) {
-    return ch === ' ' ? ' ' : '<span class="anim from-right letter" aria-hidden="true" style="transition-delay:' + (i * 45) + 'ms">' + ch + '</span>';
-  }).join('');
+  var li = 0; /* letters grouped per word (.word) so a narrow phone wraps between words, never inside one */
+  lt.innerHTML = lt.textContent.split(' ').map(function (word) {
+    var html = '<span class="word">' + word.split('').map(function (ch) {
+      return '<span class="anim from-right letter" aria-hidden="true" style="transition-delay:' + (li++ * 45) + 'ms">' + ch + '</span>';
+    }).join('') + '</span>';
+    li++;
+    return html;
+  }).join(' ');
   mark(document.querySelectorAll('.lineup-group, .know h2, .story-title, .author-note'));
   document.querySelectorAll('.lineup-row').forEach(function (row) { mark(row.children, null, 100); });
   document.querySelectorAll('.lineup-facts').forEach(function (f) {

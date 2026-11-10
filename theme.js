@@ -7,7 +7,6 @@
   const root = document.documentElement;
   const STORAGE_KEY = 'maceq-theme';
   const CONSENT_STORAGE_KEY = 'site-privacy-consent-v1';
-  const CONSENT_DISMISSED_KEY = 'site-privacy-banner-dismissed-v1';
   const GOOGLE_TAG_ID = 'G-MVT06V95WT';
   const META_PIXEL_ID = '4743844149273433';
 
@@ -31,7 +30,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     let consent = { analytics: false, marketing: false };
     let hasSavedConsent = false;
-    let hasDismissedBanner = false;
     let googleInitialized = false;
     let metaInitialized = false;
 
@@ -50,11 +48,6 @@
       // Treat unreadable consent state as no consent.
     }
 
-    try {
-      hasDismissedBanner = sessionStorage.getItem(CONSENT_DISMISSED_KEY) === 'true';
-    } catch {
-      // Keep the banner visible when session storage is unavailable.
-    }
 
     const siteNav = document.querySelector('.site-nav');
     const siteNavToggle = siteNav?.querySelector('.site-nav-toggle');
@@ -259,27 +252,33 @@
     const analyticsChoice = consentPanel.querySelector('[data-analytics-choice]');
     const marketingChoice = consentPanel.querySelector('[data-marketing-choice]');
 
+    /* Cookie panel: two states, closed (cookie button shown) and open (panel shown).
+       Every open/close goes through here; openedAtY is where the page was when it opened. */
+    let openedAtY = null;
+    const setPanelOpen = (open) => {
+      consentPanel.hidden = !open;
+      settingsButton.hidden = open;
+      openedAtY = open ? window.scrollY : null;
+    };
+
     const saveConsent = (nextConsent) => {
       consent = nextConsent;
       hasSavedConsent = true;
       try {
         localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({ version: 1, ...consent, updatedAt: new Date().toISOString() }));
-        sessionStorage.removeItem(CONSENT_DISMISSED_KEY);
       } catch {
         // Keep the choice for this page view when storage is unavailable.
       }
 
       updateGoogleConsent(consent.analytics);
       updateMetaConsent(consent.marketing);
-      consentPanel.hidden = true;
-      settingsButton.hidden = false;
+      setPanelOpen(false);
     };
 
     settingsButton.addEventListener('click', () => {
       analyticsChoice.checked = consent.analytics;
       marketingChoice.checked = consent.marketing;
-      consentPanel.hidden = false;
-      settingsButton.hidden = true;
+      setPanelOpen(true);
       analyticsChoice.focus();
     });
 
@@ -295,16 +294,9 @@
 
     document.body.append(settingsButton, consentPanel);
 
+    /* closing without saving keeps the previous choice */
     const dismissConsentPanel = () => {
-      if (consentPanel.hidden) return;
-      consentPanel.hidden = true;
-      settingsButton.hidden = false;
-      hasDismissedBanner = true;
-      try {
-        sessionStorage.setItem(CONSENT_DISMISSED_KEY, 'true');
-      } catch {
-        // The banner still stays dismissed for the current page view.
-      }
+      if (!consentPanel.hidden) setPanelOpen(false);
     };
 
     document.addEventListener('click', (event) => {
@@ -319,12 +311,16 @@
       dismissConsentPanel();
     });
 
-    let previousScrollY = window.scrollY;
+    /* scrolling 30px either way closes it; smaller jitter (a thumb resting on a phone) does not */
     window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > previousScrollY) dismissConsentPanel();
-      previousScrollY = currentScrollY;
+      if (openedAtY !== null && Math.abs(window.scrollY - openedAtY) >= 30) dismissConsentPanel();
     }, { passive: true });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || consentPanel.hidden) return;
+      dismissConsentPanel();
+      settingsButton.focus();
+    });
 
     if (hasSavedConsent) {
       updateGoogleConsent(consent.analytics);

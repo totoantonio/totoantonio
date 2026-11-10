@@ -271,19 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
     sync();
   }
 
-  /* Cookie banner: once you start scrolling it slides away and the cookie button comes back
-     (looked up at scroll time, because theme.js builds the banner after this runs) */
-  var openedAt = null;
-  window.addEventListener('scroll', function () {
-    var consent = document.querySelector('.privacy-consent'), cookie = document.querySelector('.privacy-settings');
-    if (!consent || !cookie || consent.hidden) { openedAt = null; return; }
-    if (openedAt === null) { openedAt = window.scrollY; return; }
-    if (Math.abs(window.scrollY - openedAt) < 30) return;
-    consent.hidden = true;
-    cookie.hidden = false;
-    openedAt = null;
-  }, { passive: true });
-
   /* ---------- Motion, Apple's way (same as the home page): rise into place as you reach it, once ---------- */
   if (!document.querySelector('.lineup') && !document.body.classList.contains('is-doc') &&
       'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

@@ -210,6 +210,8 @@ body > main { width: 100%; }
 
   :root body .site-nav-links,
   :root body #profile-menu {
+    padding: 8px; /* the desktop bar rule above zeroes these for the home menu */
+    border: 1px solid var(--line);
     border-radius: 0 0 18px 18px;
     background: var(--bg);
     box-shadow: var(--tile-shadow);

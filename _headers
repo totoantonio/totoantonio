@@ -18,3 +18,7 @@
 
 /apple.js
   Cache-Control: public, max-age=31536000, immutable
+
+/dailyhabittracker/latest.json
+  Cache-Control: no-cache
+  Access-Control-Allow-Origin: *

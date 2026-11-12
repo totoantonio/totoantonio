@@ -1,9 +1,9 @@
 {
-  "version": "0.2.1",
-  "build": 3,
-  "notes": "One-click updates: Update Now downloads, checks and installs the new version by itself, with a progress bar. Plus chart and phone layout fixes.",
+  "version": "0.2.2",
+  "build": 4,
+  "notes": "Quit App and reopen now asks for the login on this computer (phones stay signed in).",
   "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac.dmg",
-  "mac_sha256": "03f6b7447137f9cb7826945644f60db3f42cadc36829f5c6617098ef898f183f",
+  "mac_sha256": "9ddd33c3d59036d853f131bef56263a69b817502f2777e4ad2b02b6876c8bfec",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "644409ad17acc36a4b27935ba6096f0225fa2f633fd067b03d844effe9018dc6"
+  "windows_sha256": "c02238d04dc4dd90127cc551bb77a8a82409756419124144c64e9826752f09f1"
 }

@@ -201,7 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Screenshots: offer the high-resolution copy (Assets/optimized/*-hd.webp) so they stay sharp on Retina screens */
   var HD = { 'maceq-main': 1600, 'maceq-advanced': 1600, 'maceq-presets': 1600, 'maceq-spatial': 1946, 'maceq-surround': 1946,
     'keyboards-main': 1960, 'keyboards-screenshots': 1960, 'upscape-upscaling': 1924, 'upscape-compare': 1924,
-    'distributionapp-approvals': 1600, 'distributionapp-invoice': 1600, 'distributionapp-payment': 1960 };
+    'distributionapp-approvals': 1600, 'distributionapp-invoice': 1600, 'distributionapp-payment': 1960,
+    'dailyhabittracker-look-dash-mock': 1600, 'dailyhabittracker-look-today-mock': 1600, 'dailyhabittracker-look-plan-mock': 1600, 'dailyhabittracker-look-report-mock': 1600 };
   /* First screenshot is the hero band; the rest sit inside rounded tiles, so the page doesn't repeat itself */
   /* screenshots with a white background or white border (measured) sit on white cards */
   var WHITE = /(dailyhabittracker-look-(dash|today|plan|report)|distributionapp-(approvals|invoice|payment)|keyboards-(main|screenshots)|upscape-open|maceq-(spatial|surround))-/;

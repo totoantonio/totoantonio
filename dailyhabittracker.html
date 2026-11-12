@@ -305,7 +305,8 @@
   .dl-btn:hover { opacity: .88; text-decoration: none; }
   .dl-btn svg { width: 20px; height: 20px; fill: currentColor; }
   .dl-note { margin: 12px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
-  .open-help { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 12px; }
+  .open-help { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: var(--wide-col, 100%); max-width: 100%; margin: 0 auto 12px; box-sizing: border-box; }
+  html:root body .beta-note { width: var(--wide-col, 100%); max-width: 100%; margin: 4px auto 0; text-align: left; }
   .oh-card { padding: 22px 24px; border-radius: 20px; background: rgba(120,120,128,.08); }
   .oh-card ol { margin: 0; padding-left: 20px; font-size: 16px; }
   .oh-card li { margin-bottom: 8px; }
@@ -372,7 +373,7 @@
 <p class="hero-sub">Your coverage plan becomes each salesman's daily list of stores. Every visit and call is logged with location and photos, and you see sales, collections and visits against target.</p>
 
 <div id="download"><p class="dl-btns"><a class="dl-btn" href="downloads/DailyHabitTracker-Mac.zip" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.03-2.7 2.2-4 2.3-4.07-1.26-1.84-3.21-2.09-3.9-2.12-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.74 3.36 2.69 1.35-.05 1.86-.87 3.49-.87s2.09.87 3.51.84c1.45-.02 2.37-1.31 3.26-2.61 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.29ZM13.68 4.68c.74-.9 1.24-2.15 1.11-3.39-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.41-.61 3.15-1.51Z"/></svg>Download for Mac</a><a class="dl-btn alt" href="downloads/DailyHabitTracker-Windows.zip" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.6 10.2 2.5v8H2V3.6Zm9.2-1.25L22 1v9.5H11.2V2.35ZM2 11.5h8.2v8L2 18.4v-6.9Zm9.2 0H22V21l-10.8-1.5v-8Z"/></svg>Download for Windows</a></p>
-<p class="dl-note">Version 0.1.0 Beta · Mac (Apple Silicon and Intel) · Windows 10 and 11 · Salesmen use their phones' browser</p></div>
+<p class="dl-note">Version 0.1.0 Beta · Mac and Windows 10/11 · Phones use the browser</p></div>
 <p class="requirements"><span class="cap">Free Download</span><span class="cap">30-Day Free Trial</span><span class="cap">Mac and Windows</span></p>
 
 <h2 id="look">Take a Closer Look.</h2>
@@ -419,12 +420,14 @@
   <li><strong>Reports</strong> — dashboard, calendar and day, week or month reports per salesman, with CSV and Print / PDF.</li>
   <li><strong>Works Without Signal</strong> — visits are saved on the phone and sent with their original time when the signal is back.</li>
   <li><strong>An App on Every Phone</strong> — scan a QR code, log in once, add it to the Home Screen. No app store needed.</li>
+  <li><strong>Photo Proof</strong> — every selfie and order photo carries the store, salesman, time and the place where it was logged.</li>
+  <li><strong>Reach It Anywhere</strong> — turn on the public address once; salesmen open it anywhere with mobile data, nothing to install.</li>
 </ul>
 
 <h2 id="how" class="reveal">Up and Running in 3 Steps.</h2>
 <ol class="reveal">
   <li><strong>Install It.</strong> Put it on one office Mac or Windows computer and add your salesmen and stores.</li>
-  <li><strong>Import the Coverage Plan.</strong> From Excel, CSV or a photo of the plan you already print.</li>
+  <li><strong>Import Your Plan.</strong> From Excel, CSV or a photo of the plan you already print.</li>
   <li><strong>Send the Team Out.</strong> Salesmen scan a QR code, follow their daily list and log every visit. You watch the numbers come in.</li>
 </ol>
 
@@ -459,7 +462,7 @@
   <div class="oh-card"><p class="oh-title">On a Mac</p><ol><li>Unzip <b>DailyHabitTracker-Mac.zip</b> and drag <b>Daily Habit Tracker</b> into Applications.</li><li>The first time, <b>right-click</b> (or Control-click) the app and choose <b>Open</b>, then <b>Open</b> again. During the beta the app isn't notarized by Apple yet, so macOS asks once.</li><li>Your browser opens the app. Create the manager account, or tap <b>Explore Demo</b>.</li></ol></div>
   <div class="oh-card"><p class="oh-title">On Windows</p><ol><li>Unzip <b>DailyHabitTracker-Windows.zip</b> and open the <b>Daily Habit Tracker</b> folder.</li><li>Double-click <b>Daily Habit Tracker.exe</b>. If Windows shows “Windows protected your PC”, click <b>More info</b> → <b>Run anyway</b>.</li><li>Your browser opens the app. Keep the small black window open — closing it quits the app.</li></ol></div>
 </div>
-<p class="dl-note" style="text-align:left">Beta: something not working? Email <a href="mailto:dailyhabittracker.codes@gmail.com?subject=Daily%20Habit%20Tracker%20Beta">dailyhabittracker.codes@gmail.com</a> — every report helps.</p>
+<p class="dl-note beta-note">Beta: something not working? Email <a href="mailto:dailyhabittracker.codes@gmail.com?subject=Daily%20Habit%20Tracker%20Beta">dailyhabittracker.codes@gmail.com</a> — every report helps.</p>
 
 <h2 id="faq" class="reveal">Questions.</h2>
 <div class="faq-list">

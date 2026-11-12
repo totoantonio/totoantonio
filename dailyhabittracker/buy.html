@@ -270,6 +270,9 @@
   .total b { font-size: 28px; font-variant-numeric: tabular-nums; }
   .pay { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; }
   .pay img { width: 180px; height: 180px; border-radius: 16px; background: #fff; object-fit: contain; }
+  html:root body .filled-note { width: auto; max-width: none; margin: 0 0 16px; padding: 10px 14px; border-radius: 12px; background: rgba(0,122,255,.1); color: var(--text); font-size: 15px; line-height: 1.45; text-align: left; letter-spacing: 0; }
+  html:root body .filled-note[hidden] { display: none; }
+  .fld input.is-filled { border-color: rgba(0,122,255,.45); background: rgba(0,122,255,.05); }
   .sample-note { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; background: rgba(255,59,48,.1); color: #d70015; font-size: 15px; }
   .pay.is-sample .sample-note { display: block; }
   .send { display: inline-block; margin-top: 22px; padding: 14px 28px; border: 0; border-radius: 980px; background: var(--blue); color: #fff; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer; }
@@ -338,6 +341,7 @@
 
 <section class="buy-card">
   <h2>3. Send Your Details.</h2>
+  <p class="filled-note" id="filled" hidden><strong>Filled in from your app.</strong> Please double-check the details below, then add your email and the payment reference number.</p>
   <div class="fields">
     <label class="fld wide"><span>Install ID <small style="font-weight:400">(in the app: Settings → About)</small></span><input form="buy" name="id" required placeholder="DHT-1234-ABCD…" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[Dd][Hh][Tt]-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}" translate="no"></label>
     <label class="fld"><span>Your Name</span><input form="buy" name="name" required autocomplete="name" placeholder="Ana Reyes…"></label>
@@ -367,7 +371,11 @@
    (?id=DHT-…&plan=Team); the button checks the fields and writes the email to totoantonio@gmail.com. */
 (function () {
   var f = document.getElementById('buy'), q = new URLSearchParams(location.search), fmt = new Intl.NumberFormat('en-PH');
-  if (q.get('id')) f.elements.id.value = q.get('id').toUpperCase();
+  var filled = false;
+  [['id', q.get('id') && q.get('id').toUpperCase()], ['name', q.get('name')], ['company', q.get('company')]].forEach(function (p) {
+    if (p[1]) { f.elements[p[0]].value = p[1]; f.elements[p[0]].classList.add('is-filled'); filled = true; }
+  });
+  if (filled) document.getElementById('filled').hidden = false;
   if (q.get('plan')) [].forEach.call(f.elements.plan, function (r) { if (r.value === q.get('plan')) r.checked = true; });
   function plan() { return [].find.call(f.elements.plan, function (r) { return r.checked; }); }
   function total() { return +plan().dataset.price * +f.elements.months.value; }

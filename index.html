@@ -1062,11 +1062,10 @@
   :root body .lineup-biz .lineup-more:hover { background: #0077ED; }
   :root body .lineup-biz .lineup-get { order: 1; padding: 0; border-radius: 0; background: none; color: var(--link); }
   :root body .lineup-biz .lineup-get:hover { background: none; text-decoration: underline; }
-  /* Daily Habit Tracker: announced, not released — nothing in the card is a link yet */
+  /* Daily Habit Tracker: early release — orange Beta badge in the card label */
   :root body .lineup-biz > li + li { margin-top: 16px; }
   :root body .lineup .work-logo-dailyhabittracker { background-size: 128%; background-position: center; }
-  :root body .lineup-soon .lineup-name { font-weight: 400; }
-  :root body .lineup-soon-pill { display: inline-block; padding: 8px 18px; border-radius: 980px; background: rgb(120 120 128 / .14); color: #86868B; font-size: 14px; line-height: 1.29; cursor: default; }
+  :root body .beta-badge { display: inline-block; margin-right: 6px; padding: 1px 8px; border-radius: 980px; background: #FF9F0A; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; vertical-align: 1px; }
   .js-anim .anim { transition-duration: .8s; }
   .js-anim .know-row > li .know-eyebrow, .js-anim .know-row > li .know-head, .js-anim .know-row > li .know-card img { transition-duration: .8s; }
   @media (max-width: 734px) { :root body .know-card { padding: 28px; } }
@@ -1207,13 +1206,13 @@
         <p class="lineup-meta">Free trial · Mac and Windows</p>
         <p class="lineup-actions"><a class="lineup-more" href="distributionapp">Learn more<span class="visually-hidden"> about Distribution App</span></a><a class="lineup-get" href="https://github.com/totoantonio/DistributionApp/releases/latest" target="_blank" rel="noopener">Free Trial ›</a></p>
       </li>
-      <li class="lineup-wide lineup-soon" aria-label="Daily Habit Tracker, coming soon">
-        <span class="icon-with-marks"><span class="lineup-icon work-logo work-logo-dailyhabittracker" aria-hidden="true"></span><sup class="os-marks" role="img" aria-label="for Mac and Windows"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.03-2.7 2.2-4 2.3-4.07-1.26-1.84-3.21-2.09-3.9-2.12-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.74 3.36 2.69 1.35-.05 1.86-.87 3.49-.87s2.09.87 3.51.84c1.45-.02 2.37-1.31 3.26-2.61 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.29ZM13.68 4.68c.74-.9 1.24-2.15 1.11-3.39-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.41-.61 3.15-1.51Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.6 10.2 2.5v8H2V3.6Zm9.2-1.25L22 1v9.5H11.2V2.35ZM2 11.5h8.2v8L2 18.4v-6.9Zm9.2 0H22V21l-10.8-1.5v-8Z"/></svg></sup></span>
-        <p class="lineup-label">Coming Soon</p>
-        <h3 class="lineup-name">Daily Habit Tracker</h3>
+      <li class="lineup-wide">
+        <span class="icon-with-marks"><a class="lineup-icon work-logo work-logo-dailyhabittracker" href="dailyhabittracker" tabindex="-1" aria-hidden="true"></a><sup class="os-marks" role="img" aria-label="for Mac and Windows"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.03-2.7 2.2-4 2.3-4.07-1.26-1.84-3.21-2.09-3.9-2.12-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.74 3.36 2.69 1.35-.05 1.86-.87 3.49-.87s2.09.87 3.51.84c1.45-.02 2.37-1.31 3.26-2.61 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.29ZM13.68 4.68c.74-.9 1.24-2.15 1.11-3.39-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.41-.61 3.15-1.51Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.6 10.2 2.5v8H2V3.6Zm9.2-1.25L22 1v9.5H11.2V2.35ZM2 11.5h8.2v8L2 18.4v-6.9Zm9.2 0H22V21l-10.8-1.5v-8Z"/></svg></sup></span>
+        <p class="lineup-label"><span class="beta-badge">Beta</span> Early Release</p>
+        <h3 class="lineup-name"><a href="dailyhabittracker" data-analytics-event="select_item" data-item-id="dailyhabittracker" data-item-name="Daily Habit Tracker">Daily Habit Tracker</a></h3>
         <p class="lineup-text">For Field Sales. Plan the route. Prove the visit. Grow the sales.</p>
-        <p class="lineup-meta">Free download · Mac, Windows and phones</p>
-        <p class="lineup-actions"><span class="lineup-soon-pill" aria-disabled="true">Coming Soon</span></p>
+        <p class="lineup-meta">Free download · 30-day trial · Mac, Windows and phones</p>
+        <p class="lineup-actions"><a class="lineup-more" href="dailyhabittracker">Learn more<span class="visually-hidden"> about Daily Habit Tracker</span></a><a class="lineup-get" href="dailyhabittracker#download">Download Beta ›</a></p>
       </li>
     </ul>
   </section>
@@ -1247,6 +1246,13 @@
           <span class="know-eyebrow">Distribution App</span>
           <span class="know-head">Orders, deliveries and payments. One computer, the whole team.</span>
           <img src="Assets/optimized/distributionapp-look-approvals-640.webp" width="640" height="480" srcset="Assets/optimized/distributionapp-look-approvals-640.webp 640w, Assets/optimized/distributionapp-look-approvals-1280.webp 1280w, Assets/optimized/distributionapp-look-approvals-hd.webp 1600w" sizes="(max-width: 734px) 80vw, 560px" loading="lazy" alt="Distribution App on a Mac and an iPhone, showing Approvals">
+        </a>
+      </li>
+      <li>
+        <a class="know-card is-white" href="dailyhabittracker">
+          <span class="know-eyebrow">Daily Habit Tracker <span class="beta-badge">Beta</span></span>
+          <span class="know-head">Plan the route. Prove the visit. Grow the sales.</span>
+          <img src="Assets/optimized/dailyhabittracker-look-mac-iphone-640.webp" width="640" height="480" srcset="Assets/optimized/dailyhabittracker-look-mac-iphone-640.webp 640w, Assets/optimized/dailyhabittracker-look-mac-iphone-1280.webp 1280w, Assets/optimized/dailyhabittracker-look-mac-iphone-hd.webp 1600w" sizes="(max-width: 734px) 80vw, 560px" loading="lazy" alt="Daily Habit Tracker on a Mac and an iPhone: the team dashboard and a salesman's stores for the day">
         </a>
       </li>
     </ul>

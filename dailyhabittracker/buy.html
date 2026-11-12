@@ -352,8 +352,8 @@
 <aside class="trust" aria-labelledby="trust-title">
   <p class="trust-title" id="trust-title">Not sure this is really us?</p>
   <p>Before you pay, check with us first. We'll call you back or answer by email — no payment needed to ask.</p>
-  <p class="trust-actions"><a class="trust-btn" href="mailto:totoantonio@gmail.com?subject=Daily%20Habit%20Tracker%20%E2%80%94%20Call%20Back%20Request&amp;body=Please%20call%20me%20back%20about%20Daily%20Habit%20Tracker.%0A%0AName%3A%20%0ACompany%3A%20%0AMobile%20number%3A%20%0ABest%20time%20to%20call%3A%20">Request a Call Back</a><a class="trust-btn" href="mailto:totoantonio@gmail.com?subject=Daily%20Habit%20Tracker%20%E2%80%94%20Question%20before%20paying">Email Us</a></p>
-  <p class="fine">We never ask for your password, PIN or OTP. Only pay with the QR code on this page at <strong>totoantonio.cloud</strong>, and your activation code always comes from dailyhabittracker.codes@gmail.com (replies go to totoantonio@gmail.com).</p>
+  <p class="trust-actions"><a class="trust-btn" href="mailto:dailyhabittracker.codes@gmail.com?subject=Daily%20Habit%20Tracker%20%E2%80%94%20Call%20Back%20Request&amp;body=Please%20call%20me%20back%20about%20Daily%20Habit%20Tracker.%0A%0AName%3A%20%0ACompany%3A%20%0AMobile%20number%3A%20%0ABest%20time%20to%20call%3A%20">Request a Call Back</a><a class="trust-btn" href="mailto:dailyhabittracker.codes@gmail.com?subject=Daily%20Habit%20Tracker%20%E2%80%94%20Question%20before%20paying">Email Us</a></p>
+  <p class="fine">We never ask for your password, PIN or OTP. Only pay with the QR code on this page at <strong>totoantonio.cloud</strong>, and your activation code always comes from dailyhabittracker.codes@gmail.com.</p>
 </aside>
 
 <section class="buy-card">
@@ -379,7 +379,7 @@
     <label class="fld"><span>Payment Reference No.</span><input form="buy" name="ref" required autocomplete="off" spellcheck="false" placeholder="From your payment receipt…"></label>
   </div>
   <button class="send" type="submit" form="buy">Email My Payment Details</button>
-  <p class="fine" id="msg" role="status">Opens your email app with everything filled in — just tap Send. No email app? Send the same details to <a href="mailto:totoantonio@gmail.com">totoantonio@gmail.com</a>.</p>
+  <p class="fine" id="msg" role="status">Opens your email app with everything filled in — just tap Send. No email app? Send the same details to <a href="mailto:dailyhabittracker.codes@gmail.com">dailyhabittracker.codes@gmail.com</a>.</p>
 </section>
 
 <footer>
@@ -397,7 +397,7 @@
 
 <script>
 /* Purchase: the plan + months give the total; the Install ID (and current plan) come from the app's link
-   (?id=DHT-…&plan=Team); the button checks the fields and writes the email to totoantonio@gmail.com. */
+   (?id=DHT-…&plan=Team); the button checks the fields and writes the email to dailyhabittracker.codes@gmail.com. */
 (function () {
   var f = document.getElementById('buy'), q = new URLSearchParams(location.search), fmt = new Intl.NumberFormat('en-PH');
   var filled = false;
@@ -431,7 +431,7 @@
       'Name: ' + el.name.value.trim(),
       'Company: ' + el.company.value.trim(),
       'Email for the code: ' + el.email.value.trim()].join('\n');
-    location.href = 'mailto:totoantonio@gmail.com?subject=' + encodeURIComponent('Activation code — ' + el.id.value.trim().toUpperCase() + ' — ' + p.value + ' × ' + m) + '&body=' + encodeURIComponent(body);
+    location.href = 'mailto:dailyhabittracker.codes@gmail.com?subject=' + encodeURIComponent('Activation code — ' + el.id.value.trim().toUpperCase() + ' — ' + p.value + ' × ' + m) + '&body=' + encodeURIComponent(body);
     document.getElementById('msg').textContent = 'Your email app should open now with the details — tap Send. Your activation code comes back to ' + el.email.value.trim() + '.';
   });
 })();

@@ -1,9 +1,9 @@
 {
-  "version": "0.2.3",
-  "build": 5,
-  "notes": "Welcome Tour: Don't show again. Update Now finishes cleanly after restarting (goes to the login page).",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac.dmg",
-  "mac_sha256": "99884cf2f15216b4102a9f8853f6a38ecf31da09e75af20fab245d5241accd5b",
+  "version": "0.2.4",
+  "build": 6,
+  "notes": "\u2022 Works offline: pages open instantly from the phone's saved copy, even with weak or no signal\n\u2022 New Store visits can be logged with no signal\n\u2022 Visits waiting to send now show on the pages\n\u2022 Pages load up to 10x faster on mobile data\n\u2022 Accessibility: Larger Text, Reduce Motion, Increase Contrast\n\u2022 Welcome Tour switch in Settings\n\u2022 Red badge on Settings when an update is available\n\u2022 Rounded Home Screen icon on phones",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.4-build-6.dmg",
+  "mac_sha256": "09c036e95817fd038f7025008b7be3ceca48a65862c465f656d9c72ddc737644",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "bbfcb5646888e3e507becf6fc931f8aeb106208ac166b8a8a6dae5e84b349048"
+  "windows_sha256": "f77f5ca2e6a352a9469b1e18b6c6d1f7faabf831b4e0e3254d3d2ebcb4a9ef3e"
 }

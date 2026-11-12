@@ -276,6 +276,7 @@
   .fld input:focus, .fld select:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(0,122,255,.18); }
   .total { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 20px 0 0; padding: 16px 0 0; border-top: 1px solid var(--line); }
   .total span { color: var(--muted); }
+  .total .save { display: block; margin-top: 2px; color: #1d8a3a; font-size: 14px; font-weight: 600; }
   .total b { font-size: 28px; font-variant-numeric: tabular-nums; }
   .pay { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; }
   .pay img { width: 180px; height: 180px; border-radius: 16px; background: #fff; object-fit: contain; }
@@ -344,8 +345,8 @@
     <label class="addon-opt"><input type="checkbox" name="addon" value="Coverage Plan Setup" data-price="1500"><span><b>Coverage Plan Setup</b><small>We turn your Excel or printed plan into your stores and visit days.</small></span><em>₱1,500</em></label>
     <label class="addon-opt"><input type="checkbox" name="addon" value="On-Site Setup" data-price="0" data-quote="1"><span><b>On-Site Setup</b><small>At your office. ₱5,000 a day plus plane fare, hotel and per diem — we send a quote first, so don't include it in this payment.</small></span><em>Quote</em></label>
   </fieldset>
-  <label class="fld"><span>Months</span><select name="months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></label>
-  <p class="total" aria-live="polite"><span>Total to pay</span><b id="total">₱6,990</b></p>
+  <label class="fld"><span>Months</span><select name="months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months — save 10%</option><option value="12">12 months — save 20%</option></select></label>
+  <p class="total" aria-live="polite"><span>Total to pay <small id="save" class="save"></small></span><b id="total">₱6,990</b></p>
 </form>
 
 <aside class="trust" aria-labelledby="trust-title">
@@ -407,8 +408,13 @@
   if (q.get('plan')) [].forEach.call(f.elements.plan, function (r) { if (r.value === q.get('plan')) r.checked = true; });
   function plan() { return [].find.call(f.elements.plan, function (r) { return r.checked; }); }
   function addons() { return [].filter.call(f.querySelectorAll('[name=addon]'), function (c) { return c.checked; }); }
-  function total() { return +plan().dataset.price * +f.elements.months.value + addons().reduce(function (s, c) { return s + +c.dataset.price; }, 0); }
-  function upd() { var t = '₱' + fmt.format(total()); document.getElementById('total').textContent = t; document.getElementById('total2').textContent = t; }
+  /* pay ahead: 6–11 months 10% off, 12 months 20% off (same rule as DHT Payments, lic.Total) */
+  function off() { var m = +f.elements.months.value; return m >= 12 ? 20 : m >= 6 ? 10 : 0; }
+  function planTotal() { return Math.round(+plan().dataset.price * +f.elements.months.value * (100 - off()) / 100); }
+  function total() { return planTotal() + addons().reduce(function (s, c) { return s + +c.dataset.price; }, 0); }
+  function upd() { var t = '₱' + fmt.format(total()), saved = +plan().dataset.price * +f.elements.months.value - planTotal();
+    document.getElementById('total').textContent = t; document.getElementById('total2').textContent = t;
+    document.getElementById('save').textContent = saved ? 'You save ₱' + fmt.format(saved) + ' (' + off() + '% off)' : ''; }
   f.addEventListener('change', upd); upd();
   f.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -418,7 +424,7 @@
     var body = ['Daily Habit Tracker — activation code request', '',
       'Install ID: ' + el.id.value.trim().toUpperCase(),
       'Plan: ' + p.value + ' (' + (+p.dataset.users ? 'up to ' + p.dataset.users + ' users' : 'no user limit') + ')',
-      'Months: ' + m,
+      'Months: ' + m + (off() ? ' (' + off() + '% off for paying ahead)' : ''),
       'Add-ons: ' + (addons().map(function (c) { return c.value + (c.dataset.quote ? ' (please send a quote)' : ''); }).join(', ') || 'none'),
       'Amount paid by QR Ph: PHP ' + fmt.format(total()),
       'Payment reference no.: ' + el.ref.value.trim(), '',

@@ -71,6 +71,7 @@
     { "@type": "Question", "name": "Do my salesmen need to install anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. They scan a QR code, log in once in their phone's browser and add it to the Home Screen so it opens like an app." } },
     { "@type": "Question", "name": "Does it work without signal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Today's stores open without signal and visits are saved on the phone, then sent with their original time when the signal is back." } },
     { "@type": "Question", "name": "Where is my data kept?", "acceptedAnswer": { "@type": "Answer", "text": "On your own computer. Visits, photos and reports are not stored on someone else's server." } },
+    { "@type": "Question", "name": "Can you set it up for us?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Virtual Setup (PHP 2,500 one-time) installs it on your computer and your salesmen's phones over a video call. Coverage Plan Setup (PHP 1,500) turns your existing plan into the app. On-Site Setup at your office is PHP 5,000 a day plus plane fare, hotel and per diem, quoted first." } },
     { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "A monthly subscription per computer, paid by QR Ph (GCash, Maya or any bank app): Starter (3 users) PHP 2,990, Team (10 users) PHP 6,990, Business (25 users) PHP 12,990, Enterprise (no user limit) PHP 24,990. Every plan starts with a 30-day free trial." } }
   ]
 }
@@ -299,6 +300,10 @@
   /* four plans in one row (three on the other app pages); two per row on tablets, one on phones */
   html:root body.is-product .plan-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
   html:root body.is-product .plan-price { font-size: 38px; }
+  html:root body.is-product .addon-grid.dht-addons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  html:root body .dht-addons .addon-desc { color: var(--muted); font-size: 15px; line-height: 1.45; flex: 1; }
+  html:root body .dht-addons .addon-tag { white-space: normal; }
+  @media (max-width: 734px) { html:root body.is-product .addon-grid.dht-addons { grid-template-columns: 1fr; } }
   @media (max-width: 1068px) { html:root body.is-product .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 734px) { html:root body.is-product .plan-grid { grid-template-columns: 1fr; } }
 </style>
@@ -406,6 +411,15 @@
   <div class="plan-card"><p class="plan-name">Business</p><p class="plan-users">Up to 25 users</p><p class="plan-price">₱12,990<span>/month</span></p><p class="plan-alt">Paid monthly by QR Ph</p></div>
   <div class="plan-card"><p class="plan-name">Enterprise</p><p class="plan-users">No user limit</p><p class="plan-price">₱24,990<span>/month</span></p><p class="plan-alt">Paid monthly by QR Ph</p></div>
 </div>
+<div class="addon-card" id="addons">
+  <p class="addon-lead">Add Ons.</p>
+  <p class="addon-sub">Help getting started, if you want it. Paid once, on top of your plan.</p>
+  <ul class="addon-grid dht-addons">
+    <li><span class="addon-name">Virtual Setup</span><span class="addon-desc">A video call: we install it on your office computer, connect your salesmen's phones, turn on the outside address and show your team around.</span><span class="addon-tag">₱2,500 one-time</span></li>
+    <li><span class="addon-name">Coverage Plan Setup</span><span class="addon-desc">Send your Excel or printed coverage plan; we turn it into your stores, salesmen and visit days.</span><span class="addon-tag">₱1,500 one-time</span></li>
+    <li><span class="addon-name">On-Site Setup</span><span class="addon-desc">Everything in Virtual Setup, done at your office with your team. We send a quote first.</span><span class="addon-tag">₱5,000 a day + plane fare, hotel and per diem</span></li>
+  </ul>
+</div>
 <div class="price-notes">
   <ul>
     <li><strong>Free 30-Day Trial</strong> with no user limit. No payment needed to start.</li>
@@ -419,6 +433,7 @@
   <details><summary>Do my salesmen need to install anything?</summary><p>No. They scan a QR code, log in once in their phone's browser and add it to the Home Screen so it opens like an app.</p></details>
   <details><summary>Does it work without signal?</summary><p>Yes. Today's stores open without signal and visits are saved on the phone, then sent with their original time when the signal is back.</p></details>
   <details><summary>Can salesmen reach it outside the office?</summary><p>Yes. Turn on the public address once in Connect Phones; salesmen then open it anywhere with mobile data, nothing to install.</p></details>
+  <details><summary>Can you set it up for us?</summary><p>Yes. Virtual Setup installs it on your office computer and your salesmen's phones over a video call. Coverage Plan Setup turns your existing plan into the app. Prefer someone at your office? On-Site Setup is ₱5,000 a day plus plane fare, hotel and per diem — we send a quote first.</p></details>
   <details><summary>Where is my data kept?</summary><p>On your own computer. Visits, photos and reports are not stored on someone else's server.</p></details>
   <details><summary>What happens when the trial ends?</summary><p>Your data stays. Paste an activation code in Settings → About and carry on where you left off.</p></details>
 </div>

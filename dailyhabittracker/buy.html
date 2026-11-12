@@ -260,6 +260,15 @@
   .plan-opt .p { display: block; margin-top: 6px; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .plan-opt:has(input:checked) { border-color: var(--blue); box-shadow: 0 4px 16px rgba(0,122,255,.15); }
   .plan-opt:has(input:focus-visible) { outline: 3px solid rgba(0,122,255,.4); outline-offset: 2px; }
+  html:root body .addons { margin: 0 0 18px; padding: 0; border: 0; display: grid; gap: 8px; }
+  html:root body .addons legend { display: block; margin: 0 0 8px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  html:root body .addon-opt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 14px 16px; border-radius: 14px; background: var(--bg); border: 2px solid transparent; cursor: pointer; }
+  html:root body .addon-opt:has(input:checked) { border-color: var(--blue); }
+  html:root body .addons > .addon-opt { margin: 0; }
+  html:root body .addon-opt input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--blue); }
+  html:root body .addon-opt b { display: block; font-size: 16px; }
+  html:root body .addon-opt small { display: block; color: var(--muted); font-size: 14px; line-height: 1.4; }
+  html:root body .addon-opt em { font-style: normal; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .fld { display: block; min-width: 0; }
   .fld.wide { grid-column: 1 / -1; }
@@ -329,6 +338,12 @@
     <label class="plan-opt"><input type="radio" name="plan" value="Business" data-price="12990" data-users="25"><b>Business</b><small>Up to 25 users</small><span class="p">₱12,990<small style="display:inline">/month</small></span></label>
     <label class="plan-opt"><input type="radio" name="plan" value="Enterprise" data-price="24990" data-users="0"><b>Enterprise</b><small>No user limit</small><span class="p">₱24,990<small style="display:inline">/month</small></span></label>
   </fieldset>
+  <fieldset class="addons">
+    <legend>Add-Ons <small style="font-weight:400">(optional, one-time)</small></legend>
+    <label class="addon-opt"><input type="checkbox" name="addon" value="Virtual Setup" data-price="2500"><span><b>Virtual Setup</b><small>Video call: install on your computer, connect your salesmen's phones, quick training.</small></span><em>₱2,500</em></label>
+    <label class="addon-opt"><input type="checkbox" name="addon" value="Coverage Plan Setup" data-price="1500"><span><b>Coverage Plan Setup</b><small>We turn your Excel or printed plan into your stores and visit days.</small></span><em>₱1,500</em></label>
+    <label class="addon-opt"><input type="checkbox" name="addon" value="On-Site Setup" data-price="0" data-quote="1"><span><b>On-Site Setup</b><small>At your office. ₱5,000 a day plus plane fare, hotel and per diem — we send a quote first, so don't include it in this payment.</small></span><em>Quote</em></label>
+  </fieldset>
   <label class="fld"><span>Months</span><select name="months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></label>
   <p class="total" aria-live="polite"><span>Total to pay</span><b id="total">₱6,990</b></p>
 </form>
@@ -391,7 +406,8 @@
   if (filled) document.getElementById('filled').hidden = false;
   if (q.get('plan')) [].forEach.call(f.elements.plan, function (r) { if (r.value === q.get('plan')) r.checked = true; });
   function plan() { return [].find.call(f.elements.plan, function (r) { return r.checked; }); }
-  function total() { return +plan().dataset.price * +f.elements.months.value; }
+  function addons() { return [].filter.call(f.querySelectorAll('[name=addon]'), function (c) { return c.checked; }); }
+  function total() { return +plan().dataset.price * +f.elements.months.value + addons().reduce(function (s, c) { return s + +c.dataset.price; }, 0); }
   function upd() { var t = '₱' + fmt.format(total()); document.getElementById('total').textContent = t; document.getElementById('total2').textContent = t; }
   f.addEventListener('change', upd); upd();
   f.addEventListener('submit', function (e) {
@@ -403,6 +419,7 @@
       'Install ID: ' + el.id.value.trim().toUpperCase(),
       'Plan: ' + p.value + ' (' + (+p.dataset.users ? 'up to ' + p.dataset.users + ' users' : 'no user limit') + ')',
       'Months: ' + m,
+      'Add-ons: ' + (addons().map(function (c) { return c.value + (c.dataset.quote ? ' (please send a quote)' : ''); }).join(', ') || 'none'),
       'Amount paid by QR Ph: PHP ' + fmt.format(total()),
       'Payment reference no.: ' + el.ref.value.trim(), '',
       'Name: ' + el.name.value.trim(),

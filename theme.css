@@ -528,7 +528,7 @@ nav a:hover {
   right: -9px;
   padding: 3px 9px;
   border-radius: 980px;
-  background: var(--blue);
+  background: #0071E3;
   color: #fff;
   font-size: 10px;
   font-weight: 700;
@@ -737,7 +737,7 @@ figure.reveal.visible {
 }
 
 .testimonial-dot.active {
-  background: var(--blue);
+  background: #0071E3;
   transform: scale(1.25);
 }
 

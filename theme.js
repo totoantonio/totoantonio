@@ -13,15 +13,12 @@
   root.classList.add('js');
 
   // --- Apply the theme immediately, before anything renders. ---
-  // Light is the default; the system preference is not followed unless the
-  // visitor picks dark themselves.
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    root.dataset.theme = saved === 'dark' ? 'dark' : 'light';
-  } catch {
-    // Private browsing or blocked storage: still default to light.
-    root.dataset.theme = 'light';
-  }
+  // Follows the Mac/phone appearance until the visitor picks one with the toggle.
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  let saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch { /* blocked storage: follow the system */ }
+  root.dataset.theme = saved === 'dark' || saved === 'light' ? saved : (systemDark.matches ? 'dark' : 'light');
+  systemDark.addEventListener('change', e => { if (!saved) root.dataset.theme = e.matches ? 'dark' : 'light'; });
 
   const currentTheme = () => root.dataset.theme || 'light';
 
@@ -396,6 +393,7 @@
       toggle.addEventListener('click', () => {
         const next = currentTheme() === 'dark' ? 'light' : 'dark';
         root.dataset.theme = next;
+        saved = next;
         try {
           localStorage.setItem(STORAGE_KEY, next);
         } catch {

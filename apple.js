@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navLinks) {
     var have = {};
     navLinks.querySelectorAll('a').forEach(function (l) { have[(l.getAttribute('href') || '').split('#')[0]] = true; });
-    [['macEQ', 'maceq'], ['KeyboardS', 'keyboards'], ['Upscape', 'upscape'], ['Distribution App', 'distributionapp']].forEach(function (p) {
+    [['macEQ', 'maceq'], ['KeyboardS', 'keyboards'], ['Upscape', 'upscape'], ['DiskCleaner', 'https://diskcleaner.pro'], ['Distribution App', 'distributionapp'], ['Daily Habit Tracker', 'dailyhabittracker']].forEach(function (p) {
       if (have[p[1]]) return;
       var a = document.createElement('a');
       a.href = p[1];
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
     row.className = 'footer-links';
     row.setAttribute('aria-label', 'Site');
     [['Home', '/'], ['macEQ', 'maceq'], ['KeyboardS', 'keyboards'], ['Upscape', 'upscape'],
-     ['Distribution App', 'distributionapp'], ['macEQ Support', 'support'], ['Upscape Support', 'upscape-support'],
+     ['DiskCleaner', 'https://diskcleaner.pro'], ['Distribution App', 'distributionapp'], ['Daily Habit Tracker', 'dailyhabittracker'], ['macEQ Support', 'support'], ['Upscape Support', 'upscape-support'],
      ['Website Privacy', 'website-privacy']].forEach(function (l) {
       var a = document.createElement('a');
       a.href = l[1];

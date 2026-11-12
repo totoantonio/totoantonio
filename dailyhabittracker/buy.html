@@ -242,9 +242,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="theme.css?v=15">
-<script src="theme.js?v=15"></script>
-<link rel="stylesheet" href="apple.css?v=30">
-<script src="apple.js?v=29"></script>
+<script src="theme.js?v=16"></script>
+<link rel="stylesheet" href="apple.css?v=32">
+<script src="apple.js?v=31"></script>
 <style>
   /* Purchase page: plan cards to pick from, the QR Ph code beside the form, one button that writes the email */
   .buy-steps { margin: 28px 0 8px; }
@@ -341,7 +341,7 @@
     <label class="plan-opt"><input type="radio" name="plan" value="Enterprise" data-price="24990" data-users="0"><b>Enterprise</b><small>No user limit</small><span class="p">₱24,990<small style="display:inline">/month</small></span></label>
   </fieldset>
   <fieldset class="addons">
-    <legend>Add-Ons <small style="font-weight:400">(optional, one-time)</small></legend>
+    <legend>Add-Ons <small style="font-weight:400;font-size:13px">(optional, one-time)</small></legend>
     <label class="addon-opt"><input type="checkbox" name="addon" value="Virtual Setup" data-price="2500"><span><b>Virtual Setup</b><small>Video call: install on your computer, connect your salesmen's phones, quick training.</small></span><em>₱2,500</em></label>
     <label class="addon-opt"><input type="checkbox" name="addon" value="Coverage Plan Setup" data-price="1500"><span><b>Coverage Plan Setup</b><small>We turn your Excel or printed plan into your stores and visit days.</small></span><em>₱1,500</em></label>
     <label class="addon-opt"><input type="checkbox" name="addon" value="On-Site Setup" data-price="0" data-quote="1"><span><b>On-Site Setup</b><small>At your office. ₱5,000 a day plus plane fare, hotel and per diem — we send a quote first, so don't include it in this payment.</small></span><em>Quote</em></label>
@@ -373,10 +373,10 @@
   <h2>3. Send Your Details.</h2>
   <p class="filled-note" id="filled" hidden><strong>Filled in from your app.</strong> Please double-check the details below, then add your email and the payment reference number.</p>
   <div class="fields">
-    <label class="fld wide"><span>Install ID <small style="font-weight:400">(in the app: Settings → About)</small></span><input form="buy" name="id" required placeholder="DHT-1234-ABCD…" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[Dd][Hh][Tt]-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}" translate="no"></label>
+    <label class="fld wide"><span>Install ID <small style="font-weight:400;font-size:13px">(in the app: Settings → About)</small></span><input form="buy" name="id" required placeholder="DHT-1234-ABCD…" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[Dd][Hh][Tt]-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}" translate="no"></label>
     <label class="fld"><span>Your Name</span><input form="buy" name="name" required autocomplete="name" placeholder="Ana Reyes…"></label>
     <label class="fld"><span>Company</span><input form="buy" name="company" autocomplete="organization" placeholder="Reyes Trading…"></label>
-    <label class="fld"><span>Email <small style="font-weight:400">(the code is sent here)</small></span><input form="buy" name="email" type="email" required autocomplete="email" spellcheck="false" placeholder="you@company.com…"></label>
+    <label class="fld"><span>Email <small style="font-weight:400;font-size:13px">(the code is sent here)</small></span><input form="buy" name="email" type="email" required autocomplete="email" spellcheck="false" placeholder="you@company.com…"></label>
     <label class="fld"><span>Payment Reference No.</span><input form="buy" name="ref" required autocomplete="off" spellcheck="false" placeholder="From your payment receipt…"></label>
   </div>
   <button class="send" type="submit" form="buy">Email My Payment Details</button>

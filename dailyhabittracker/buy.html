@@ -270,8 +270,8 @@
   .total b { font-size: 28px; font-variant-numeric: tabular-nums; }
   .pay { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; }
   .pay img { width: 180px; height: 180px; border-radius: 16px; background: #fff; object-fit: contain; }
-  .pay.no-image img { display: none; }
-  .pay.no-image { grid-template-columns: 1fr; }
+  .sample-note { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; background: rgba(255,59,48,.1); color: #d70015; font-size: 15px; }
+  .pay.is-sample .sample-note { display: block; }
   .send { display: inline-block; margin-top: 22px; padding: 14px 28px; border: 0; border-radius: 980px; background: var(--blue); color: #fff; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer; }
   .send:hover { background: #0077ED; }
   .fine { margin-top: 12px; font-size: 14px; color: var(--muted); }
@@ -327,9 +327,10 @@
 <section class="buy-card">
   <h2>2. Pay by QR Ph.</h2>
   <div class="pay" id="pay">
-    <img src="Assets/qrph.png" width="180" height="180" alt="QR Ph code for paying Daily Habit Tracker" onerror="document.getElementById('pay').classList.add('no-image')">
+    <img src="Assets/qrph.png" width="180" height="180" alt="QR Ph code for paying Daily Habit Tracker" onerror="this.onerror=null;this.src='Assets/qrph-sample.svg';document.getElementById('pay').classList.add('is-sample')">
     <div>
       <p>Scan the QR Ph code with <strong>GCash, Maya or any bank app</strong> and send <strong id="total2">₱6,990</strong>.</p>
+      <p class="sample-note" role="note"><strong>Placeholder:</strong> this is a sample QR code, not a real one. Please don't pay yet — the real QR Ph code is coming soon.</p>
       <p class="fine">After paying, your app shows a <strong>reference number</strong>. You'll need it in the next step.</p>
     </div>
   </div>

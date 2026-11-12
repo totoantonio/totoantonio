@@ -270,6 +270,12 @@
   .total b { font-size: 28px; font-variant-numeric: tabular-nums; }
   .pay { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; }
   .pay img { width: 180px; height: 180px; border-radius: 16px; background: #fff; object-fit: contain; }
+  .trust { margin: 28px 0; padding: 22px 24px; border-radius: 20px; border: 1px solid var(--line); }
+  html:root body .trust p { text-align: left; max-width: none; width: auto; }
+  html:root body .trust .trust-title { margin: 0 0 6px; font-size: 18px; font-weight: 700; color: var(--text); }
+  .trust-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px; }
+  .trust-btn { display: inline-block; padding: 10px 20px; border-radius: 980px; background: rgba(120,120,128,.14); color: var(--text); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .trust-btn:hover { background: rgba(120,120,128,.22); }
   html:root body .filled-note { width: auto; max-width: none; margin: 0 0 16px; padding: 10px 14px; border-radius: 12px; background: rgba(0,122,255,.1); color: var(--text); font-size: 15px; line-height: 1.45; text-align: left; letter-spacing: 0; }
   html:root body .filled-note[hidden] { display: none; }
   .fld input.is-filled { border-color: rgba(0,122,255,.45); background: rgba(0,122,255,.05); }
@@ -326,6 +332,13 @@
   <label class="fld"><span>Months</span><select name="months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></label>
   <p class="total" aria-live="polite"><span>Total to pay</span><b id="total">₱6,990</b></p>
 </form>
+
+<aside class="trust" aria-labelledby="trust-title">
+  <p class="trust-title" id="trust-title">Not sure this is really us?</p>
+  <p>Before you pay, check with us first. We'll call you back or answer by email — no payment needed to ask.</p>
+  <p class="trust-actions"><a class="trust-btn" href="mailto:totoantonio@gmail.com?subject=Daily%20Habit%20Tracker%20%E2%80%94%20Call%20Back%20Request&amp;body=Please%20call%20me%20back%20about%20Daily%20Habit%20Tracker.%0A%0AName%3A%20%0ACompany%3A%20%0AMobile%20number%3A%20%0ABest%20time%20to%20call%3A%20">Request a Call Back</a><a class="trust-btn" href="mailto:totoantonio@gmail.com?subject=Daily%20Habit%20Tracker%20%E2%80%94%20Question%20before%20paying">Email Us</a></p>
+  <p class="fine">We never ask for your password, PIN or OTP. Only pay with the QR code on this page at <strong>totoantonio.cloud</strong>, and your activation code always comes from totoantonio@gmail.com.</p>
+</aside>
 
 <section class="buy-card">
   <h2>2. Pay by QR Ph.</h2>

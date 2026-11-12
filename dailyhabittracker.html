@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Habit Tracker — Store Visits and Sales Tracking for Field Sales Teams</title>
+<meta name="description" content="Coverage plans, store visits with GPS and selfie, sales per brand, collections and team reports for distributors with salesmen in the field. Mac and Windows; salesmen use their phones.">
+<meta name="author" content="totoantonio">
+<meta name="keywords" content="field sales app, salesman visit tracker, coverage plan app, store visit app with GPS, sales per brand tracking, distributor salesman monitoring, telemarketing tracker, offline sales visits">
+<link rel="canonical" href="https://totoantonio.cloud/dailyhabittracker">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta property="og:title" content="Daily Habit Tracker — Store Visits and Sales Tracking for Field Sales Teams">
+<meta property="og:description" content="Turn your coverage plan into each salesman's daily store list. Visits with GPS and selfie, sales per brand, collections and reports. Runs on your own computer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://totoantonio.cloud/dailyhabittracker">
+<meta property="og:site_name" content="Daily Habit Tracker">
+<meta property="og:image" content="https://totoantonio.cloud/Assets/optimized/dailyhabittracker-look-dash-1280.webp">
+<meta property="og:image:alt" content="Daily Habit Tracker dashboard: stores visited, sales to date and performance per brand against target">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daily Habit Tracker — Store Visits and Sales Tracking for Field Sales Teams">
+<meta name="twitter:description" content="Coverage plans, store visits with GPS and selfie, sales per brand and team reports. Your own computer, your salesmen's phones.">
+<meta name="twitter:image" content="https://totoantonio.cloud/Assets/optimized/dailyhabittracker-look-dash-1280.webp">
+
+<link rel="icon" href="favicon-t.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-t-32.png">
+<link rel="icon" type="image/svg+xml" href="favicon-t.svg">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-t.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-t.png">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Daily Habit Tracker",
+  "url": "https://totoantonio.cloud/dailyhabittracker",
+  "image": "https://totoantonio.cloud/Assets/optimized/dailyhabittracker-appicon-384.webp",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Field Sales Software",
+  "operatingSystem": "macOS, Windows",
+  "author": { "@type": "Organization", "@id": "https://totoantonio.cloud/#org", "name": "totoantonio", "url": "https://totoantonio.cloud/" },
+  "publisher": { "@type": "Organization", "@id": "https://totoantonio.cloud/#org", "name": "totoantonio", "url": "https://totoantonio.cloud/" },
+  "slogan": "Small Habits, Done Daily, Win the Month",
+  "description": "Field sales software for distributors: coverage plans, each salesman's daily store list, visits and calls with GPS, selfie and order photo, sales per brand, collections, missed and far-from-store flags, and day, week and month reports. Runs on your own Mac or Windows computer; salesmen use it on their phones, even without signal.",
+  "featureList": [
+    "Coverage plan imported from Excel, CSV or a photo of the printed plan",
+    "Each salesman's stores for the day, with visit status",
+    "Visits with GPS location, selfie and order photo",
+    "Telemarketing calls beside in-person visits",
+    "Sales per brand against monthly targets",
+    "Collections with reasons when nothing was collected",
+    "Flags for missed visits, unplanned visits and visits far from the store",
+    "Dashboard, calendar and day, week and month reports with CSV and PDF",
+    "Works without signal; visits send when the phone is back online"
+  ],
+  "softwareRequirements": "macOS or Windows",
+  "screenshot": [
+    "https://totoantonio.cloud/Assets/optimized/dailyhabittracker-look-dash-1280.webp",
+    "https://totoantonio.cloud/Assets/optimized/dailyhabittracker-look-plan-1280.webp",
+    "https://totoantonio.cloud/Assets/optimized/dailyhabittracker-look-report-1280.webp"
+  ]
+}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is Daily Habit Tracker?", "acceptedAnswer": { "@type": "Answer", "text": "Field sales software for distributors. It turns your coverage plan into each salesman's daily list of stores, logs every visit and call with location and photos, and shows sales, collections and visits against target." } },
+    { "@type": "Question", "name": "Do my salesmen need to install anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. They scan a QR code, log in once in their phone's browser and add it to the Home Screen so it opens like an app." } },
+    { "@type": "Question", "name": "Does it work without signal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Today's stores open without signal and visits are saved on the phone, then sent with their original time when the signal is back." } },
+    { "@type": "Question", "name": "Where is my data kept?", "acceptedAnswer": { "@type": "Answer", "text": "On your own computer. Visits, photos and reports are not stored on someone else's server." } },
+    { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "A monthly subscription per computer, paid by GCash: Starter (3 users) PHP 2,990, Team (10 users) PHP 6,990, Business (25 users) PHP 12,990, Enterprise (no user limit) PHP 24,990. Every plan starts with a 30-day free trial." } }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #FFFFFF;
+    --text: #1D1D1F;
+    --muted: #6E6E73;
+    --line: rgba(0,0,0,.12);
+    --blue: #007AFF;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1C1C1E;
+      --text: #F5F5F7;
+      --muted: #98989D;
+      --line: rgba(255,255,255,.14);
+      --blue: #0A84FF;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 26px 24px 60px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--blue); }
+  a:hover { text-decoration: none; }
+
+  /* ---------- Nav ---------- */
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 56px;
+    font-size: 15px;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--text); }
+
+  /* ---------- SF Symbols ---------- */
+
+  .sf-symbol {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: var(--sf) center / contain no-repeat;
+    mask: var(--sf) center / contain no-repeat;
+  }
+
+  .app-icon {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 22px;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    font-weight: 700;
+  }
+
+  .tagline {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 19px;
+    color: var(--muted);
+  }
+
+  .download {
+    margin: 32px 0 0;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    line-height: 0;
+  }
+  .badge:hover { opacity: .85; }
+
+  .badge img {
+    width: 180px;
+    height: 60px;
+  }
+
+  .requirements {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  figure {
+    margin: 44px 0;
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 44px 0 12px;
+    font-size: 22px;
+    letter-spacing: -.01em;
+    font-weight: 600;
+  }
+
+  h2 .sf-symbol {
+    width: 30px;
+    height: 30px;
+    color: var(--blue);
+  }
+
+  p { margin: 0 0 16px; }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+
+  li { margin-bottom: 8px; }
+
+  li strong { font-weight: 600; }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .9em;
+    font-weight: 600;
+  }
+
+  /* The use case list reads as a grid of labels, not a bulleted list. */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .category-grid li {
+    margin: 0;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 48px 0 24px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 520px) {
+    body { padding-top: 48px; }
+    h1 { font-size: 32px; }
+    .tagline { font-size: 17px; }
+  }
+
+  /* Download button: the Lemon Squeezy badge shape, in GitHub black */
+  .gh-badge { background: #1D1D1F; color: #FFFFFF; text-decoration: none; }
+
+  /* Pricing table: no box, thin row lines, small grey headings; scrolls sideways on narrow phones */
+  /* Made For cards settle in once, one after another, as you reach them (script at the end of the page) */
+  #made-for-grid li { background: var(--bg-2); }
+  .js-settle #made-for-grid li { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
+  .js-settle #made-for-grid.is-in li { opacity: 1; transform: none; }
+
+  .eyebrow { margin: 0 0 10px; text-align: center; font-size: 15px; font-weight: 600; color: var(--blue); }
+
+  .price-wrap { overflow-x: auto; margin: 0 0 20px; }
+  .price-table { width: 100%; border-collapse: collapse; font-size: 16px; text-align: center; white-space: nowrap; }
+  .price-table th { padding: 8px 10px; font-size: 13px; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .price-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
+  .price-table th:first-child, .price-table td:first-child { text-align: left; padding-left: 0; }
+  /* Daily Habit Tracker: not released yet — the download button is a grey "Coming Soon" pill, nothing to click */
+  .soon-pill { display: inline-block; padding: 14px 28px; border-radius: 980px; background: rgb(120 120 128 / .14); color: var(--muted); font-size: 17px; font-weight: 600; cursor: default; }
+  /* four plans in one row (three on the other app pages); two per row on tablets, one on phones */
+  html:root body.is-product .plan-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  html:root body.is-product .plan-price { font-size: 38px; }
+  @media (max-width: 1068px) { html:root body.is-product .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 734px) { html:root body.is-product .plan-grid { grid-template-columns: 1fr; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="theme.css?v=15">
+<script src="theme.js?v=15"></script>
+<link rel="stylesheet" href="apple.css?v=30">
+<script src="apple.js?v=29"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Open navigation menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <div class="site-nav-links" id="site-nav-menu">
+    <a href="/">Home</a>
+    <span class="site-nav-menu-label">Daily Habit Tracker</span>
+    <a href="dailyhabittracker" aria-current="page">Overview</a>
+    <a href="dailyhabittracker#features">Features</a>
+    <a href="dailyhabittracker#how">How It Works</a>
+    <a href="dailyhabittracker#pricing">Pricing</a>
+    <a href="dailyhabittracker#faq">Questions</a>
+  </div>
+  <span class="site-nav-title" aria-hidden="true">Daily Habit Tracker</span>
+  <button class="theme-toggle" type="button" aria-label="Switch appearance" title="Change appearance">
+    <span class="sf-symbol theme-sun" style="--sf:url('Assets/Symbols/sun.max.png')" aria-hidden="true"></span>
+    <span class="sf-symbol theme-moon" style="--sf:url('Assets/Symbols/moon.png')" aria-hidden="true"></span>
+  </button>
+</nav>
+
+<div class="logo-lockup">
+  <img class="app-icon" src="Assets/optimized/dailyhabittracker-appicon-256.webp" srcset="Assets/optimized/dailyhabittracker-appicon-256.webp 256w, Assets/optimized/dailyhabittracker-appicon-384.webp 384w" sizes="(max-width: 520px) 132px, 168px" width="128" height="128" fetchpriority="high" alt="Daily Habit Tracker icon">
+  <sup class="os-marks" role="img" aria-label="for Mac and Windows"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.03-2.7 2.2-4 2.3-4.07-1.26-1.84-3.21-2.09-3.9-2.12-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.74 3.36 2.69 1.35-.05 1.86-.87 3.49-.87s2.09.87 3.51.84c1.45-.02 2.37-1.31 3.26-2.61 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.29ZM13.68 4.68c.74-.9 1.24-2.15 1.11-3.39-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.29 1.19.09 2.41-.61 3.15-1.51Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.6 10.2 2.5v8H2V3.6Zm9.2-1.25L22 1v9.5H11.2V2.35ZM2 11.5h8.2v8L2 18.4v-6.9Zm9.2 0H22V21l-10.8-1.5v-8Z"/></svg></sup>
+</div>
+
+<p class="eyebrow">Coming Soon</p>
+<h1 class="site-page-heading">Daily Habit Tracker</h1>
+<p class="tagline">Small Habits. Done Daily. Win the Month.</p>
+<p class="hero-sub">Your coverage plan becomes each salesman's daily list of stores. Every visit and call is logged with location and photos, and you see sales, collections and visits against target.</p>
+
+<p class="download"><span class="soon-pill" aria-disabled="true">Coming Soon</span></p>
+<p class="requirements"><span class="cap">Free Download</span><span class="cap">30-Day Free Trial</span><span class="cap">Mac and Windows</span></p>
+
+<h2 id="look">Take a Closer Look.</h2>
+<figure class="reveal main-figure">
+  <img src="Assets/optimized/dailyhabittracker-look-dash-640.webp" srcset="Assets/optimized/dailyhabittracker-look-dash-640.webp 640w, Assets/optimized/dailyhabittracker-look-dash-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1280" height="960" fetchpriority="high" alt="Daily Habit Tracker dashboard: stores visited, sales to date and performance per brand against target">
+  <figcaption><span class="cap-eyebrow">Dashboard</span><span class="cap-head">The whole team against target.</span></figcaption>
+</figure>
+
+<figure class="reveal phone-figure">
+  <img src="Assets/optimized/dailyhabittracker-look-today-390.webp" srcset="Assets/optimized/dailyhabittracker-look-today-390.webp 390w, Assets/optimized/dailyhabittracker-look-today-780.webp 780w" sizes="300px" width="780" height="1688" loading="lazy" decoding="async" alt="A salesman's day on the phone: four stores visited or called, one flagged as visited far from the store">
+  <figcaption><span class="cap-eyebrow">On the Phone</span><span class="cap-head">Every salesman knows where to go.</span></figcaption>
+</figure>
+
+<figure class="reveal">
+  <img src="Assets/optimized/dailyhabittracker-look-plan-640.webp" srcset="Assets/optimized/dailyhabittracker-look-plan-640.webp 640w, Assets/optimized/dailyhabittracker-look-plan-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1280" height="960" loading="lazy" decoding="async" alt="Coverage Plan: each day's stores for the whole team with sales and collection objectives">
+  <figcaption><span class="cap-eyebrow">Coverage Plan</span><span class="cap-head">The week's stores, visited or missed.</span></figcaption>
+</figure>
+
+<figure class="reveal">
+  <img src="Assets/optimized/dailyhabittracker-look-report-640.webp" srcset="Assets/optimized/dailyhabittracker-look-report-640.webp 640w, Assets/optimized/dailyhabittracker-look-report-1280.webp 1280w" sizes="(max-width: 680px) calc(100vw - 48px), 632px" width="1280" height="960" loading="lazy" decoding="async" alt="Monthly report: one line per salesman with visits, missed stores, sales and collections">
+  <figcaption><span class="cap-eyebrow">Reports</span><span class="cap-head">Day, week or month, ready to print.</span></figcaption>
+</figure>
+
+<h2 id="for-who" class="reveal">Made For.</h2>
+<ul class="category-grid reveal" id="made-for-grid">
+  <li>Distributors with Salesmen</li>
+  <li>Sales Managers in the Office</li>
+  <li>Teams Covering Many Towns</li>
+  <li>Telemarketing Teams</li>
+  <li>Selling Several Brands</li>
+  <li>Collecting on Visits</li>
+  <li>Areas with Weak Signal</li>
+  <li>Teams Moving Off Paper Itineraries</li>
+</ul>
+
+<h2 id="features" class="reveal">Features.</h2>
+<ul class="reveal">
+  <li><strong>Coverage Plan In, Daily List Out.</strong> — import the plan from Excel, CSV or even a photo of the printed sheet. Each salesman opens the app and sees today's stores.</li>
+  <li><strong>Visits You Can Trust.</strong> — every visit saves the location, the distance to the store, a selfie and the order photo. Far from the store? It's flagged.</li>
+  <li><strong>Calls Count Too.</strong> — stores covered by telemarketing are logged as calls, with their own sales and missed-call counts.</li>
+  <li><strong>Sales per Brand</strong> — salesmen enter sales per brand on each visit; you see each brand against its monthly target.</li>
+  <li><strong>Collections</strong> — money collected on each visit, with the reason when nothing was collected.</li>
+  <li><strong>Nothing Slips</strong> — missed visits, visits not in the plan, new stores found in the field and no-location visits are all flagged.</li>
+  <li><strong>Reports</strong> — dashboard, calendar and day, week or month reports per salesman, with CSV and Print / PDF.</li>
+  <li><strong>Works Without Signal</strong> — visits are saved on the phone and sent with their original time when the signal is back.</li>
+  <li><strong>An App on Every Phone</strong> — scan a QR code, log in once, add it to the Home Screen. No app store needed.</li>
+</ul>
+
+<h2 id="how" class="reveal">Up and Running in 3 Steps.</h2>
+<ol class="reveal">
+  <li><strong>Install It.</strong> Put it on one office Mac or Windows computer and add your salesmen and stores.</li>
+  <li><strong>Import the Coverage Plan.</strong> From Excel, CSV or a photo of the plan you already print.</li>
+  <li><strong>Send the Team Out.</strong> Salesmen scan a QR code, follow their daily list and log every visit. You watch the numbers come in.</li>
+</ol>
+
+<h2 id="pricing" class="reveal">Pricing.</h2>
+<p class="pricing-lead">Monthly, per computer, paid by GCash. Your data stays on your own computer.</p>
+<div class="plan-grid">
+  <div class="plan-card"><p class="plan-name">Starter</p><p class="plan-users">Up to 3 users</p><p class="plan-price">₱2,990<span>/month</span></p><p class="plan-alt">Paid monthly by GCash</p></div>
+  <div class="plan-card"><p class="plan-name">Team</p><p class="plan-users">Up to 10 users</p><p class="plan-price">₱6,990<span>/month</span></p><p class="plan-alt">Paid monthly by GCash</p></div>
+  <div class="plan-card"><p class="plan-name">Business</p><p class="plan-users">Up to 25 users</p><p class="plan-price">₱12,990<span>/month</span></p><p class="plan-alt">Paid monthly by GCash</p></div>
+  <div class="plan-card"><p class="plan-name">Enterprise</p><p class="plan-users">No user limit</p><p class="plan-price">₱24,990<span>/month</span></p><p class="plan-alt">Paid monthly by GCash</p></div>
+</div>
+<div class="price-notes">
+  <ul>
+    <li><strong>Free 30-Day Trial</strong> with no user limit. No payment needed to start.</li>
+    <li><strong>Users</strong> are logins turned on, managers included.</li>
+    <li><strong>Your Activation Code</strong> arrives by email after your GCash payment. Paste it in the app under Settings → About.</li>
+  </ul>
+</div>
+
+<h2 id="faq" class="reveal">Questions.</h2>
+<div class="faq-list">
+  <details><summary>Do my salesmen need to install anything?</summary><p>No. They scan a QR code, log in once in their phone's browser and add it to the Home Screen so it opens like an app.</p></details>
+  <details><summary>Does it work without signal?</summary><p>Yes. Today's stores open without signal and visits are saved on the phone, then sent with their original time when the signal is back.</p></details>
+  <details><summary>Can salesmen reach it outside the office?</summary><p>Yes. Turn on the public address once in Connect Phones; salesmen then open it anywhere with mobile data, nothing to install.</p></details>
+  <details><summary>Where is my data kept?</summary><p>On your own computer. Visits, photos and reports are not stored on someone else's server.</p></details>
+  <details><summary>What happens when the trial ends?</summary><p>Your data stays. Paste an activation code in Settings → About and carry on where you left off.</p></details>
+</div>
+
+<img class="closing-icon" src="Assets/optimized/dailyhabittracker-appicon-256.webp" width="72" height="72" alt="" loading="lazy">
+<h2 class="closing-title">Coming Soon.</h2>
+<p class="closing-sub">Free download with a 30-day free trial.</p>
+<p class="download guide-download"><span class="soon-pill" aria-disabled="true">Coming Soon</span></p>
+<p class="requirements"><span class="cap">Mac and Windows</span><span class="cap">Salesmen Use Their Phones</span><span class="cap">Works Without Signal</span></p>
+
+<footer>
+  <p>Daily Habit Tracker · Store Visits and Sales Tracking for Field Sales Teams.</p>
+  <div class="footer-bottom">
+    <p class="copyright">© 2026 totoantonio. All rights reserved.</p>
+    <ul class="social">
+      <li><a href="https://x.com/alfiesuperhalk" aria-label="totoantonio on X" title="X" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
+      <li><a href="https://threads.com/@toto_antonio" aria-label="totoantonio on Threads" title="Threads" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.85 1.205 8.605.024 12.185 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.83 8.116c.976-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a></li>
+      <li><a href="https://bsky.app/profile/totoantonio.bsky.social" aria-label="totoantonio on Bluesky" title="Bluesky" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364q.204-.03.415-.056-.207.033-.415.056c-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a9 9 0 0 1-.415-.056q.21.026.415.056c2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8"/></svg></a></li>
+      <li><a href="#" aria-label="totoantonio on Unsplash" title="Unsplash" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 6.75V0h9v6.75zm9 3.75H24V24H0V10.5h7.5v6.75h9z"/></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* Made For: the cards settle in once, one after another, when the section comes into view.
+   No loop. Shown straight away for Reduce Motion. */
+(function () {
+  var grid = document.getElementById('made-for-grid');
+  if (!grid || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('js-settle');
+  Array.prototype.forEach.call(grid.children, function (li, i) { li.style.transitionDelay = (i * 70) + 'ms'; });
+  var io = new IntersectionObserver(function (e) {
+    if (!e[0].isIntersecting) return;
+    grid.classList.add('is-in');
+    io.disconnect();
+  }, { threshold: 0.3 });
+  io.observe(grid);
+})();
+</script>
+</body>
+</html>

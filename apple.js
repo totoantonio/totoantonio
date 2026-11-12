@@ -51,11 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
     maceq: [['eq-curve', 'Every App', 'One EQ for every app on your Mac'], ['shield', 'No Driver', 'Uses Apple’s built-in audio tap'], ['spatial', 'Spatial Audio', 'Spatial effects and built-in presets']],
     keyboards: [['quick-actions', '⌘ + K Anywhere', 'Press ⌘ + K from any app'], ['apps', '200+ Shortcuts', '200+ shortcuts in 14 categories'], ['shield', 'Private', 'Never reads what you type']],
     upscape: [['fidelity', 'Up to 4x', 'Upscale images up to 4x'], ['preset', '6 AI Models', 'Six specialized AI models'], ['shield', 'No Uploads', 'Nothing is ever uploaded']],
-    distributionapp: [['apps', 'All in One Place', 'Orders, deliveries and payments in one place'], ['save', 'On Your Computer', 'Your data stays on your own computer'], ['balance', 'No Per-User Fees', 'One flat price, no per-user fees']]
+    distributionapp: [['apps', 'All in One Place', 'Orders, deliveries and payments in one place'], ['save', 'On Your Computer', 'Your data stays on your own computer'], ['balance', 'No Per-User Fees', 'One flat price, no per-user fees']],
+    dailyhabittracker: [['apps', 'Plan to Daily List', 'The coverage plan becomes each salesman\u2019s daily stores'], ['shield', 'Proof of Visit', 'Location, selfie and order photo on every visit'], ['save', 'On Your Computer', 'Your data stays on your own computer']]
   };
   var appKey = page.replace('.html', '');
   /* product pages redesigned in the macEQ style (hero, gallery, full grids) */
-  var IS_PRODUCT = ['maceq', 'keyboards', 'distributionapp', 'upscape'].indexOf(appKey) > -1;
+  var IS_PRODUCT = ['maceq', 'keyboards', 'distributionapp', 'upscape', 'dailyhabittracker'].indexOf(appKey) > -1;
   if (IS_PRODUCT) document.body.classList.add('is-product');
   /* same store icons, in the same order, as the home page cards */
   var STORES = { maceq: ['lemon', 'appstore'], keyboards: ['appstore', 'lemon'], upscape: ['appstore', 'lemon'] };
@@ -203,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'distributionapp-approvals': 1600, 'distributionapp-invoice': 1600, 'distributionapp-payment': 1960 };
   /* First screenshot is the hero band; the rest sit inside rounded tiles, so the page doesn't repeat itself */
   /* screenshots with a white background or white border (measured) sit on white cards */
-  var WHITE = /(distributionapp-(approvals|invoice|payment)|keyboards-(main|screenshots)|upscape-open|maceq-(spatial|surround))-/;
+  var WHITE = /(dailyhabittracker-look-(dash|today|plan|report)|distributionapp-(approvals|invoice|payment)|keyboards-(main|screenshots)|upscape-open|maceq-(spatial|surround))-/;
   document.querySelectorAll('body > figure').forEach(function (f) {
     f.classList.add('is-card');
     var img = f.querySelector('img');

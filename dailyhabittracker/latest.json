@@ -1,9 +1,9 @@
 {
-  "version": "0.2.2",
-  "build": 4,
-  "notes": "Quit App and reopen now asks for the login on this computer (phones stay signed in).",
+  "version": "0.2.3",
+  "build": 5,
+  "notes": "Welcome Tour: Don't show again. Update Now finishes cleanly after restarting (goes to the login page).",
   "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac.dmg",
-  "mac_sha256": "9ddd33c3d59036d853f131bef56263a69b817502f2777e4ad2b02b6876c8bfec",
+  "mac_sha256": "99884cf2f15216b4102a9f8853f6a38ecf31da09e75af20fab245d5241accd5b",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "c02238d04dc4dd90127cc551bb77a8a82409756419124144c64e9826752f09f1"
+  "windows_sha256": "bbfcb5646888e3e507becf6fc931f8aeb106208ac166b8a8a6dae5e84b349048"
 }

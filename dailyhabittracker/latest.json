@@ -1,7 +1,9 @@
 {
-  "version": "0.2.0",
-  "build": 2,
-  "notes": "Plan vs Actual for each store visit, yearly and weekly performance charts, brand logos, buying-stores view, and many layout fixes for phones.",
+  "version": "0.2.1",
+  "build": 3,
+  "notes": "One-click updates: Update Now downloads, checks and installs the new version by itself, with a progress bar. Plus chart and phone layout fixes.",
   "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac.dmg",
-  "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip"
+  "mac_sha256": "03f6b7447137f9cb7826945644f60db3f42cadc36829f5c6617098ef898f183f",
+  "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
+  "windows_sha256": "644409ad17acc36a4b27935ba6096f0225fa2f633fd067b03d844effe9018dc6"
 }

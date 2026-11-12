@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="/">
 <title>Purchase Daily Habit Tracker — Get Your Activation Code</title>
-<meta name="description" content="Pick a Daily Habit Tracker plan, pay by GCash and get the activation code for your computer by email.">
+<meta name="description" content="Pick a Daily Habit Tracker plan, pay by QR Ph from GCash, Maya or any bank app, and get the activation code for your computer by email.">
 <link rel="canonical" href="https://totoantonio.cloud/dailyhabittracker/buy">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#FFFFFF">
@@ -246,7 +246,7 @@
 <link rel="stylesheet" href="apple.css?v=30">
 <script src="apple.js?v=29"></script>
 <style>
-  /* Purchase page: plan cards to pick from, the GCash QR beside the form, one button that writes the email */
+  /* Purchase page: plan cards to pick from, the QR Ph code beside the form, one button that writes the email */
   .buy-steps { margin: 28px 0 8px; }
   .buy-card { margin: 28px 0; padding: 28px; border-radius: 24px; background: var(--bg-2, rgba(120,120,128,.08)); }
   html:root body .buy-card h2 { display: block; margin: 0 0 18px; padding: 0; text-align: left; font-size: 24px; line-height: 1.2; letter-spacing: -.01em; }
@@ -270,10 +270,8 @@
   .total b { font-size: 28px; font-variant-numeric: tabular-nums; }
   .pay { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; }
   .pay img { width: 180px; height: 180px; border-radius: 16px; background: #fff; object-fit: contain; }
-  .pay .noqr { display: none; }
   .pay.no-image img { display: none; }
   .pay.no-image { grid-template-columns: 1fr; }
-  .pay.no-image .noqr { display: block; }
   .send { display: inline-block; margin-top: 22px; padding: 14px 28px; border: 0; border-radius: 980px; background: var(--blue); color: #fff; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer; }
   .send:hover { background: #0077ED; }
   .fine { margin-top: 12px; font-size: 14px; color: var(--muted); }
@@ -305,11 +303,11 @@
 
 <p class="eyebrow">Daily Habit Tracker</p>
 <h1 class="site-page-heading">Get Your Activation Code.</h1>
-<p class="tagline">Pick a plan, pay by GCash, and the code for your computer arrives by email.</p>
+<p class="tagline">Pick a plan, pay by QR Ph, and the code for your computer arrives by email.</p>
 
 <ol class="buy-steps">
   <li><strong>Pick Your Plan.</strong> One price per computer, paid monthly. Users are logins turned on, managers included.</li>
-  <li><strong>Pay by GCash.</strong> Scan the QR code and send the total. Keep the GCash reference number.</li>
+  <li><strong>Pay by QR Ph.</strong> Scan the QR code with GCash, Maya or your bank app and send the total. Keep the reference number.</li>
   <li><strong>Send Your Details.</strong> Tap Email My Payment Details. The activation code comes back to your email — paste it in the app under Settings → About.</li>
 </ol>
 
@@ -323,17 +321,16 @@
     <label class="plan-opt"><input type="radio" name="plan" value="Enterprise" data-price="24990" data-users="0"><b>Enterprise</b><small>No user limit</small><span class="p">₱24,990<small style="display:inline">/month</small></span></label>
   </fieldset>
   <label class="fld"><span>Months</span><select name="months"><option value="1">1 month</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></label>
-  <p class="total" aria-live="polite"><span>Total to send by GCash</span><b id="total">₱6,990</b></p>
+  <p class="total" aria-live="polite"><span>Total to pay</span><b id="total">₱6,990</b></p>
 </form>
 
 <section class="buy-card">
-  <h2>2. Pay by GCash.</h2>
+  <h2>2. Pay by QR Ph.</h2>
   <div class="pay" id="pay">
-    <img src="Assets/gcash-qr.png" width="180" height="180" alt="GCash QR code for paying Daily Habit Tracker" onerror="document.getElementById('pay').classList.add('no-image')">
+    <img src="Assets/qrph.png" width="180" height="180" alt="QR Ph code for paying Daily Habit Tracker" onerror="document.getElementById('pay').classList.add('no-image')">
     <div>
-      <p>Open GCash, tap <strong>Pay QR</strong>, scan the code and send <strong id="total2">₱6,990</strong>.</p>
-      <p class="noqr">The GCash QR code is being added. Email <a href="mailto:totoantonio@gmail.com?subject=Daily%20Habit%20Tracker%20GCash%20QR">totoantonio@gmail.com</a> and we'll send it right away.</p>
-      <p class="fine">After paying, GCash shows a <strong>reference number</strong>. You'll need it in the next step.</p>
+      <p>Scan the QR Ph code with <strong>GCash, Maya or any bank app</strong> and send <strong id="total2">₱6,990</strong>.</p>
+      <p class="fine">After paying, your app shows a <strong>reference number</strong>. You'll need it in the next step.</p>
     </div>
   </div>
 </section>
@@ -345,7 +342,7 @@
     <label class="fld"><span>Your Name</span><input form="buy" name="name" required autocomplete="name" placeholder="Ana Reyes…"></label>
     <label class="fld"><span>Company</span><input form="buy" name="company" autocomplete="organization" placeholder="Reyes Trading…"></label>
     <label class="fld"><span>Email <small style="font-weight:400">(the code is sent here)</small></span><input form="buy" name="email" type="email" required autocomplete="email" spellcheck="false" placeholder="you@company.com…"></label>
-    <label class="fld"><span>GCash Reference No.</span><input form="buy" name="ref" required inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="From the GCash receipt…"></label>
+    <label class="fld"><span>Payment Reference No.</span><input form="buy" name="ref" required autocomplete="off" spellcheck="false" placeholder="From your payment receipt…"></label>
   </div>
   <button class="send" type="submit" form="buy">Email My Payment Details</button>
   <p class="fine" id="msg" role="status">Opens your email app with everything filled in — just tap Send. No email app? Send the same details to <a href="mailto:totoantonio@gmail.com">totoantonio@gmail.com</a>.</p>
@@ -384,8 +381,8 @@
       'Install ID: ' + el.id.value.trim().toUpperCase(),
       'Plan: ' + p.value + ' (' + (+p.dataset.users ? 'up to ' + p.dataset.users + ' users' : 'no user limit') + ')',
       'Months: ' + m,
-      'Amount sent by GCash: PHP ' + fmt.format(total()),
-      'GCash reference no.: ' + el.ref.value.trim(), '',
+      'Amount paid by QR Ph: PHP ' + fmt.format(total()),
+      'Payment reference no.: ' + el.ref.value.trim(), '',
       'Name: ' + el.name.value.trim(),
       'Company: ' + el.company.value.trim(),
       'Email for the code: ' + el.email.value.trim()].join('\n');

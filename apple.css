@@ -13,8 +13,8 @@
 
 :root,
 :root[data-theme="light"] {
-  --bg: #FFFFFF;
-  --bg-2: #F5F5F7;
+  --bg: #F5F5F7;
+  --bg-2: #FFFFFF;
   --text: #1D1D1F;
   --muted: #6E6E73;
   --line: #D2D2D7;
@@ -22,10 +22,10 @@
   --link: #0066CC;
   --navbar: rgba(255, 255, 255, .8);
   --tile-shadow: 0 4px 24px rgba(0, 0, 0, .08);
-  --page-bg: #FFFFFF;
+  --page-bg: #F5F5F7;
   --page-text: #1D1D1F;
   --page-soft: #6E6E73;
-  --card-bg: #F5F5F7;
+  --card-bg: #FFFFFF;
   --card-text: #6E6E73;
   --card-shadow: rgba(0, 0, 0, 0);
   --card-shadow-hover: rgba(0, 0, 0, .08);
@@ -51,7 +51,7 @@
 }
 
 :root {
-  --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --gutter: clamp(22px, 6vw, 80px);
   --text-col: min(980px, calc(100% - 2 * var(--gutter)));
   --wide-col: min(1260px, calc(100% - 2 * var(--gutter)));
@@ -1727,9 +1727,9 @@ html.apple-pending body { visibility: hidden; }
 }
 
 /* Site-wide, matching the home page: headline scale, gray App Store mark, Xcode-style capsules */
-:root { --headline: 40px; }
-@media (max-width: 1068px) { :root { --headline: 34px; } }
-@media (max-width: 734px) { :root { --headline: 28px; } }
+:root { --headline: 48px; }
+@media (max-width: 1068px) { :root { --headline: 40px; } }
+@media (max-width: 734px) { :root { --headline: 32px; } }
 :root body .appstore-mark { filter: grayscale(1); opacity: .7; }
 :root body > .requirements { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 14px; }
 :root body .requirements .cap { display: inline-flex; align-items: center; justify-content: center; height: 24px; padding: 0 11px; border: .5px solid rgba(0, 0, 0, .08); border-radius: 980px; background: linear-gradient(#FFFFFF, #FAFAFA); box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04), inset 0 1px 0 rgba(255, 255, 255, .9); color: var(--text); font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap; }
@@ -1749,3 +1749,10 @@ html.apple-pending body { visibility: hidden; }
 h1, h2, h3 { text-wrap: balance; }
 a, button, input, select, textarea, label, summary { touch-action: manipulation; }
 .word { white-space: nowrap; }
+
+/* ---------- Site-wide, matching the home page redesign (apple.com/home) ----------
+   Light gray page (#F5F5F7) so white cards stand out; Apple's font rendering settings. */
+:root body, :root body input, :root body textarea, :root body select, :root body button {
+  font-synthesis: none; font-feature-settings: "kern"; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+:root body h1, :root body h2, :root body h3 { font-weight: 600; }

@@ -29,10 +29,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon-t.svg">
 <link rel="icon" type="image/png" sizes="128x128" href="favicon-t.png">
 <link rel="apple-touch-icon" href="apple-touch-icon-t.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="theme.css?v=15">
+<link rel="stylesheet" href="theme.css?v=16">
 <script src="theme.js?v=16"></script>
 <style>
   :root {
@@ -96,7 +93,7 @@
     padding: 48px 32px 72px;
     background: var(--page-bg);
     color: var(--page-text);
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 17px;
     line-height: 1.4706;
     letter-spacing: -.022em;
@@ -735,7 +732,7 @@
     .work-description { font-size: 12px; }
   }
 </style>
-<link rel="stylesheet" href="apple.css?v=32">
+<link rel="stylesheet" href="apple.css?v=33">
 <script src="apple.js?v=31"></script>
 <style>
   /* ---------- Home preview: apple.com/mac style line-up + "Get to know" carousel (home page) ---------- */
@@ -1093,20 +1090,11 @@
   :root body .lineup-mac .work-logo-diskcleaner { background-image: url("Assets/optimized/diskcleaner-icon-384.webp"); }
   :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: hidden; }
   :root body .lineup-mac > li.lineup-featured > .lineup-label { position: absolute; top: 14px; right: -34px; width: 130px; margin: 0; padding: 4px 0; transform: rotate(45deg); background: #0071E3; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-align: center; text-transform: uppercase; }
-  @media (max-width: 734px) {
-    :root body .lineup-row.lineup-mac > li.lineup-featured { overflow: visible; }
-    :root body .lineup-mac > li.lineup-featured > .lineup-label { position: static; width: auto; padding: 0; transform: none; background: none; color: var(--link); text-align: left; }
-  }
   :root body .lineup-mac > li > * { grid-column: 2; }
-  :root body .lineup-mac > li > .lineup-icon { grid-column: 1; grid-row: 1 / span 4; align-self: center; width: 68px; height: 68px; margin: 0; border-radius: 15px; }
+  :root body .lineup-mac > li > .lineup-icon { align-self: flex-start; width: 64px; height: 64px; margin: 0 0 16px; border-radius: 14px; }
   :root body .lineup-mac > li > .lineup-label:empty,
-  :root body .lineup-mac > li > .lineup-actions,
   :root body .lineup-mac .lineup-stores-label { display: none; }
-  :root body .lineup-mac > li > .lineup-name { margin: 0; font-size: 19px; line-height: 1.19; }
-  :root body .lineup-mac .lineup-name a { font-weight: 700; }
   :root body .lineup-mac .lineup-name a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
-  :root body .lineup-mac > li > .lineup-text { margin: 2px 0 0; color: var(--text); font-size: 14px; line-height: 1.36; }
-  :root body .lineup-mac > li > .lineup-stores { justify-content: flex-start; margin: 10px 0 0; }
   @media (max-width: 734px) {
     :root body .lineup-row.lineup-mac { grid-template-columns: 1fr; gap: 0; }
     :root body .lineup-row.lineup-mac > li:nth-child(n) {
@@ -1114,10 +1102,6 @@
       padding: 22px 0; border: 0; border-top: .5px solid color-mix(in srgb, var(--line) 55%, transparent); border-radius: 0; background: none;
     }
     :root body .lineup-row.lineup-mac > li:first-child { border-top: 0; padding-top: 0; }
-    :root body .lineup-mac > li > .lineup-icon { width: 64px; height: 64px; border-radius: 14px; }
-    :root body .lineup-mac > li > .lineup-name { font-size: 19px; line-height: 1.19; }
-    :root body .lineup-mac > li > .lineup-text { margin-top: 2px; font-size: 14px; }
-    :root body .lineup-mac > li > .lineup-stores { margin-top: 10px; }
     /* list rows don't lift; a press dims the row and the icon still leans in */
     :root body .lineup-row.lineup-mac > li.is-in:hover { transform: none; box-shadow: none; }
     :root body .lineup-row.lineup-mac > li:active { opacity: .6; transition-duration: .1s; }
@@ -1126,6 +1110,138 @@
   :root body .author-promise { display: block; margin-bottom: 4px; color: var(--text); font-weight: 600; }
   :root body .lineup-mac .lineup-tag { order: 0; display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 10px; border: .5px solid rgba(0, 0, 0, .08); border-radius: 980px; background: linear-gradient(#FFFFFF, #FAFAFA); box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .04), inset 0 1px 0 rgba(255, 255, 255, .9); color: var(--text); font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap; }
   :root[data-theme="dark"] body .lineup-mac .lineup-tag { border-color: rgba(255, 255, 255, .12); background: linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .06)); box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .1); }
+  /* ---------- Typography: Apple Support article scale (support.apple.com/en-us/127888) ---------- */
+  :root body {
+    --text: #1D1D1F; --page-text: #1D1D1F; --muted: #6E6E73; --page-soft: #6E6E73; --card-text: #6E6E73; --link: #0066CC;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px; line-height: 1.4706; letter-spacing: -.022em; font-weight: 400;
+  }
+  :root[data-theme="dark"] body { --text: #F5F5F7; --page-text: #F5F5F7; --muted: #86868B; --page-soft: #86868B; --card-text: #86868B; --link: #2997FF; }
+  :root body h1, :root body h2, :root body h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600; color: var(--text); }
+  :root body .author-intro h1 { font-size: 48px; line-height: 1.0835; letter-spacing: -.003em; }
+  :root body .lineup h2, :root body .know h2, :root body .story-title { font-size: 48px; line-height: 1.0834; letter-spacing: -.003em; color: var(--text); }
+  :root body .lineup-group { font-size: 32px; line-height: 1.125; letter-spacing: .004em; }
+  @media (max-width: 734px) {
+    :root body .author-intro h1 { font-size: 32px; line-height: 1.125; }
+    :root body .lineup h2, :root body .know h2, :root body .story-title { font-size: 32px; line-height: 1.125; }
+    :root body .lineup-group { font-size: 24px; line-height: 1.167; }
+  }
+
+  /* ---------- Get to Know cards: apple.com/home feature-card values ---------- */
+  @media (min-width: 735px) and (max-width: 1068px) {
+    :root body .lineup h2, :root body .know h2, :root body .story-title { font-size: 40px; line-height: 1.1; letter-spacing: 0; }
+  }
+  /* same wide column as every page; cards start on it and scroll past it */
+  :root body .know h2 { width: var(--wide-col); }
+  :root body .know-row {
+    grid-auto-columns: 372px; gap: 20px;
+    padding: 10px calc(50% - var(--wide-col) / 2) 30px;
+    scroll-padding-inline: calc(50% - var(--wide-col) / 2);
+  }
+  :root body .know-row li { scroll-snap-align: start; }
+  :root:not([data-theme="dark"]) body .know-card { background: #FFFFFF; color: #1D1D1F; border: 0; box-shadow: none; }
+  :root body .know-card {
+    height: auto; min-height: 612px; padding: 32px; border-radius: 28px;
+    transform: scale(1); transition: transform .3s cubic-bezier(0, 0, .5, 1), background-color .344s ease;
+  }
+  :root body .know-card:hover { transform: scale(1); box-shadow: none; }
+  @media (hover: hover) { :root body .know-card:hover { transform: scale(1.01); } }
+  :root body .know-card .know-eyebrow, :root body .know-card.is-white .know-eyebrow { color: inherit; font-size: 17px; line-height: 1.2353; font-weight: 600; letter-spacing: -.022em; }
+  :root body .know-head { margin-top: 8px; font-size: 28px; line-height: 1.1429; font-weight: 600; letter-spacing: .007em; }
+  /* the round "+" button, bottom-right */
+  :root body .know-card::after {
+    content: ""; position: absolute; right: 16px; bottom: 16px; z-index: 1; width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(rgba(0, 0, 0, .56), rgba(0, 0, 0, .56)) center / 14px 2px no-repeat, linear-gradient(rgba(0, 0, 0, .56), rgba(0, 0, 0, .56)) center / 2px 14px no-repeat, rgba(210, 210, 215, .64);
+    transition: background-color .1s linear;
+  }
+  :root body .know-card:hover::after { background-color: rgba(223, 223, 227, .7); }
+  @media (max-width: 1068px) {
+    :root body .know-row { grid-auto-columns: 344px; }
+    :root body .know-card { min-height: 576px; padding: 28px; }
+    :root body .know-head { font-size: 24px; line-height: 1.1667; letter-spacing: .009em; }
+    :root body .know-card::after { right: 13px; bottom: 13px; }
+  }
+  @media (max-width: 734px) {
+    :root body .know h2, :root body .know-row { --col: var(--wide-col); }
+    :root body .know h2 { width: var(--col); }
+    :root body .know-row { grid-auto-columns: 260px; padding-left: calc(50% - var(--col) / 2); padding-right: calc(50% - var(--col) / 2); scroll-padding-inline: calc(50% - var(--col) / 2); }
+    :root body .know-row li { scroll-snap-align: start; }
+    :root body .know-card { height: auto; min-height: 480px; padding: 24px; }
+    :root body .know-card .know-eyebrow, :root body .know-card.is-white .know-eyebrow { font-size: 14px; line-height: 1.2857; letter-spacing: -.016em; }
+    :root body .know-head { font-size: 21px; line-height: 1.1905; letter-spacing: .011em; }
+  }
+  @media (prefers-reduced-motion: reduce) { :root body .know-card, :root body .know-card:hover { transition: none; transform: none; } }
+
+  /* ---------- For Your Mac: apple.com/home icon-card values, in a sideways row like Apple's ---------- */
+  /* 4 across on wide screens, 2 on tablets, 1 on phones */
+  :root body .lineup-row.lineup-mac { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-flow: row; gap: 20px; margin: 0; padding: 0; overflow: visible; }
+  :root body .lineup-row.lineup-mac > li:nth-child(n) {
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 248px;
+    padding: 28px 32px 48px; border: 0; border-radius: 28px; text-align: left;
+    transform: scale(1); transition: transform .3s cubic-bezier(0, 0, .5, 1);
+  }
+  :root:not([data-theme="dark"]) body .lineup-row.lineup-mac > li:nth-child(n) { background: #FFFFFF; }
+  @media (hover: hover) { :root body .lineup-row.lineup-mac > li:nth-child(n):hover { transform: scale(1.01); } }
+  :root body .lineup-mac .lineup-icon { width: 64px; height: 64px; margin: 0 0 16px; border-radius: 14px; }
+  :root body .lineup-mac .lineup-label:empty { display: none; }
+  :root body .lineup-mac .lineup-name { margin: 0; font-size: 28px; line-height: 1.1429; letter-spacing: .007em; }
+  :root body .lineup-row .lineup-name, :root body .lineup-row .lineup-name a { font-weight: 600; }
+  :root body .lineup-mac .lineup-text { margin: 8px 0 0; color: var(--text); font-size: 17px; line-height: 1.2354; letter-spacing: -.022em; }
+  /* apple.com CTA pair: blue "Learn more" pill + blue text link with › */
+  :root body .lineup-row .lineup-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 34px; }
+  :root body .lineup-mac > li > .lineup-actions { margin: 20px 0 0; }
+  :root body .lineup-row .lineup-more { padding: 12px 22px; border-radius: 980px; background: #0071E3; color: #FFFFFF; font-size: 17px; line-height: 1.1765; letter-spacing: -.022em; text-decoration: none; }
+  :root body .lineup-row .lineup-more:hover { background: #0077ED; color: #FFFFFF; text-decoration: none; }
+  :root body .lineup-row .lineup-get { padding: 0; background: none; color: var(--link); font-size: 17px; line-height: 1.1765; letter-spacing: -.022em; }
+  :root body .lineup-row .lineup-get:hover { background: none; text-decoration: underline; }
+  /* Apple's card is icon, name, text, link: no price/store row, no ribbon */
+  :root body .lineup-mac > li > .lineup-stores { display: none; }
+  @media (max-width: 1068px) {
+    :root body .lineup-row.lineup-mac { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    :root body .lineup-row.lineup-mac > li:nth-child(n) { padding: 28px 28px 48px; }
+    :root body .lineup-mac .lineup-name { font-size: 24px; line-height: 1.1667; letter-spacing: .009em; }
+  }
+  @media (max-width: 734px) {
+    :root body .lineup-row.lineup-mac { grid-template-columns: 1fr; }
+    :root body .lineup-row.lineup-mac > li:nth-child(n) { padding: 24px 24px 48px; border-top: 0; }
+    :root body .lineup-mac .lineup-name { font-size: 21px; line-height: 1.1905; letter-spacing: .011em; }
+    :root body .lineup-mac .lineup-text { font-size: 14px; line-height: 1.2858; letter-spacing: -.016em; }
+    :root body .lineup-row .lineup-actions { gap: 12px 20px; }
+    :root body .lineup-row .lineup-more { padding: 8px 16px; font-size: 14px; line-height: 1.2858; letter-spacing: -.016em; }
+    :root body .lineup-row .lineup-get { font-size: 14px; line-height: 1.2858; letter-spacing: -.016em; }
+  }
+  @media (prefers-reduced-motion: reduce) { :root body .lineup-row.lineup-mac > li:nth-child(n) { transition: none; transform: none; } }
+
+  /* ---------- Wide business cards: apple.com/home banner-card values ---------- */
+  :root body .lineup-biz > li + li { margin-top: 20px; }
+  :root body .lineup-row > li.lineup-wide {
+    display: grid; grid-template-columns: 400px minmax(0, 1fr); align-content: center; column-gap: 0;
+    min-height: 480px; padding: 56px clamp(0px, 6.25vw, 120px); border: 0; border-radius: 28px; text-align: left;
+  }
+  :root:not([data-theme="dark"]) body .lineup-row > li.lineup-wide { background: #FFFFFF; }
+  :root body .lineup-wide > * { grid-column: 1; margin-left: 0; margin-right: 0; }
+  :root body .lineup-wide > .icon-with-marks { grid-column: 2; grid-row: 1 / span 5; align-self: center; justify-self: center; }
+  :root body .lineup-wide .work-logo { width: 200px; height: 200px; border-radius: 45px; }
+  :root body .lineup-wide .lineup-label { order: 0; margin: 0 0 8px; color: #B64400; font-size: 12px; line-height: 1.3334; font-weight: 600; letter-spacing: -.01em; }
+  :root[data-theme="dark"] body .lineup-wide .lineup-label { color: #FF791B; }
+  :root body .lineup-wide .lineup-name { margin: 0; font-size: 28px; line-height: 1.1429; letter-spacing: .007em; }
+  :root body .lineup-wide .lineup-text { max-width: none; margin: 12px 0 0; font-size: 17px; line-height: 1.2354; letter-spacing: -.022em; }
+  :root body .lineup-wide .lineup-meta { margin: 12px 0 0; }
+  :root body .lineup-wide .lineup-actions { justify-content: flex-start; margin: 32px 0 0; }
+  /* tablet and phone: picture on top, words centred under it */
+  @media (max-width: 1068px) {
+    :root body .lineup-row > li.lineup-wide { display: flex; flex-direction: column; align-items: center; min-height: 0; padding: 56px 28px; text-align: center; }
+    :root body .lineup-wide > * { max-width: 480px; }
+    :root body .lineup-wide > .icon-with-marks { order: -1; margin-bottom: 32px; }
+    :root body .lineup-wide .lineup-name { font-size: 24px; line-height: 1.1667; letter-spacing: .009em; }
+    :root body .lineup-wide .lineup-actions { justify-content: center; }
+  }
+  @media (max-width: 734px) {
+    :root body .lineup-row > li.lineup-wide { padding: 48px 24px; }
+    :root body .lineup-wide .work-logo { width: 140px; height: 140px; border-radius: 31px; }
+    :root body .lineup-wide .lineup-name { font-size: 21px; line-height: 1.1905; letter-spacing: .011em; }
+    :root body .lineup-wide .lineup-text { font-size: 14px; line-height: 1.2858; letter-spacing: -.016em; }
+  }
 </style>
 </head>
 <body class="author-page">
@@ -1164,11 +1280,11 @@
     <h2 id="lineup-title">Explore the Line-Up.</h2>
     <h3 class="lineup-group">For Your Mac.</h3>
     <ul class="lineup-row lineup-mac">
-      <li>
+      <li class="lineup-featured">
         <a class="lineup-icon work-logo work-logo-maceq" href="maceq" tabindex="-1" aria-hidden="true"></a>
-        <p class="lineup-label"></p>
+        <p class="lineup-label">Premium</p>
         <h3 class="lineup-name"><a href="maceq" data-analytics-event="select_item" data-item-id="maceq" data-item-name="macEQ">macEQ</a></h3>
-        <p class="lineup-text">One equalizer for every app on your Mac.</p>
+        <p class="lineup-text">One equalizer for every app on your Mac. Ten bands and a live spectrum for Spotify, Apple Music, YouTube and Safari. No driver to install.</p>
         <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="lineup-tag">$14.99</span><span class="lineup-tag">Free Trial</span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" role="img" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" role="img" aria-label="Coming soon to the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span></p>
         <p class="lineup-actions"><a class="lineup-more" href="maceq">Learn more<span class="visually-hidden"> about macEQ</span></a><a class="lineup-get" href="https://totoantonio-updates.pages.dev/maceq/macEQ-1.0.6.dmg" target="_blank" rel="noopener">Free Trial ›</a></p>
       </li>
@@ -1176,7 +1292,7 @@
         <a class="lineup-icon work-logo work-logo-keyboards" href="keyboards" tabindex="-1" aria-hidden="true"></a>
         <p class="lineup-label"></p>
         <h3 class="lineup-name"><a href="keyboards" data-analytics-event="select_item" data-item-id="keyboards" data-item-name="KeyboardS">KeyboardS</a></h3>
-        <p class="lineup-text">Every Mac shortcut, one keystroke away.</p>
+        <p class="lineup-text">Every Mac shortcut, one keystroke away. Search any shortcut by name instead of digging through menus or the web.</p>
         <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="lineup-tag">$9.99</span><span class="lineup-tag">Free Trial</span><span class="work-status work-status-released work-status-icon" title="Available on the App Store" role="img" aria-label="Available on the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" role="img" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
         <p class="lineup-actions"><a class="lineup-more" href="keyboards">Learn more<span class="visually-hidden"> about KeyboardS</span></a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/a7ed3bb8-9b6f-4d91-94f3-5cfa2776aadd" target="_blank" rel="noopener">Download ›</a></p>
       </li>
@@ -1184,7 +1300,7 @@
         <a class="lineup-icon work-logo work-logo-upscape" href="upscape" tabindex="-1" aria-hidden="true"></a>
         <p class="lineup-label"></p>
         <h3 class="lineup-name"><a href="upscape" data-analytics-event="select_item" data-item-id="upscape" data-item-name="Upscape">Upscape</a></h3>
-        <p class="lineup-text">Sharper images, privately on your Mac.</p>
+        <p class="lineup-text">Sharper images, privately on your Mac. Blow up small photos without the blur, and nothing ever gets uploaded.</p>
         <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="lineup-tag">$9.99</span><span class="lineup-tag">Free Trial</span><span class="work-status work-status-pending work-status-icon" title="Coming soon to the App Store" role="img" aria-label="Coming soon to the App Store"><svg class="appstore-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.4" fill="#1A8CFF"/><g fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"><path d="M8 17.4 13.1 8.5"/><path d="M16 17.4 10.9 8.5"/><path d="M6.4 14.6h11.2"/></g></svg></span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" role="img" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
         <p class="lineup-actions"><a class="lineup-more" href="upscape">Learn more<span class="visually-hidden"> about Upscape</span></a><a class="lineup-get" href="https://totoantonio.lemonsqueezy.com/checkout/buy/c09293b2-94a2-4312-bc47-99985d8d56bd" target="_blank" rel="noopener">Download ›</a></p>
       </li>
@@ -1192,8 +1308,9 @@
         <a class="lineup-icon work-logo work-logo-diskcleaner" href="https://diskcleaner.pro" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"></a>
         <p class="lineup-label">Featured</p>
         <h3 class="lineup-name"><a href="https://diskcleaner.pro" target="_blank" rel="noopener" data-analytics-event="select_item" data-item-id="diskcleaner" data-item-name="DiskCleaner">DiskCleaner</a></h3>
-        <p class="lineup-text">A review-first Mac cleaner. Everything moves to Trash.</p>
+        <p class="lineup-text">A review-first Mac cleaner. See what fills your disk, choose what goes, and everything moves to Trash so nothing is lost for good.</p>
         <p class="lineup-meta lineup-stores"><span class="lineup-stores-label">Available from</span><span class="lineup-tag">$9.99</span><span class="lineup-tag">Free Version</span><span class="work-status work-status-lemon work-status-icon" title="Available from Lemon Squeezy" role="img" aria-label="Available from Lemon Squeezy"><svg class="lemon-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFC233" d="M15.2 15.6C14 12.2 10.4 8.2 10.5 6.1c.1-2.1 1.8-3.4 4-3.1 2.8.3 4.4 2.7 3.6 5.3l-2.9 7.3Z"/><path fill="#FFC233" d="M16.5 16.5c1.8-3.3 3.8-8.2 5.8-9.1 2-.9 4.1.2 4.7 2.3.8 2.7-.8 5-3.4 5.8l-7.1 1Z"/><path fill="#FFC233" d="M16.7 17.6c3.5-.9 8.7-2.2 10.5-.9 1.8 1.2 1.8 3.7.4 5.4-1.8 2.1-4.5 2.1-6.3.4l-4.6-4.9Z"/><path fill="#FFC233" d="M15.7 18.7c1.8 3.2 4.5 7.7 3.7 9.7-.8 2-3 2.8-5 1.9-2.6-1.1-3.5-3.7-2.2-6.1l3.5-5.5Z"/></svg></span></p>
+        <p class="lineup-actions"><a class="lineup-more" href="https://diskcleaner.pro" target="_blank" rel="noopener">Learn more<span class="visually-hidden"> about DiskCleaner</span></a><a class="lineup-get" href="https://diskcleaner.pro" target="_blank" rel="noopener">Download ›</a></p>
       </li>
     </ul>
     <h3 class="lineup-group">For Your Business.</h3>

@@ -1,9 +1,9 @@
 {
-  "version": "0.2.5",
-  "build": 7,
-  "notes": "\u2022 Store page: future days show Planned, not Missed\n\u2022 Calendar easier to read on phones\n\u2022 Selfie and Order side by side (icons when space is tight)\n\u2022 New app name design with For Field Sales\n\u2022 Restarting the app reuses the open browser tab\n\u2022 Pages refresh themselves after an app update\n\u2022 Clearer message when the app isn't in the Applications folder",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.5-build-7.dmg",
-  "mac_sha256": "3c13e218e7c5e35c9f8a41c03c525a4600abe88191e9acefc3900e4e7b1cb38d",
+  "version": "0.2.6",
+  "build": 8,
+  "notes": "\u2022 Ask AI (managers): get advice on your team's numbers from your own Claude, ChatGPT or Gemini \u2014 the app writes the prompt, nothing is sent\n\u2022 Software Update card like macOS, with Check for Updates beside the status\n\u2022 Renew or Upgrade License link under Licence\n\u2022 Team list: salesman names easier to read",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.6-build-8.dmg",
+  "mac_sha256": "df0f854201b2b2b9e80c4157b9faae10d4950acae9e5f6062c24d590a38f53b0",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "7b9a427c2a8a4ea3ccacf9bc13b90f09ae74bb15210c044b3ea9b56b612fe067"
+  "windows_sha256": "147b570523d8d34c8db594dabca729d01d94d4ed344ce3ba75db441758585ca7"
 }

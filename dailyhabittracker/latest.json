@@ -1,9 +1,9 @@
 {
-  "version": "0.2.6",
-  "build": 8,
-  "notes": "\u2022 Ask AI (managers): get advice on your team's numbers from your own Claude, ChatGPT or Gemini \u2014 the app writes the prompt, nothing is sent\n\u2022 Software Update card like macOS, with Check for Updates beside the status\n\u2022 Renew or Upgrade License link under Licence\n\u2022 Team list: salesman names easier to read",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.6-build-8.dmg",
-  "mac_sha256": "df0f854201b2b2b9e80c4157b9faae10d4950acae9e5f6062c24d590a38f53b0",
+  "version": "0.2.7",
+  "build": 9,
+  "notes": "\u2022 Terms of Use: agree once on first use; a copy is in Settings and on the sign-in page\n\u2022 Brand logos are round and show on Reports \u2192 Performance per Brand\n\u2022 Dashboard brand filter now counts only that brand's stores (Stores Visited, Visits, Missed and more)\n\u2022 Smoother, Apple-style text: spacing, weights and colors\n\u2022 Online status moved to the bottom of the side panel; hidden on phones (already at the top)\n\u2022 Brands page: pencil icon instead of Edit buttons; narrower Monthly Targets boxes",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.7-build-9.dmg",
+  "mac_sha256": "463798b7b233b403ef7e487b0bbaf25631391c579020462010fe622b15c98762",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "147b570523d8d34c8db594dabca729d01d94d4ed344ce3ba75db441758585ca7"
+  "windows_sha256": "211f52fde340aba876f119bbe29147e66d3a6c550cc7aab16b319a929126c917"
 }

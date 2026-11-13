@@ -1,9 +1,9 @@
 {
-  "version": "0.2.4",
-  "build": 6,
-  "notes": "\u2022 Works offline: pages open instantly from the phone's saved copy, even with weak or no signal\n\u2022 New Store visits can be logged with no signal\n\u2022 Visits waiting to send now show on the pages\n\u2022 Pages load up to 10x faster on mobile data\n\u2022 Accessibility: Larger Text, Reduce Motion, Increase Contrast\n\u2022 Welcome Tour switch in Settings\n\u2022 Red badge on Settings when an update is available\n\u2022 Rounded Home Screen icon on phones",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.4-build-6.dmg",
-  "mac_sha256": "09c036e95817fd038f7025008b7be3ceca48a65862c465f656d9c72ddc737644",
+  "version": "0.2.5",
+  "build": 7,
+  "notes": "\u2022 Store page: future days show Planned, not Missed\n\u2022 Calendar easier to read on phones\n\u2022 Selfie and Order side by side (icons when space is tight)\n\u2022 New app name design with For Field Sales\n\u2022 Restarting the app reuses the open browser tab\n\u2022 Pages refresh themselves after an app update\n\u2022 Clearer message when the app isn't in the Applications folder",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.5-build-7.dmg",
+  "mac_sha256": "3c13e218e7c5e35c9f8a41c03c525a4600abe88191e9acefc3900e4e7b1cb38d",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "f77f5ca2e6a352a9469b1e18b6c6d1f7faabf831b4e0e3254d3d2ebcb4a9ef3e"
+  "windows_sha256": "7b9a427c2a8a4ea3ccacf9bc13b90f09ae74bb15210c044b3ea9b56b612fe067"
 }

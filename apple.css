@@ -9,6 +9,16 @@
      body 17 · caption 14 · nav 12. Weight 600 for headings, 400 for text.
    --------------------------------------------------------------- */
 
+/* Plus Jakarta Sans for devices without San Francisco (Android, Windows, Linux).
+   Served from this site, never from Google; Macs and iPhones never download it. */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("Assets/fonts/plus-jakarta-sans-latin.woff2") format("woff2");
+}
+
 /* ---------- Tokens ---------- */
 
 :root,
@@ -51,7 +61,7 @@
 }
 
 :root {
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --gutter: clamp(22px, 6vw, 80px);
   --text-col: min(980px, calc(100% - 2 * var(--gutter)));
   --wide-col: min(1260px, calc(100% - 2 * var(--gutter)));
@@ -73,7 +83,7 @@
 
 /* ---------- Page ---------- */
 
-html { scroll-padding-top: 64px; }
+html { scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 :root body {
   max-width: none;

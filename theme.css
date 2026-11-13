@@ -9,7 +9,7 @@ html {
 
 /* Apple system font (San Francisco) everywhere. */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- Type scale ----------
@@ -640,6 +640,7 @@ nav a:hover {
 .reveal.visible {
   opacity: 1;
   transform: none;
+  will-change: auto; /* drop the GPU layer once settled so text renders crisp, like Apple's */
 }
 
 /* Screenshots get a slightly larger, slower entrance. */

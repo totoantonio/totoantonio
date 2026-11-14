@@ -1,9 +1,9 @@
 {
-  "version": "0.2.7",
-  "build": 9,
-  "notes": "\u2022 Terms of Use: agree once on first use; a copy is in Settings and on the sign-in page\n\u2022 Brand logos are round and show on Reports \u2192 Performance per Brand\n\u2022 Dashboard brand filter now counts only that brand's stores (Stores Visited, Visits, Missed and more)\n\u2022 Smoother, Apple-style text: spacing, weights and colors\n\u2022 Online status moved to the bottom of the side panel; hidden on phones (already at the top)\n\u2022 Brands page: pencil icon instead of Edit buttons; narrower Monthly Targets boxes",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.7-build-9.dmg",
-  "mac_sha256": "463798b7b233b403ef7e487b0bbaf25631391c579020462010fe622b15c98762",
+  "version": "0.2.8",
+  "build": 10,
+  "notes": "\u2022 Fix today's visit or call with the pencil until midnight \u2014 every edit is listed under the card\n\u2022 Sales orders need an SO No.; replace a rejected SO with the small pencil beside it\n\u2022 Reports: Sales Orders vs Invoiced \u2014 import the office's invoices from a template\n\u2022 Upload a store list from a template; Find on Map pins a store from its address\n\u2022 Settings: choose what a visit can't be saved without (SO No., selfie, notes)\n\u2022 New FAQ page; printed reports show every salesman's numbers\n\u2022 The computer asks for the login every time the app opens",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.8-build-10.dmg",
+  "mac_sha256": "8856582a1d2103b47100ab076a9a040d87c30bc1faf49ecbaa70988039808a09",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "211f52fde340aba876f119bbe29147e66d3a6c550cc7aab16b319a929126c917"
+  "windows_sha256": "486620184e2d51f0c59143d747a400173b7bd35a73e2aa412022738c4a02a41a"
 }

@@ -1,9 +1,9 @@
 {
-  "version": "0.2.9",
-  "build": 11,
-  "notes": "\u2022 Salesmen upload their own coverage plan on the 1st to 3rd of the month (one change allowed), with an upload history\n\u2022 Last month's plan is locked: new plans never change past reports\n\u2022 Targets split over the days in the coverage plan (6-day weeks, no target on days off)\n\u2022 Turned-off salesmen stay in past reports\n\u2022 Settings: Download Backup\n\u2022 Changing your password signs out your other devices\n\u2022 Visits saved offline stay on the phone until the computer really receives them\n\u2022 Brand icons on phones: brand colours with initials\n\u2022 Arrows on the period bar line up with the text\n\u2022 Tailscale setup steps and a reminder on the dashboard until phones can connect from outside\n\u2022 FAQ: connecting phones outside the office, and what to do if an update won't open\n\u2022 Dashboard and print polish for phones and Safari",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.9-build-11.dmg",
-  "mac_sha256": "c5aca2838d45987d2420e85f76f0aa6442dd2950f08c5d896228f7231857ee98",
+  "version": "0.2.10",
+  "build": 12,
+  "notes": "\u2022 Dashboard: problems (missed calls, far from store) now show first\n\u2022 Telemarketing card shows calls made against the plan\n\u2022 Calmer colours: red and orange only when something needs attention\n\u2022 Smaller brand logos on phones",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.10-build-12.dmg",
+  "mac_sha256": "924a23b082f5c85f0b05e3b42b264429df2743a1721c750e344e500fb7ec196c",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "00a1464a97ea5e60f00a2298163dc38119892d217be109a2c59431155b0e65e3"
+  "windows_sha256": "dd0a65fd78c8f8e18552294273d0fbb2b1cac0ea908df33e38bdc97c8b24c927"
 }

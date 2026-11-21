@@ -1,9 +1,9 @@
 {
-  "version": "0.2.10",
-  "build": 12,
-  "notes": "\u2022 Dashboard: problems (missed calls, far from store) now show first\n\u2022 Telemarketing card shows calls made against the plan\n\u2022 Calmer colours: red and orange only when something needs attention\n\u2022 Smaller brand logos on phones",
-  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.10-build-12.dmg",
-  "mac_sha256": "924a23b082f5c85f0b05e3b42b264429df2743a1721c750e344e500fb7ec196c",
+  "version": "0.2.11",
+  "build": 13,
+  "notes": "\u2022 Location must be on to save a visit or a call, with an Allow Location button\n\u2022 Reports: newest visits show first\n\u2022 Store list upload asks about possible duplicate stores before saving\n\u2022 Filter menus are rounded to match the new Mac look",
+  "mac": "https://totoantonio.cloud/downloads/DailyHabitTracker-Mac-0.2.11-build-13.dmg",
+  "mac_sha256": "5b868c447ccdaa06969475451b8ab6fb5ffc7b0ae4464455368b5df290b699c5",
   "windows": "https://totoantonio.cloud/downloads/DailyHabitTracker-Windows.zip",
-  "windows_sha256": "dd0a65fd78c8f8e18552294273d0fbb2b1cac0ea908df33e38bdc97c8b24c927"
+  "windows_sha256": "778951c7c5c6579ad8fa2fd65ebc9fd90fd35d13bf62cbd2aef19018c15fd0ef"
 }
